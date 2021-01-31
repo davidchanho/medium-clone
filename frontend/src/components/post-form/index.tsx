@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import { IPost } from "../../types";
+import { IPost } from "../../store/reducers/posts";
 
 const initialPost: IPost = {
   title: "",
@@ -27,7 +27,7 @@ function PostForm() {
       .then(() => setPostForm(initialPost))
       .catch((err) => console.log(err));
   };
-  
+
   return (
     <form onSubmit={onSubmit}>
       <input placeholder="title" type="text" name="title" onChange={onChange} />
