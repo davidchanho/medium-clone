@@ -20,8 +20,14 @@ interface AddPostAction {
   payload: IPost;
 }
 
+interface DeletePostAction {
+  type: ActionTypes.DELETE_POST;
+  payload: string;
+}
+
 export type Action =
   | FetchPostsAction
   | FetchPostsSuccessAction
   | FetchPostsFailAction
-  | AddPostAction;
+  | AddPostAction
+  | DeletePostAction

@@ -25,3 +25,8 @@ export const addPost = (post: IPost) => ({
   type: ActionTypes.ADD_POST,
   payload: post,
 });
+
+export const deletePost = (_id: string) => ({
+  type: ActionTypes.DELETE_POST,
+  payload: _id,
+});

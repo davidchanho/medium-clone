@@ -3,6 +3,7 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { IPost } from "../../store/reducers/posts";
 
 const initialPost: IPost = {
+  _id: '',
   title: "",
   body: "",
 };

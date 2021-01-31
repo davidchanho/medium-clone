@@ -3,6 +3,7 @@ import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 
 export interface IPost {
+  _id: string;
   title: string;
   body: string;
 }
@@ -38,6 +39,12 @@ const postsReducers = produce(
       case ActionTypes.FETCH_POSTS_FAIL:
         state.loading = false;
         state.error = action.payload;
+        return state;
+      case ActionTypes.DELETE_POST:
+        const deleteIndex = state.posts.findIndex(
+          (post) => post._id === action.payload
+        );
+        delete state.posts[deleteIndex];
         return state;
       default:
         return state;
