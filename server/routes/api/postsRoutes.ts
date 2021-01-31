@@ -7,6 +7,10 @@ const router = express.Router();
 router.route("/").get(postsControllers.getPosts).post(postsControllers.addPost);
 
 // Matches with "/api/posts/:id"
-router.route("/:id").get(postsControllers.getPost).put(postsControllers.updatePost).delete(postsControllers.deletePost);
+router
+  .route("/:id")
+  .get(postsControllers.getPost)
+  .put(postsControllers.updatePost)
+  .delete(postsControllers.deletePost);
 
 export default router;
