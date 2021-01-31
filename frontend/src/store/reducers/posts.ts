@@ -10,16 +10,16 @@ export interface IPost {
 
 export interface IPostsState {
   posts: IPost[];
-  post: IPost | null;
+  post: IPost;
   loading: boolean;
-  error: string | null;
+  error: string;
 }
 
 const initialPostsState: IPostsState = {
   posts: [],
-  post: null,
+  post: { _id: "", title: "", body: "" },
   loading: false,
-  error: null,
+  error: "",
 };
 
 const postsReducers = produce(
@@ -40,11 +40,30 @@ const postsReducers = produce(
         state.loading = false;
         state.error = action.payload;
         return state;
+      case ActionTypes.FETCH_POST:
+        state.loading = true;
+        state.error = "";
+        return state;
+      case ActionTypes.FETCH_POST_SUCCESS:
+        state.post = action.payload;
+        state.loading = false;
+        return state;
+      case ActionTypes.FETCH_POST_FAIL:
+        state.loading = false;
+        state.error = action.payload;
+        return state;
       case ActionTypes.DELETE_POST:
         const deleteIndex = state.posts.findIndex(
           (post) => post._id === action.payload
         );
-        delete state.posts[deleteIndex];
+        if (deleteIndex !== -1) state.posts.splice(deleteIndex, 1);
+        return state;
+      case ActionTypes.UPDATE_POST:
+        const updateIndex = state.posts.findIndex(
+          (post) => post._id === action.payload._id
+        );
+        if (updateIndex !== -1)
+          state.posts.splice(updateIndex, 1, action.payload);
         return state;
       default:
         return state;
