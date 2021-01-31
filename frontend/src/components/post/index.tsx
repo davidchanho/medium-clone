@@ -1,30 +1,19 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import { useActions } from "../../hooks/useActions";
 import { PostProps } from "../../types";
+import { usePost } from "./usePost";
 
 function Post({ post }: PostProps) {
-  const { deletePost, fetchPost } = useActions();
-  const { _id, title } = post;
-
-  const onDeletePost = () => {
-    deletePost(_id);
-  };
-
-  const onFetchPost = () => {
-    fetchPost(_id);
-  };
+  const { onDeletePost, onFetchPost } = usePost(post);
 
   return (
     <Card className="w-25">
       <Card.Header>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title>{post.title}</Card.Title>
         <Button variant="danger" onClick={onDeletePost}>
           Delete
         </Button>
-        <Button variant="info" >
-          Update
-        </Button>
+        <Button variant="info">Update</Button>
         <Button variant="success" onClick={onFetchPost}>
           Details
         </Button>
