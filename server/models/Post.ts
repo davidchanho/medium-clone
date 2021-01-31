@@ -8,10 +8,12 @@ export interface IPostDoc extends Document {
 const postSchema = new Schema({
   title: {
     type: String,
+    minlength: [6, "post title must be at least 6 characters long"],
     required: true,
   },
   body: {
     type: String,
+    minlength: [6, "post body must be at least 6 characters long"],
     required: true,
   },
 });
