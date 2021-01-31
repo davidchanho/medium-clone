@@ -10,9 +10,7 @@ function PostList() {
   const { posts, loading, error } = useSelector(postSelectors);
 
   useEffect(() => {
-    if (posts.length === 0) {
-      fetchPosts();
-    }
+    fetchPosts();
   }, []);
 
   const renderPosts = () => {
