@@ -1,17 +1,11 @@
-import { nanoid } from "@reduxjs/toolkit";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useActions } from "../../hooks/useActions";
-import { IPost } from "../../store/reducers/posts";
-
-const initialPost: IPost = {
-  _id: nanoid(),
-  title: "",
-  body: "",
-};
+import { initialPost, IPost } from "../../store/reducers/posts";
 
 function PostForm() {
   const [postForm, setPostForm] = useState<IPost>(initialPost);
   const { addPost } = useActions();
+  
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setPostForm({

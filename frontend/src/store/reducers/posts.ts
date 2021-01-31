@@ -1,6 +1,13 @@
+import { nanoid } from "@reduxjs/toolkit";
 import produce from "immer";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
+
+export const initialPost: IPost = {
+  _id: nanoid(),
+  title: "",
+  body: "",
+};
 
 export interface IPost {
   _id: string;
