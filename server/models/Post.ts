@@ -1,6 +1,6 @@
 import { Document, model, Schema } from "mongoose";
 
-interface IPostDoc extends Document {
+export interface IPostDoc extends Document {
   title: string;
   body: string;
 }
