@@ -29,13 +29,9 @@ function Post({ post }: PostProps) {
               <BsThreeDots />
             </Dropdown.Toggle>
             <Dropdown.Menu className="d-flex flex-column">
-              <Dropdown.Item variant="danger" onClick={onDeletePost}>
-                Delete
-              </Dropdown.Item>
-              <Dropdown.Item variant="info">Update</Dropdown.Item>
-              <Dropdown.Item variant="success" onClick={onFetchPost}>
-                Details
-              </Dropdown.Item>
+              <Dropdown.Item onClick={onDeletePost}>Delete</Dropdown.Item>
+              <Dropdown.Item>Update</Dropdown.Item>
+              <Dropdown.Item onClick={onFetchPost}>Details</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>
