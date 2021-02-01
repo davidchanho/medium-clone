@@ -12,9 +12,9 @@ function PostDetailsPage() {
   }, []);
 
   return (
-    <div>
+    <>
       <PostDetails />
-    </div>
+    </>
   );
 }
 
