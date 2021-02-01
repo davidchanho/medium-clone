@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PostList from "../../components/post-list";
-import { useActions } from "../../hooks/useActions";
+import { usePostsPage } from "./usePostsPage";
 
 function PostsPage() {
-  const { fetchPosts } = useActions();
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
+  usePostsPage();
+  
   return (
     <>
       <PostList />

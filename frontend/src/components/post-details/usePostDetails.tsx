@@ -13,12 +13,16 @@ export const usePostDetails = () => {
       return <div>bummer...</div>;
     }
 
+    if (!post) {
+      return null;
+    }
+
     return (
       <>
-        {post?.title} {post?.body}
+        {post.title} {post.body}
       </>
     );
   };
 
-  return {renderPost}
+  return { renderPost };
 };

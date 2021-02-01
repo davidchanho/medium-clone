@@ -11,8 +11,6 @@ const postSchema = new Schema(
     publicationId: {
       type: Schema.Types.ObjectId,
       ref: "publication",
-      required: [true, "publication id required"],
-      default: "1",
     },
     title: {
       type: String,
