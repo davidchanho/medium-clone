@@ -9,17 +9,19 @@ function Post({ post }: PostProps) {
 
   return (
     <Card className="w-75 my-2 d-flex flex-row border-0">
-      <Card.Header className="bg-white border-0 w-75">
-        <Card.Title className="text-capitalize">{post.title}</Card.Title>
-        <Card.Subtitle className="text-capitalize text-secondary">
-          {post.body}
-        </Card.Subtitle>
-        <div className="d-flex align-items-center justify-content-between">
+      <Card.Header className="bg-white border-0 w-75 d-flex justify-content-between">
+        <div className="pointer mt-auto" onClick={onFetchPost}>
+          <Card.Title className="text-capitalize">{post.title}</Card.Title>
+
+          <Card.Subtitle className="text-capitalize text-secondary">
+            {post.body}
+          </Card.Subtitle>
           <Card.Text className="text-secondary">
             {new Date().toDateString()} 3 min read Base on your reading history
             *
           </Card.Text>
-
+        </div>
+        <div className="mt-auto">
           <Dropdown className="d-flex align-items-center justify-content-between">
             <Dropdown.ItemText>
               <BsBookmark />
@@ -31,12 +33,11 @@ function Post({ post }: PostProps) {
             <Dropdown.Menu className="d-flex flex-column">
               <Dropdown.Item onClick={onDeletePost}>Delete</Dropdown.Item>
               <Dropdown.Item>Update</Dropdown.Item>
-              <Dropdown.Item onClick={onFetchPost}>Details</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>
       </Card.Header>
-      <Card.Body>
+      <Card.Body className="pointer" onClick={onFetchPost}>
         <Card.Img
           className="w-75"
           src="https://miro.medium.com/fit/c/272/181/1*ts3kXw7MPHS_yrejwIbZHA.png"
