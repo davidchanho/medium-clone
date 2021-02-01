@@ -10,20 +10,22 @@ function Post({ post }: PostProps) {
   return (
     <Card className="w-75 my-2 d-flex flex-row border-0">
       <Card.Header className="bg-white border-0 w-75">
-        <Card.Title>{post.title}</Card.Title>
-        <Card.Subtitle>{post.body}</Card.Subtitle>
+        <Card.Title className="text-capitalize">{post.title}</Card.Title>
+        <Card.Subtitle className="text-capitalize text-secondary">
+          {post.body}
+        </Card.Subtitle>
         <div className="d-flex align-items-center justify-content-between">
-          <Card.Text>
+          <Card.Text className="text-secondary">
             {new Date().toDateString()} 3 min read Base on your reading history
             *
           </Card.Text>
 
           <Dropdown className="d-flex align-items-center justify-content-between">
-            <Dropdown.Item>
+            <Dropdown.ItemText>
               <BsBookmark />
-            </Dropdown.Item>
+            </Dropdown.ItemText>
 
-            <Dropdown.Toggle>
+            <Dropdown.Toggle className="border-0 bg-white text-secondary shadow-none">
               <BsThreeDots />
             </Dropdown.Toggle>
             <Dropdown.Menu className="d-flex flex-column">
