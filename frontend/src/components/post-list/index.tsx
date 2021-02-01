@@ -5,7 +5,7 @@ import { usePostList } from "./usePostList";
 function PostList() {
   const { renderPosts } = usePostList();
 
-  return <CardDeck>{renderPosts()}</CardDeck>;
+  return <CardDeck className="d-flex flex-column">{renderPosts()}</CardDeck>;
 }
 
 export default PostList;
