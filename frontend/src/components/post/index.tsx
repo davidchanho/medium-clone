@@ -11,14 +11,19 @@ function Post({ post }: PostProps) {
     <Card className="w-75 my-2 d-flex flex-row border-0">
       <Card.Header className="bg-white border-0 w-75 d-flex justify-content-between">
         <div className="pointer mt-auto" onClick={onFetchPost}>
-          <Card.Title className="text-capitalize">{post.title}</Card.Title>
-
-          <Card.Subtitle className="text-capitalize text-secondary">
-            {post.body}
-          </Card.Subtitle>
+          <Card.Text>
+            <BsBookmark /> firstname lastname in publication
+          </Card.Text>
+          <Card.Text>
+            <Card.Title className="text-capitalize">{post.title}</Card.Title>
+          </Card.Text>
+          <Card.Text>
+            <Card.Subtitle className="text-capitalize text-secondary">
+              {post.body}
+            </Card.Subtitle>
+          </Card.Text>
           <Card.Text className="text-secondary">
-            {new Date().toDateString()} 3 min read Base on your reading history
-            *
+            {new Date().toDateString()}
           </Card.Text>
         </div>
         <div className="mt-auto">
