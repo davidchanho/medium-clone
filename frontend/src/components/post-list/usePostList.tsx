@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { useActions } from "../../hooks/useActions";
 import { postSelectors } from "../../store";
 import Post from "../post";
 
 export const usePostList = () => {
-  const { fetchPosts } = useActions();
   const { posts, loading, error } = useSelector(postSelectors);
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
 
   const renderPosts = () => {
     if (loading) {
@@ -21,7 +15,7 @@ export const usePostList = () => {
       return <h2>{error}</h2>;
     }
 
-    return posts?.map((post) => <Post post={post} />);
+    return posts?.map((post) => <Post key={post._id} post={post} />);
   };
 
   return { renderPosts };

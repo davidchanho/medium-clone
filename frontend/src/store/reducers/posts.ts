@@ -30,7 +30,7 @@ const initialPostsState: IPostsState = {
 };
 
 const postsReducers = produce(
-  (state: IPostsState = initialPostsState, action: Action) => {
+  (state: IPostsState = initialPostsState, action: Action): IPostsState => {
     switch (action.type) {
       case ActionTypes.ADD_POST:
         state.posts.push(action.payload);
