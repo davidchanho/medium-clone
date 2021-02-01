@@ -1,15 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 import { IPost } from "../../store/reducers/posts";
 
 export const usePost = (post: IPost) => {
-  const { deletePost, fetchPost } = useActions();
+  const { deletePost } = useActions();
+  const navigate = useNavigate();
 
   const onDeletePost = () => {
     deletePost(post._id);
   };
 
   const onFetchPost = () => {
-    fetchPost(post._id);
+    navigate(`/${post._id}`);
   };
 
   return { onDeletePost, onFetchPost };
