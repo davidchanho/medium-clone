@@ -45,7 +45,7 @@ function Post({ post }: PostProps) {
       <Card.Body className="pointer" onClick={onFetchPost}>
         <Card.Img
           className="w-75"
-          src="https://miro.medium.com/fit/c/272/181/1*ts3kXw7MPHS_yrejwIbZHA.png"
+          src={post.image}
         />
       </Card.Body>
     </Card>

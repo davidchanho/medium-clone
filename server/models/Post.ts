@@ -24,6 +24,11 @@ const postSchema = new Schema(
       minlength: [6, "post body must be at least 6 characters long"],
       required: [true, "post body is required"],
     },
+    image: {
+      type: String,
+      default:
+        "https://miro.medium.com/fit/c/272/181/1*ts3kXw7MPHS_yrejwIbZHA.png",
+    },
   },
   { timestamps: true }
 );
