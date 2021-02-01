@@ -14,9 +14,18 @@ export const usePostForm = () => {
     });
   };
 
+  const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files) {
+      console.log(files[0]);
+    }
+  };
+
+  const {title, body} = postForm
+
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (postForm.body.length > 6 && postForm.title.length > 6) {
+    if (body.length > 6 && title.length > 6) {
       try {
         addPost(postForm);
         setPostForm(initialPost);
@@ -26,5 +35,5 @@ export const usePostForm = () => {
     }
   };
 
-  return { postForm, onChange, onSubmit };
+  return { postForm, onChange, onSubmit, onFileChange };
 };

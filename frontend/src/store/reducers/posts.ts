@@ -32,7 +32,6 @@ export interface IPublication {
 }
 
 export interface IPostsState {
-  name: string;
   publications: IPublication[];
   publication: IPublication;
   post: IPost;
@@ -41,8 +40,11 @@ export interface IPostsState {
 }
 
 const initialPostsState: IPostsState = {
-  name: "",
-  publications: [],
+  publications: [
+    { _id: "1", name: "a", posts: [] },
+    { _id: "2", name: "b", posts: [] },
+    { _id: "3", name: "c", posts: [] },
+  ],
   publication: { _id: "", name: "", posts: [] },
   post: { _id: "", _publicationId: "", title: "", body: "", image: "" },
   loading: false,
