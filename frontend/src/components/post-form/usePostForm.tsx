@@ -1,10 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useActions } from "../../hooks/useActions";
 import { initialPost, IPost } from "../../store/reducers/posts";
+import {useNavigate} from 'react-router-dom';
 
 export const usePostForm = () => {
   const [postForm, setPostForm] = useState<IPost>(initialPost);
   const { addPost } = useActions();
+  const navigate = useNavigate();
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -29,6 +31,7 @@ export const usePostForm = () => {
       try {
         addPost(postForm);
         setPostForm(initialPost);
+        navigate('/');
       } catch (err) {
         console.log(err);
       }
