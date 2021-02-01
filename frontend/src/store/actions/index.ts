@@ -1,6 +1,7 @@
 import { ActionTypes } from "../action-types";
-import { IPost } from "../reducers/posts";
+import { IPost, IPublication } from "../reducers/posts";
 
+// Posts
 interface FetchPostsAction {
   type: ActionTypes.FETCH_POSTS;
 }
@@ -44,6 +45,50 @@ interface UpdatePostAction {
   payload: IPost;
 }
 
+// Publications
+interface FetchPublicationsAction {
+  type: ActionTypes.FETCH_PUBLICATIONS;
+}
+
+interface FetchPublicationsSuccessAction {
+  type: ActionTypes.FETCH_PUBLICATIONS_SUCCESS;
+  payload: IPublication[];
+}
+
+interface FetchPublicationsFailAction {
+  type: ActionTypes.FETCH_PUBLICATIONS_FAIL;
+  payload: string;
+}
+
+interface FetchPublicationAction {
+  type: ActionTypes.FETCH_PUBLICATION;
+}
+
+interface FetchPublicationSuccessAction {
+  type: ActionTypes.FETCH_PUBLICATION_SUCCESS;
+  payload: IPublication;
+}
+
+interface FetchPublicationFailAction {
+  type: ActionTypes.FETCH_PUBLICATION_FAIL;
+  payload: string;
+}
+
+interface AddPublicationAction {
+  type: ActionTypes.ADD_PUBLICATION;
+  payload: IPublication;
+}
+
+interface DeletePublicationAction {
+  type: ActionTypes.DELETE_PUBLICATION;
+  payload: string;
+}
+
+interface UpdatePublicationAction {
+  type: ActionTypes.UPDATE_PUBLICATION;
+  payload: IPublication;
+}
+
 export type Action =
   | FetchPostsAction
   | FetchPostsSuccessAction
@@ -53,4 +98,13 @@ export type Action =
   | FetchPostFailAction
   | AddPostAction
   | DeletePostAction
-  | UpdatePostAction;
+  | UpdatePostAction
+  | FetchPublicationsAction
+  | FetchPublicationsSuccessAction
+  | FetchPublicationsFailAction
+  | FetchPublicationAction
+  | FetchPublicationSuccessAction
+  | FetchPublicationFailAction
+  | AddPublicationAction
+  | DeletePublicationAction
+  | UpdatePublicationAction

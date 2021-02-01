@@ -5,26 +5,44 @@ import { Action } from "../actions";
 
 export const initialPost: IPost = {
   _id: nanoid(),
+  _publicationId: "",
   title: "",
   body: "",
 };
 
 export interface IPost {
   _id: string;
+  _publicationId: string;
   title: string;
   body: string;
 }
 
-export interface IPostsState {
+export const initialPublication: IPublication = {
+  _id: nanoid(),
+  name: "",
+  posts: [],
+};
+
+export interface IPublication {
+  _id: string;
+  name: string;
   posts: IPost[];
+}
+
+export interface IPostsState {
+  name: string;
+  publications: IPublication[];
+  publication: IPublication;
   post: IPost;
   loading: boolean;
   error: string;
 }
 
 const initialPostsState: IPostsState = {
-  posts: [],
-  post: { _id: "", title: "", body: "" },
+  name: "",
+  publications: [],
+  publication: { _id: "", name: "", posts: [] },
+  post: { _id: "", _publicationId: "", title: "", body: "" },
   loading: false,
   error: "",
 };
@@ -33,14 +51,14 @@ const postsReducers = produce(
   (state: IPostsState = initialPostsState, action: Action): IPostsState => {
     switch (action.type) {
       case ActionTypes.ADD_POST:
-        state.posts.push(action.payload);
+        state.publication.posts.push(action.payload);
         return state;
       case ActionTypes.FETCH_POSTS:
         state.loading = true;
         state.error = "";
         return state;
       case ActionTypes.FETCH_POSTS_SUCCESS:
-        state.posts = action.payload;
+        state.publication.posts = action.payload;
         state.loading = false;
         return state;
       case ActionTypes.FETCH_POSTS_FAIL:
@@ -60,17 +78,60 @@ const postsReducers = produce(
         state.error = action.payload;
         return state;
       case ActionTypes.DELETE_POST:
-        const deleteIndex = state.posts.findIndex(
+        const deletePostIndex = state.publication.posts.findIndex(
           (post) => post._id === action.payload
         );
-        if (deleteIndex !== -1) state.posts.splice(deleteIndex, 1);
+        if (deletePostIndex !== -1)
+          state.publication.posts.splice(deletePostIndex, 1);
         return state;
       case ActionTypes.UPDATE_POST:
-        const updateIndex = state.posts.findIndex(
+        const updatePostIndex = state.publication.posts.findIndex(
           (post) => post._id === action.payload._id
         );
-        if (updateIndex !== -1)
-          state.posts.splice(updateIndex, 1, action.payload);
+        if (updatePostIndex !== -1)
+          state.publication.posts.splice(updatePostIndex, 1, action.payload);
+        return state;
+
+      case ActionTypes.ADD_PUBLICATION:
+        state.publications.push(action.payload);
+        return state;
+      case ActionTypes.FETCH_PUBLICATIONS:
+        state.loading = true;
+        state.error = "";
+        return state;
+      case ActionTypes.FETCH_PUBLICATIONS_SUCCESS:
+        state.publications = action.payload;
+        state.loading = false;
+        return state;
+      case ActionTypes.FETCH_PUBLICATIONS_FAIL:
+        state.loading = false;
+        state.error = action.payload;
+        return state;
+      case ActionTypes.FETCH_PUBLICATION:
+        state.loading = true;
+        state.error = "";
+        return state;
+      case ActionTypes.FETCH_PUBLICATION_SUCCESS:
+        state.publication = action.payload;
+        state.loading = false;
+        return state;
+      case ActionTypes.FETCH_PUBLICATION_FAIL:
+        state.loading = false;
+        state.error = action.payload;
+        return state;
+      case ActionTypes.DELETE_PUBLICATION:
+        const deletePublicationIndex = state.publications.findIndex(
+          (publication) => publication._id === action.payload
+        );
+        if (deletePublicationIndex !== -1)
+          state.publications.splice(deletePublicationIndex, 1);
+        return state;
+      case ActionTypes.UPDATE_PUBLICATION:
+        const updatePublicationIndex = state.publications.findIndex(
+          (publication) => publication._id === action.payload._id
+        );
+        if (updatePublicationIndex !== -1)
+          state.publications.splice(updatePublicationIndex, 1, action.payload);
         return state;
       default:
         return state;

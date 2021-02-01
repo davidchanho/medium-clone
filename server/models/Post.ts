@@ -1,12 +1,19 @@
 import { Document, model, Schema } from "mongoose";
 
 export interface IPostDoc extends Document {
+  publicationId: Schema.Types.ObjectId;
   title: string;
   body: string;
 }
 
 const postSchema = new Schema(
   {
+    publicationId: {
+      type: Schema.Types.ObjectId,
+      ref: "publication",
+      required: [true, "publication id required"],
+      default: "1",
+    },
     title: {
       type: String,
       minlength: [6, "post title must be at least 6 characters long"],
