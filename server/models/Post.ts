@@ -10,12 +10,12 @@ const postSchema = new Schema(
     title: {
       type: String,
       minlength: [6, "post title must be at least 6 characters long"],
-      required: true,
+      required: [true, "post title is required"],
     },
     body: {
       type: String,
       minlength: [6, "post body must be at least 6 characters long"],
-      required: true,
+      required: [true, "post body is required"],
     },
   },
   { timestamps: true }
