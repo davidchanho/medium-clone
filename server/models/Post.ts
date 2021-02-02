@@ -9,7 +9,7 @@ export interface IPostDoc extends Document {
 const postSchema = new Schema(
   {
     publicationId: {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: "publication",
     },
     title: {
