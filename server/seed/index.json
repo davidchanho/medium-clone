@@ -1,19 +1,31 @@
 [
     {
-        "name": "publication1",
         "posts": [
             {
-                "title": "titlepub1",
-                "body": "bodypub2"
+                "image": "https://miro.medium.com/fit/c/272/181/1*ts3kXw7MPHS_yrejwIbZHA.png",
+                "_id": "6018dd4275b3d794c4b35805",
+                "publicationId": "6018dadbe6afe7436c43951f",
+                "title": "titlghje",
+                "body": "boghjghgjdy",
+                "createdAt": "2021-02-02T05:04:02.582Z",
+                "updatedAt": "2021-02-02T05:04:02.582Z",
+                "__v": 0
             }
-        ]
+        ],
+        "_id": "6018dadbe6afe7436c43951f",
+        "name": "publication1",
+        "__v": 0
     },
     {
+        "posts": [],
+        "_id": "6018dadbe6afe7436c439520",
         "name": "publication2",
-        "posts": []
+        "__v": 0
     },
     {
+        "posts": [],
+        "_id": "6018dadbe6afe7436c439521",
         "name": "publication3",
-        "posts": []
+        "__v": 0
     }
 ]

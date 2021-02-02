@@ -24,10 +24,11 @@ const logger = createLogger();
 const middleware = [thunk, logger];
 
 export const store = createStore(
-  persistedReducer,
+  reducers,
   {},
   composeWithDevTools(applyMiddleware(...middleware))
 );
 
 export const persistor = persistStore(store);
+
 export type RootState = ReturnType<typeof store.getState>;
