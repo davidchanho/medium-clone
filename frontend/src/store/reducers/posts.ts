@@ -34,18 +34,16 @@ export interface IPublication {
 export interface IPostsState {
   publications: IPublication[];
   publication: IPublication;
+  posts: IPost[];
   post: IPost;
   loading: boolean;
   error: string;
 }
 
 const initialPostsState: IPostsState = {
-  publications: [
-    { _id: "1", name: "a", posts: [] },
-    { _id: "2", name: "b", posts: [] },
-    { _id: "3", name: "c", posts: [] },
-  ],
+  publications: [],
   publication: { _id: "", name: "", posts: [] },
+  posts: [],
   post: { _id: "", _publicationId: "", title: "", body: "", image: "" },
   loading: false,
   error: "",

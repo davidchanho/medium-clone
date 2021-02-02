@@ -9,6 +9,9 @@ router
   .get(postsControllers.fetchPosts)
   .post(postsControllers.addPost);
 
+// Matches with "/api/posts/seed"
+router.route("/seed").post(postsControllers.seedPosts);
+
 // Matches with "/api/posts/:id"
 router
   .route("/:id")

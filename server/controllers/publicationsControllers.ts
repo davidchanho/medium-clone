@@ -17,6 +17,11 @@ export default {
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
+  seedPublications: (req: Request, res: Response) => {
+    db.Publication.insertMany(req.body)
+      .then((model) => res.json(model))
+      .catch((err) => res.status(422).json(err));
+  },
   deletePublication: (req: Request, res: Response) => {
     db.Publication.findById(req.params.id)
       .then((model) => model?.remove())

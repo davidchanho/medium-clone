@@ -28,4 +28,9 @@ export default {
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
+  seedPosts: (req: Request, res: Response) => {
+    db.Post.insertMany(req.body)
+      .then((model) => res.json(model))
+      .catch((err) => res.status(422).json(err));
+  },
 };
