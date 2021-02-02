@@ -5,7 +5,7 @@ import { Action } from "../actions";
 
 export const initialPost: IPost = {
   _id: nanoid(),
-  _publicationId: "",
+  publicationId: "",
   title: "",
   body: "",
   image: "",
@@ -13,7 +13,7 @@ export const initialPost: IPost = {
 
 export interface IPost {
   _id: string;
-  _publicationId: string;
+  publicationId: string;
   title: string;
   body: string;
   image: string;
@@ -44,7 +44,7 @@ const initialPostsState: IPostsState = {
   publications: [],
   publication: { _id: "", name: "", posts: [] },
   posts: [],
-  post: { _id: "", _publicationId: "", title: "", body: "", image: "" },
+  post: { _id: "", publicationId: "", title: "", body: "", image: "" },
   loading: false,
   error: "",
 };

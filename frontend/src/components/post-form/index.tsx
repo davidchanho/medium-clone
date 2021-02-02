@@ -10,7 +10,7 @@ function PostForm() {
     onFileChange,
   } = usePostForm();
 
-  const { title, body } = postForm;
+  const { title, body, publicationId } = postForm;
 
   return (
     <form onSubmit={onSubmit} className="d-flex flex-column" noValidate>
@@ -36,9 +36,13 @@ function PostForm() {
       <label>Image</label>
       <input type="file" accept="image/*" onChange={onFileChange} />
       <label>Publication</label>
-      <select>
+      <select onChange={onChange} value={publicationId} name="publicationId">
         {publications.map((publication) => {
-          return <option key={publication._id}>{publication.name}</option>;
+          return (
+            <option key={publication._id} value={publication._id}>
+              {publication.name}
+            </option>
+          );
         })}
       </select>
       <button type="submit">submit</button>

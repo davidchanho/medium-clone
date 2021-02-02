@@ -14,8 +14,10 @@ const db = {
     return data;
   },
   addPost(post: IPost) {
-    const { title, body } = post;
-    axios.post<any>(postsUrl, { title, body });
+    const {title, body, publicationId} = post
+    const newPost = {...post}
+    console.log(newPost)
+    axios.post<any>(postsUrl, {title, body, publicationId});
   },
   deletePost(_id: string) {
     axios.delete<string>(postsUrl + _id);
