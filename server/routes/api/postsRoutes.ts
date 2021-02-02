@@ -4,10 +4,7 @@ import postsControllers from "../../controllers/postsControllers";
 const router = express.Router();
 
 // Matches with "/api/posts"
-router
-  .route("/")
-  .get(postsControllers.fetchPosts)
-  .post(postsControllers.addPost);
+router.route("/").get(postsControllers.getPosts).post(postsControllers.addPost);
 
 // Matches with "/api/posts/seed"
 router.route("/seed").post(postsControllers.seedPosts);
@@ -15,7 +12,7 @@ router.route("/seed").post(postsControllers.seedPosts);
 // Matches with "/api/posts/:id"
 router
   .route("/:id")
-  .get(postsControllers.fetchPost)
+  .get(postsControllers.getPost)
   .put(postsControllers.updatePost)
   .delete(postsControllers.deletePost);
 

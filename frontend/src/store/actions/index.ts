@@ -2,30 +2,30 @@ import { ActionTypes } from "../action-types";
 import { IPost, IPublication } from "../reducers/posts";
 
 // Posts
-interface FetchPostsAction {
+interface GetPostsAction {
   type: ActionTypes.FETCH_POSTS;
 }
 
-interface FetchPostsSuccessAction {
+interface GetPostsSuccessAction {
   type: ActionTypes.FETCH_POSTS_SUCCESS;
   payload: IPost[];
 }
 
-interface FetchPostsFailAction {
+interface GetPostsFailAction {
   type: ActionTypes.FETCH_POSTS_FAIL;
   payload: string;
 }
 
-interface FetchPostAction {
+interface GetPostAction {
   type: ActionTypes.FETCH_POST;
 }
 
-interface FetchPostSuccessAction {
+interface GetPostSuccessAction {
   type: ActionTypes.FETCH_POST_SUCCESS;
   payload: IPost;
 }
 
-interface FetchPostFailAction {
+interface GetPostFailAction {
   type: ActionTypes.FETCH_POST_FAIL;
   payload: string;
 }
@@ -46,30 +46,30 @@ interface UpdatePostAction {
 }
 
 // Publications
-interface FetchPublicationsAction {
+interface GetPublicationsAction {
   type: ActionTypes.FETCH_PUBLICATIONS;
 }
 
-interface FetchPublicationsSuccessAction {
+interface GetPublicationsSuccessAction {
   type: ActionTypes.FETCH_PUBLICATIONS_SUCCESS;
   payload: IPublication[];
 }
 
-interface FetchPublicationsFailAction {
+interface GetPublicationsFailAction {
   type: ActionTypes.FETCH_PUBLICATIONS_FAIL;
   payload: string;
 }
 
-interface FetchPublicationAction {
+interface GetPublicationAction {
   type: ActionTypes.FETCH_PUBLICATION;
 }
 
-interface FetchPublicationSuccessAction {
+interface GetPublicationSuccessAction {
   type: ActionTypes.FETCH_PUBLICATION_SUCCESS;
   payload: IPublication;
 }
 
-interface FetchPublicationFailAction {
+interface GetPublicationFailAction {
   type: ActionTypes.FETCH_PUBLICATION_FAIL;
   payload: string;
 }
@@ -90,21 +90,21 @@ interface UpdatePublicationAction {
 }
 
 export type Action =
-  | FetchPostsAction
-  | FetchPostsSuccessAction
-  | FetchPostsFailAction
-  | FetchPostAction
-  | FetchPostSuccessAction
-  | FetchPostFailAction
+  | GetPostsAction
+  | GetPostsSuccessAction
+  | GetPostsFailAction
+  | GetPostAction
+  | GetPostSuccessAction
+  | GetPostFailAction
   | AddPostAction
   | DeletePostAction
   | UpdatePostAction
-  | FetchPublicationsAction
-  | FetchPublicationsSuccessAction
-  | FetchPublicationsFailAction
-  | FetchPublicationAction
-  | FetchPublicationSuccessAction
-  | FetchPublicationFailAction
+  | GetPublicationsAction
+  | GetPublicationsSuccessAction
+  | GetPublicationsFailAction
+  | GetPublicationAction
+  | GetPublicationSuccessAction
+  | GetPublicationFailAction
   | AddPublicationAction
   | DeletePublicationAction
-  | UpdatePublicationAction
+  | UpdatePublicationAction;

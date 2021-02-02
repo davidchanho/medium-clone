@@ -2,12 +2,12 @@ import { Request, Response } from "express";
 import db from "../models";
 
 export default {
-  fetchPosts: (req: Request, res: Response) => {
+  getPosts: (req: Request, res: Response) => {
     db.Post.find({})
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
-  fetchPost: (req: Request, res: Response) => {
+  getPost: (req: Request, res: Response) => {
     db.Post.findById(req.params.id)
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));

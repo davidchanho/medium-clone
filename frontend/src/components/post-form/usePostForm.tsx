@@ -2,10 +2,13 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { useActions } from "../../hooks/useActions";
 import { initialPost, IPost } from "../../store/reducers/posts";
 import {useNavigate} from 'react-router-dom';
+import { useSelector } from "../../hooks/useSelector";
+import { postSelectors } from "../../store";
 
 export const usePostForm = () => {
   const [postForm, setPostForm] = useState<IPost>(initialPost);
   const { addPost } = useActions();
+  const {publications} = useSelector(postSelectors)
   const navigate = useNavigate();
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -23,6 +26,10 @@ export const usePostForm = () => {
     }
   };
 
+  const onSelectPublication = () => {
+
+  }
+
   const {title, body} = postForm
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -38,5 +45,5 @@ export const usePostForm = () => {
     }
   };
 
-  return { postForm, onChange, onSubmit, onFileChange };
+  return { postForm, publications, onChange, onSubmit, onFileChange };
 };

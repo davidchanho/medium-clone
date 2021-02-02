@@ -2,12 +2,12 @@ import { Request, Response } from "express";
 import db from "../models";
 
 export default {
-  fetchPublications: (req: Request, res: Response) => {
+  getPublications: (req: Request, res: Response) => {
     db.Publication.find({})
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
-  fetchPublication: (req: Request, res: Response) => {
+  getPublication: (req: Request, res: Response) => {
     db.Publication.findById(req.params.id)
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
@@ -19,12 +19,6 @@ export default {
   },
   seedPublications: (req: Request, res: Response) => {
     db.Publication.insertMany(req.body)
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
-  },
-  deletePublication: (req: Request, res: Response) => {
-    db.Publication.findById(req.params.id)
-      .then((model) => model?.remove())
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },

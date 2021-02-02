@@ -6,7 +6,7 @@ const router = express.Router();
 // Matches with "/api/publications"
 router
   .route("/")
-  .get(publicationsControllers.fetchPublications)
+  .get(publicationsControllers.getPublications)
   .post(publicationsControllers.addPublication);
 
 // Matches with "/api/publications/seed"
@@ -15,8 +15,7 @@ router.route("/seed").post(publicationsControllers.seedPublications);
 // Matches with "/api/publications/:id"
 router
   .route("/:id")
-  .get(publicationsControllers.fetchPublication)
-  .put(publicationsControllers.updatePublication)
-  .delete(publicationsControllers.deletePublication);
+  .get(publicationsControllers.getPublication)
+  .put(publicationsControllers.updatePublication);
 
 export default router;

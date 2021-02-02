@@ -10,9 +10,9 @@ export const usePost = (post: IPost) => {
     deletePost(post._id);
   };
 
-  const onFetchPost = () => {
+  const onGetPost = () => {
     navigate(`/${post._id}`);
   };
 
-  return { onDeletePost, onFetchPost };
+  return { onDeletePost, onGetPost };
 };

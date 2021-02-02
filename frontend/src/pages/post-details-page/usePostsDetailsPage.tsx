@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 
 const usePostsDetailsPage = () => {
-    const params = useParams();
-    const { fetchPost } = useActions();
-  
-    useEffect(() => {
-      fetchPost(params.id);
-    }, []); 
-}
+  const params = useParams();
+  const { getPost } = useActions();
 
-export default usePostsDetailsPage
+  useEffect(() => {
+    getPost(params.id);
+  }, []);
+};
+
+export default usePostsDetailsPage;

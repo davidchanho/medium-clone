@@ -4,11 +4,11 @@ import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 import { IPost, IPublication } from "../reducers/posts";
 
-export const fetchPosts = () => async (dispatch: Dispatch<Action>) => {
+export const getPosts = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_POSTS });
 
   try {
-    const data = await db.fetchPosts();
+    const data = await db.getPosts();
     dispatch({
       type: ActionTypes.FETCH_POSTS_SUCCESS,
       payload: data,
@@ -21,13 +21,11 @@ export const fetchPosts = () => async (dispatch: Dispatch<Action>) => {
   }
 };
 
-export const fetchPost = (_id: string) => async (
-  dispatch: Dispatch<Action>
-) => {
+export const getPost = (_id: string) => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_POST });
 
   try {
-    const data = await db.fetchPost(_id);
+    const data = await db.getPost(_id);
     dispatch({
       type: ActionTypes.FETCH_POST_SUCCESS,
       payload: data,
@@ -77,11 +75,11 @@ export const updatePost = (post: IPost) => async (
   }
 };
 
-export const fetchPublications = () => async (dispatch: Dispatch<Action>) => {
+export const getPublications = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_PUBLICATIONS });
 
   try {
-    const data = await db.fetchPublications();
+    const data = await db.getPublications();
     dispatch({
       type: ActionTypes.FETCH_PUBLICATIONS_SUCCESS,
       payload: data,
@@ -94,13 +92,13 @@ export const fetchPublications = () => async (dispatch: Dispatch<Action>) => {
   }
 };
 
-export const fetchPublication = (_id: string) => async (
+export const getPublication = (_id: string) => async (
   dispatch: Dispatch<Action>
 ) => {
   dispatch({ type: ActionTypes.FETCH_PUBLICATION });
 
   try {
-    const data = await db.fetchPublication(_id);
+    const data = await db.getPublication(_id);
     dispatch({
       type: ActionTypes.FETCH_PUBLICATION_SUCCESS,
       payload: data,
@@ -113,7 +111,9 @@ export const fetchPublication = (_id: string) => async (
   }
 };
 
-export const addPublication = (publication: IPublication) => async (dispatch: Dispatch<Action>) => {
+export const addPublication = (publication: IPublication) => async (
+  dispatch: Dispatch<Action>
+) => {
   try {
     db.addPublication(publication);
     dispatch({ type: ActionTypes.ADD_PUBLICATION, payload: publication });

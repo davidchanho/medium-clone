@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useActions } from "../../hooks/useActions";
 
 export const usePostsPage = () => {
-  const { fetchPosts, fetchPublications } = useActions();
+  const { getPosts, getPublications } = useActions();
 
   useEffect(() => {
-    fetchPosts();
-    fetchPublications();
+    getPosts();
+    getPublications();
   }, []);
 };

@@ -2,14 +2,14 @@ import axios from "axios";
 import { IPost, IPublication } from "../store/reducers/posts";
 
 const postsUrl = "/api/posts/";
-const publicationsUrl = '/api/publications/';
+const publicationsUrl = "/api/publications/";
 
 const db = {
-  async fetchPosts() {
+  async getPosts() {
     const { data } = await axios.get<IPost[]>(postsUrl);
     return data;
   },
-  async fetchPost(_id: string) {
+  async getPost(_id: string) {
     const { data } = await axios.get<IPost>(postsUrl + _id);
     return data;
   },
@@ -24,11 +24,11 @@ const db = {
     axios.put<string>(postsUrl + post._id, post);
   },
 
-  async fetchPublications() {
+  async getPublications() {
     const { data } = await axios.get<IPublication[]>(publicationsUrl);
     return data;
   },
-  async fetchPublication(_id: string) {
+  async getPublication(_id: string) {
     const { data } = await axios.get<IPublication>(publicationsUrl + _id);
     return data;
   },

@@ -2,9 +2,15 @@ import React from "react";
 import { usePostForm } from "./usePostForm";
 
 function PostForm() {
-  const { postForm, onSubmit, onChange, onFileChange } = usePostForm();
- 
-  const {title, body} = postForm
+  const {
+    postForm,
+    publications,
+    onSubmit,
+    onChange,
+    onFileChange,
+  } = usePostForm();
+
+  const { title, body } = postForm;
 
   return (
     <form onSubmit={onSubmit} className="d-flex flex-column" noValidate>
@@ -29,6 +35,12 @@ function PostForm() {
       />
       <label>Image</label>
       <input type="file" accept="image/*" onChange={onFileChange} />
+      <label>Publication</label>
+      <select>
+        {publications.map((publication) => {
+          return <option key={publication._id}>{publication.name}</option>;
+        })}
+      </select>
       <button type="submit">submit</button>
     </form>
   );
