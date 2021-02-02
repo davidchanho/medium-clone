@@ -1,0 +1,19 @@
+[
+    {
+        "name": "publication1",
+        "posts": [
+            {
+                "title": "titlepub1",
+                "body": "bodypub2"
+            }
+        ]
+    },
+    {
+        "name": "publication2",
+        "posts": []
+    },
+    {
+        "name": "publication3",
+        "posts": []
+    }
+]

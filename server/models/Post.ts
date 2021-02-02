@@ -31,6 +31,11 @@ const postSchema = new Schema(
   { timestamps: true }
 );
 
+postSchema.pre("save", function (this) {
+  const post = this;
+  post.populate("publication");
+});
+
 const Post = model<IPostDoc>("post", postSchema);
 
 export default Post;

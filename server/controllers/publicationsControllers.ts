@@ -9,6 +9,8 @@ export default {
   },
   getPublication: (req: Request, res: Response) => {
     db.Publication.findById(req.params.id)
+      .populate("post", "title")
+      .exec()
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },

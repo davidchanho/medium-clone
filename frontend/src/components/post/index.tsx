@@ -5,14 +5,14 @@ import { PostProps } from "../../types";
 import { usePost } from "./usePost";
 
 function Post({ post }: PostProps) {
-  const { onDeletePost, onGetPost } = usePost(post);
+  const { onDeletePost, onGetPost, publicationName } = usePost(post);
 
   return (
     <Card className="w-75 my-2 d-flex flex-row border-0">
       <Card.Header className="bg-white border-0 w-75 d-flex justify-content-between">
         <div className="pointer mt-auto" onClick={onGetPost}>
           <Card.Text>
-            <BsBookmark /> firstname lastname in publication
+            <BsBookmark /> firstname lastname in {publicationName}
           </Card.Text>
           <Card.Text>
             <Card.Title className="text-capitalize">{post.title}</Card.Title>
@@ -36,8 +36,9 @@ function Post({ post }: PostProps) {
               <BsThreeDots />
             </Dropdown.Toggle>
             <Dropdown.Menu className="d-flex flex-column">
-              <Dropdown.Item onClick={onDeletePost}>Delete</Dropdown.Item>
-              <Dropdown.Item>Update</Dropdown.Item>
+              <Dropdown.Item onClick={onDeletePost}>
+                Dismiss This Post
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>
