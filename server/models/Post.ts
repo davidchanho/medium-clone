@@ -1,7 +1,7 @@
 import { Document, model, Schema } from "mongoose";
 
 export interface IPostDoc extends Document {
-  publicationId: string;
+  publicationId: Schema.Types.ObjectId;
   title: string;
   body: string;
 }
@@ -9,7 +9,8 @@ export interface IPostDoc extends Document {
 const postSchema = new Schema(
   {
     publicationId: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: "publication",
     },
     title: {
       type: String,
