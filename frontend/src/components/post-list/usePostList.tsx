@@ -23,7 +23,7 @@ export const usePostList = () => {
       return null;
     }
 
-    return posts.map((post) => <Post key={post._id} post={post} />);
+    return posts.map((post) => <Post key={`post-${post._id}`} post={post} />);
   };
 
   return { renderPosts };

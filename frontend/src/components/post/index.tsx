@@ -14,14 +14,10 @@ function Post({ post }: PostProps) {
           <Card.Text>
             <BsBookmark /> firstname lastname in {publicationName}
           </Card.Text>
-          <Card.Text>
-            <Card.Title className="text-capitalize">{post.title}</Card.Title>
-          </Card.Text>
-          <Card.Text>
-            <Card.Subtitle className="text-capitalize text-secondary">
-              {post.body}
-            </Card.Subtitle>
-          </Card.Text>
+          <Card.Title className="text-capitalize">{post.title}</Card.Title>
+          <Card.Subtitle className="text-capitalize text-secondary">
+            {post.body}
+          </Card.Subtitle>
           <Card.Text className="text-secondary">
             {new Date().toDateString()}
           </Card.Text>

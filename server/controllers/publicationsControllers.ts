@@ -27,4 +27,9 @@ export default {
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
+  getPublicationPosts: (req: Request, res: Response) => {
+    db.Publication.findById(req.params.id)
+      .then((model) => res.json(model))
+      .catch((err) => res.status(422).json(err));
+  },
 };

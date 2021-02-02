@@ -7,5 +7,5 @@ export const usePostsPage = () => {
   useEffect(() => {
     getPosts();
     getPublications();
-  }, []);
+  }, [getPosts, getPublications]);
 };

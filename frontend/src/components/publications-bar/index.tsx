@@ -17,6 +17,7 @@ function PublicationsBar() {
       {publications.map((publication) => {
         return (
           <ListGroupItem
+            key={publication._id}
             action
             onClick={() => onGetPublication(publication._id)}
           >

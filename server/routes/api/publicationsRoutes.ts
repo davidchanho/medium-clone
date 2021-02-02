@@ -18,4 +18,6 @@ router
   .get(publicationsControllers.getPublication)
   .put(publicationsControllers.updatePublication);
 
+router.route('/:id/posts').get(publicationsControllers.getPublicationPosts)
+
 export default router;
