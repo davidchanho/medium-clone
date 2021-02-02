@@ -4,7 +4,7 @@ import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 
 export const initialPost: IPost = {
-  _id: nanoid(),
+  _id: "",
   publicationId: "",
   title: "",
   body: "",
@@ -12,7 +12,7 @@ export const initialPost: IPost = {
 };
 
 export interface IPost {
-  _id: string;
+  _id?: string;
   publicationId: string;
   title: string;
   body: string;

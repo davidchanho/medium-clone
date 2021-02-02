@@ -7,7 +7,9 @@ export const usePost = (post: IPost) => {
   const navigate = useNavigate();
 
   const onDeletePost = () => {
-    deletePost(post._id);
+    if(post._id) {
+      deletePost(post._id);
+    }
   };
 
   const onGetPost = () => {
