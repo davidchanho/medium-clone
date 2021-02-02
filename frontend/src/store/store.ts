@@ -15,7 +15,7 @@ localForage.config({
 const persistConfig = {
   key: "medium",
   storage: localForage,
-  whitelist: ["posts"],
+  blacklist: ["posts"],
 };
 const persistedReducer = persistReducer(persistConfig, reducers);
 
@@ -24,7 +24,7 @@ const logger = createLogger();
 const middleware = [thunk, logger];
 
 export const store = createStore(
-  reducers,
+  persistedReducer,
   {},
   composeWithDevTools(applyMiddleware(...middleware))
 );
