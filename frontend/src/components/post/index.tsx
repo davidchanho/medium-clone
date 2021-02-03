@@ -12,13 +12,12 @@ function Post({ post }: PostProps) {
 
   return (
     <Card className="my-2 d-flex flex-row align-items-center border-0">
-      <Card.Header
-        className="bg-white border-0 d-flex justify-content-between p-0 pointer"
-        onClick={onGetPost}
-      >
-        <PostHeader post={post} />
-        <PostTitle post={post} />
-        <PostDate post={post} />
+      <Card.Header className="bg-white border-0 d-flex justify-content-between p-0 pointer" >
+        <div className="pointer" onClick={onGetPost}>
+          <PostHeader post={post} />
+          <PostTitle post={post} />
+          <PostDate post={post} />
+        </div>
       </Card.Header>
       <PostImg post={post} />
     </Card>

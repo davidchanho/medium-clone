@@ -12,10 +12,10 @@ function PostsPage() {
     <>
       <PostHero />
       <Row>
-        <Col sm={8}>
+        <Col sm={6}>
           <PostList />
         </Col>
-        <Col>
+        <Col sm={{ span: 5, offset: 1 }}>
           <SideBar />
         </Col>
       </Row>

@@ -10,7 +10,7 @@ function PostSkeleton() {
           <Skeleton count={5} />
         </Col>
         <Col>
-          <Skeleton width={200} height={200} />
+          <Skeleton width={200} height={135} />
         </Col>
       </Row>
     </div>
