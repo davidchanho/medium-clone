@@ -5,7 +5,9 @@ import { PostProps } from "../../types";
 
 function PostDate({ post }: PostProps) {
   return (
-    <Card.Text className="text-secondary">{formatDate(post.date)}</Card.Text>
+    <Card.Text className="text-secondary">
+      {formatDate(post.date)} {post.readingTime}
+    </Card.Text>
   );
 }
 

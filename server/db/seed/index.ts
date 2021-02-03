@@ -21,14 +21,16 @@ const seed = () =>
     });
 
     const posts = _.times(5, () => {
+      const body = faker.lorem.paragraph(5);
       const newPost = new db.Post({
         publicationId: newId,
         title: _.capitalize(faker.lorem.words(3)),
-        body: faker.lorem.paragraph(5),
-        image: `${faker.image.nature()}?random=${Math.round(
+        body,
+        image: `${faker.image.nature(200, 135)}?random=${Math.round(
           Math.random() * 1000
         )}`,
         date: faker.date.between("2020-01-01", new Date().toDateString()),
+        readingTime: `${Math.ceil(body.split(" ").length / 275)} min read`,
       });
       newPost.save();
       return newPost;

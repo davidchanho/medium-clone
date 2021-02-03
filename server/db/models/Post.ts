@@ -4,6 +4,7 @@ export interface IPostDoc extends Document {
   publicationId: Schema.Types.ObjectId;
   title: string;
   body: string;
+  readingTime: string;
 }
 
 const postSchema = new Schema(
@@ -31,6 +32,9 @@ const postSchema = new Schema(
       default:
         "https://miro.medium.com/fit/c/272/181/1*ts3kXw7MPHS_yrejwIbZHA.png",
     },
+    readingTime: {
+      type: String,
+    }
   },
   { timestamps: true }
 );
