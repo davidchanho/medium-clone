@@ -9,7 +9,7 @@ export default {
       .catch((err) => res.status(422).json(err));
   },
   getPublication: (req: Request, res: Response) => {
-    db.Publication.find({ _id: req.params.id })
+    db.Publication.findById(req.params.id)
       .populate("posts")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));

@@ -18,9 +18,11 @@ export const usePostDetails = () => {
     }
 
     return (
-      <>
-        {post.title} {post.body}
-      </>
+      <article>
+        <img src={post.image} />
+        <h3>{post.title}</h3>
+        <p> {post.body}</p>
+      </article>
     );
   };
 
