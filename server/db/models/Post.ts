@@ -5,6 +5,7 @@ export interface IPostDoc extends Document {
   title: string;
   body: string;
   readingTime: string;
+  date: string;
 }
 
 const postSchema = new Schema(
