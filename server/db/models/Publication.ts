@@ -13,9 +13,9 @@ const publicationSchema = new Schema({
     requied: [true, "publication name is required"],
     minlength: [6, "publication name must be at least 6 characters"],
   },
-  posts: [{ type: Schema.Types.ObjectId, ref: "post" }],
+  posts: [{ type: Schema.Types.ObjectId, ref: "post", autopopulate: true }],
 });
 
 const Publication = model<IPublicationDoc>("publication", publicationSchema);
-
+publicationSchema.plugin(require('mongoose-autopopulate'));
 export default Publication;

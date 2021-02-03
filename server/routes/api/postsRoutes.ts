@@ -6,9 +6,6 @@ const router = express.Router();
 // Matches with "/api/posts"
 router.route("/").get(postsControllers.getPosts).post(postsControllers.addPost);
 
-// Matches with "/api/posts/seed"
-router.route("/seed").post(postsControllers.seedPosts);
-
 // Matches with "/api/posts/:id"
 router
   .route("/:id")

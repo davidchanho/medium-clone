@@ -21,6 +21,7 @@
     "lodash": "^4.17.20",
     "mongo-seeding": "^3.5.0",
     "mongoose": "^5.11.14",
+    "mongoose-autopopulate": "^0.12.3",
     "morgan": "^1.10.0",
     "ts-node": "^9.1.1"
   },

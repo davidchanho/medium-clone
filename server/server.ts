@@ -1,7 +1,7 @@
 import cors from "cors";
 import express from "express";
 import logger from "morgan";
-import connectDB from "./config/db";
+import connectDB from "./db";
 import routes from "./routes";
 
 const app = express();

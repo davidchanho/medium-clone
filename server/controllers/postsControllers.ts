@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import db from "../models";
+import db from "../db/models";
 
 export default {
   getPosts: (req: Request, res: Response) => {

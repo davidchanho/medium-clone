@@ -9,9 +9,6 @@ router
   .get(publicationsControllers.getPublications)
   .post(publicationsControllers.addPublication);
 
-// Matches with "/api/publications/seed"
-router.route("/seed").post(publicationsControllers.seedPublications);
-
 // Matches with "/api/publications/:id"
 router
   .route("/:id")
