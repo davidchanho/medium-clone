@@ -1,5 +1,5 @@
+import { IComment } from "../../types";
 import { ActionTypes } from "../action-types";
-import { IComment } from "../reducers/comments";
 
 export interface GetCommentsAction {
   type: ActionTypes.FETCH_COMMENTS;

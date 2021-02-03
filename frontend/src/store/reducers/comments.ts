@@ -1,13 +1,7 @@
 import produce from "immer";
+import { IComment } from "../../types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
-
-export interface IComment {
-  _id?: string;
-  postId: string;
-  body: string;
-  date: string;
-}
 
 export const initialComment: IComment = {
   _id: "",
@@ -31,7 +25,10 @@ const initialCommentsState: ICommentsState = {
 };
 
 const commentsReducers = produce(
-  (state: ICommentsState = initialCommentsState, action: Action): ICommentsState => {
+  (
+    state: ICommentsState = initialCommentsState,
+    action: Action
+  ): ICommentsState => {
     switch (action.type) {
       case ActionTypes.ADD_COMMENT:
         state.comments.push(action.payload);

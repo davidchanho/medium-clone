@@ -1,5 +1,6 @@
 import { nanoid } from "@reduxjs/toolkit";
 import produce from "immer";
+import { IPublication } from "../../types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 
@@ -7,11 +8,6 @@ export const initialPublication: IPublication = {
   _id: nanoid(),
   name: "",
 };
-
-export interface IPublication {
-  _id: string;
-  name: string;
-}
 
 export interface IPublicationsState {
   publications: IPublication[];
@@ -28,7 +24,10 @@ const initialPublicationsState: IPublicationsState = {
 };
 
 const publicationsReducers = produce(
-  (state: IPublicationsState = initialPublicationsState, action: Action): IPublicationsState => {
+  (
+    state: IPublicationsState = initialPublicationsState,
+    action: Action
+  ): IPublicationsState => {
     switch (action.type) {
       case ActionTypes.ADD_PUBLICATION:
         state.publications.push(action.payload);

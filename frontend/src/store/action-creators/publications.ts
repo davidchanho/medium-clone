@@ -1,8 +1,9 @@
 import { Dispatch } from "redux";
 import db from "../../api";
+import { IPublication } from "../../types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
-import { IPublication } from "../reducers/publications";
+
 
 export const getPublications = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_PUBLICATIONS });

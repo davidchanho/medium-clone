@@ -1,5 +1,5 @@
-import { nanoid } from "@reduxjs/toolkit";
 import produce from "immer";
+import { IPost } from "../../types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 
@@ -12,16 +12,6 @@ export const initialPost: IPost = {
   date: "",
   readingTime: "",
 };
-
-export interface IPost {
-  _id?: string;
-  publicationId: string;
-  title: string;
-  body: string;
-  image: string;
-  date: string;
-  readingTime: string;
-}
 
 export interface IPostsState {
   posts: IPost[];
@@ -71,8 +61,7 @@ const postsReducers = produce(
         const deletePostIndex = state.posts.findIndex(
           (post) => post._id === action.payload
         );
-        if (deletePostIndex !== -1)
-          state.posts.splice(deletePostIndex, 1);
+        if (deletePostIndex !== -1) state.posts.splice(deletePostIndex, 1);
         return state;
       case ActionTypes.UPDATE_POST:
         const updatePostIndex = state.posts.findIndex(

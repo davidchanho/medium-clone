@@ -1,8 +1,8 @@
 import { Dispatch } from "react";
 import db from "../../api";
+import { IPost } from "../../types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
-import { IPost } from "../reducers/posts";
 
 export const getPosts = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_POSTS });

@@ -1,5 +1,5 @@
+import { IPublication } from "../../types";
 import { ActionTypes } from "../action-types";
-import { IPublication } from "../reducers/publications";
 
 export interface GetPublicationsAction {
   type: ActionTypes.FETCH_PUBLICATIONS;

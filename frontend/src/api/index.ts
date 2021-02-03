@@ -1,7 +1,5 @@
 import axios from "axios";
-import { IComment } from "../store/reducers/comments";
-import {IPost } from "../store/reducers/posts";
-import { IPublication } from "../store/reducers/publications";
+import { IComment, IPost, IPublication } from "../types";
 
 const commentsUrl = "/api/comments/";
 const postsUrl = "/api/posts/";
