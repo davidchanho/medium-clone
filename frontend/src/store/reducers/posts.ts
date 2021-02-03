@@ -9,6 +9,7 @@ export const initialPost: IPost = {
   title: "",
   body: "",
   image: "",
+  date: ''
 };
 
 export interface IPost {
@@ -17,6 +18,7 @@ export interface IPost {
   title: string;
   body: string;
   image: string;
+  date: string;
 }
 
 export const initialPublication: IPublication = {
@@ -44,7 +46,7 @@ const initialPostsState: IPostsState = {
   publications: [],
   publication: { _id: "", name: "", posts: [] },
   posts: [],
-  post: { _id: "", publicationId: "", title: "", body: "", image: "" },
+  post: { _id: "", publicationId: "", title: "", body: "", image: "", date: '' },
   loading: false,
   error: "",
 };

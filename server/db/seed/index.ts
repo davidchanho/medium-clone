@@ -19,14 +19,15 @@ const seed = () =>
       name: _.capitalize(faker.lorem.words(3).replace(/\s/g, "")),
       posts: [],
     });
-    
+
     const posts = _.times(5, () => {
       const newPost = new db.Post({
         publicationId: newId,
         title: _.capitalize(faker.lorem.words(3)),
         body: faker.lorem.paragraph(5),
+        date: faker.date.between("2020-01-01", new Date().toDateString()),
       });
-      newPost.save()
+      newPost.save();
       return newPost;
     });
 

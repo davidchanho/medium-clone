@@ -8,6 +8,10 @@ export interface IPostDoc extends Document {
 
 const postSchema = new Schema(
   {
+    date: {
+      type: String,
+      default: new Date().toString()
+    },
     publicationId: {
       type: String,
       ref: "publication",
@@ -32,10 +36,5 @@ const postSchema = new Schema(
 );
 
 const Post = model<IPostDoc>("post", postSchema);
-
-postSchema.pre("save", function (this) {
-  const post = this;
-  post.populate("publication", "name");
-});
 
 export default Post;

@@ -19,7 +19,7 @@ function Post({ post }: PostProps) {
             {post.body}
           </Card.Subtitle>
           <Card.Text className="text-secondary">
-            {new Date().toDateString()}
+            {post.date}
           </Card.Text>
         </div>
         <div className="mt-auto">
