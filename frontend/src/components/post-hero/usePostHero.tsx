@@ -1,10 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
-import Post from "../post";
-import PostListSkeleton from "./PostListSkeleton";
+import PostHeroItem from "./PostHeroItem";
 
-export const usePostList = () => {
+export const usePostHero = () => {
   const {
     publication: { posts },
     loading,
@@ -13,7 +12,7 @@ export const usePostList = () => {
 
   const renderPosts = () => {
     if (loading) {
-      return <PostListSkeleton />;
+      return <h2>Loading...</h2>;
     }
 
     if (error) {
@@ -24,7 +23,9 @@ export const usePostList = () => {
       return null;
     }
 
-    return posts.map((post) => <Post key={`post-${post._id}`} post={post} />);
+    return posts
+      .slice(0, 5)
+      .map((post) => <PostHeroItem key={`post-${post._id}`} post={post} />);
   };
 
   return { renderPosts };

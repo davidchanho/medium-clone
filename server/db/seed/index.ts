@@ -25,6 +25,9 @@ const seed = () =>
         publicationId: newId,
         title: _.capitalize(faker.lorem.words(3)),
         body: faker.lorem.paragraph(5),
+        image: `${faker.image.nature()}?random=${Math.round(
+          Math.random() * 1000
+        )}`,
         date: faker.date.between("2020-01-01", new Date().toDateString()),
       });
       newPost.save();

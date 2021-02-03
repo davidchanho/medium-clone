@@ -17,7 +17,7 @@ function Post({ post }: PostProps) {
           </Card.Text>
           <Card.Title className="text-capitalize">{post.title}</Card.Title>
           <Card.Subtitle className="text-capitalize text-secondary">
-            {post.body}
+            {post.body.substr(0, 50).trim()}...
           </Card.Subtitle>
           <Card.Text className="text-secondary">
             {formatDate(post.date)}
