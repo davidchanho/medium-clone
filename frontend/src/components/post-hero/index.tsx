@@ -3,11 +3,11 @@ import { Col, Row } from "react-bootstrap";
 import { usePostHero } from "./usePostHero";
 
 function PostHero() {
-  const { renderPosts } = usePostHero();
+  const { renderHeroPost, renderPosts } = usePostHero();
 
   return (
     <Row>
-      <Col></Col>
+      <Col>{renderHeroPost()}</Col>
       <Col>{renderPosts()}</Col>
       <Col></Col>
     </Row>

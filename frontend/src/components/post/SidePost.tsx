@@ -7,7 +7,7 @@ import { usePost } from "./usePost";
 
 function SidePost({ post }: PostProps) {
   const { onGetPost } = usePost(post);
-  
+
   return (
     <div className="pointer" onClick={onGetPost}>
       <PostHeader post={post} />
