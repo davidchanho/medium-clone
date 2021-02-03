@@ -3,12 +3,13 @@ import { Button, Nav, Navbar as BsNavbar } from "react-bootstrap";
 import { BiUserCircle } from "react-icons/bi";
 import { BsBell, BsBookmarks, BsSearch } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
+import { ReactComponent as MediumLogo } from "../../asset/medium.svg";
 
 function Navbar() {
   return (
     <BsNavbar bg="light" expand="lg">
       <BsNavbar.Brand to="/" as={NavLink}>
-        MEDIUM | Good morning
+        <MediumLogo /> | Good morning
       </BsNavbar.Brand>
       <BsNavbar.Toggle aria-controls="basic-navbar-nav" />
       <BsNavbar.Collapse id="basic-navbar-nav">
