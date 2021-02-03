@@ -30,7 +30,7 @@ export const usePostHero = () => {
     }
 
     return posts.slice(0, 1).map((post) => (
-      <Card className="border-0">
+      <Card className="">
         <PostImg post={post} />
         <PostHeader post={post} />
         <PostTitle post={post} />
@@ -54,7 +54,7 @@ export const usePostHero = () => {
     }
 
     return posts.slice(0, 5).map((post) => (
-      <Card className="border-0 d-flex flex-row align-items-center justify-content-between">
+      <Card className=" d-flex flex-row align-items-center justify-content-between">
         <Post key={`post-${post._id}`} post={post} />
         <PostImg post={post} />
       </Card>

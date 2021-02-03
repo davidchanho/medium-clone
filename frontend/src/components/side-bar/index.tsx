@@ -7,12 +7,12 @@ function SideBar() {
   const { renderPosts } = useSidebar();
 
   return (
-    <Card className="border-0 w-100">
-      <Card.Header className="border-0 font-weight-bold text-uppercase d-flex align-items-center bg-white">
+    <Card className="w-50 h-25">
+      <Card.Header className=" font-weight-bold text-uppercase d-flex align-items-center bg-white">
         <BsBookmarks className="mr-2" /> reading list
       </Card.Header>
       <Card.Body className="bg-light">{renderPosts()}</Card.Body>
-      <Card.Footer className="text-wrap border-0">
+      <Card.Footer className="text-wrap ">
         <p>Help</p>
         <p>Status</p>
         <p>Writers</p>

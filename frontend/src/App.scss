@@ -1,6 +1,15 @@
 $enable-caret: false;
 @import "bootstrap/scss/bootstrap.scss";
-@import 'react-multi-carousel/lib/styles.css';
+@import "react-multi-carousel/lib/styles.css";
+
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.card,
+.card-header,
+.card-body,
+.list-group-item,
+.btn {
+  border: none;
 }

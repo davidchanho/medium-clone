@@ -3,8 +3,8 @@ import { usePostDetails } from "./usePostDetails";
 
 function PostDetails() {
   const { renderPost } = usePostDetails();
-  
-  return <div>{renderPost()}</div>;
+
+  return <div className="w-75">{renderPost()}</div>;
 }
 
 export default PostDetails;
