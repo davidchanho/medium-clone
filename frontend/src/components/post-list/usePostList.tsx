@@ -5,11 +5,7 @@ import PostListItem from "../post/PostListItem";
 import PostListSkeleton from "./PostListSkeleton";
 
 export const usePostList = () => {
-  const {
-    publication: { posts },
-    loading,
-    error,
-  } = useSelector(postSelectors);
+  const { posts, loading, error } = useSelector(postSelectors);
 
   const renderPosts = () => {
     if (loading) {

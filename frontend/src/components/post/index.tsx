@@ -10,7 +10,7 @@ function Post({ post }: PostProps) {
   const { onGetPost } = usePost(post);
 
   return (
-    <Card className="my-2 d-flex flex-row align-items-center">
+    <Card className="d-flex flex-row align-items-center">
       <Card.Header className="bg-white d-flex justify-content-between p-0 pointer">
         <div className="pointer" onClick={onGetPost}>
           <PostHeader post={post} />

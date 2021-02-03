@@ -10,11 +10,7 @@ import PostSubtitle from "../post/PostSubtitle";
 import PostTitle from "../post/PostTitle";
 
 export const usePostHero = () => {
-  const {
-    publication: { posts },
-    loading,
-    error,
-  } = useSelector(postSelectors);
+  const { posts, loading, error } = useSelector(postSelectors);
 
   const renderHeroPost = () => {
     if (loading) {
@@ -30,7 +26,7 @@ export const usePostHero = () => {
     }
 
     return posts.slice(0, 1).map((post) => (
-      <Card className="">
+      <Card key={`hero-left-${post._id}`}>
         <PostImg post={post} />
         <PostHeader post={post} />
         <PostTitle post={post} />
@@ -53,9 +49,12 @@ export const usePostHero = () => {
       return null;
     }
 
-    return posts.slice(0, 5).map((post) => (
-      <Card className=" d-flex flex-row align-items-center justify-content-between">
-        <Post key={`post-${post._id}`} post={post} />
+    return posts.slice(0, 4).map((post) => (
+      <Card
+        key={`hero-center-${post._id}`}
+        className=" d-flex flex-row align-items-center justify-content-between"
+      >
+        <Post post={post} />
         <PostImg post={post} />
       </Card>
     ));

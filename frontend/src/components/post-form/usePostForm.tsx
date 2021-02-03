@@ -2,13 +2,13 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
-import { postSelectors } from "../../store";
+import { publicationSelectors } from "../../store";
 import { initialPost, IPost } from "../../store/reducers/posts";
 
 export const usePostForm = () => {
   const [postForm, setPostForm] = useState<IPost>(initialPost);
   const { addPost } = useActions();
-  const { publications } = useSelector(postSelectors);
+  const { publications } = useSelector(publicationSelectors);
   const navigate = useNavigate();
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { BiUserCircle } from "react-icons/bi";
 import { usePostHero } from "./usePostHero";
 
@@ -7,10 +7,10 @@ function PostHero() {
   const { renderHeroPost, renderPosts } = usePostHero();
 
   return (
-    <Row>
-      <Col>{renderHeroPost()}</Col>
-      <Col>{renderPosts()}</Col>
-      <Col>
+    <div className="d-flex justify-content-between">
+      <Card>{renderHeroPost()}</Card>
+      <Card>{renderPosts()}</Card>
+      <Card>
         <div>
           <p className="text-uppercase font-weight-bold">Creators to follow</p>
           <BiUserCircle />{" "}
@@ -23,8 +23,8 @@ function PostHero() {
         <div>
           <p className="text-uppercase font-weight-bold">Topics you follow</p>
         </div>
-      </Col>
-    </Row>
+      </Card>
+    </div>
   );
 }
 

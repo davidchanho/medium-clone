@@ -1,10 +1,32 @@
 import axios from "axios";
-import { IPost, IPublication } from "../store/reducers/posts";
+import { IComment } from "../store/reducers/comments";
+import {IPost } from "../store/reducers/posts";
+import { IPublication } from "../store/reducers/publications";
 
+const commentsUrl = "/api/comments/";
 const postsUrl = "/api/posts/";
 const publicationsUrl = "/api/publications/";
 
 const db = {
+  async getComments() {
+    const { data } = await axios.get<IComment[]>(commentsUrl);
+    return data;
+  },
+  async getComment(_id: string) {
+    const { data } = await axios.get<IComment>(commentsUrl + _id);
+    return data;
+  },
+  addComment(comment: IComment) {
+    const {body, postId} = comment
+    axios.post<any>(publicationsUrl, {body, postId});
+  },
+  deleteComment(_id: string) {
+    axios.delete<string>(commentsUrl + _id);
+  },
+  updateComment(post: IComment) {
+    axios.put<string>(commentsUrl + post._id, post);
+  },
+
   async getPosts() {
     const { data } = await axios.get<IPost[]>(postsUrl);
     return data;

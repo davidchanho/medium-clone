@@ -4,11 +4,7 @@ import { postSelectors } from "../../store";
 import Post from "../post";
 
 export const useSidebar = () => {
-  const {
-    publication: { posts },
-    loading,
-    error,
-  } = useSelector(postSelectors);
+  const { posts, loading, error } = useSelector(postSelectors);
 
   const renderPosts = () => {
     if (loading) {

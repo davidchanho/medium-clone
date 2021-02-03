@@ -8,7 +8,7 @@ function PostHeader({ post }: PostProps) {
   const publicationName = useFindPublicationByPostId(post.publicationId);
 
   return (
-    <Card.Text>
+    <Card.Text className='mb-0'>
       <BsBookmark /> firstname lastname in {publicationName}
     </Card.Text>
   );
