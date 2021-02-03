@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
-import PostHeroItem from "./PostHeroItem";
+import Post from "../post";
 
 export const usePostHero = () => {
   const {
@@ -25,7 +25,7 @@ export const usePostHero = () => {
 
     return posts
       .slice(0, 5)
-      .map((post) => <PostHeroItem key={`post-${post._id}`} post={post} />);
+      .map((post) => <Post key={`post-${post._id}`} post={post} />);
   };
 
   return { renderPosts };
