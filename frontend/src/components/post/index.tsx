@@ -9,9 +9,9 @@ function Post({ post }: PostProps) {
   const { onDeletePost, onGetPost, publicationName } = usePost(post);
 
   return (
-    <Card className="w-75 my-2 d-flex flex-row border-0">
-      <Card.Header className="bg-white border-0 w-75 d-flex justify-content-between">
-        <div className="pointer mt-auto" onClick={onGetPost}>
+    <Card className="w-100 my-2 d-flex flex-row align-items-center border-0 ">
+      <Card.Header className="bg-white border-0 w-75 d-flex justify-content-between p-0">
+        <div className="pointer" onClick={onGetPost}>
           <Card.Text>
             <BsBookmark /> firstname lastname in {publicationName}
           </Card.Text>
@@ -25,7 +25,7 @@ function Post({ post }: PostProps) {
         </div>
         <div className="mt-auto">
           <Dropdown className="d-flex align-items-center justify-content-between">
-            <Dropdown.ItemText>
+            <Dropdown.ItemText className='p-0'>
               <BsBookmark />
             </Dropdown.ItemText>
 
@@ -40,8 +40,8 @@ function Post({ post }: PostProps) {
           </Dropdown>
         </div>
       </Card.Header>
-      <Card.Body className="pointer" onClick={onGetPost}>
-        <Card.Img className="w-75" src={post.image} />
+      <Card.Body className="pointer w-25" onClick={onGetPost}>
+        <Card.Img className="w-100" src={post.image} />
       </Card.Body>
     </Card>
   );
