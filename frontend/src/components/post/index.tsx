@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Dropdown } from "react-bootstrap";
 import { BsBookmark, BsThreeDots } from "react-icons/bs";
+import { formatDate } from "../../helpers/formatDate";
 import { PostProps } from "../../types";
 import { usePost } from "./usePost";
 
@@ -19,7 +20,7 @@ function Post({ post }: PostProps) {
             {post.body}
           </Card.Subtitle>
           <Card.Text className="text-secondary">
-            {post.date}
+            {formatDate(post.date)}
           </Card.Text>
         </div>
         <div className="mt-auto">
