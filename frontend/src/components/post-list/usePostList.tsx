@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { shuffle } from "../../helpers/shuffle";
 import { postSelectors } from "../../store";
 import PostListItem from "../post/PostListItem";
 import PostListSkeleton from "./PostListSkeleton";
@@ -20,7 +21,7 @@ export const usePostList = () => {
       return null;
     }
 
-    return posts.map((post) => (
+    return shuffle(posts).map((post) => (
       <PostListItem key={`post-${post._id}`} post={post} />
     ));
   };

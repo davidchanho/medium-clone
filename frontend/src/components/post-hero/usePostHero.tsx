@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { shuffle } from "../../helpers/shuffle";
 import { postSelectors } from "../../store";
 import Post from "../post";
 import PostDate from "../post/PostDate";
@@ -11,6 +12,8 @@ import PostTitle from "../post/PostTitle";
 
 export const usePostHero = () => {
   const { posts, loading, error } = useSelector(postSelectors);
+
+  const shufflePosts = shuffle(posts)
 
   const renderHeroPost = () => {
     if (loading) {
@@ -25,7 +28,7 @@ export const usePostHero = () => {
       return null;
     }
 
-    return posts.slice(0, 1).map((post) => (
+    return shufflePosts.slice(0, 1).map((post) => (
       <Card key={`hero-left-${post._id}`}>
         <PostImg post={post} />
         <PostHeader post={post} />
@@ -49,7 +52,7 @@ export const usePostHero = () => {
       return null;
     }
 
-    return posts.slice(0, 4).map((post) => (
+    return shufflePosts.slice(0, 4).map((post) => (
       <Card
         key={`hero-center-${post._id}`}
         className=" d-flex flex-row align-items-center justify-content-between"

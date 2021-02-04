@@ -4,9 +4,11 @@ import { formatDate } from "../../helpers/formatDate";
 import { PostProps } from "../../types";
 
 function PostDate({ post }: PostProps) {
+  const date = formatDate(post.date);
+  
   return (
     <Card.Text className="text-secondary">
-      {formatDate(post.date)} {post.readingTime}
+      {date} {post.readingTime}
     </Card.Text>
   );
 }

@@ -4,7 +4,7 @@ import Skeleton from "react-loading-skeleton";
 
 function PostSkeleton() {
   return (
-    <div className="w-100 my-2">
+    <div className="my-2">
       <Row>
         <Col>
           <Skeleton count={5} />

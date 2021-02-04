@@ -5,8 +5,9 @@ import { useTrendingPosts } from "./useTrendingPosts";
 
 function TrendingPosts() {
   const { renderPosts } = useTrendingPosts();
+
   return (
-    <div className={styles.trendingPosts}>
+    <div className='my-5'>
       <div className="font-weight-bold text-uppercase d-flex align-items-center">
         <FiTrendingUp className="border rounded-circle p-1 mr-2" size={26} /> trending on
         medium

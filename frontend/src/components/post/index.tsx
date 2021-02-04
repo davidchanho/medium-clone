@@ -10,14 +10,13 @@ function Post({ post }: PostProps) {
   const { onGetPost } = usePost(post);
 
   return (
-    <Card className="d-flex flex-row align-items-center">
-      <Card.Header className="bg-white d-flex justify-content-between p-0 pointer">
-        <div className="pointer" onClick={onGetPost}>
-          <PostHeader post={post} />
-          <PostTitle post={post} />
-          <PostDate post={post} />
-        </div>
-      </Card.Header>
+    <Card
+      className="d-flex flex-column bg-inherit pointer mb-2"
+      onClick={onGetPost}
+    >
+      <PostHeader post={post} />
+      <PostTitle post={post} />
+      <PostDate post={post} />
     </Card>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { shuffle } from "../../helpers/shuffle";
 import { postSelectors } from "../../store";
 import Post from "../post";
 
@@ -19,7 +20,7 @@ export const useSidebar = () => {
       return null;
     }
 
-    return posts
+    return shuffle(posts)
       .slice(0, 5)
       .map((post) => <Post key={`post-${post._id}`} post={post} />);
   };
