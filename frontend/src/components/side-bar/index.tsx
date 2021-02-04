@@ -7,7 +7,7 @@ function SideBar() {
   const { renderPosts } = useSidebar();
 
   return (
-    <Card className="w-50 h-25">
+    <Card className="w-50 h-25 mb-2">
       <Card.Header className=" font-weight-bold text-uppercase d-flex align-items-center bg-white">
         <BsBookmarks className="mr-2" /> reading list
       </Card.Header>

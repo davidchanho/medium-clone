@@ -2,31 +2,32 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { shuffle } from "../../helpers/shuffle";
 import { postSelectors } from "../../store";
-import Post from "../post";
+import TrendingPost from "./TrendingPost";
+import styles from "./TrendingPosts.module.scss";
 
-export const useTrendingPosts = () => {
+const useTrendingPosts = () => {
   const { posts, loading, error } = useSelector(postSelectors);
+  const shufflePosts = shuffle(posts);
 
   const renderPosts = () => {
     if (loading) {
-      return <h2>Loading...</h2>;
+      return <h1>Loading...</h1>;
     }
 
     if (error) {
-      return <h2>{error}</h2>;
+      return <h1>{error}</h1>;
     }
 
-    if (!posts) {
-      return null;
-    }
-
-    return shuffle(posts).slice(0, 6).map((post, index) => (
-      <div className="d-flex">
-        <h3 className="text-muted mr-2">0{index + 1}</h3>
-        <Post key={`post-${post._id}`} post={post} />
+    return (
+      <div className={styles.grid}>
+        {shufflePosts.slice(0, 6).map((post, index) => (
+          <TrendingPost post={post} index={index} />
+        ))}
       </div>
-    ));
+    );
   };
 
   return { renderPosts };
 };
+
+export default useTrendingPosts;

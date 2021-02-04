@@ -1,10 +1,11 @@
-import { postSelectors, publicationSelectors } from "../store";
+import { publicationSelectors } from "../store";
 import { useSelector } from "./useSelector";
 
-export const useFindPublicationByPostId = (_id: string) => {
+export const useFindPublicationByPostId = (publicationId: string) => {
   const { publications } = useSelector(publicationSelectors);
+
   const index = publications.findIndex((publication) => {
-    return publication._id === _id;
+    return publication._id === publicationId;
   });
 
   if (!publications[index]) {
