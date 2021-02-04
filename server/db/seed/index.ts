@@ -12,6 +12,8 @@ const seed = () =>
       useUnifiedTopology: true,
     });
 
+    mongoose.connection.dropDatabase();
+
     const newId = new mongoose.Types.ObjectId();
 
     const newPub = new db.Publication({
@@ -22,7 +24,10 @@ const seed = () =>
 
     const posts = _.times(5, () => {
       const body = faker.lorem.paragraph(5);
+      const newPostId = new mongoose.Types.ObjectId();
+
       const newPost = new db.Post({
+        _id: newPostId,
         publicationId: newId,
         title: _.capitalize(faker.lorem.words(3)),
         body,
@@ -31,8 +36,23 @@ const seed = () =>
         )}`,
         date: faker.date.between("2020-01-01", new Date().toDateString()),
         readingTime: `${Math.ceil(body.split(" ").length / 275)} min read`,
+        comments: [],
       });
+
+      const comments = _.times(5, () => {
+        const body = faker.lorem.paragraph(5);
+        const newComment = new db.Comment({
+          postId: newPostId,
+          body,
+          date: faker.date.between("2020-01-01", new Date().toDateString()),
+        });
+        newComment.save();
+        return newComment;
+      });
+
+      newPost.comments = comments;
       newPost.save();
+
       return newPost;
     });
 

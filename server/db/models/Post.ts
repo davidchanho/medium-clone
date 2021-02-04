@@ -1,4 +1,5 @@
 import { Document, model, Schema } from "mongoose";
+import { ICommentDoc } from "./Comment";
 
 export interface IPostDoc extends Document {
   publicationId: Schema.Types.ObjectId;
@@ -6,14 +7,11 @@ export interface IPostDoc extends Document {
   body: string;
   readingTime: string;
   date: string;
+  comments: ICommentDoc[];
 }
 
 const postSchema = new Schema(
   {
-    date: {
-      type: String,
-      default: new Date().toString()
-    },
     publicationId: {
       type: String,
       ref: "publication",
@@ -35,7 +33,12 @@ const postSchema = new Schema(
     },
     readingTime: {
       type: String,
-    }
+    },
+    comments: [{ type: String, ref: "comment" }],
+    date: {
+      type: String,
+      default: new Date().toString(),
+    },
   },
   { timestamps: true }
 );

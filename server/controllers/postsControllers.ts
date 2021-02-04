@@ -4,11 +4,13 @@ import db from "../db/models";
 export default {
   getPosts: (req: Request, res: Response) => {
     db.Post.find({})
+      .populate("comments")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
   getPost: (req: Request, res: Response) => {
     db.Post.findById(req.params.id)
+      .populate("comments")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },

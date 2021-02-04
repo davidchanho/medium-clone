@@ -8,10 +8,6 @@ export interface ICommentDoc extends Document {
 
 const commentSchema = new Schema(
   {
-    date: {
-      type: String,
-      default: new Date().toString(),
-    },
     postId: {
       type: String,
       ref: "post",
@@ -20,6 +16,10 @@ const commentSchema = new Schema(
       type: String,
       minlength: [6, "comment body must be at least 6 characters long"],
       required: [true, "comment body is required"],
+    },
+    date: {
+      type: String,
+      default: new Date().toString(),
     },
   },
   { timestamps: true }
