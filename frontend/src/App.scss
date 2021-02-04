@@ -17,3 +17,13 @@ $enable-caret: false;
 .bg-inherit {
   background-color: inherit;
 }
+
+.dropdown-toggle {
+  background-color: inherit;
+  padding: 0;
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: inherit !important;
+  }
+}

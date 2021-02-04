@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Nav, Navbar as BsNavbar } from "react-bootstrap";
-import { BiUserCircle } from "react-icons/bi";
 import { BsBell, BsBookmarks, BsSearch } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as MediumLogo } from "../../asset/medium.svg";
+import UserNavMenu from "./UserNavMenu";
 
 function Navbar() {
   return (
@@ -14,9 +14,6 @@ function Navbar() {
       <BsNavbar.Toggle aria-controls="basic-navbar-nav" />
       <BsNavbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto d-flex align-items-center">
-          <Nav.Link to="/create" as={NavLink}>
-            Create
-          </Nav.Link>
           <Nav.Link>
             <BsSearch />
           </Nav.Link>
@@ -32,7 +29,7 @@ function Navbar() {
             </Button>
           </Nav.Link>
           <Nav.Link>
-            <BiUserCircle />
+            <UserNavMenu />
           </Nav.Link>
         </Nav>
       </BsNavbar.Collapse>
