@@ -3,14 +3,13 @@ import { useSelector } from "react-redux";
 import { shuffle } from "../../helpers/shuffle";
 import { postSelectors } from "../../store";
 import PostListItem from "../post/PostListItem";
-import PostListSkeleton from "./PostListSkeleton";
 
 export const usePostList = () => {
   const { posts, loading, error } = useSelector(postSelectors);
 
   const renderPosts = () => {
     if (loading) {
-      return <PostListSkeleton />;
+      return <div>Loading...</div>;
     }
 
     if (error) {
