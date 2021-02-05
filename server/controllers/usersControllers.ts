@@ -2,36 +2,42 @@ import { Request, Response } from "express";
 import db from "../db/models";
 
 export default {
-  getPosts: (req: Request, res: Response) => {
-    db.Post.find({})
-      .populate("comments")
+  getUsers: (req: Request, res: Response) => {
+    db.User.find({})
+      .populate("post")
+      .populate("publication")
+      .populate("comment")
+      .populate("user")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
-  getPost: (req: Request, res: Response) => {
-    db.Post.findById(req.params.id)
-      .populate("comments")
+  getUser: (req: Request, res: Response) => {
+    db.User.findById(req.params.id)
+      .populate("post")
+      .populate("publication")
+      .populate("comment")
+      .populate("user")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
-  addPost: (req: Request, res: Response) => {
-    db.Post.create(req.body)
+  addUser: (req: Request, res: Response) => {
+    db.User.create(req.body)
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
-  deletePost: (req: Request, res: Response) => {
-    db.Post.findById(req.params.id)
+  deleteUser: (req: Request, res: Response) => {
+    db.User.findById(req.params.id)
       .then((model) => model?.remove())
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
-  updatePost: (req: Request, res: Response) => {
-    db.Post.findByIdAndUpdate(req.params.id, req.body)
+  updateUser: (req: Request, res: Response) => {
+    db.User.findByIdAndUpdate(req.params.id, req.body)
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
-  seedPosts: (req: Request, res: Response) => {
-    db.Post.insertMany(req.body)
+  seedUsers: (req: Request, res: Response) => {
+    db.User.insertMany(req.body)
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },

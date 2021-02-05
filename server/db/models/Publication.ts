@@ -16,7 +16,6 @@ const publicationSchema = new Schema({
   posts: [{ type: Schema.Types.ObjectId, ref: "post" }],
 });
 
-
 const Publication = model<IPublicationDoc>("publication", publicationSchema);
 
 export default Publication;

@@ -1,16 +1,11 @@
 import dotenv from "dotenv";
-import mongoose from "mongoose";
+import { connectDb } from "./seed/utils";
 
 dotenv.config();
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost/medium", {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true,
-    });
+    await connectDb();
   } catch (err) {
     console.error(err.message);
     process.exit();

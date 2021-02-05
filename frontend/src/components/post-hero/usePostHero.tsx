@@ -13,7 +13,7 @@ import PostTitle from "../post/PostTitle";
 export const usePostHero = () => {
   const { posts, loading, error } = useSelector(postSelectors);
 
-  const shufflePosts = shuffle(posts)
+  const shufflePosts = shuffle(posts);
 
   const renderHeroPost = () => {
     if (loading) {
@@ -55,10 +55,10 @@ export const usePostHero = () => {
     return shufflePosts.slice(0, 4).map((post) => (
       <Card
         key={`hero-center-${post._id}`}
-        className=" d-flex flex-row align-items-center justify-content-between"
+        className="d-flex flex-row align-items-center justify-content-between"
       >
         <Post post={post} />
-        <PostImg post={post} />
+        <PostImg post={post} width={50} />
       </Card>
     ));
   };

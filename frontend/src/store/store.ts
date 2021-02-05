@@ -15,8 +15,9 @@ localForage.config({
 const persistConfig = {
   key: "medium",
   storage: localForage,
-  whitelist: ["posts"],
+  whitelist: ["posts", "publications", "comments"],
 };
+
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 // middleware
