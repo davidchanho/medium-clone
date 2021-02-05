@@ -1,13 +1,13 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { PostProps } from "../../types";
-import PostDate from "./PostDate";
-import PostHeader from "./PostHeader";
-import PostImg from "./PostImg";
-import PostOptions from "./PostOptions";
-import PostSubtitle from "./PostSubtitle";
-import PostTitle from "./PostTitle";
-import { usePost } from "./usePost";
+import PostDate from "../post/PostDate";
+import PostHeader from "../post/PostHeader";
+import PostImg from "../post/PostImg";
+import PostOptions from "../post/PostOptions";
+import PostSubtitle from "../post/PostSubtitle";
+import PostTitle from "../post/PostTitle";
+import { usePost } from "../post/usePost";
 
 function PostListItem({ post }: PostProps) {
   const { onGetPost } = usePost(post);
@@ -23,7 +23,9 @@ function PostListItem({ post }: PostProps) {
         </div>
         <PostOptions post={post} />
       </Card.Header>
-      <PostImg post={post} />
+      <Card.Body>
+        <PostImg post={post} />
+      </Card.Body>
     </Card>
   );
 }

@@ -8,10 +8,10 @@ function SideBar() {
 
   return (
     <Card className="w-50 h-25 mb-2">
-      <Card.Header className=" font-weight-bold text-uppercase d-flex align-items-center bg-white">
+      <Card.Header className="font-weight-bold text-uppercase d-flex align-items-center">
         <BsBookmarks className="mr-2" /> reading list
       </Card.Header>
-      <Card.Body className="bg-light">{renderPosts()}</Card.Body>
+      <Card.Body className="bg-light pt-1">{renderPosts()}</Card.Body>
       <Card.Footer className="text-wrap ">
         <p>Help</p>
         <p>Status</p>

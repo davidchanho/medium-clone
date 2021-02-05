@@ -1,19 +1,21 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, ImageProps } from "react-bootstrap";
 import placeholder from "../../asset/imgPlaceholder.png";
 import { PostProps } from "../../types";
 import { usePost } from "./usePost";
 
-function PostImg({ post }: PostProps) {
+function PostImg({ post, width = 200, height = 135 }: PostProps & ImageProps) {
   const { onGetPost } = usePost(post);
 
   const image = post.image;
-  
+
   return (
     <Card.Img
       src={image ? image : placeholder}
-      className="pointer w-25"
+      className="pointer"
       onClick={onGetPost}
+      width={width}
+      height={height}
     />
   );
 }
