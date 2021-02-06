@@ -8,7 +8,7 @@ const usePostsDetailsPage = () => {
 
   useEffect(() => {
     getPost(params.id);
-  }, [getPost, params.id]);
+  }, []);
 };
 
 export default usePostsDetailsPage;

@@ -6,19 +6,13 @@ export interface IUserDoc extends Document {
   email: string;
   password: string;
   name: string;
-  token: string;
-  date: string;
   posts: IPostDoc[];
-  bookmarks: IPostDoc[];
   comments: ICommentDoc[];
+  date: string;
 }
 
 const userSchema = new Schema(
   {
-    publicationId: {
-      type: String,
-      ref: "publication",
-    },
     email: {
       type: String,
     },
@@ -28,13 +22,7 @@ const userSchema = new Schema(
     name: {
       type: String,
     },
-    token: {
-      type: String,
-    },
-    publicationFollow: [{ type: String, ref: "publication" }],
-    followers: [{ type: String, ref: "user" }],
     posts: [{ type: String, ref: "post" }],
-    bookmarks: [{ type: String, ref: "bookmark" }],
     comments: [{ type: String, ref: "comment" }],
     date: {
       type: String,

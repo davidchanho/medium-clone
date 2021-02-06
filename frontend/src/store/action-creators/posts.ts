@@ -9,6 +9,7 @@ export const getPosts = () => async (dispatch: Dispatch<Action>) => {
 
   try {
     const data = await db.getPosts();
+
     dispatch({
       type: ActionTypes.FETCH_POSTS_SUCCESS,
       payload: data,
@@ -26,6 +27,7 @@ export const getPost = (_id: string) => async (dispatch: Dispatch<Action>) => {
 
   try {
     const data = await db.getPost(_id);
+
     dispatch({
       type: ActionTypes.FETCH_POST_SUCCESS,
       payload: data,
@@ -41,6 +43,7 @@ export const getPost = (_id: string) => async (dispatch: Dispatch<Action>) => {
 export const addPost = (post: IPost) => async (dispatch: Dispatch<Action>) => {
   try {
     db.addPost(post);
+
     dispatch({ type: ActionTypes.ADD_POST, payload: post });
   } catch (err) {
     console.log(err);
@@ -52,6 +55,7 @@ export const deletePost = (_id: string) => async (
 ) => {
   try {
     db.deletePost(_id);
+
     dispatch({
       type: ActionTypes.DELETE_POST,
       payload: _id,
@@ -66,6 +70,7 @@ export const updatePost = (post: IPost) => async (
 ) => {
   try {
     db.updatePost(post);
+    
     dispatch({
       type: ActionTypes.UPDATE_POST,
       payload: post,

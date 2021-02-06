@@ -3,41 +3,41 @@ import _ from "lodash";
 import mongoose from "mongoose";
 import db from "../models";
 
-export const PUBLICATIONS_AMOUNT = 5;
+const PUBLICATIONS_AMOUNT = 5;
 
-export const generateRandomNumber = () => {
+const generateRandomNumber = () => {
   return _.random(3, 7);
 };
 
-export const generateImg = () => {
+const generateImg = () => {
   return `${faker.image.nature(200, 135)}?random=${Math.round(
     Math.random() * 1000
   )}`;
 };
 
-export const generatePubName = () => {
+const generatePubName = () => {
   return _.capitalize(faker.lorem.words(3).replace(/\s/g, ""));
 };
 
-export const generateBody = () => {
+const generateBody = () => {
   return _.capitalize(faker.lorem.paragraph(5));
 };
 
-export const generateId = () => {
+const generateId = () => {
   return new mongoose.Types.ObjectId();
 };
 
-export const generateDate = () => {
+const generateDate = () => {
   const today = new Date().toDateString();
 
   return faker.date.between("2020-01-01", today);
 };
 
-export const generateReadTime = (body: string) => {
+const generateReadTime = (body: string) => {
   return `${Math.ceil(body.split(" ").length / 275)} min read`;
 };
 
-export const generatePub = (publicationId: mongoose.Types._ObjectId) => {
+const generatePub = (publicationId: mongoose.Types._ObjectId) => {
   return new db.Publication({
     _id: publicationId,
     name: generatePubName(),
@@ -45,11 +45,11 @@ export const generatePub = (publicationId: mongoose.Types._ObjectId) => {
   });
 };
 
-export const generateTitle = () => {
+const generateTitle = () => {
   return _.capitalize(faker.lorem.words(3));
 };
 
-export const generatePost = (
+const generatePost = (
   postId: mongoose.Types._ObjectId,
   publicationId: mongoose.Types._ObjectId
 ) => {
@@ -67,7 +67,18 @@ export const generatePost = (
   });
 };
 
-export const generateComment = (postId: mongoose.Types._ObjectId) => {
+const generateUser = () => {
+  return new db.User({
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+    name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+    posts: [],
+    comments: [],
+    date: generateDate(),
+  });
+};
+
+const generateComment = (postId: mongoose.Types._ObjectId) => {
   const body = generateBody();
 
   return new db.Comment({
@@ -77,7 +88,7 @@ export const generateComment = (postId: mongoose.Types._ObjectId) => {
   });
 };
 
-export const generateComments = (postId: mongoose.Types._ObjectId) => {
+const generateComments = (postId: mongoose.Types._ObjectId) => {
   return _.times(generateRandomNumber(), () => {
     const newComment = generateComment(postId);
 
@@ -87,7 +98,7 @@ export const generateComments = (postId: mongoose.Types._ObjectId) => {
   });
 };
 
-export const generatePosts = (publicationId: mongoose.Types._ObjectId) => {
+const generatePosts = (publicationId: mongoose.Types._ObjectId) => {
   return _.times(generateRandomNumber(), () => {
     const postId = generateId();
 
@@ -102,6 +113,41 @@ export const generatePosts = (publicationId: mongoose.Types._ObjectId) => {
     return newPost;
   });
 };
+
+const generateSampleSize = (arr: any[]) => {
+  const shuffledArr = _.shuffle(arr);
+  return _.sampleSize(shuffledArr, generateRandomNumber());
+};
+
+export const generatePublications = () =>
+  _.times(PUBLICATIONS_AMOUNT, () => {
+    connectDb();
+
+    mongoose.connection.dropDatabase();
+
+    const publicationId = generateId();
+
+    const newPub = generatePub(publicationId);
+
+    const posts = generatePosts(publicationId);
+    
+    const postsSample = generateSampleSize(posts);
+
+    const user = generateUser();
+
+    newPub.posts = posts;
+    user.posts = postsSample;
+
+    Promise.all([newPub.save(), user.save()])
+      .then(() => {
+        console.log("seeding successful");
+        process.exit(0);
+      })
+      .catch((err) => {
+        console.log(err.message);
+        process.exit(1);
+      });
+  });
 
 export const connectDb = () => {
   return mongoose.connect(
