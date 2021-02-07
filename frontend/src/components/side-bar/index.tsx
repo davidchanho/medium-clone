@@ -1,27 +1,13 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { BsBookmarks } from "react-icons/bs";
-import { useSidebar } from "./useSidebar";
+import SidebarFollow from "../side-bar-follow";
+import SidebarFooter from "../side-bar-footer";
 
 function SideBar() {
-  const { renderPosts } = useSidebar();
-
   return (
     <Card className="w-50 h-25 mb-2">
-      <Card.Header className="font-weight-bold text-uppercase d-flex align-items-center">
-        <BsBookmarks className="mr-2" /> reading list
-      </Card.Header>
-      <Card.Body className="bg-light pt-1">{renderPosts()}</Card.Body>
-      <Card.Footer className="text-wrap ">
-        <p>Help</p>
-        <p>Status</p>
-        <p>Writers</p>
-        <p>Blog</p>
-        <p>Careers</p>
-        <p>Privacy</p>
-        <p>Terms</p>
-        <p>About</p>
-      </Card.Footer>
+      <SidebarFollow />
+      <SidebarFooter />
     </Card>
   );
 }

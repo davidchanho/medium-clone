@@ -1,30 +1,51 @@
-import React from "react";
-import { Button, Card, CardDeck } from "react-bootstrap";
-import { BiUserCircle } from "react-icons/bi";
-import { usePostHero } from "./usePostHero";
+import { shuffle } from "lodash";
+import React, { useEffect, useState } from "react";
+import { Card } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { postSelectors } from "../../store";
+import { IPost } from "../../types";
+import PostHeader from "../post/PostHeader";
+import PostImg from "../post/PostImg";
+import PostSubtitle from "../post/PostSubtitle";
+import PostTitle from "../post/PostTitle";
 
 function PostHero() {
-  const { renderHeroPost, renderPosts } = usePostHero();
+  const { posts, loading, error } = useSelector(postSelectors);
+  const [post, setPost] = useState<IPost>();
+
+  useEffect(() => {
+    shuffle(posts)
+      .slice(0, 1)
+      .map((post) => setPost(post));
+  }, []);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
+  if (!posts) {
+    return null;
+  }
+
+  if (!post) {
+    return null;
+  }
 
   return (
-    <div className="d-flex justify-content-between">
-      <Card>{renderHeroPost()}</Card>
-      <CardDeck className="d-flex flex-column">{renderPosts()}</CardDeck>
-      <Card>
-        <div>
-          <p className="text-uppercase font-weight-bold">Creators to follow</p>
-          <BiUserCircle />{" "}
-          <div>
-            <div>name</div>
-            <div>name</div>
-          </div>{" "}
-          <Button variant="success">Follow</Button>
-        </div>
-        <div>
-          <p className="text-uppercase font-weight-bold">Topics you follow</p>
-        </div>
-      </Card>
-    </div>
+    <Card key={`hero-left-${post._id}`}>
+      <PostImg post={post} className="mb-2" />
+      <PostHeader post={post} className="mb-2" />
+      <PostTitle post={post} className="mb-2" />
+      <PostSubtitle post={post} className="mb-2" />
+      <div className="text-secondary d-flex">
+        <p>Read More</p>
+        <div>{post.readingTime}</div>
+      </div>
+    </Card>
   );
 }
 

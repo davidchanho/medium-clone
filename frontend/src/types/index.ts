@@ -1,4 +1,6 @@
-export interface PostProps {
+import { CardProps } from 'react-bootstrap';
+
+export interface PostProps extends CardProps{
   post: IPost;
 }
 

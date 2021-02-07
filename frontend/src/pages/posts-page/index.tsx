@@ -1,5 +1,5 @@
 import React from "react";
-import PostHero from "../../components/post-hero";
+import Hero from "../../components/hero";
 import PostList from "../../components/post-list";
 import SideBar from "../../components/side-bar";
 import TrendingPosts from "../../components/trending-posts";
@@ -10,7 +10,7 @@ function PostsPage() {
 
   return (
     <>
-      <PostHero />
+      <Hero />
       <TrendingPosts />
       <div className="d-flex">
         <PostList />

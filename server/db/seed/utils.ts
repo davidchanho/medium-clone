@@ -16,7 +16,7 @@ const generateImg = () => {
 };
 
 const generatePubName = () => {
-  return _.capitalize(faker.lorem.words(3).replace(/\s/g, ""));
+  return _.capitalize(faker.lorem.word(8));
 };
 
 const generateBody = () => {
@@ -40,7 +40,7 @@ const generateReadTime = (body: string) => {
 const generatePub = (publicationId: mongoose.Types._ObjectId) => {
   return new db.Publication({
     _id: publicationId,
-    icon: generateAvatar(),
+    icon: generateIcon(),
     name: generatePubName(),
     posts: [],
   });
@@ -71,6 +71,12 @@ const generatePost = (
 
 const generateAvatar = () => {
   return `${faker.image.animals(30, 30)}?random=${Math.round(
+    Math.random() * 1000
+  )}`;
+};
+
+const generateIcon = () => {
+  return `${faker.image.animals(20, 20)}?random=${Math.round(
     Math.random() * 1000
   )}`;
 };
