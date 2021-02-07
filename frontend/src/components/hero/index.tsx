@@ -6,7 +6,7 @@ import PostHero from "../post-hero";
 
 function Hero() {
   return (
-    <Row className="d-flex justify-content-between">
+    <Row>
       <Col sm={4}>
         <PostHero />
       </Col>
