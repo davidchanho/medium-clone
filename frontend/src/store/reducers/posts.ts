@@ -6,11 +6,13 @@ import { Action } from "../actions";
 export const initialPost: IPost = {
   _id: "",
   publicationId: "",
+  userId: "",
   title: "",
   body: "",
   image: "",
   date: "",
   readingTime: "",
+  comments: [],
 };
 
 export interface IPostsState {

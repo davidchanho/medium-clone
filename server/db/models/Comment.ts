@@ -12,6 +12,10 @@ const commentSchema = new Schema(
       type: String,
       ref: "post",
     },
+    userId: {
+      type: String,
+      ref: "user"
+    },
     body: {
       type: String,
       minlength: [6, "comment body must be at least 6 characters long"],

@@ -6,6 +6,7 @@ import { Action } from "../actions";
 export const initialComment: IComment = {
   _id: "",
   postId: "",
+  userId: "",
   body: "",
   date: "",
 };

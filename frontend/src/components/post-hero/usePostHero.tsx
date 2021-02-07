@@ -55,7 +55,7 @@ export const usePostHero = () => {
     return shufflePosts.slice(0, 4).map((post) => (
       <Card
         key={`hero-center-${post._id}`}
-        className="d-flex flex-row align-items-center justify-content-between"
+        className="d-flex justify-content-between"
       >
         <Post post={post} />
         <PostImg post={post} width={50} />

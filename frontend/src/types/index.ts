@@ -11,6 +11,7 @@ export interface IPublication {
 export interface IComment {
   _id?: string;
   postId: string;
+  userId: string;
   body: string;
   date: string;
 }
@@ -18,11 +19,13 @@ export interface IComment {
 export interface IPost {
   _id?: string;
   publicationId: string;
+  userId: string;
   title: string;
   body: string;
   image: string;
   date: string;
   readingTime: string;
+  comments: IComment[];
 }
 
 export interface IUser {

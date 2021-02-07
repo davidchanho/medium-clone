@@ -59,6 +59,7 @@ const generatePost = (
   return new db.Post({
     _id: postId,
     publicationId,
+    userId: '',
     title: generateTitle(),
     body,
     image: generateImg(),
@@ -102,6 +103,7 @@ const generateComment = (postId: mongoose.Types._ObjectId) => {
 
   return new db.Comment({
     postId,
+    userId: '',
     body,
     date: generateDate(),
   });

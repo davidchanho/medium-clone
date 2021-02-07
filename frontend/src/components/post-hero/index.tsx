@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, CardDeck } from "react-bootstrap";
 import { BiUserCircle } from "react-icons/bi";
 import { usePostHero } from "./usePostHero";
 
@@ -9,7 +9,7 @@ function PostHero() {
   return (
     <div className="d-flex justify-content-between">
       <Card>{renderHeroPost()}</Card>
-      <Card>{renderPosts()}</Card>
+      <CardDeck className="d-flex flex-column">{renderPosts()}</CardDeck>
       <Card>
         <div>
           <p className="text-uppercase font-weight-bold">Creators to follow</p>

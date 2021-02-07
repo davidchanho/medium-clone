@@ -3,6 +3,7 @@ import { ICommentDoc } from "./Comment";
 
 export interface IPostDoc extends Document {
   publicationId: Schema.Types.ObjectId;
+  userId: Schema.Types.ObjectId;
   title: string;
   body: string;
   readingTime: string;
@@ -15,6 +16,10 @@ const postSchema = new Schema(
     publicationId: {
       type: String,
       ref: "publication",
+    },
+    userId: {
+      type: String,
+      ref: "user"
     },
     title: {
       type: String,

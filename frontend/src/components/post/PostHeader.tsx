@@ -7,7 +7,7 @@ function PostHeader({ post }: PostProps) {
   const publication = useFindPublicationByPostId(post.publicationId);
 
   return (
-    <Card.Text className="mb-0">
+    <Card.Text className="mb-1">
       <img src={publication?.icon} /> firstname lastname in {publication?.name}
     </Card.Text>
   );
