@@ -7,7 +7,7 @@ function PostHeader({ post, className }: PostProps) {
   const publication = useFindPublicationByPostId(post.publicationId);
 
   return (
-    <Card.Text className={`d-flex align-items-end ${className}`}>
+    <Card.Text className={`d-flex align-items-end mb-1 ${className}`}>
       <img src={publication?.icon} className="mr-1 rounded" /> name in{" "}
       {publication?.name}
     </Card.Text>

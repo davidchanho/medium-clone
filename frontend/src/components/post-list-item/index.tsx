@@ -13,10 +13,10 @@ function PostListItem({ post }: PostProps) {
   const { onGetPost } = usePost(post);
 
   return (
-    <Card className="d-flex flex-row align-items-center mb-2 w-100">
+    <Card className="d-flex flex-row align-items-center mb-1 w-100">
       <Card.Header className="bg-white d-flex justify-content-between pointer">
         <div className="pointer" onClick={onGetPost}>
-          <PostHeader post={post} />
+          <PostHeader post={post}/>
           <PostTitle post={post} />
           <PostSubtitle post={post} />
           <PostDate post={post} />
