@@ -23,3 +23,11 @@ export interface IPost {
   date: string;
   readingTime: string;
 }
+
+export interface IUser {
+  _id?: string;
+  email: string;
+  name: string;
+  posts: IPost[];
+  comments: IComment[];
+}

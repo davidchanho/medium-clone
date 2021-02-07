@@ -1,12 +1,17 @@
 import { useEffect } from "react";
 import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
-import { postSelectors, publicationSelectors } from "../../store";
+import {
+  postSelectors,
+  publicationSelectors,
+  userSelectors,
+} from "../../store";
 
 export const usePostsPage = () => {
-  const { getPosts, getPublications } = useActions();
+  const { getPosts, getPublications, getUser, getUsers } = useActions();
   const { posts } = useSelector(postSelectors);
   const { publications } = useSelector(publicationSelectors);
+  const { users, user } = useSelector(userSelectors);
 
   useEffect(() => {
     if (posts.length === 0) {
@@ -14,6 +19,12 @@ export const usePostsPage = () => {
     }
     if (publications.length === 0) {
       getPublications();
+    }
+    if (users.length === 0) {
+      getUsers();
+    }
+    if (!user._id) {
+      getUser("601f4a2988b9023f1cacb67e");
     }
   }, []);
 };

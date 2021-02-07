@@ -3,6 +3,7 @@ import { IPostDoc } from "./Post";
 
 interface IPublicationDoc extends Document {
   name: string;
+  icon: string;
   posts: IPostDoc[];
 }
 
@@ -13,6 +14,7 @@ const publicationSchema = new Schema({
     requied: [true, "publication name is required"],
     minlength: [6, "publication name must be at least 6 characters"],
   },
+  icon: { type: String },
   posts: [{ type: Schema.Types.ObjectId, ref: "post" }],
 });
 

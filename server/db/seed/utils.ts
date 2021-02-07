@@ -40,6 +40,7 @@ const generateReadTime = (body: string) => {
 const generatePub = (publicationId: mongoose.Types._ObjectId) => {
   return new db.Publication({
     _id: publicationId,
+    icon: generateAvatar(),
     name: generatePubName(),
     posts: [],
   });
@@ -67,14 +68,30 @@ const generatePost = (
   });
 };
 
+const generateAvatar = () => {
+  return faker.image.avatar()
+}
+
+const generateEmail = () => {
+  return faker.internet.email()
+}
+
+const generatePassword = () => {
+  return faker.internet.password()
+}
+
+const generateName = () => {
+  return `${faker.name.firstName()} ${faker.name.lastName()}`
+}
+
 const generateUser = () => {
   return new db.User({
-    email: faker.internet.email(),
-    password: faker.internet.password(),
-    name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+    avatar: generateAvatar(),
+    email: generateEmail(),
+    password: generatePassword(),
+    name: generateName(),
     posts: [],
     comments: [],
-    date: generateDate(),
   });
 };
 

@@ -11,3 +11,7 @@ export const commentSelectors = (state: RootState) => {
 export const publicationSelectors = (state: RootState) => {
   return state.publications;
 };
+
+export const userSelectors = (state: RootState) => {
+  return state.users;
+};

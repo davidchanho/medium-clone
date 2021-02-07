@@ -3,16 +3,19 @@ import { ICommentDoc } from "./Comment";
 import { IPostDoc } from "./Post";
 
 export interface IUserDoc extends Document {
+  avatar: string;
   email: string;
   password: string;
   name: string;
   posts: IPostDoc[];
   comments: ICommentDoc[];
-  date: string;
 }
 
 const userSchema = new Schema(
   {
+    avatar: {
+      type: String,
+    },
     email: {
       type: String,
     },
@@ -24,10 +27,6 @@ const userSchema = new Schema(
     },
     posts: [{ type: String, ref: "post" }],
     comments: [{ type: String, ref: "comment" }],
-    date: {
-      type: String,
-      default: new Date().toString(),
-    },
   },
   { timestamps: true }
 );
