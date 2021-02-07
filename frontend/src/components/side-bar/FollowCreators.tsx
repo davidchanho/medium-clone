@@ -1,7 +1,7 @@
 import React from "react";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
 
-function SidebarFollow() {
+function FollowCreators() {
   return (
     <div>
       <h6 className="font-weight-bold text-uppercase">who to follow</h6>
@@ -14,4 +14,4 @@ function SidebarFollow() {
   );
 }
 
-export default SidebarFollow;
+export default FollowCreators;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function SidebarFooter() {
+function Footer() {
   return (
     <div>
       <p>Help</p>
@@ -15,4 +15,4 @@ function SidebarFooter() {
   );
 }
 
-export default SidebarFooter;
+export default Footer;

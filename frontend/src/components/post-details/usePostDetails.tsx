@@ -1,17 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useActions } from "../../hooks/useActions";
-import { commentSelectors, postSelectors } from "../../store";
+import { postSelectors } from "../../store";
 
 export const usePostDetails = () => {
   const { post, loading, error } = useSelector(postSelectors);
-  const { comments } = useSelector(commentSelectors);
-
-  const {getComments} = useActions()
-
-  React.useEffect(() => {
-    getComments()
-  }, [])
 
   const renderPost = () => {
     if (loading) {
@@ -30,7 +22,6 @@ export const usePostDetails = () => {
         <img src={post.image} />
         <h3>{post.title}</h3>
         <p> {post.body}</p>
-
       </article>
     );
   };

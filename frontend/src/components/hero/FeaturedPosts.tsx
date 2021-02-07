@@ -4,7 +4,7 @@ import { CardDeck } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
 import { IPost } from "../../types";
-import FeaturedPost from "../featured-post";
+import FeaturedPost from "./FeaturedPost";
 
 function FeaturedPosts() {
   const { posts, loading, error } = useSelector(postSelectors);

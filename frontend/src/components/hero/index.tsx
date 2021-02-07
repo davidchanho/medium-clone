@@ -1,8 +1,9 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import FeaturedPosts from "../featured-posts";
-import FeaturedUsers from "../featured-users";
-import PostHero from "../post-hero";
+import FeaturedPosts from "./FeaturedPosts";
+import CreatorsToFollow from "./CreatorsToFollow";
+import PostHero from "./PostHero";
+import TopicsYouFollow from "./TopicsYouFollow";
 
 function Hero() {
   return (
@@ -14,7 +15,8 @@ function Hero() {
         <FeaturedPosts />
       </Col>
       <Col>
-        <FeaturedUsers />
+        <CreatorsToFollow />
+        <TopicsYouFollow />
       </Col>
     </Row>
   );

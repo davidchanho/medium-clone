@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { BsBookmarks } from "react-icons/bs";
 import { useSidebar } from "./useSidebar";
 
-function SidebarReadingList() {
+function ReadingList() {
   const { renderPosts } = useSidebar();
 
   return (
@@ -21,4 +21,4 @@ function SidebarReadingList() {
   );
 }
 
-export default SidebarReadingList;
+export default ReadingList;

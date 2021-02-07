@@ -1,14 +1,13 @@
 import React from "react";
-import { Card } from "react-bootstrap";
-import SidebarFollow from "../side-bar-follow";
-import SidebarFooter from "../side-bar-footer";
+import FollowCreators from "./FollowCreators";
+import Footer from "./Footer";
 
 function SideBar() {
   return (
-    <Card className="w-50 h-25 mb-2">
-      <SidebarFollow />
-      <SidebarFooter />
-    </Card>
+    <div>
+      <FollowCreators />
+      <Footer />
+    </div>
   );
 }
 
