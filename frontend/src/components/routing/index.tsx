@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PostDetailsPage from "../../pages/post-details-page";
 import PostFormPage from "../../pages/post-form-page";
 import PostsPage from "../../pages/posts-page";
+import ReadingListPage from "../../pages/reading-list-page";
 import Template from "../../shared/template";
 
 function Routing() {
@@ -13,6 +14,7 @@ function Routing() {
           <Route path="/" element={<PostsPage />} />
           <Route path="/create" element={<PostFormPage />} />
           <Route path="/:id" element={<PostDetailsPage />} />
+          <Route path="/reading-list" element={<ReadingListPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -5,7 +5,7 @@ import ReadingList from "./ReadingList";
 
 function SideBar() {
   return (
-    <div className="w-100">
+    <div>
       <ReadingList />
       <FollowCreators />
       <Footer />

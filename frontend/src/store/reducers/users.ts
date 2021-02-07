@@ -5,11 +5,12 @@ import { Action } from "../actions";
 
 export const initialUser: IUser = {
   _id: "",
-  avatar: '',
+  name: "",
+  avatar: "",
   email: "",
+  about: "",
   posts: [],
   comments: [],
-  name: "",
 };
 
 export interface IUsersState {
@@ -60,8 +61,7 @@ const usersReducers = produce(
         const deleteUserIndex = state.users.findIndex(
           (user) => user._id === action.payload
         );
-        if (deleteUserIndex !== -1)
-          state.users.splice(deleteUserIndex, 1);
+        if (deleteUserIndex !== -1) state.users.splice(deleteUserIndex, 1);
         return state;
       case ActionTypes.UPDATE_USER:
         const updateUserIndex = state.users.findIndex(

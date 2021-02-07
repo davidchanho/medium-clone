@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import Navbar from "../navbar";
 
@@ -7,9 +6,9 @@ function Template() {
   return (
     <div className="mx-auto">
       <Navbar />
-      <Container>
+      <div className="mx-5">
         <Outlet />
-      </Container>
+      </div>
     </div>
   );
 }

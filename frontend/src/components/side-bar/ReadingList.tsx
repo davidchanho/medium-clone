@@ -8,7 +8,7 @@ function ReadingList() {
 
   return (
     <Card>
-      <Card.Header className="w-100 font-weight-bold text-uppercase d-flex align-items-center">
+      <Card.Header className="font-weight-bold text-uppercase d-flex align-items-center">
         <BsBookmarks className="mr-2" /> reading list
       </Card.Header>
       <Card.Body className="bg-light pt-1">

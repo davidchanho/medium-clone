@@ -6,8 +6,8 @@ function TrendingPosts() {
   const { renderPosts } = useTrendingPosts();
 
   return (
-    <div className="my-5 border-bottom">
-      <div className="font-weight-bold text-uppercase d-flex align-items-center mb-2">
+    <div className="border-bottom m-5 p-5">
+      <div className="font-weight-bold text-uppercase d-flex align-items-center">
         <FiTrendingUp className="border rounded-circle p-1 mr-2" size={26} />{" "}
         trending on medium
       </div>

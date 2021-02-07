@@ -59,7 +59,7 @@ const generatePost = (
   return new db.Post({
     _id: postId,
     publicationId,
-    userId: '',
+    userId: "",
     title: generateTitle(),
     body,
     image: generateImg(),
@@ -93,12 +93,17 @@ const generateName = () => {
   return `${faker.name.firstName()} ${faker.name.lastName()}`;
 };
 
+const generateAbout = () => {
+  return faker.lorem.lines(4);
+};
+
 const generateUser = () => {
   return new db.User({
     avatar: generateAvatar(),
     email: generateEmail(),
     password: generatePassword(),
     name: generateName(),
+    about: generateAbout(),
     posts: [],
     comments: [],
   });
@@ -109,7 +114,7 @@ const generateComment = (postId: mongoose.Types._ObjectId) => {
 
   return new db.Comment({
     postId,
-    userId: '',
+    userId: "",
     body,
     date: generateDate(),
   });

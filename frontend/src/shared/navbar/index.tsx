@@ -18,7 +18,7 @@ function Navbar() {
             <Nav.Link>
               <BsSearch />
             </Nav.Link>
-            <Nav.Link>
+            <Nav.Link to="/reading-list" as={NavLink}>
               <BsBookmarks />
             </Nav.Link>
             <Nav.Link>
