@@ -7,6 +7,7 @@ import { Action } from "../actions";
 export const initialPublication: IPublication = {
   _id: nanoid(),
   name: "",
+  icon: '',
 };
 
 export interface IPublicationsState {

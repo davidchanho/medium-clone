@@ -12,5 +12,5 @@ export const useFindPublicationByPostId = (publicationId: string) => {
     return null;
   }
 
-  return publications[index].name;
+  return publications[index];
 };

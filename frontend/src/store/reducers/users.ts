@@ -5,6 +5,7 @@ import { Action } from "../actions";
 
 export const initialUser: IUser = {
   _id: "",
+  avatar: '',
   email: "",
   posts: [],
   comments: [],

@@ -5,6 +5,7 @@ export interface PostProps {
 export interface IPublication {
   _id: string;
   name: string;
+  icon: string;
 }
 
 export interface IComment {
@@ -26,6 +27,7 @@ export interface IPost {
 
 export interface IUser {
   _id?: string;
+  avatar: string;
   email: string;
   name: string;
   posts: IPost[];

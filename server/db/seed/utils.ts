@@ -69,20 +69,20 @@ const generatePost = (
 };
 
 const generateAvatar = () => {
-  return faker.image.avatar()
-}
+  return faker.image.animals(30, 30);
+};
 
 const generateEmail = () => {
-  return faker.internet.email()
-}
+  return faker.internet.email();
+};
 
 const generatePassword = () => {
-  return faker.internet.password()
-}
+  return faker.internet.password();
+};
 
 const generateName = () => {
-  return `${faker.name.firstName()} ${faker.name.lastName()}`
-}
+  return `${faker.name.firstName()} ${faker.name.lastName()}`;
+};
 
 const generateUser = () => {
   return new db.User({
@@ -147,7 +147,7 @@ export const generatePublications = () =>
     const newPub = generatePub(publicationId);
 
     const posts = generatePosts(publicationId);
-    
+
     const postsSample = generateSampleSize(posts);
 
     const user = generateUser();
