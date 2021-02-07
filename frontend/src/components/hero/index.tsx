@@ -1,13 +1,13 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import FeaturedPosts from "./FeaturedPosts";
 import CreatorsToFollow from "./CreatorsToFollow";
+import FeaturedPosts from "./FeaturedPosts";
 import PostHero from "./PostHero";
 import TopicsYouFollow from "./TopicsYouFollow";
 
 function Hero() {
   return (
-    <Row>
+    <Row className="border-bottom">
       <Col sm={4}>
         <PostHero />
       </Col>

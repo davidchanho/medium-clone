@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { shuffle } from "../../helpers/shuffle";
 import { postSelectors } from "../../store";
-import PostListItem from "../post-list-item";
+import PostListItem from "./PostListItem";
 
 export const usePostList = () => {
   const { posts, loading, error } = useSelector(postSelectors);

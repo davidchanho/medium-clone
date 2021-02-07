@@ -1,4 +1,5 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import Hero from "../../components/hero";
 import PostList from "../../components/post-list";
 import SideBar from "../../components/side-bar";
@@ -12,10 +13,14 @@ function PostsPage() {
     <>
       <Hero />
       <TrendingPosts />
-      <div className="d-flex">
-        <PostList />
-        <SideBar />
-      </div>
+      <Row>
+        <Col sm={8}>
+          <PostList />
+        </Col>
+        <Col>
+          <SideBar />
+        </Col>
+      </Row>
     </>
   );
 }

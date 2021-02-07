@@ -14,16 +14,16 @@ function PostListItem({ post }: PostProps) {
 
   return (
     <Card className="d-flex flex-row align-items-center mb-1 w-100">
-      <Card.Header className="bg-white d-flex justify-content-between pointer">
+      <Card.Header className="bg-white d-flex justify-content-between pointer w-75">
         <div className="pointer" onClick={onGetPost}>
-          <PostHeader post={post}/>
+          <PostHeader post={post} />
           <PostTitle post={post} />
           <PostSubtitle post={post} />
           <PostDate post={post} />
         </div>
         <PostOptions post={post} />
       </Card.Header>
-      <Card.Body>
+      <Card.Body className="w-25">
         <PostImg post={post} />
       </Card.Body>
     </Card>
