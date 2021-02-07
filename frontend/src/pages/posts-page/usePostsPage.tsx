@@ -24,7 +24,7 @@ export const usePostsPage = () => {
       getUsers();
     }
     if (!user._id) {
-      getUser("601f4a2988b9023f1cacb67e");
+      getUser("601f56a32a6e993e983b157f");
     }
   }, []);
 };

@@ -69,7 +69,9 @@ const generatePost = (
 };
 
 const generateAvatar = () => {
-  return faker.image.animals(30, 30);
+  return `${faker.image.animals(30, 30)}?random=${Math.round(
+    Math.random() * 1000
+  )}`;
 };
 
 const generateEmail = () => {
