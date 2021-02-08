@@ -1,5 +1,6 @@
 import { IUser } from "../../types";
 import { ActionTypes } from "../action-types";
+import { IPost } from "./../../types/index";
 
 export interface GetUsersAction {
   type: ActionTypes.FETCH_USERS;
@@ -44,6 +45,11 @@ export interface UpdateUserAction {
   payload: IUser;
 }
 
+export interface BookmarkPostAction {
+  type: ActionTypes.BOOKMARK_POST;
+  payload: IPost;
+}
+
 export type UserAction =
   | GetUsersAction
   | GetUsersSuccessAction
@@ -53,4 +59,5 @@ export type UserAction =
   | GetUserFailAction
   | AddUserAction
   | DeleteUserAction
-  | UpdateUserAction;
+  | UpdateUserAction
+  | BookmarkPostAction;

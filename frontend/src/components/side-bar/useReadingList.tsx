@@ -22,7 +22,7 @@ export const useReadingList = () => {
 
     return shuffle(posts)
       .slice(0, 5)
-      .map((post) => <Post key={`post-${post._id}`} post={post} className='mb-2'/>);
+      .map((post) => <Post key={`post-${post._id}`} post={post} className='mb-3'/>);
   };
 
   return { renderPosts };

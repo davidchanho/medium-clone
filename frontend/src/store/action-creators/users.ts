@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
 import db from "../../api";
-import { IUser } from "../../types";
+import { IPost, IUser } from "../../types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 
@@ -41,12 +41,12 @@ export const getUser = (_id: string) => async (
   }
 };
 
-export const addUser = (publication: IUser) => async (
+export const addUser = (user: IUser) => async (
   dispatch: Dispatch<Action>
 ) => {
   try {
-    db.addUser(publication);
-    dispatch({ type: ActionTypes.ADD_USER, payload: publication });
+    db.addUser(user);
+    dispatch({ type: ActionTypes.ADD_USER, payload: user });
   } catch (err) {
     console.log(err);
   }
@@ -66,16 +66,31 @@ export const deleteUser = (_id: string) => async (
   }
 };
 
-export const updateUser = (publication: IUser) => async (
+export const updateUser = (user: IUser) => async (
   dispatch: Dispatch<Action>
 ) => {
   try {
-    db.updateUser(publication);
+    db.updateUser(user);
     dispatch({
       type: ActionTypes.UPDATE_USER,
-      payload: publication,
+      payload: user,
     });
   } catch (err) {
     console.log(err);
   }
 };
+
+
+export const bookmarkPost = (post: IPost) => async (
+  dispatch: Dispatch<Action>
+) => {
+  try {
+    dispatch({
+      type: ActionTypes.BOOKMARK_POST,
+      payload: post,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+

@@ -2,12 +2,12 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { PublicationProps } from "../../types";
 
-function Topic({ publication }: PublicationProps) {
+function Publication({ label }: PublicationProps) {
   return (
     <Button variant="light" className="mr-2 mb-2">
-      {publication.name}
+      {label}
     </Button>
   );
 }
 
-export default Topic;
+export default Publication;

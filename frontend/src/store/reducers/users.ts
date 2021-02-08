@@ -10,6 +10,7 @@ export const initialUser: IUser = {
   email: "",
   about: "",
   posts: [],
+  bookmarks: [],
   comments: [],
 };
 
@@ -69,6 +70,11 @@ const usersReducers = produce(
         );
         if (updateUserIndex !== -1)
           state.users.splice(updateUserIndex, 1, action.payload);
+        return state;
+      case ActionTypes.BOOKMARK_POST:
+        state.user.bookmarks.push(action.payload);
+        state.loading = false;
+        state.error = '';
         return state;
       default:
         return state;

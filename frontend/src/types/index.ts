@@ -1,13 +1,12 @@
-import { CardProps } from 'react-bootstrap';
+import { CardProps } from "react-bootstrap";
 
-export interface PostProps extends CardProps{
+export interface PostProps extends CardProps {
   post: IPost;
 }
 
 export interface PublicationProps {
-  publication: IPublication;
+  label: string;
 }
-
 
 export interface IPublication {
   _id: string;
@@ -41,6 +40,7 @@ export interface IUser {
   email: string;
   name: string;
   about: string;
+  bookmarks: IPost[];
   posts: IPost[];
   comments: IComment[];
 }

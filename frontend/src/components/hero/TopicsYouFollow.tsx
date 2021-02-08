@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "../../hooks/useSelector";
+import Publication from "../../shared/publication";
 import { publicationSelectors } from "../../store";
-import Topic from "./Topic";
 
 function TopicsYouFollow() {
   const { publications } = useSelector(publicationSelectors);
@@ -12,9 +12,9 @@ function TopicsYouFollow() {
       <div className="d-flex flex-wrap">
         {publications.map((publication) => {
           return (
-            <Topic
+            <Publication
               key={`topics-you-follow-${publication._id}`}
-              publication={publication}
+              label={publication.name}
             />
           );
         })}

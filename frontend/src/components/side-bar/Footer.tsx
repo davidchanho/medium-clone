@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import Publication from "../../shared/publication";
 
 const items = [
   "Help",
@@ -16,11 +16,7 @@ function Footer() {
   return (
     <div className="d-flex flex-wrap">
       {items.map((item) => {
-        return (
-          <Button key={item} variant="light" className="mr-2 mb-2">
-            {item}
-          </Button>
-        );
+        return <Publication key={item} label={item} />;
       })}
     </div>
   );

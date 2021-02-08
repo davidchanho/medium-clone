@@ -5,12 +5,12 @@ import { PostProps } from "../../types";
 import { usePost } from "./usePost";
 
 function PostOptions({ post }: PostProps) {
-  const { onDeletePost } = usePost(post);
+  const { onDeletePost, onBookmarkPost } = usePost(post);
 
   return (
     <Dropdown className="mt-auto d-flex align-items-center justify-content-between">
       <Dropdown.ItemText className="p-0">
-        <BsBookmark />
+        <BsBookmark onClick={onBookmarkPost} />
       </Dropdown.ItemText>
 
       <Dropdown.Toggle className="ml-2 bg-white text-secondary shadow-none">
