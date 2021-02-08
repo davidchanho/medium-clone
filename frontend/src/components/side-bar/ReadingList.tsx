@@ -1,21 +1,24 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { BsBookmarks } from "react-icons/bs";
-import { useSidebar } from "./useSidebar";
+import { NavLink } from "react-router-dom";
+import { useReadingList } from "./useReadingList";
 
 function ReadingList() {
-  const { renderPosts } = useSidebar();
+  const { renderPosts } = useReadingList();
 
   return (
-    <Card>
+    <Card className="mb-4">
       <Card.Header className="font-weight-bold text-uppercase d-flex align-items-center">
         <BsBookmarks className="mr-2" /> reading list
       </Card.Header>
       <Card.Body className="bg-light pt-1">
         {renderPosts()}
-        <small className="text-success text-capitalize">
-          see your full reading list
-        </small>
+        <NavLink to="/reading-list">
+          <small className="text-success text-capitalize">
+            see your full reading list
+          </small>
+        </NavLink>
       </Card.Body>
     </Card>
   );

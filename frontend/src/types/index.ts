@@ -4,6 +4,11 @@ export interface PostProps extends CardProps{
   post: IPost;
 }
 
+export interface PublicationProps {
+  publication: IPublication;
+}
+
+
 export interface IPublication {
   _id: string;
   name: string;

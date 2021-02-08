@@ -4,7 +4,7 @@ import { shuffle } from "../../helpers/shuffle";
 import { postSelectors } from "../../store";
 import Post from "../post";
 
-export const useSidebar = () => {
+export const useReadingList = () => {
   const { posts, loading, error } = useSelector(postSelectors);
 
   const renderPosts = () => {
@@ -22,7 +22,7 @@ export const useSidebar = () => {
 
     return shuffle(posts)
       .slice(0, 5)
-      .map((post) => <Post key={`post-${post._id}`} post={post} />);
+      .map((post) => <Post key={`post-${post._id}`} post={post} className='mb-2'/>);
   };
 
   return { renderPosts };

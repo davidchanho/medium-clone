@@ -13,7 +13,7 @@ function PostOptions({ post }: PostProps) {
         <BsBookmark />
       </Dropdown.ItemText>
 
-      <Dropdown.Toggle className=" bg-white text-secondary shadow-none">
+      <Dropdown.Toggle className="ml-2 bg-white text-secondary shadow-none">
         <BsThreeDots />
       </Dropdown.Toggle>
       <Dropdown.Menu className="d-flex flex-column">
