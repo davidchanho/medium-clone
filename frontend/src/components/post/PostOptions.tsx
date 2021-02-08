@@ -1,16 +1,17 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
-import { BsBookmark, BsThreeDots } from "react-icons/bs";
+import { BsThreeDots } from "react-icons/bs";
+import Bookmark from "../../shared/bookmark";
 import { PostProps } from "../../types";
 import { usePost } from "./usePost";
 
 function PostOptions({ post }: PostProps) {
-  const { onDeletePost, onBookmarkPost } = usePost(post);
+  const { onDeletePost } = usePost(post);
 
   return (
     <Dropdown className="mt-auto d-flex align-items-center justify-content-between">
       <Dropdown.ItemText className="p-0">
-        <BsBookmark onClick={onBookmarkPost} />
+        <Bookmark post={post} />
       </Dropdown.ItemText>
 
       <Dropdown.Toggle className="ml-2 bg-white text-secondary shadow-none">

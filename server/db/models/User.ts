@@ -8,6 +8,7 @@ export interface IUserDoc extends Document {
   password: string;
   name: string;
   about: string;
+  bookmarks: IPostDoc[];
   posts: IPostDoc[];
   comments: ICommentDoc[];
 }
@@ -29,6 +30,7 @@ const userSchema = new Schema(
     about: {
       type: String,
     },
+    bookmarks: [{ type: String, ref: "post" }],
     posts: [{ type: String, ref: "post" }],
     comments: [{ type: String, ref: "comment" }],
   },

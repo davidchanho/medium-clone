@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Highlight() {
-    return (
-        <>
-         highlight   
-        </>
-    )
+  return <></>;
 }
 
-export default Highlight
+export default Highlight;

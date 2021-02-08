@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Recent() {
-    return (
-        <>
-         Recent   
-        </>
-    )
+  return <></>;
 }
 
-export default Recent
+export default Recent;
