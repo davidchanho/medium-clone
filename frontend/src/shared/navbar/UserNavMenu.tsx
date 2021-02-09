@@ -11,7 +11,7 @@ function UserNavMenu() {
   return (
     <Dropdown alignRight>
       <Dropdown.Toggle className="bg-inherit text-muted shadow-none ">
-        {user?.avatar ? <img src={user.avatar} /> : <BiUserCircle />}
+        {user?.avatar ? <img src={user.avatar} className='rounded' /> : <BiUserCircle />}
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Item>

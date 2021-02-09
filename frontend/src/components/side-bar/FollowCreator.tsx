@@ -1,11 +1,7 @@
 import React from "react";
-import { Button, Col, ListGroupItem, Row } from "react-bootstrap";
+import { Button, ListGroupItem } from "react-bootstrap";
 import { clampText } from "../../helpers/clampText";
-import { IUser } from "../../types";
-
-interface FollowCreatorProps {
-  user: IUser;
-}
+import { FollowCreatorProps } from "./types";
 
 function FollowCreator({ user }: FollowCreatorProps) {
   if (!user) {
@@ -13,19 +9,15 @@ function FollowCreator({ user }: FollowCreatorProps) {
   }
 
   return (
-    <ListGroupItem className="bg-light d-flex align-items-center justify-content-between">
-      <Row noGutters>
-        <Col sm={2}>
-          <img src={user?.avatar} className="rounded w-100" />
-        </Col>
-        <Col sm={7}>
-          <p>{user?.name}</p>
-          <p>{clampText(user?.about, 15)}</p>
-        </Col>
-        <Col sm={3}>
-          <Button>Follow</Button>
-        </Col>
-      </Row>
+    <ListGroupItem className="w-100 bg-light d-flex align-items-center justify-content-between">
+      <img src={user?.avatar} className="rounded w-25" />
+
+      <div className="w-50">
+        <p className="mx-2">{user?.name}</p>
+        <p className="mx-2">{clampText(user?.about, 15)}</p>
+      </div>
+
+      <Button>Follow</Button>
     </ListGroupItem>
   );
 }
