@@ -11,7 +11,7 @@ function Hero() {
       <Col sm={3}>
         <HeroPost />
       </Col>
-      <Col sm={4}>
+      <Col sm={5}>
         <FeaturedPosts />
       </Col>
       <Col>

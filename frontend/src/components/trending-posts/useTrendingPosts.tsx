@@ -19,7 +19,7 @@ const useTrendingPosts = () => {
     }
 
     return (
-      <div className={styles.grid}>
+      <div className={`p-4 ${styles.grid}`}>
         {shufflePosts.slice(0, 6).map((post, index) => (
           <TrendingPost key={post._id} post={post} index={index} />
         ))}

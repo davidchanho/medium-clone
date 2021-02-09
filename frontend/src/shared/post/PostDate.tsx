@@ -8,7 +8,7 @@ function PostDate({ post }: PostProps) {
   
   return (
     <Card.Text className="text-secondary">
-      {date} {post.readingTime}
+      {date} &middot; {post.readingTime}
     </Card.Text>
   );
 }

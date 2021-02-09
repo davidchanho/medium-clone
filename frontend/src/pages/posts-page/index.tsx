@@ -13,7 +13,7 @@ function PostsPage() {
     <>
       <Hero />
       <TrendingPosts />
-      <Row>
+      <Row className="mt-5">
         <Col sm={7}>
           <PostList />
         </Col>

@@ -2,12 +2,12 @@ import { shuffle } from "lodash";
 import React from "react";
 import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { postSelectors } from "../../store";
 import post from "../../shared/post";
 import PostHeader from "../../shared/post/PostHeader";
 import PostImg from "../../shared/post/PostImg";
 import PostSubtitle from "../../shared/post/PostSubtitle";
 import PostTitle from "../../shared/post/PostTitle";
+import { postSelectors } from "../../store";
 
 export const useHeroPost = () => {
   const { posts, loading, error } = useSelector(postSelectors);
@@ -33,13 +33,12 @@ export const useHeroPost = () => {
       .slice(0, 1)
       .map((post) => (
         <Card key={`hero-${post._id}`}>
-          <PostImg post={post} className="mb-2" />
+          <PostImg post={post} className="mb-2 h-100" />
           <PostHeader post={post} className="mb-2" />
           <PostTitle post={post} className="mb-2" />
           <PostSubtitle post={post} className="mb-2" />
           <div className="text-secondary d-flex">
-            <p>Read More</p>
-            <div>{post.readingTime}</div>
+            Read More &middot; {post.readingTime}
           </div>
         </Card>
       ));
