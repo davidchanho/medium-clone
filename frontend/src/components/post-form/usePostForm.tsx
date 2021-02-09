@@ -1,9 +1,10 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
 import { publicationSelectors } from "../../store";
-import { initialPost} from "../../store/reducers/posts";
+import { initialPost } from "../../store/reducers/posts";
 import { IPost } from "../../types";
 
 export const usePostForm = () => {
@@ -28,15 +29,21 @@ export const usePostForm = () => {
     }
   };
 
-  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const { register, handleSubmit } = useForm<IPost>();
+
+  const onSubmit = (postForm: IPost) => {
+    const newPost = {
+      ...initialPost,
+      body: postForm.body,
+      title: postForm.title,
+      publicationId: postForm.publicationId,
+      date: new Date().toLocaleDateString()
+    }
     if (
-      postForm.body.length > 6 &&
-      postForm.title.length > 6 &&
-      postForm.publicationId
+      newPost.body.length > 6
     ) {
       try {
-        addPost(postForm);
+        addPost(newPost);
         setPostForm(initialPost);
         navigate("/");
       } catch (err) {
@@ -45,5 +52,13 @@ export const usePostForm = () => {
     }
   };
 
-  return { postForm, publications, onChange, onSubmit, onFileChange };
+  return {
+    postForm,
+    publications,
+    onChange,
+    onSubmit,
+    onFileChange,
+    handleSubmit,
+    register,
+  };
 };

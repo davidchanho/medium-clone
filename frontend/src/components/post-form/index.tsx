@@ -9,12 +9,18 @@ function PostForm() {
     onSubmit,
     onChange,
     onFileChange,
+    handleSubmit,
+    register,
   } = usePostForm();
 
   const { title, body, publicationId } = postForm;
 
   return (
-    <form onSubmit={onSubmit} className="d-flex flex-column" noValidate>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="d-flex flex-column"
+      noValidate
+    >
       <label>Title</label>
       <input
         placeholder="title"
@@ -23,6 +29,7 @@ function PostForm() {
         name="title"
         onChange={onChange}
         minLength={6}
+        ref={register}
         autoFocus
       />
       <label>Body</label>
@@ -33,11 +40,12 @@ function PostForm() {
         name="body"
         onChange={onChange}
         minLength={6}
+        ref={register}
       />
       <label>Image</label>
       <input type="file" accept="image/*" onChange={onFileChange} />
       <label>Publication</label>
-      <select onChange={onChange} value={publicationId} name="publicationId">
+      <select onChange={onChange} value={publicationId} name="publicationId" ref={register}>
         {publications.map((publication: IPublication) => {
           return (
             <option key={publication._id} value={publication._id}>
