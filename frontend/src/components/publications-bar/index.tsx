@@ -1,24 +1,14 @@
 import React from "react";
-import { ListGroupItem } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
+import PublicationList from "../publication-list";
 import { usePublicationsBar } from "./usePublicationsBar";
 
 function PublicationsBar() {
-  const { publications, responsive, onGetPublication } = usePublicationsBar();
+  const { responsive } = usePublicationsBar();
 
   return (
     <Carousel ssr responsive={responsive}>
-      {publications.map((publication) => {
-        return (
-          <ListGroupItem
-            action
-            key={publication._id}
-            onClick={() => onGetPublication(publication._id)}
-          >
-            {publication.name}
-          </ListGroupItem>
-        );
-      })}
+      <PublicationList />
     </Carousel>
   );
 }

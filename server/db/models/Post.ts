@@ -2,8 +2,8 @@ import { Document, model, Schema } from "mongoose";
 import { ICommentDoc } from "./Comment";
 
 export interface IPostDoc extends Document {
-  publicationId: Schema.Types.ObjectId;
-  userId: Schema.Types.ObjectId;
+  publicationId: string;
+  userId: string;
   title: string;
   body: string;
   readingTime: string;

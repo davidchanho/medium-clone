@@ -1,7 +1,8 @@
 import { Document, model, Schema } from "mongoose";
 
 export interface ICommentDoc extends Document {
-  postId: Schema.Types.ObjectId;
+  postId: string;
+  userId: string;
   body: string;
   date: string;
 }

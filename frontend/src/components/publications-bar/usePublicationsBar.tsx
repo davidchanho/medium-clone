@@ -1,7 +1,3 @@
-import { useSelector } from "react-redux";
-import { useActions } from "../../hooks/useActions";
-import { publicationSelectors } from "../../store";
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -20,12 +16,5 @@ const responsive = {
 };
 
 export const usePublicationsBar = () => {
-  const { publications } = useSelector(publicationSelectors);
-  const { getPublication } = useActions();
-
-  const onGetPublication = (_id: string) => {
-    getPublication(_id);
-  };
-
-  return { publications, responsive, onGetPublication };
+  return { responsive };
 };
