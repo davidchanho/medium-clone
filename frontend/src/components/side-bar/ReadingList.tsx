@@ -14,10 +14,8 @@ function ReadingList() {
       </Card.Header>
       <Card.Body className="bg-light pt-1">
         {renderPosts()}
-        <NavLink to="/reading-list">
-          <small className="text-success text-capitalize">
-            see your full reading list
-          </small>
+        <NavLink to="/reading-list" className="text-success text-decoration-none">
+       See your full reading list
         </NavLink>
       </Card.Body>
     </Card>

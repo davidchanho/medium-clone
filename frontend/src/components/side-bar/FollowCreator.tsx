@@ -11,15 +11,19 @@ function FollowCreator({ user, className, imgStyles }: FollowCreatorProps) {
   const { photo, name, about } = user;
 
   return (
-    <ListGroupItem className={`w-100 d-flex justify-content-between ${className}`}>
+    <ListGroupItem
+      className={`w-100 d-flex justify-content-between ${className}`}
+    >
       <img src={photo} className={`${imgStyles}`} />
 
-      <div className="w-50">
-        <p className="mx-2 font-weight-bold">{name}</p>
-        <p className="mx-2">{clampText(about, 35)}</p>
+      <div className="w-50 mx-2">
+        <p className="font-weight-bold">{name}</p>
+        <p>{clampText(about, 35)}</p>
       </div>
 
-      <Button className="h-50 my-auto">Follow</Button>
+      <Button variant="success" className="h-50 my-auto">
+        Follow
+      </Button>
     </ListGroupItem>
   );
 }

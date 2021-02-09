@@ -14,11 +14,11 @@ function PostsPage() {
       <Hero />
       <TrendingPosts />
       <Row className="mt-5">
-        <Col sm={7}>
-          <PostList />
-        </Col>
-        <Col sm={{ span: 4, offset: 1 }}>
+        <Col lg={{ span: 4, offset: 1, order: 2 }}>
           <SideBar />
+        </Col>
+        <Col lg={7}>
+          <PostList />
         </Col>
       </Row>
     </>
