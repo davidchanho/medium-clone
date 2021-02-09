@@ -37,6 +37,7 @@ export interface IPost {
 export interface IUser {
   _id?: string;
   avatar: string;
+  photo: string;
   email: string;
   name: string;
   about: string;

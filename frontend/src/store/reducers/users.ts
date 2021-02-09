@@ -7,6 +7,7 @@ export const initialUser: IUser = {
   _id: "",
   name: "",
   avatar: "",
+  photo: "",
   email: "",
   about: "",
   posts: [],
@@ -74,7 +75,7 @@ const usersReducers = produce(
       case ActionTypes.BOOKMARK_POST:
         state.user.bookmarks.push(action.payload);
         state.loading = false;
-        state.error = '';
+        state.error = "";
         return state;
       default:
         return state;

@@ -1,4 +1,4 @@
-import { nanoid } from "@reduxjs/toolkit";
+import { nanoid } from "nanoid";
 import produce from "immer";
 import { IPublication } from "../../types";
 import { ActionTypes } from "../action-types";

@@ -4,6 +4,7 @@ import { IPostDoc } from "./Post";
 
 export interface IUserDoc extends Document {
   avatar: string;
+  photo: string;
   email: string;
   password: string;
   name: string;
@@ -18,6 +19,7 @@ const userSchema = new Schema(
     avatar: {
       type: String,
     },
+    photo: { type: String },
     email: {
       type: String,
     },

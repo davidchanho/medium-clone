@@ -9,12 +9,6 @@ const generateRandomNumber = () => {
   return _.random(3, 7);
 };
 
-const generateImg = () => {
-  return `${faker.image.nature(200, 135)}?random=${Math.round(
-    Math.random() * 1000
-  )}`;
-};
-
 const generatePubName = () => {
   return _.capitalize(faker.lorem.word(8));
 };
@@ -33,14 +27,17 @@ const generateDate = () => {
   return faker.date.between("2020-01-01", today);
 };
 
-const generateReadTime = (body: string) => {
-  return `${Math.ceil(body.split(" ").length / 275)} min read`;
+const calcReadTime = (body: string) => {
+  const wordCount = body.split(" ").length;
+  const wordsPerMinute = 275;
+  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+  return `${readingTime} min read`;
 };
 
 const generatePub = (publicationId: mongoose.Types._ObjectId) => {
   return new db.Publication({
     _id: publicationId,
-    icon: generateIcon(),
+    icon: generatePhoto(20, 20),
     name: generatePubName(),
     posts: [],
   });
@@ -62,21 +59,15 @@ const generatePost = (
     userId: "",
     title: generateTitle(),
     body,
-    image: generateImg(),
+    image: generatePhoto(200, 135),
     date: generateDate(),
-    readingTime: generateReadTime(body),
+    readingTime: calcReadTime(body),
     comments: [],
   });
 };
 
-const generateAvatar = () => {
-  return `${faker.image.animals(30, 30)}?random=${Math.round(
-    Math.random() * 1000
-  )}`;
-};
-
-const generateIcon = () => {
-  return `${faker.image.animals(20, 20)}?random=${Math.round(
+const generatePhoto = (width: number, height: number) => {
+  return `${faker.image.animals(width, height)}?random=${Math.round(
     Math.random() * 1000
   )}`;
 };
@@ -99,7 +90,8 @@ const generateAbout = () => {
 
 const generateUser = () => {
   return new db.User({
-    avatar: generateAvatar(),
+    avatar: generatePhoto(30, 30),
+    photo: generatePhoto(60, 60),
     email: generateEmail(),
     password: generatePassword(),
     name: generateName(),

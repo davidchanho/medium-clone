@@ -1,4 +1,5 @@
 import React from "react";
+import { IPublication } from "../../types";
 import { usePostForm } from "./usePostForm";
 
 function PostForm() {
@@ -37,7 +38,7 @@ function PostForm() {
       <input type="file" accept="image/*" onChange={onFileChange} />
       <label>Publication</label>
       <select onChange={onChange} value={publicationId} name="publicationId">
-        {publications.map((publication) => {
+        {publications.map((publication: IPublication) => {
           return (
             <option key={publication._id} value={publication._id}>
               {publication.name}

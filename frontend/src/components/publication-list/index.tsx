@@ -1,4 +1,5 @@
 import React from "react";
+import { IPublication } from "../../types";
 import PublicationItem from "../publication-item";
 import { usePublicationList } from "./usePublicationList";
 
@@ -7,7 +8,7 @@ function PublicationList() {
 
   return (
     <>
-      {publications.map((publication) => {
+      {publications.map((publication: IPublication) => {
         return <PublicationItem publication={publication} />;
       })}
     </>

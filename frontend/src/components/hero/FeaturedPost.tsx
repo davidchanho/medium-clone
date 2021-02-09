@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { PostProps } from "../../types";
-import Post from "../post";
-import PostImg from "../post/PostImg";
+import Post from "../../shared/post";
+import PostImg from "../../shared/post/PostImg";
 
 function FeaturedPost({ post }: PostProps) {
   return (

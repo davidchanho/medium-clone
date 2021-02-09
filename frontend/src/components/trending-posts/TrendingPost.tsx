@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "../post";
+import Post from "../../shared/post";
 import { TrendingPostProps } from "./types";
 
 function TrendingPost({ post, index }: TrendingPostProps) {

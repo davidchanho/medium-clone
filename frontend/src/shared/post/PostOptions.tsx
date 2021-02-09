@@ -1,7 +1,7 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
-import Bookmark from "../../shared/bookmark";
+import Bookmark from "../bookmark";
 import { PostProps } from "../../types";
 import { usePost } from "./usePost";
 

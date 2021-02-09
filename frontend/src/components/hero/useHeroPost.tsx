@@ -3,11 +3,11 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
-import post from "../post";
-import PostHeader from "../post/PostHeader";
-import PostImg from "../post/PostImg";
-import PostSubtitle from "../post/PostSubtitle";
-import PostTitle from "../post/PostTitle";
+import post from "../../shared/post";
+import PostHeader from "../../shared/post/PostHeader";
+import PostImg from "../../shared/post/PostImg";
+import PostSubtitle from "../../shared/post/PostSubtitle";
+import PostTitle from "../../shared/post/PostTitle";
 
 export const useHeroPost = () => {
   const { posts, loading, error } = useSelector(postSelectors);

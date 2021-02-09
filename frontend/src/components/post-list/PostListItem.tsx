@@ -1,13 +1,13 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { PostProps } from "../../types";
-import PostDate from "../post/PostDate";
-import PostHeader from "../post/PostHeader";
-import PostImg from "../post/PostImg";
-import PostOptions from "../post/PostOptions";
-import PostSubtitle from "../post/PostSubtitle";
-import PostTitle from "../post/PostTitle";
-import { usePost } from "../post/usePost";
+import PostDate from "../../shared/post/PostDate";
+import PostHeader from "../../shared/post/PostHeader";
+import PostImg from "../../shared/post/PostImg";
+import PostOptions from "../../shared/post/PostOptions";
+import PostSubtitle from "../../shared/post/PostSubtitle";
+import PostTitle from "../../shared/post/PostTitle";
+import { usePost } from "../../shared/post/usePost";
 
 function PostListItem({ post }: PostProps) {
   const { onGetPost } = usePost(post);

@@ -3,7 +3,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import PostList from ".";
 import { store } from "../../store";
-import Post from "../post";
+import Post from "../../shared/post";
 
 describe("<PostList/>", () => {
   it("should render", () => {

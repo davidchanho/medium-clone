@@ -8,8 +8,8 @@ import UserNavMenu from "./UserNavMenu";
 
 function Navbar() {
   return (
-    <BsNavbar bg="light" expand="lg">
-      <BsNavbar.Brand to="/" as={NavLink}>
+    <BsNavbar bg="white" expand="lg" className="px-5 py-4">
+      <BsNavbar.Brand to="/" as={NavLink} className="font-weight-bold">
         <MediumLogo /> {greeting()}
       </BsNavbar.Brand>
       <BsNavbar.Toggle aria-controls="basic-navbar-nav" />

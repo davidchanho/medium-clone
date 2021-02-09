@@ -14,7 +14,12 @@ function FollowCreators() {
         <ListGroup>
           {users.slice(0, 3).map((user) => {
             return (
-              <FellowCreator key={`follow-creators-${user?._id}`} user={user} />
+              <FellowCreator
+                className="bg-light"
+                imgStyles="rounded"
+                key={`follow-creators-${user?._id}`}
+                user={user}
+              />
             );
           })}
         </ListGroup>

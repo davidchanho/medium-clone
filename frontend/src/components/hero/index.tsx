@@ -8,10 +8,10 @@ import TopicsYouFollow from "./TopicsYouFollow";
 function Hero() {
   return (
     <Row className="border-bottom p-5">
-      <Col sm={4}>
+      <Col sm={3}>
         <HeroPost />
       </Col>
-      <Col sm={5}>
+      <Col sm={4}>
         <FeaturedPosts />
       </Col>
       <Col>
