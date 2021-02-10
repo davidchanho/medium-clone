@@ -1,7 +1,7 @@
 import { Document, model, Schema } from "mongoose";
 import { IPostDoc } from "./Post";
 
-interface IPublicationDoc extends Document {
+export interface IPublicationDoc extends Document {
   name: string;
   icon: string;
   posts: IPostDoc[];

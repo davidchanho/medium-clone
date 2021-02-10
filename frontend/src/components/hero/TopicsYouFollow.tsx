@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { BsPlus } from "react-icons/bs";
 import { useSelector } from "../../hooks/useSelector";
 import Publication from "../../shared/publication";
 import { publicationSelectors } from "../../store";
@@ -19,6 +21,9 @@ function TopicsYouFollow() {
             />
           );
         })}
+        <Button variant="light">
+          <BsPlus />
+        </Button>
       </div>
     </div>
   );

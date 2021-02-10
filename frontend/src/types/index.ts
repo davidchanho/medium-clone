@@ -41,6 +41,10 @@ export interface IUser {
   email: string;
   name: string;
   about: string;
+  following: {
+    users: IUser[];
+    publications: IPublication[];
+  };
   bookmarks: IPost[];
   posts: IPost[];
   comments: IComment[];

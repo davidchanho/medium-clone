@@ -1,6 +1,7 @@
 import { Document, model, Schema } from "mongoose";
 import { ICommentDoc } from "./Comment";
 import { IPostDoc } from "./Post";
+import { IPublicationDoc } from "./Publication";
 
 export interface IUserDoc extends Document {
   avatar: string;
@@ -9,6 +10,10 @@ export interface IUserDoc extends Document {
   password: string;
   name: string;
   about: string;
+  following: {
+    publications: IPublicationDoc[];
+    users: IUserDoc[];
+  };
   bookmarks: IPostDoc[];
   posts: IPostDoc[];
   comments: ICommentDoc[];
@@ -31,6 +36,10 @@ const userSchema = new Schema(
     },
     about: {
       type: String,
+    },
+    following: {
+      users: [{ type: String, ref: "user" }],
+      publications: [{ type: String, ref: "publication" }],
     },
     bookmarks: [{ type: String, ref: "post" }],
     posts: [{ type: String, ref: "post" }],

@@ -11,6 +11,17 @@ function ReadingList() {
   const [key, setKey] = useState<string>("saved");
   const { user } = useSelector(userSelectors);
 
+  const items = [
+    {
+      eventKey: "saved",
+      title: `Saved (${user.bookmarks.length})`,
+      panel: <Saved />,
+    },
+    { eventKey: "archived", title: "archived", panel: <Archived /> },
+    { eventKey: "highlights", title: "highlights", panel: <Highlight /> },
+    { eventKey: "recent", title: "recent", panel: <Recent /> },
+  ];
+
   const onSelect = (k: any) => {
     if (k) {
       return setKey(k);
@@ -19,18 +30,11 @@ function ReadingList() {
 
   return (
     <Tabs activeKey={key} onSelect={onSelect} id="readingList">
-      <Tab eventKey="saved" title={`Saved (${user.bookmarks.length})`}>
-        <Saved />
-      </Tab>
-      <Tab eventKey="archived" title="Archived">
-        <Archived />
-      </Tab>
-      <Tab eventKey="highlights" title="Highlights">
-        <Highlight />
-      </Tab>
-      <Tab eventKey="recent" title="Recently viewed">
-        <Recent />
-      </Tab>
+      {items.map(({ eventKey, title, panel }) => {
+        <Tab key={title} eventKey={eventKey} title={title}>
+          {panel}
+        </Tab>;
+      })}
     </Tabs>
   );
 }

@@ -10,8 +10,12 @@ export const initialUser: IUser = {
   photo: "",
   email: "",
   about: "",
-  posts: [],
+  following: {
+    users: [],
+    publications: []
+  },
   bookmarks: [],
+  posts: [],
   comments: [],
 };
 

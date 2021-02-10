@@ -12,7 +12,7 @@ function FeaturedPost({ post }: PostProps) {
           <Post post={post} />
         </Col>
         <Col>
-          <PostImg post={post} />
+          <PostImg post={post} height={100} width={100} />
         </Col>
       </Row>
     </Card>

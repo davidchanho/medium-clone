@@ -15,7 +15,7 @@ mongoose.Query.prototype.exec = async function () {
     })
   );
 
-  const cacheValue: any = await client.get(key);
+  const cacheValue: any = client.get(key);
 
   if (cacheValue) {
     console.log(cacheValue);

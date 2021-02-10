@@ -33,7 +33,7 @@ export const useHeroPost = () => {
       .slice(0, 1)
       .map((post) => (
         <Card key={`hero-${post._id}`}>
-          <PostImg post={post} className="mb-2 h-100" />
+          <PostImg post={post} className="mb-2 h-100 w-100" />
           <PostHeader post={post} className="mb-2" />
           <PostTitle post={post} className="mb-2" />
           <PostSubtitle post={post} className="mb-2" />
