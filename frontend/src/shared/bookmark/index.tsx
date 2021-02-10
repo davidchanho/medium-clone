@@ -1,6 +1,6 @@
 import React from "react";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
-import { PostProps } from "../../types";
+import { PostProps } from "../../store/posts/types";
 import { useBookmark } from "./useBookmark";
 
 function Bookmark({ post }: PostProps) {

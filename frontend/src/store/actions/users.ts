@@ -1,6 +1,6 @@
 import { IUser } from "../../types";
 import { ActionTypes } from "../action-types";
-import { IPost } from "./../../types/index";
+import { IPost } from "./../../store/posts/types";
 
 export interface GetUsersAction {
   type: ActionTypes.FETCH_USERS;

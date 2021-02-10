@@ -1,9 +1,5 @@
 import { RootState } from "../store";
 
-export const postSelectors = (state: RootState) => {
-  return state.posts;
-};
-
 export const commentSelectors = (state: RootState) => {
   return state.comments;
 };

@@ -1,6 +1,6 @@
 import axios from "axios";
-import { IPost } from "../types";
-import { publicationsUrl } from "./publications";
+import { publicationsUrl } from "../../api/publications";
+import { IPost } from "./types";
 
 export const postsUrl = "/api/posts/";
 

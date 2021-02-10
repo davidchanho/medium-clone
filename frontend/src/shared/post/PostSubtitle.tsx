@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/esm/Card";
 import { clampText } from "../../helpers/clampText";
-import { PostProps } from "../../types";
+import { PostProps } from "../../store/posts/types";
 
 function PostSubtitle({ post, className }: PostProps) {
   const renderSubtitle = clampText(post.body, 50);

@@ -1,7 +1,7 @@
 import { shuffle } from "lodash";
 import React from "react";
 import { useSelector } from "../../hooks/useSelector";
-import { postSelectors } from "../../store";
+import { postSelectors } from "../../store/posts/selectors";
 import FeaturedPost from "./FeaturedPost";
 
 export const useFeaturedPosts = () => {

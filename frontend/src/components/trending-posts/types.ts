@@ -1,4 +1,4 @@
-import { IPost } from "../../types";
+import { IPost } from "../../store/posts/types";
 
 export interface TrendingPostProps {
   post: IPost;

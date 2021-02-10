@@ -1,6 +1,7 @@
 import { Dispatch } from "redux";
 import db from "../../api";
-import { IPost, IUser } from "../../types";
+import { IUser } from "../../types";
+import { IPost } from "../../store/posts/types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 

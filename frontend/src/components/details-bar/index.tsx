@@ -4,7 +4,7 @@ import { BiMessage } from "react-icons/bi";
 import { FaRegHandPaper } from "react-icons/fa";
 import { useSelector } from "../../hooks/useSelector";
 import Bookmark from "../../shared/bookmark";
-import { postSelectors } from "../../store";
+import { postSelectors } from "../../store/posts/selectors";
 
 function DetailsBar() {
   const { post } = useSelector(postSelectors);

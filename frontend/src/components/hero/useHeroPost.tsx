@@ -7,7 +7,7 @@ import PostHeader from "../../shared/post/PostHeader";
 import PostImg from "../../shared/post/PostImg";
 import PostSubtitle from "../../shared/post/PostSubtitle";
 import PostTitle from "../../shared/post/PostTitle";
-import { postSelectors } from "../../store";
+import { postSelectors } from "../../store/posts/selectors";
 
 export const useHeroPost = () => {
   const { posts, loading, error } = useSelector(postSelectors);

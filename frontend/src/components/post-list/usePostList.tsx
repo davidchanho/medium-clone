@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { shuffle } from "../../helpers/shuffle";
-import { postSelectors } from "../../store";
+import { postSelectors } from "../../store/posts/selectors";
 import PostListItem from "./PostListItem";
 import PostsSkeleton from "../../shared/post/PostsSkeleton";
 

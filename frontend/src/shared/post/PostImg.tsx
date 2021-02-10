@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, ImageProps } from "react-bootstrap";
 import placeholder from "../../asset/imgPlaceholder.png";
-import { PostProps } from "../../types";
+import { PostProps } from "../../store/posts/types";
 import { usePost } from "./usePost";
 
 function PostImg({

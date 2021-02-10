@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useActions } from "../../hooks/useActions";
-import { IPost } from "../../types";
+import { IPost } from "../../store/posts/types";
 import { useSelector } from "./../../hooks/useSelector";
 import { userSelectors } from "./../../store/selectors/index";
 

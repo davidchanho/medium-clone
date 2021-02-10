@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { useFindPublicationByPostId } from "../../hooks/useFindPublicationbyPostId";
-import { PostProps } from "../../types";
+import { PostProps } from "../../store/posts/types";
 
 function PostHeader({ post, className }: PostProps) {
   const publication = useFindPublicationByPostId(post.publicationId);

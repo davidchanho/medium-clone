@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import commentsReducers from "./comments";
-import postsReducers from "./posts";
+import postsReducers from "../posts/reducers";
 import publicationsReducers from "./publications";
 import usersReducers from "./users";
 

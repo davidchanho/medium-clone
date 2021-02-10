@@ -1,5 +1,5 @@
 import produce from "immer";
-import { IPost } from "../../types";
+import { IPost } from "./types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 

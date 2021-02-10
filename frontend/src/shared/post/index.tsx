@@ -1,5 +1,5 @@
 import React from "react";
-import { PostProps } from "../../types";
+import { PostProps } from "../../store/posts/types";
 import PostContainer from "./PostContainer";
 import PostDate from "./PostDate";
 import PostHeader from "./PostHeader";

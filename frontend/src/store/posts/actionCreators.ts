@@ -1,8 +1,8 @@
 import { Dispatch } from "react";
 import db from "../../api";
-import { IPost } from "../../types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
+import { IPost } from "./types";
 
 export const getPosts = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_POSTS });
@@ -70,7 +70,7 @@ export const updatePost = (post: IPost) => async (
 ) => {
   try {
     db.updatePost(post);
-    
+
     dispatch({
       type: ActionTypes.UPDATE_POST,
       payload: post,

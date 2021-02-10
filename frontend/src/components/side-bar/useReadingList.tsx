@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { shuffle } from "../../helpers/shuffle";
-import { postSelectors } from "../../store";
+import { postSelectors } from "../../store/posts/selectors";
 import Post from "../../shared/post";
 
 export const useReadingList = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { postSelectors } from "../../store";
+import { postSelectors } from "../../store/posts/selectors";
 
 export const usePostDetails = () => {
   const { post, loading, error } = useSelector(postSelectors);

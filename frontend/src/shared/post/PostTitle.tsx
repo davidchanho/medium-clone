@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { PostProps } from "../../types";
+import { PostProps } from "../../store/posts/types";
 
 function PostTitle({ post, className }: PostProps) {
   return (

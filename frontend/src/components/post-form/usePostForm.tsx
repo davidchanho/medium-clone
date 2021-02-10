@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
 import { publicationSelectors } from "../../store";
-import { initialPost } from "../../store/reducers/posts";
-import { IPost } from "../../types";
+import { initialPost } from "../../store/posts/reducers";
+import { IPost } from "../../store/posts/types";
 
 export const usePostForm = () => {
   const [postForm, setPostForm] = useState<IPost>(initialPost);

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
-import { IPost } from "../../types";
+import { IPost } from "../../store/posts/types";
 
 export const usePost = (post: IPost) => {
   const { deletePost } = useActions();

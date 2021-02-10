@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
 import {
-  postSelectors,
   publicationSelectors,
   userSelectors,
 } from "../../store";
+import {postSelectors} from '../../store/posts/selectors'
 
 export const usePostsPage = () => {
   const { getPosts, getPublications, getUser, getUsers } = useActions();

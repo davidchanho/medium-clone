@@ -1,8 +1,4 @@
-import { CardProps } from "react-bootstrap";
-
-export interface PostProps extends CardProps {
-  post: IPost;
-}
+import { IPost } from "../store/posts/types";
 
 export interface PublicationProps {
   label: string;
@@ -20,18 +16,6 @@ export interface IComment {
   userId: string;
   body: string;
   date: string;
-}
-
-export interface IPost {
-  _id?: string;
-  publicationId: string;
-  userId: string;
-  title: string;
-  body: string;
-  image: string;
-  date: string;
-  readingTime: string;
-  comments: IComment[];
 }
 
 export interface IUser {

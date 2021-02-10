@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { formatDate } from "../../helpers/formatDate";
-import { PostProps } from "../../types";
+import { PostProps } from "../../store/posts/types";
 
 function PostDate({ post }: PostProps) {
   const date = formatDate(post.date);

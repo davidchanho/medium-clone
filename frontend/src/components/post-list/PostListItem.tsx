@@ -7,7 +7,7 @@ import PostOptions from "../../shared/post/PostOptions";
 import PostSubtitle from "../../shared/post/PostSubtitle";
 import PostTitle from "../../shared/post/PostTitle";
 import { usePost } from "../../shared/post/usePost";
-import { PostProps } from "../../types";
+import { PostProps } from "../../store/posts/types";
 
 function PostListItem({ post }: PostProps) {
   const { onGetPost } = usePost(post);

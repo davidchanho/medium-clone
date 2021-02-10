@@ -1,5 +1,5 @@
 import { comments } from "./comments";
-import { posts } from "./posts";
+import { posts } from "../store/posts/api";
 import { publications } from "./publications";
 import { users } from "./users";
 

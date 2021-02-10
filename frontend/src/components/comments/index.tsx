@@ -3,7 +3,7 @@ import { Button, FormControl, Modal, ModalBody, ModalTitle } from "react-bootstr
 import ModalHeader from "react-bootstrap/esm/ModalHeader";
 import { BiMessage } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import { postSelectors } from "../../store";
+import { postSelectors } from "../../store/posts/selectors";
 
 function Comments() {
   const { post } = useSelector(postSelectors);
