@@ -6,16 +6,12 @@ import { PublicationItemProps } from "./types";
 function PublicationItem({ publication }: PublicationItemProps) {
   const { getPublication } = useActions();
 
-  const onGetPublication = (_id: string) => {
-    getPublication(_id);
+  const onGetPublication = () => {
+    getPublication(publication._id);
   };
 
   return (
-    <ListGroupItem
-      action
-      key={publication._id}
-      onClick={() => onGetPublication(publication._id)}
-    >
+    <ListGroupItem action key={publication._id} onClick={onGetPublication}>
       {publication.name}
     </ListGroupItem>
   );

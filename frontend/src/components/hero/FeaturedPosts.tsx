@@ -7,7 +7,7 @@ import FeaturedPost from "./FeaturedPost";
 
 function FeaturedPosts() {
   const { posts, loading, error } = useSelector(postSelectors);
-  
+
   if (loading) {
     return <h2>Loading...</h2>;
   }
@@ -20,13 +20,15 @@ function FeaturedPosts() {
     return null;
   }
 
+  const renderPosts = () => {
+    return shuffle(posts)
+      .slice(0, 4)
+      .map((post) => <FeaturedPost key={`featured-${post._id}`} post={post} />);
+  };
+
   return (
     <CardDeck className="d-flex flex-column border-right">
-      {shuffle(posts)
-        .slice(0, 4)
-        .map((post) => (
-          <FeaturedPost key={`featured-${post._id}`} post={post} />
-        ))}
+      {renderPosts()}
     </CardDeck>
   );
 }

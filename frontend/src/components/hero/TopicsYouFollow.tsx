@@ -21,19 +21,23 @@ function TopicsYouFollow() {
     return null;
   }
 
+  const renderPublications = () => {
+    return publications.map((publication: IPublication) => {
+      return (
+        <Publication
+          key={`topics-you-follow-${publication._id}`}
+          label={publication.name}
+        />
+      );
+    });
+  };
+
   return (
     <div>
       <p className="text-uppercase font-weight-bold mb-2">Topics you follow</p>
       <div className="d-flex flex-wrap">
-        {publications.map((publication: IPublication) => {
-          return (
-            <Publication
-              key={`topics-you-follow-${publication._id}`}
-              label={publication.name}
-            />
-          );
-        })}
-        <Button variant="light" size='sm' className='p-2 h-50'>
+        {renderPublications()}
+        <Button variant="light" size="sm" className="p-2 h-50">
           <BsPlus />
         </Button>
       </div>

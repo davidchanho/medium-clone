@@ -12,13 +12,17 @@ const items = [
 ];
 
 function Footer() {
-  return (
-    <div className="d-flex flex-wrap">
-      {items.map((item) => {
-        return <p className='mx-3' key={item}>{item}</p>;
-      })}
-    </div>
-  );
+  const renderFooter = () => {
+    return items.map((item) => {
+      return (
+        <p className="mx-3" key={item}>
+          {item}
+        </p>
+      );
+    });
+  };
+
+  return <div className="d-flex flex-wrap">{renderFooter()}</div>;
 }
 
 export default Footer;

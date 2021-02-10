@@ -40,15 +40,19 @@ function ReadingList() {
     }
   };
 
+  const renderTabs = () => {
+    return items.map(({ eventKey, title, panel }) => {
+      return (
+        <Tab key={title} eventKey={eventKey} title={title}>
+          {panel}
+        </Tab>
+      );
+    });
+  };
+
   return (
     <Tabs activeKey={key} onSelect={onSelect} id="readingList">
-      {items.map(({ eventKey, title, panel }) => {
-        return (
-          <Tab key={title} eventKey={eventKey} title={title}>
-            {panel}
-          </Tab>
-        );
-      })}
+      {renderTabs()}
     </Tabs>
   );
 }

@@ -6,7 +6,15 @@ import { NavLink } from "react-router-dom";
 import { userSelectors } from "../../store";
 
 function UserNavMenu() {
-  const { user } = useSelector(userSelectors);
+  const { user, loading, error } = useSelector(userSelectors);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <Dropdown alignRight>

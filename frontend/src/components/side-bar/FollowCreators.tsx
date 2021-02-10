@@ -19,22 +19,24 @@ function FollowCreators() {
     return null;
   }
 
+  const renderUsers = () => {
+    return users.slice(0, 3).map((user) => {
+      return (
+        <FellowCreator
+          className="bg-light"
+          imgStyles="rounded"
+          key={`follow-creators-${user?._id}`}
+          user={user}
+        />
+      );
+    });
+  };
+
   return (
     <Card className="mb-4">
       <Card.Body className="bg-light">
         <h6 className="font-weight-bold text-uppercase">who to follow</h6>
-        <ListGroup>
-          {users.slice(0, 3).map((user) => {
-            return (
-              <FellowCreator
-                className="bg-light"
-                imgStyles="rounded"
-                key={`follow-creators-${user?._id}`}
-                user={user}
-              />
-            );
-          })}
-        </ListGroup>
+        <ListGroup>{renderUsers()}</ListGroup>
       </Card.Body>
     </Card>
   );

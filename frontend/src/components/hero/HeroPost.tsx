@@ -28,21 +28,25 @@ function HeroPost() {
     return null;
   }
 
+  const renderPost = () => {
+    return shuffle(posts)
+    .slice(0, 1)
+    .map((post) => (
+      <Card key={`hero-${post._id}`}>
+        <PostImg post={post} className="mb-2 h-100 w-100" />
+        <PostHeader post={post} className="mb-2" />
+        <PostTitle post={post} className="mb-2" />
+        <PostSubtitle post={post} className="mb-2" />
+        <div className="text-secondary d-flex">
+          Read More &middot; {post.readingTime}
+        </div>
+      </Card>
+    ))
+  }
+
   return (
     <>
-      {shuffle(posts)
-        .slice(0, 1)
-        .map((post) => (
-          <Card key={`hero-${post._id}`}>
-            <PostImg post={post} className="mb-2 h-100 w-100" />
-            <PostHeader post={post} className="mb-2" />
-            <PostTitle post={post} className="mb-2" />
-            <PostSubtitle post={post} className="mb-2" />
-            <div className="text-secondary d-flex">
-              Read More &middot; {post.readingTime}
-            </div>
-          </Card>
-        ))}
+      {renderPost()}
     </>
   );
 }

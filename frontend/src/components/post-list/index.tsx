@@ -21,11 +21,17 @@ function PostList() {
     return null;
   }
 
+  const renderPosts = () => {
+    return (
+      shuffle(posts).map((post) => (
+        <PostListItem key={`post-${post._id}`} post={post} />
+      ))
+    )
+  }
+
   return (
     <CardDeck className="w-100 d-flex flex-column pt-5">
-      {shuffle(posts).map((post) => (
-        <PostListItem key={`post-${post._id}`} post={post} />
-      ))}
+      {renderPosts()}
     </CardDeck>
   );
 }

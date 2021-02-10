@@ -18,17 +18,17 @@ function Saved() {
     return null;
   }
 
-  return (
-    <ListGroup>
-      {user.bookmarks.map((bookmark) => {
-        return (
-          <ListGroupItem key={`saved-${bookmark._id}`}>
-            {bookmark.title}
-          </ListGroupItem>
-        );
-      })}
-    </ListGroup>
-  );
+  const renderUser = () => {
+    return user.bookmarks.map((bookmark) => {
+      return (
+        <ListGroupItem key={`saved-${bookmark._id}`}>
+          {bookmark.title}
+        </ListGroupItem>
+      );
+    });
+  };
+
+  return <ListGroup>{renderUser()}</ListGroup>;
 }
 
 export default Saved;

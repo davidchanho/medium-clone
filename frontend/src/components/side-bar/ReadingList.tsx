@@ -22,17 +22,23 @@ function ReadingList() {
     return null;
   }
 
+  const renderPosts = () => {
+    return (
+      shuffle(posts)
+      .slice(0, 5)
+      .map((post) => (
+        <Post key={`post-${post._id}`} post={post} className="mb-3" />
+      ))
+    )
+  }
+
   return (
     <Card className="mb-4">
       <Card.Header className="font-weight-bold text-uppercase d-flex align-items-center">
         <BsBookmarks className="mr-2" /> reading list
       </Card.Header>
       <Card.Body className="bg-light pt-1">
-        {shuffle(posts)
-          .slice(0, 5)
-          .map((post) => (
-            <Post key={`post-${post._id}`} post={post} className="mb-3" />
-          ))}
+        {renderPosts()}
         <NavLink
           to="/reading-list"
           className="text-success text-decoration-none"

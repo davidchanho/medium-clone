@@ -20,16 +20,26 @@ function CreatorsToFollow() {
     return null;
   }
 
-  return (
-    <div>
-      <p className="text-uppercase font-weight-bold">Creators to follow</p>{" "}
+  const renderCreators = () => {
+    return (
       <ListGroup>
         {users.slice(0, 2).map((user: IUser) => {
           return (
-            <FellowCreator imgStyles='rounded-circle' key={`follow-creators-${user?._id}`} user={user} />
+            <FellowCreator
+              imgStyles="rounded-circle"
+              key={`follow-creators-${user?._id}`}
+              user={user}
+            />
           );
         })}
       </ListGroup>
+    );
+  };
+
+  return (
+    <div>
+      <p className="text-uppercase font-weight-bold">Creators to follow</p>{" "}
+      {renderCreators()}
     </div>
   );
 }
