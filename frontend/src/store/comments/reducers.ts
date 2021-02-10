@@ -1,5 +1,5 @@
 import produce from "immer";
-import { IComment } from "../../types";
+import { IComment } from "./types";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 

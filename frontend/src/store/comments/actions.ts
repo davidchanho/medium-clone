@@ -1,4 +1,4 @@
-import { IComment } from "../../types";
+import { IComment } from "./types";
 import { ActionTypes } from "../action-types";
 
 export interface GetCommentsAction {

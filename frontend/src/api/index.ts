@@ -1,4 +1,4 @@
-import { comments } from "./comments";
+import { comments } from "../store/comments/api";
 import { posts } from "../store/posts/api";
 import { publications } from "./publications";
 import { users } from "./users";

@@ -1,3 +1,4 @@
+import { IComment } from "../store/comments/types";
 import { IPost } from "../store/posts/types";
 
 export interface PublicationProps {
@@ -8,14 +9,6 @@ export interface IPublication {
   _id: string;
   name: string;
   icon: string;
-}
-
-export interface IComment {
-  _id?: string;
-  postId: string;
-  userId: string;
-  body: string;
-  date: string;
 }
 
 export interface IUser {

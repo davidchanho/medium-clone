@@ -1,5 +1,5 @@
 import { CardProps } from "react-bootstrap";
-import { IComment } from "../../types";
+import { IComment } from "../comments/types";
 
 export interface IPost {
   _id?: string;
