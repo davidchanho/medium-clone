@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 import produce from "immer";
-import { IPublication } from "../../types";
-import { ActionTypes } from "../action-types";
+import { IPublication } from "./types";
+import { ActionTypes } from "../actionTypes";
 import { Action } from "../actions";
 
 export const initialPublication: IPublication = {

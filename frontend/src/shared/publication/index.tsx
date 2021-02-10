@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { PublicationProps } from "../../types";
+import { PublicationProps } from "../../store/publications/types";
 
 function Publication({ label }: PublicationProps) {
   return (

@@ -4,7 +4,7 @@ import { BsPlus } from "react-icons/bs";
 import { useSelector } from "../../hooks/useSelector";
 import Publication from "../../shared/publication";
 import { publicationSelectors } from "../../store";
-import { IPublication } from "../../types";
+import { IPublication } from "../../store/publications/types";
 
 function TopicsYouFollow() {
   const { publications } = useSelector(publicationSelectors);

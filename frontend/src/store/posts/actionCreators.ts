@@ -1,6 +1,6 @@
 import { Dispatch } from "react";
-import db from "../../api";
-import { ActionTypes } from "../action-types";
+import db from "../api";
+import { ActionTypes } from "../actionTypes";
 import { Action } from "../actions";
 import { IPost } from "./types";
 

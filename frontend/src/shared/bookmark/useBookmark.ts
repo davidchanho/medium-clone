@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useActions } from "../../hooks/useActions";
+import { userSelectors } from "../../store";
 import { IPost } from "../../store/posts/types";
 import { useSelector } from "./../../hooks/useSelector";
-import { userSelectors } from "./../../store/selectors/index";
 
 export const useBookmark = (post: IPost) => {
   const { bookmarkPost } = useActions();

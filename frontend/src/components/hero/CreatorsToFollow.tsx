@@ -2,7 +2,7 @@ import React from "react";
 import { ListGroup } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { userSelectors } from "../../store";
-import { IUser } from "../../types";
+import { IUser } from "../../store/users/types";
 import FellowCreator from "../side-bar/FollowCreator";
 
 function CreatorsToFollow() {

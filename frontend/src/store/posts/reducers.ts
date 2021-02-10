@@ -1,6 +1,6 @@
 import produce from "immer";
 import { IPost } from "./types";
-import { ActionTypes } from "../action-types";
+import { ActionTypes } from "../actionTypes";
 import { Action } from "../actions";
 
 export const initialPost: IPost = {

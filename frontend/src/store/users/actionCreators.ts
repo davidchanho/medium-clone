@@ -1,10 +1,9 @@
 import { Dispatch } from "redux";
-import db from "../../api";
-import { IUser } from "../../types";
-import { IPost } from "../../store/posts/types";
-import { ActionTypes } from "../action-types";
+import db from "../api";
+import { IPost } from "../posts/types";
+import { ActionTypes } from "../actionTypes";
 import { Action } from "../actions";
-
+import { IUser } from "./types";
 
 export const getUsers = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_USERS });
@@ -81,7 +80,6 @@ export const updateUser = (user: IUser) => async (
   }
 };
 
-
 export const bookmarkPost = (post: IPost) => async (
   dispatch: Dispatch<Action>
 ) => {
@@ -94,4 +92,3 @@ export const bookmarkPost = (post: IPost) => async (
     console.log(err);
   }
 };
-

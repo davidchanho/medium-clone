@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
-import db from "../../api";
-import { IPublication } from "../../types";
-import { ActionTypes } from "../action-types";
+import db from "../api";
+import { IPublication } from "./types";
+import { ActionTypes } from "../actionTypes";
 import { Action } from "../actions";
 
 

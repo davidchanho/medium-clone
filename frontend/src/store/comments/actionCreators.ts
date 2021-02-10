@@ -1,7 +1,7 @@
 import { Dispatch } from "react";
-import db from "../../api";
+import db from "../api";
 import { IComment } from "./types";
-import { ActionTypes } from "../action-types";
+import { ActionTypes } from "../actionTypes";
 import { Action } from "../actions";
 
 export const getComments = () => async (dispatch: Dispatch<Action>) => {

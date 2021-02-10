@@ -1,5 +1,5 @@
 import React from "react";
-import { IPublication } from "../../types";
+import { IPublication } from "../../store/publications/types";
 import { usePostForm } from "./usePostForm";
 
 function PostForm() {

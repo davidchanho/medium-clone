@@ -1,5 +1,5 @@
 import { IPost } from "./types";
-import { ActionTypes } from "../action-types";
+import { ActionTypes } from "../actionTypes";
 
 export interface GetPostsAction {
   type: ActionTypes.FETCH_POSTS;

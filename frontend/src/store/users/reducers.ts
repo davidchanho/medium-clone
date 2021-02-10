@@ -1,7 +1,7 @@
 import produce from "immer";
-import { IUser } from "../../types";
-import { ActionTypes } from "../action-types";
+import { ActionTypes } from "../actionTypes";
 import { Action } from "../actions";
+import { IUser } from "./types";
 
 export const initialUser: IUser = {
   _id: "",

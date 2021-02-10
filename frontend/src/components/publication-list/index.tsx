@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { publicationSelectors } from "../../store";
-import { IPublication } from "../../types";
+import { IPublication } from "../../store/publications/types";
 import PublicationItem from "../publication-item";
 
 function PublicationList() {
