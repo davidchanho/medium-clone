@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactComponent as MediumLogo } from "../../asset/medium.svg";
-import PricingCard from "./PricingCard";
+import PricingCard from "../../components/upgrade/PricingCard";
 
 function UpgradePage() {
   return (

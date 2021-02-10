@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import DetailsBar from "../../components/details-bar";
 import PostDetails from "../../components/post-details";
-import usePostsDetailsPage from "./usePostsDetailsPage";
+import { useActions } from "../../hooks/useActions";
 
 function PostDetailsPage() {
-  usePostsDetailsPage();
+  const params = useParams();
+  const { getPost } = useActions();
+
+  useEffect(() => {
+    getPost(params.id);
+  }, []);
 
   return (
     <div className="d-flex">

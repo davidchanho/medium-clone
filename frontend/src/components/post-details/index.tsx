@@ -1,10 +1,31 @@
 import React from "react";
-import { usePostDetails } from "./usePostDetails";
+import { useSelector } from "react-redux";
+import { postSelectors } from "../../store";
 
 function PostDetails() {
-  const { renderPost } = usePostDetails();
+  const { post, loading, error } = useSelector(postSelectors);
 
-  return <div className="w-75">{renderPost()}</div>;
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
+  if (!post) {
+    return null;
+  }
+
+  return (
+    <div className="w-75">
+      <article>
+        <img src={post.image} />
+        <h3>{post.title}</h3>
+        <p> {post.body}</p>
+      </article>
+    </div>
+  );
 }
 
 export default PostDetails;

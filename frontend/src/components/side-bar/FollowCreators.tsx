@@ -5,7 +5,19 @@ import { userSelectors } from "../../store";
 import FellowCreator from "./FollowCreator";
 
 function FollowCreators() {
-  const { users } = useSelector(userSelectors);
+  const { users, loading, error } = useSelector(userSelectors);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!users) {
+    return null;
+  }
 
   return (
     <Card className="mb-4">

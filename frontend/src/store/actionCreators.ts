@@ -1,4 +1,4 @@
 export * from './comments/actionCreators'
 export * from './posts/actionCreators'
-export * from './publications/actionsCreators'
+export * from './publications/actionCreators'
 export * from './users/actionCreators'

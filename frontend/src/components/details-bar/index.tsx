@@ -7,7 +7,19 @@ import Bookmark from "../../shared/bookmark";
 import { postSelectors } from "../../store/posts/selectors";
 
 function DetailsBar() {
-  const { post } = useSelector(postSelectors);
+  const { post, loading, error } = useSelector(postSelectors);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
+  if (!post) {
+    return null;
+  }
 
   return (
     <Card className="w-25">

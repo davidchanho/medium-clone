@@ -1,6 +1,9 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
-import PublicationList from "../publication-list";
+import { useSelector } from "react-redux";
+import { publicationSelectors } from "../../store";
+import { IPublication } from "../../store/publications/types";
+import PublicationItem from "./PublicationItem";
 
 const responsive = {
   desktop: {
@@ -20,9 +23,13 @@ const responsive = {
 };
 
 function PublicationsBar() {
+  const { publications } = useSelector(publicationSelectors);
+
   return (
     <Carousel ssr responsive={responsive}>
-      <PublicationList />
+      {publications.map((publication: IPublication) => {
+        return <PublicationItem publication={publication} />;
+      })}
     </Carousel>
   );
 }

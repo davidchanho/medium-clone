@@ -1,9 +1,22 @@
+import { shuffle } from "lodash";
 import React from "react";
+import { useSelector } from "react-redux";
 import { ReactComponent as TrendingLogo } from "../../asset/trending.svg";
-import useTrendingPosts from "./useTrendingPosts";
+import { postSelectors } from "../../store";
+import TrendingPost from "./TrendingPost";
+import styles from "./TrendingPosts.module.scss";
 
 function TrendingPosts() {
-  const { renderPosts } = useTrendingPosts();
+  const { posts, loading, error } = useSelector(postSelectors);
+  const shufflePosts = shuffle(posts);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>{error}</h1>;
+  }
 
   return (
     <div className="border-bottom mt-4 pb-4">
@@ -11,7 +24,11 @@ function TrendingPosts() {
         <TrendingLogo />
         trending on medium
       </div>
-      {renderPosts()}
+      <div className={`p-4 ${styles.grid}`}>
+        {shufflePosts.slice(0, 6).map((post, index) => (
+          <TrendingPost key={post._id} post={post} index={index} />
+        ))}
+      </div>
     </div>
   );
 }

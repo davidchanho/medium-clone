@@ -1,12 +1,22 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
+import { useActions } from "../../hooks/useActions";
 import { PostProps } from "../../store/posts/types";
 import Bookmark from "../bookmark";
-import { usePost } from "./usePost";
 
 function PostOptions({ post }: PostProps) {
-  const { onDeletePost } = usePost(post);
+  const { deletePost } = useActions();
+
+  const onDeletePost = () => {
+    if (post._id) {
+      deletePost(post._id);
+    }
+  };
+
+  if (!post) {
+    return null;
+  }
 
   return (
     <Dropdown className="mt-auto d-flex align-items-center justify-content-between">

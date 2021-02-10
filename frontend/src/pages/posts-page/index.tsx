@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import Hero from "../../components/hero";
 import PostList from "../../components/post-list";
 import SideBar from "../../components/side-bar";
 import TrendingPosts from "../../components/trending-posts";
-import { usePostsPage } from "./usePostsPage";
+import { useActions } from "../../hooks/useActions";
+import { postSelectors, publicationSelectors, userSelectors } from "../../store";
 
 function PostsPage() {
-  usePostsPage();
+  const { getPosts, getPublications, getUser, getUsers } = useActions();
+  const { posts } = useSelector(postSelectors);
+  const { publications } = useSelector(publicationSelectors);
+  const { users, user } = useSelector(userSelectors);
+
+  useEffect(() => {
+    if (posts.length === 0) {
+      getPosts();
+    }
+    if (publications.length === 0) {
+      getPublications();
+    }
+    if (users.length === 0) {
+      getUsers();
+    }
+    if (!user._id) {
+      getUser("6022cbd41b05807030594efe");
+    }
+  }, []);
 
   return (
     <>

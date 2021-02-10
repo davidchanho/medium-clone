@@ -9,7 +9,19 @@ import Saved from "./Saved";
 
 function ReadingList() {
   const [key, setKey] = useState<string>("saved");
-  const { user } = useSelector(userSelectors);
+  const { user, loading, error } = useSelector(userSelectors);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!user) {
+    return null;
+  }
 
   const items = [
     {

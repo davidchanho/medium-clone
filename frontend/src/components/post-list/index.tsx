@@ -1,11 +1,33 @@
+import { shuffle } from "lodash";
 import React from "react";
 import { CardDeck } from "react-bootstrap";
-import { usePostList } from "./usePostList";
+import { useSelector } from "react-redux";
+import PostsSkeleton from "../../shared/post/PostsSkeleton";
+import { postSelectors } from "../../store";
+import PostListItem from "./PostListItem";
 
 function PostList() {
-  const { renderPosts } = usePostList();
+  const { posts, loading, error } = useSelector(postSelectors);
 
-  return <CardDeck className="w-100 d-flex flex-column pt-5">{renderPosts()}</CardDeck>;
+  if (loading) {
+    return <PostsSkeleton amount={4} />;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
+  if (!posts) {
+    return null;
+  }
+
+  return (
+    <CardDeck className="w-100 d-flex flex-column pt-5">
+      {shuffle(posts).map((post) => (
+        <PostListItem key={`post-${post._id}`} post={post} />
+      ))}
+    </CardDeck>
+  );
 }
 
 export default PostList;

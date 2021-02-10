@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
+import { useActions } from "../../hooks/useActions";
+import { userSelectors } from "../../store";
 import { PostProps } from "../../store/posts/types";
-import { useBookmark } from "./useBookmark";
 
 function Bookmark({ post }: PostProps) {
-  const { isBookmark, onBookmarkPost } = useBookmark(post);
+  const { bookmarkPost } = useActions();
+  const [isBookmark, setBookmark] = useState<boolean>(false);
+  const { user } = useSelector(userSelectors);
+
+  useEffect(() => {
+    if (user.bookmarks.includes(post)) {
+      setBookmark(true);
+    }
+  }, [user.bookmarks]);
+
+  const onBookmarkPost = () => {
+    if (post._id) {
+      bookmarkPost(post);
+    }
+  };
 
   return isBookmark ? (
     <BsBookmarkFill onClick={onBookmarkPost} />

@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, ImageProps } from "react-bootstrap";
 import placeholder from "../../asset/imgPlaceholder.png";
+import { useGetPost } from "../../hooks/useGetPost";
 import { PostProps } from "../../store/posts/types";
-import { usePost } from "./usePost";
 
 function PostImg({
   post,
@@ -10,9 +10,13 @@ function PostImg({
   height = 135,
   className,
 }: PostProps & ImageProps) {
-  const { onGetPost } = usePost(post);
+  const { onGetPost } = useGetPost(post);
 
   const image = post.image;
+
+  if (!post) {
+    return null;
+  }
 
   return (
     <Card.Img

@@ -6,7 +6,19 @@ import { IUser } from "../../store/users/types";
 import FellowCreator from "../side-bar/FollowCreator";
 
 function CreatorsToFollow() {
-  const { users } = useSelector(userSelectors);
+  const { users, loading, error } = useSelector(userSelectors);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
+  if (!users) {
+    return null;
+  }
 
   return (
     <div>

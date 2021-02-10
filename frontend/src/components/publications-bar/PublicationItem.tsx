@@ -1,10 +1,14 @@
 import React from "react";
 import { ListGroupItem } from "react-bootstrap";
+import { useActions } from "../../hooks/useActions";
 import { PublicationItemProps } from "./types";
-import { usePublicationItem } from "./usePublicationItem";
 
 function PublicationItem({ publication }: PublicationItemProps) {
-  const { onGetPublication } = usePublicationItem();
+  const { getPublication } = useActions();
+
+  const onGetPublication = (_id: string) => {
+    getPublication(_id);
+  };
 
   return (
     <ListGroupItem

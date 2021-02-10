@@ -1,9 +1,6 @@
 import React from "react";
 import PostSkeleton from "./PostSkeleton";
-
-interface PostsSkeletonProps {
-  amount: number;
-}
+import { PostsSkeletonProps } from "./types";
 
 function PostsSkeleton({ amount }: PostsSkeletonProps) {
   const arr = new Array(amount)

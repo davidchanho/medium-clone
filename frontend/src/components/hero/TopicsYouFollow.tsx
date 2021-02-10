@@ -7,7 +7,19 @@ import { publicationSelectors } from "../../store";
 import { IPublication } from "../../store/publications/types";
 
 function TopicsYouFollow() {
-  const { publications } = useSelector(publicationSelectors);
+  const { publications, loading, error } = useSelector(publicationSelectors);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
+  if (!publications) {
+    return null;
+  }
 
   return (
     <div>
@@ -21,7 +33,7 @@ function TopicsYouFollow() {
             />
           );
         })}
-        <Button variant="light">
+        <Button variant="light" size='sm' className='p-2 h-50'>
           <BsPlus />
         </Button>
       </div>

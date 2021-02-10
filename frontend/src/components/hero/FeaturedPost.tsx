@@ -5,6 +5,10 @@ import PostImg from "../../shared/post/PostImg";
 import { PostProps } from "../../store/posts/types";
 
 function FeaturedPost({ post }: PostProps) {
+  if(!post) {
+    return null
+  }
+  
   return (
     <Card className="d-flex justify-content-between mb-2">
       <Row>

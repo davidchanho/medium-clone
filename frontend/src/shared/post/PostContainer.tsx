@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { Card } from "react-bootstrap";
 import { PostContainerProps } from "./types";
 
-
 const PostContainer: FC<PostContainerProps> = ({ children, onClick }) => {
   return (
     <Card

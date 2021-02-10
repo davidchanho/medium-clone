@@ -1,16 +1,16 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { useGetPost } from "../../hooks/useGetPost";
 import PostDate from "../../shared/post/PostDate";
 import PostHeader from "../../shared/post/PostHeader";
 import PostImg from "../../shared/post/PostImg";
 import PostOptions from "../../shared/post/PostOptions";
 import PostSubtitle from "../../shared/post/PostSubtitle";
 import PostTitle from "../../shared/post/PostTitle";
-import { usePost } from "../../shared/post/usePost";
 import { PostProps } from "../../store/posts/types";
 
 function PostListItem({ post }: PostProps) {
-  const { onGetPost } = usePost(post);
+  const { onGetPost } = useGetPost(post);
 
   return (
     <Card className="d-flex flex-row mb-1 w-100">
