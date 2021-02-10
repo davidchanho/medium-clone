@@ -31,9 +31,11 @@ function ReadingList() {
   return (
     <Tabs activeKey={key} onSelect={onSelect} id="readingList">
       {items.map(({ eventKey, title, panel }) => {
-        <Tab key={title} eventKey={eventKey} title={title}>
-          {panel}
-        </Tab>;
+        return (
+          <Tab key={title} eventKey={eventKey} title={title}>
+            {panel}
+          </Tab>
+        );
       })}
     </Tabs>
   );

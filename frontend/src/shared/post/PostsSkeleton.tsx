@@ -1,5 +1,5 @@
 import React from "react";
-import PostSkeleton from "../../shared/post/PostSkeleton";
+import PostSkeleton from "./PostSkeleton";
 
 interface PostsSkeletonProps {
   amount: number;

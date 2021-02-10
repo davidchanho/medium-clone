@@ -8,7 +8,7 @@ import { postSelectors } from "../../store";
 
 function DetailsBar() {
   const { post } = useSelector(postSelectors);
-  
+
   return (
     <Card className="w-25">
       <Card.Header className="bg-white">
@@ -22,7 +22,7 @@ function DetailsBar() {
             103
           </ListGroup.Item>
           <ListGroup.Item>
-            <BiMessage /> 1
+            <BiMessage /> {post.comments.length}
           </ListGroup.Item>
           <ListGroup.Item>
             <Bookmark post={post} />

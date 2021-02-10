@@ -1,10 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { publicationSelectors } from "../../store";
 import { IPublication } from "../../types";
 import PublicationItem from "../publication-item";
-import { usePublicationList } from "./usePublicationList";
 
 function PublicationList() {
-  const { publications } = usePublicationList();
+  const { publications } = useSelector(publicationSelectors);
 
   return (
     <>

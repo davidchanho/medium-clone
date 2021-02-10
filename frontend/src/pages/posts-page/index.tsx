@@ -13,7 +13,7 @@ function PostsPage() {
     <>
       <Hero />
       <TrendingPosts />
-      <Row className="mt-5">
+      <Row>
         <Col lg={{ span: 4, offset: 1, order: 2 }}>
           <SideBar />
         </Col>

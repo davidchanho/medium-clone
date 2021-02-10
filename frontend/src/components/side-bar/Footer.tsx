@@ -1,5 +1,4 @@
 import React from "react";
-import Publication from "../../shared/publication";
 
 const items = [
   "Help",
@@ -16,7 +15,7 @@ function Footer() {
   return (
     <div className="d-flex flex-wrap">
       {items.map((item) => {
-        return <Publication key={item} label={item} />;
+        return <p className='mx-3' key={item}>{item}</p>;
       })}
     </div>
   );

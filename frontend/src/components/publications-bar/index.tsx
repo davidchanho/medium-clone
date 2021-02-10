@@ -1,11 +1,25 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import PublicationList from "../publication-list";
-import { usePublicationsBar } from "./usePublicationsBar";
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 5,
+    slidesToSlide: 5,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 3,
+    slidesToSlide: 3,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 function PublicationsBar() {
-  const { responsive } = usePublicationsBar();
-
   return (
     <Carousel ssr responsive={responsive}>
       <PublicationList />

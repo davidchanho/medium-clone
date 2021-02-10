@@ -5,7 +5,7 @@ import ReadingList from "./ReadingList";
 
 function SideBar() {
   return (
-    <div>
+    <div className="sticky-top py-5">
       <ReadingList />
       <FollowCreators />
       <Footer />
