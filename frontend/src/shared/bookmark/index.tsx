@@ -11,10 +11,10 @@ function Bookmark({ post }: PostProps) {
   const { user } = useSelector(userSelectors);
 
   useEffect(() => {
-    if (user.bookmarks.includes(post)) {
+    if (user?.bookmarks.includes(post)) {
       setBookmark(true);
     }
-  }, [user.bookmarks]);
+  }, [user?.bookmarks]);
 
   const onBookmarkPost = () => {
     if (post._id) {

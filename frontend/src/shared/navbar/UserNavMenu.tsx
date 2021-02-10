@@ -20,17 +20,17 @@ function UserNavMenu() {
     <Dropdown alignRight>
       <Dropdown.Toggle className="bg-inherit text-muted shadow-none ">
         {user?.avatar ? (
-          <img src={user.avatar} className="rounded" />
+          <img src={user?.avatar} className="rounded" />
         ) : (
           <BiUserCircle />
         )}
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Item className="d-flex">
-          <img src={user.photo} className="rounded mr-2" />
+          <img src={user?.photo} className="rounded mr-2" />
           <div>
-            <p>{user.name}</p>
-            <p>@{user.email.split("@")[0]}</p>
+            <p>{user?.name}</p>
+            <p>@{user?.email.split("@")[0]}</p>
           </div>
         </Dropdown.Item>
         <Dropdown.Divider />

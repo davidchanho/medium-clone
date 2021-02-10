@@ -1,13 +1,15 @@
 import React from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
-import { BiMessage } from "react-icons/bi";
 import { FaRegHandPaper } from "react-icons/fa";
+import { useFindUserbyPost } from "../../hooks/useFindUserbyPost";
 import { useSelector } from "../../hooks/useSelector";
 import Bookmark from "../../shared/bookmark";
 import { postSelectors } from "../../store/posts/selectors";
+import Comments from "../comments";
 
 function DetailsBar() {
   const { post, loading, error } = useSelector(postSelectors);
+  const user = useFindUserbyPost(post.userId);
 
   if (loading) {
     return <h2>Loading...</h2>;
@@ -24,7 +26,8 @@ function DetailsBar() {
   return (
     <Card className="w-25">
       <Card.Header className="bg-white">
-        Written by name aboutadsfsadfsadfsadfsdfsdf
+        <p>Written by {user?.name}</p>
+        <p>{user?.about}</p>
         <Button>Follow</Button>
       </Card.Header>
       <Card.Body>
@@ -34,7 +37,7 @@ function DetailsBar() {
             103
           </ListGroup.Item>
           <ListGroup.Item>
-            <BiMessage /> {post.comments.length}
+            <Comments post={post} />
           </ListGroup.Item>
           <ListGroup.Item>
             <Bookmark post={post} />

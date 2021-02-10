@@ -25,7 +25,7 @@ function PostsPage() {
       getUsers();
     }
     if (!user._id) {
-      getUser("6022cbd41b05807030594efe");
+      getUser("6024670da4cf7653c06c6dd3");
     }
   }, []);
 

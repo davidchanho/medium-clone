@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LandingPage from "../../pages/landing-page";
 import PostDetailsPage from "../../pages/post-details-page";
 import PostFormPage from "../../pages/post-form-page";
 import PostsPage from "../../pages/posts-page";
@@ -11,6 +12,7 @@ function Routing() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* <Route path="/" element={<LandingPage />} /> */}
         <Route element={<Template />}>
           <Route path="/" element={<PostsPage />} />
           <Route path="/create" element={<PostFormPage />} />

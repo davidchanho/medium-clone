@@ -25,13 +25,12 @@ function ReadingList() {
 
   const items = [
     {
-      eventKey: "saved",
-      title: `Saved (${user.bookmarks.length})`,
+      title: `Saved (${user?.bookmarks.length})`,
       panel: <Saved />,
     },
-    { eventKey: "archived", title: "archived", panel: <Archived /> },
-    { eventKey: "highlights", title: "highlights", panel: <Highlight /> },
-    { eventKey: "recent", title: "recent", panel: <Recent /> },
+    { title: "Archived", panel: <Archived /> },
+    { title: "Highlights", panel: <Highlight /> },
+    { title: "Recent", panel: <Recent /> },
   ];
 
   const onSelect = (k: any) => {
@@ -41,9 +40,9 @@ function ReadingList() {
   };
 
   const renderTabs = () => {
-    return items.map(({ eventKey, title, panel }) => {
+    return items.map(({ title, panel }) => {
       return (
-        <Tab key={title} eventKey={eventKey} title={title}>
+        <Tab key={title} eventKey={title} title={title}>
           {panel}
         </Tab>
       );

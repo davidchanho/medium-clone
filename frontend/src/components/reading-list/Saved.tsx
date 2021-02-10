@@ -19,7 +19,7 @@ function Saved() {
   }
 
   const renderUser = () => {
-    return user.bookmarks.map((bookmark) => {
+    return user?.bookmarks.map((bookmark) => {
       return (
         <ListGroupItem key={`saved-${bookmark._id}`}>
           {bookmark.title}
