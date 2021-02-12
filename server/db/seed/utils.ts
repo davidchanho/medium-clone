@@ -2,49 +2,24 @@ import faker from "faker";
 import _ from "lodash";
 import mongoose from "mongoose";
 import db from "../models";
+import {
+  calcReadTime,
+  generateBody,
+  generateDate,
+  generateId,
+  generatePhoto,
+  generateRandomNumber,
+} from "./helpers";
 
-const PUBLICATIONS_AMOUNT = 5;
+export const PUBLICATIONS_AMOUNT = 5;
 
-const generateRandomNumber = () => {
-  return _.random(3, 7);
-};
-
-const generatePubName = () => {
-  return _.capitalize(faker.lorem.word(8));
-};
-
-const generateBody = () => {
-  return _.capitalize(faker.lorem.paragraph(5));
-};
-
-const generateId = () => {
-  return new mongoose.Types.ObjectId();
-};
-
-const generateDate = () => {
-  const today = new Date().toDateString();
-
-  return faker.date.between("2020-01-01", today);
-};
-
-const calcReadTime = (body: string) => {
-  const wordCount = body.split(" ").length;
-  const wordsPerMinute = 275;
-  const readingTime = Math.ceil(wordCount / wordsPerMinute);
-  return `${readingTime} min read`;
-};
-
-const generatePub = (publicationId: mongoose.Types._ObjectId) => {
+export const generatePub = (publicationId: mongoose.Types._ObjectId) => {
   return new db.Publication({
     _id: publicationId,
     icon: generatePhoto(20, 20),
-    name: generatePubName(),
+    name: _.capitalize(faker.lorem.word(8)),
     posts: [],
   });
-};
-
-const generateTitle = () => {
-  return _.capitalize(faker.lorem.words(3));
 };
 
 const generatePost = (
@@ -57,7 +32,7 @@ const generatePost = (
     _id: postId,
     publicationId,
     userId: "",
-    title: generateTitle(),
+    title: _.capitalize(faker.lorem.words(3)),
     body,
     image: generatePhoto(200, 135),
     date: generateDate(),
@@ -66,36 +41,14 @@ const generatePost = (
   });
 };
 
-const generatePhoto = (width: number, height: number) => {
-  return `${faker.image.animals(width, height)}?random=${Math.round(
-    Math.random() * 1000
-  )}`;
-};
-
-const generateEmail = () => {
-  return faker.internet.email();
-};
-
-const generatePassword = () => {
-  return faker.internet.password();
-};
-
-const generateName = () => {
-  return `${faker.name.firstName()} ${faker.name.lastName()}`;
-};
-
-const generateAbout = () => {
-  return faker.lorem.lines(4);
-};
-
-const generateUser = () => {
+export const generateUser = () => {
   return new db.User({
     avatar: generatePhoto(30, 30),
     photo: generatePhoto(60, 60),
-    email: generateEmail(),
-    password: generatePassword(),
-    name: generateName(),
-    about: generateAbout(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+    name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+    about: faker.lorem.lines(4),
     posts: [],
     comments: [],
   });
@@ -122,7 +75,7 @@ const generateComments = (postId: mongoose.Types._ObjectId) => {
   });
 };
 
-const generatePosts = (publicationId: mongoose.Types._ObjectId) => {
+export const generatePosts = (publicationId: mongoose.Types._ObjectId) => {
   return _.times(generateRandomNumber(), () => {
     const postId = generateId();
 
@@ -138,49 +91,3 @@ const generatePosts = (publicationId: mongoose.Types._ObjectId) => {
   });
 };
 
-const generateSampleSize = (arr: any[]) => {
-  const shuffledArr = _.shuffle(arr);
-  return _.sampleSize(shuffledArr, generateRandomNumber());
-};
-
-export const generatePublications = () =>
-  _.times(PUBLICATIONS_AMOUNT, () => {
-    connectDb();
-
-    mongoose.connection.dropDatabase();
-
-    const publicationId = generateId();
-
-    const newPub = generatePub(publicationId);
-
-    const posts = generatePosts(publicationId);
-
-    const postsSample = generateSampleSize(posts);
-
-    const user = generateUser();
-
-    newPub.posts = posts;
-    user.posts = postsSample;
-
-    Promise.all([newPub.save(), user.save()])
-      .then(() => {
-        console.log("seeding successful");
-        process.exit(0);
-      })
-      .catch((err) => {
-        console.log(err.message);
-        process.exit(1);
-      });
-  });
-
-export const connectDb = () => {
-  return mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/medium",
-    {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true,
-    }
-  );
-};

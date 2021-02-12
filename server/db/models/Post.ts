@@ -19,7 +19,7 @@ const postSchema = new Schema(
     },
     userId: {
       type: String,
-      ref: "user"
+      ref: "user",
     },
     title: {
       type: String,
@@ -45,7 +45,7 @@ const postSchema = new Schema(
       default: new Date().toString(),
     },
   },
-  { timestamps: true }
+  { toJSON: { virtuals: true }, timestamps: true }
 );
 
 const Post = model<IPostDoc>("post", postSchema);
