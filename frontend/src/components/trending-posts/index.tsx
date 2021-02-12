@@ -19,12 +19,12 @@ function TrendingPosts() {
   }
 
   const renderPosts = () => {
-    return (
-      shufflePosts.slice(0, 6).map((post, index) => (
+    return shufflePosts
+      .slice(0, 6)
+      .map((post, index) => (
         <TrendingPost key={post._id} post={post} index={index} />
-      ))
-    )
-  }
+      ));
+  };
 
   return (
     <div className="border-bottom mt-4 pb-4">
@@ -32,9 +32,7 @@ function TrendingPosts() {
         <TrendingLogo />
         trending on medium
       </div>
-      <div className={`p-4 ${styles.grid}`}>
-        {renderPosts()}
-      </div>
+      <div className={`p-4 ${styles.grid}`}>{renderPosts()}</div>
     </div>
   );
 }

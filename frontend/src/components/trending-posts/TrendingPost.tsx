@@ -1,6 +1,11 @@
 import React from "react";
 import Post from "../../shared/post";
-import { TrendingPostProps } from "./types";
+import { IPost } from "../../store/posts/types";
+
+interface TrendingPostProps {
+  post: IPost;
+  index: number;
+}
 
 function TrendingPost({ post, index }: TrendingPostProps) {
   return (

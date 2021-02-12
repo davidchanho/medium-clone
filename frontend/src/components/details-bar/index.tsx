@@ -9,7 +9,7 @@ import Comments from "../comments";
 
 function DetailsBar() {
   const { post, loading, error } = useSelector(postSelectors);
-  
+
   const user = useFindUserbyPost(post.userId);
 
   if (loading) {

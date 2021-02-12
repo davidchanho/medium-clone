@@ -1,7 +1,13 @@
 import React from "react";
 import { Button, ListGroupItem } from "react-bootstrap";
 import { clampText } from "../../helpers/clampText";
-import { FollowCreatorProps } from "./types";
+import { IUser } from "../../store/users/types";
+
+interface FollowCreatorProps {
+  user: IUser;
+  className?: string;
+  imgStyles?: string;
+}
 
 function FollowCreator({ user, className, imgStyles }: FollowCreatorProps) {
   if (!user) {

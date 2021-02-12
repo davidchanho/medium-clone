@@ -1,7 +1,11 @@
 import React from "react";
 import { ListGroupItem } from "react-bootstrap";
 import { useActions } from "../../hooks/useActions";
-import { PublicationItemProps } from "./types";
+import { IPublication } from "../../store/publications/types";
+
+interface PublicationItemProps {
+  publication: IPublication;
+}
 
 function PublicationItem({ publication }: PublicationItemProps) {
   const { getPublication } = useActions();

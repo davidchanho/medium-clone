@@ -22,11 +22,11 @@ function Bookmark({ post }: PostProps) {
     }
   };
 
-  return isBookmark ? (
-    <BsBookmarkFill onClick={onBookmarkPost} />
-  ) : (
-    <BsBookmark onClick={onBookmarkPost} />
-  );
+  if (isBookmark) {
+    return <BsBookmarkFill onClick={onBookmarkPost} />;
+  }
+
+  return <BsBookmark onClick={onBookmarkPost} />;
 }
 
 export default Bookmark;

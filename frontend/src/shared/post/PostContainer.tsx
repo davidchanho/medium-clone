@@ -1,6 +1,9 @@
 import React, { FC } from "react";
 import { Card } from "react-bootstrap";
-import { PostContainerProps } from "./types";
+
+interface PostContainerProps {
+  onClick: () => void;
+}
 
 const PostContainer: FC<PostContainerProps> = ({ children, onClick }) => {
   return (

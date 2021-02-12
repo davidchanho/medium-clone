@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
-import { PricingCardProps } from "./types";
+
+interface PricingCardProps {
+  freq: string;
+  price: string;
+}
 
 function PricingCard({ freq, price }: PricingCardProps) {
   const [isHover, setHover] = useState<boolean>(false);
