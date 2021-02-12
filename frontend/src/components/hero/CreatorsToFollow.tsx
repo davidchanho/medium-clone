@@ -1,9 +1,9 @@
 import React from "react";
-import { ListGroup } from "react-bootstrap";
+import { Button, ListGroup, ListGroupItem } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { clampText } from "../../helpers/clampText";
 import { userSelectors } from "../../store";
 import { IUser } from "../../store/users/types";
-import FellowCreator from "../side-bar/FollowCreator";
 
 function CreatorsToFollow() {
   const { users, loading, error } = useSelector(userSelectors);
@@ -25,11 +25,18 @@ function CreatorsToFollow() {
       <ListGroup>
         {users.slice(0, 2).map((user: IUser) => {
           return (
-            <FellowCreator
-              imgStyles="rounded-circle"
-              key={`follow-creators-${user?._id}`}
-              user={user}
-            />
+            <ListGroupItem className="w-100 d-flex justify-content-between">
+              <img src={user.photo} className="rounded-circle" />
+
+              <div className="w-50 mx-2">
+                <p className="font-weight-bold">{user.name}</p>
+                <p>{clampText(user.about, 35)}</p>
+              </div>
+
+              <Button variant="success" className="h-50 my-auto">
+                Follow
+              </Button>
+            </ListGroupItem>
           );
         })}
       </ListGroup>
