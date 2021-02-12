@@ -36,9 +36,4 @@ export default {
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
-  seedUsers: (req: Request, res: Response) => {
-    db.User.insertMany(req.body)
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
-  },
 };

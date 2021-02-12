@@ -1,13 +1,13 @@
-import { nanoid } from "nanoid";
 import produce from "immer";
-import { IPublication } from "./types";
-import { ActionTypes } from "../actionTypes";
+import { nanoid } from "nanoid";
 import { Action } from "../actions";
+import { ActionTypes } from "../actionTypes";
+import { IPublication } from "./types";
 
 export const initialPublication: IPublication = {
   _id: nanoid(),
   name: "",
-  icon: '',
+  icon: "",
 };
 
 export interface IPublicationsState {
@@ -30,9 +30,6 @@ const publicationsReducers = produce(
     action: Action
   ): IPublicationsState => {
     switch (action.type) {
-      case ActionTypes.ADD_PUBLICATION:
-        state.publications.push(action.payload);
-        return state;
       case ActionTypes.FETCH_PUBLICATIONS:
         state.loading = true;
         state.error = "";
@@ -56,20 +53,6 @@ const publicationsReducers = produce(
       case ActionTypes.FETCH_PUBLICATION_FAIL:
         state.loading = false;
         state.error = action.payload;
-        return state;
-      case ActionTypes.DELETE_PUBLICATION:
-        const deletePublicationIndex = state.publications.findIndex(
-          (publication) => publication._id === action.payload
-        );
-        if (deletePublicationIndex !== -1)
-          state.publications.splice(deletePublicationIndex, 1);
-        return state;
-      case ActionTypes.UPDATE_PUBLICATION:
-        const updatePublicationIndex = state.publications.findIndex(
-          (publication) => publication._id === action.payload._id
-        );
-        if (updatePublicationIndex !== -1)
-          state.publications.splice(updatePublicationIndex, 1, action.payload);
         return state;
       default:
         return state;

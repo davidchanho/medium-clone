@@ -29,21 +29,6 @@ export interface GetPublicationFailAction {
   payload: string;
 }
 
-export interface AddPublicationAction {
-  type: ActionTypes.ADD_PUBLICATION;
-  payload: IPublication;
-}
-
-export interface DeletePublicationAction {
-  type: ActionTypes.DELETE_PUBLICATION;
-  payload: string;
-}
-
-export interface UpdatePublicationAction {
-  type: ActionTypes.UPDATE_PUBLICATION;
-  payload: IPublication;
-}
-
 export type PublicationAction =
   | GetPublicationsAction
   | GetPublicationsSuccessAction
@@ -51,6 +36,3 @@ export type PublicationAction =
   | GetPublicationAction
   | GetPublicationSuccessAction
   | GetPublicationFailAction
-  | AddPublicationAction
-  | DeletePublicationAction
-  | UpdatePublicationAction;

@@ -32,9 +32,4 @@ export default {
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
-  seedComments: (req: Request, res: Response) => {
-    db.Comment.insertMany(req.body)
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
-  },
 };

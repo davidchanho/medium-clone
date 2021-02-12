@@ -12,13 +12,4 @@ export const publications = {
     const { data } = await axios.get<IPublication>(publicationsUrl + _id);
     return data;
   },
-  addPublication(publication: IPublication) {
-    axios.post<any>(publicationsUrl, publication.name);
-  },
-  deletePublication(_id: string) {
-    axios.delete<string>(publicationsUrl + _id);
-  },
-  updatePublication(post: IPublication) {
-    axios.put<string>(publicationsUrl + post._id, post);
-  },
 };

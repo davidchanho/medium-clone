@@ -1,9 +1,7 @@
 import { Dispatch } from "redux";
-import db from "../api";
-import { IPublication } from "./types";
-import { ActionTypes } from "../actionTypes";
 import { Action } from "../actions";
-
+import { ActionTypes } from "../actionTypes";
+import db from "../api";
 
 export const getPublications = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_PUBLICATIONS });
@@ -38,44 +36,5 @@ export const getPublication = (_id: string) => async (
       type: ActionTypes.FETCH_PUBLICATION_FAIL,
       payload: err,
     });
-  }
-};
-
-export const addPublication = (publication: IPublication) => async (
-  dispatch: Dispatch<Action>
-) => {
-  try {
-    db.addPublication(publication);
-    dispatch({ type: ActionTypes.ADD_PUBLICATION, payload: publication });
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const deletePublication = (_id: string) => async (
-  dispatch: Dispatch<Action>
-) => {
-  try {
-    db.deletePublication(_id);
-    dispatch({
-      type: ActionTypes.DELETE_PUBLICATION,
-      payload: _id,
-    });
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const updatePublication = (publication: IPublication) => async (
-  dispatch: Dispatch<Action>
-) => {
-  try {
-    db.updatePublication(publication);
-    dispatch({
-      type: ActionTypes.UPDATE_PUBLICATION,
-      payload: publication,
-    });
-  } catch (err) {
-    console.log(err);
   }
 };

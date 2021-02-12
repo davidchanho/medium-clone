@@ -4,17 +4,9 @@ import publicationsControllers from "../../controllers/publicationsControllers";
 const router = express.Router();
 
 // Matches with "/api/publications"
-router
-  .route("/")
-  .get(publicationsControllers.getPublications)
-  .post(publicationsControllers.addPublication);
+router.route("/").get(publicationsControllers.getPublications);
 
 // Matches with "/api/publications/:id"
-router
-  .route("/:id")
-  .get(publicationsControllers.getPublication)
-  .put(publicationsControllers.updatePublication);
-
-router.route('/:id/posts').get(publicationsControllers.getPublicationPosts)
+router.route("/:id").get(publicationsControllers.getPublication);
 
 export default router;
