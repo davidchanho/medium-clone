@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
+import DetailsHeader from "./DetailsHeader";
+import DetailsImg from "./DetailsImg";
 
 function PostDetails() {
   const { post, loading, error } = useSelector(postSelectors);
@@ -20,9 +22,10 @@ function PostDetails() {
   return (
     <div className="w-75">
       <article>
-        <img src={post.image} />
         <h3>{post.title}</h3>
-        <p> {post.body}</p>
+        <DetailsHeader post={post} />
+        <DetailsImg post={post} />
+        <p>{post.body}</p>
       </article>
     </div>
   );

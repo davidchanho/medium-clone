@@ -45,7 +45,7 @@ const postSchema = new Schema(
       default: new Date().toString(),
     },
   },
-  { toJSON: { virtuals: true }, timestamps: true }
+  { timestamps: true }
 );
 
 const Post = model<IPostDoc>("post", postSchema);

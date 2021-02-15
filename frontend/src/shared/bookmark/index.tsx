@@ -23,10 +23,10 @@ function Bookmark({ post }: PostProps) {
   };
 
   if (isBookmark) {
-    return <BsBookmarkFill onClick={onBookmarkPost} />;
+    return <BsBookmarkFill onClick={onBookmarkPost} size="28" />;
   }
 
-  return <BsBookmark onClick={onBookmarkPost} />;
+  return <BsBookmark onClick={onBookmarkPost} size="28" />;
 }
 
 export default Bookmark;

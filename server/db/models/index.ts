@@ -7,5 +7,5 @@ export default {
   Comment,
   Post,
   Publication,
-  User
+  User,
 };

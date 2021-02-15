@@ -2,7 +2,7 @@ import compression from "compression";
 import cors from "cors";
 import express from "express";
 import logger from "morgan";
-import connectDB from "./db";
+import startDB from "./db";
 import routes from "./routes";
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(logger("dev"));
 app.use(compression());
 app.use(cors({ origin: `http://localhost:${PORT}` }));
 
-connectDB();
+startDB();
 
 app.use(routes);
 

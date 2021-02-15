@@ -12,7 +12,6 @@ export const generateId = () => {
 
 export const generateDate = () => {
   const today = new Date().toDateString();
-
   return faker.date.between("2020-01-01", today);
 };
 

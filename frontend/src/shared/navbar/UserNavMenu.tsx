@@ -17,15 +17,11 @@ function UserNavMenu() {
   }
 
   const renderToggle = () => {
-    return (
-      <Dropdown.Toggle className="bg-inherit text-muted shadow-none">
-        {user?.avatar ? (
-          <img src={user?.avatar} className="rounded" />
-        ) : (
-          <BiUserCircle />
-        )}
-      </Dropdown.Toggle>
-    );
+    if (user?.avatar) {
+      <img src={user?.avatar} className="rounded" />;
+    }
+
+    return <BiUserCircle />;
   };
 
   const renderHeader = () => {
@@ -42,7 +38,9 @@ function UserNavMenu() {
 
   return (
     <Dropdown alignRight>
-      {renderToggle()}
+      <Dropdown.Toggle className="text-muted shadow-none">
+        {renderToggle()}
+      </Dropdown.Toggle>
       <Dropdown.Menu>
         {renderHeader()}
         <Dropdown.Divider />

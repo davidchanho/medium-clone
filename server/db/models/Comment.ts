@@ -15,7 +15,7 @@ const commentSchema = new Schema(
     },
     userId: {
       type: String,
-      ref: "user"
+      ref: "user",
     },
     body: {
       type: String,

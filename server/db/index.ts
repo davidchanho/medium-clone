@@ -12,7 +12,7 @@ export const connectDb = () => {
   );
 };
 
-const connectDB = async () => {
+const startDB = async () => {
   try {
     await connectDb();
   } catch (err) {
@@ -21,4 +21,4 @@ const connectDB = async () => {
   }
 };
 
-export default connectDB;
+export default startDB;
