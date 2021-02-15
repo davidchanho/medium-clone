@@ -1,10 +1,10 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { useGetPost } from "../../hooks/useGetPost";
+import PostOptions from "../../shared/post-options";
 import PostDate from "../../shared/post/PostDate";
 import PostHeader from "../../shared/post/PostHeader";
 import PostImg from "../../shared/post/PostImg";
-import PostOptions from "../../shared/post/PostOptions";
 import PostSubtitle from "../../shared/post/PostSubtitle";
 import PostTitle from "../../shared/post/PostTitle";
 import { PostProps } from "../../store/posts/types";

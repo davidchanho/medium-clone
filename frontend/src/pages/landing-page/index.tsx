@@ -1,3 +1,4 @@
+import faker from "faker";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -5,9 +6,17 @@ import LandingHero from "../../components/hero/LandingHero";
 import PostList from "../../components/post-list";
 import TrendingPosts from "../../components/trending-posts";
 import LandingNavbar from "../../shared/navbar/LandingNavbar";
-import Publication from "../../shared/publication";
+import Publication from "../../shared/topic";
 import { publicationSelectors } from "../../store";
-import { IPublication } from "../../store/publications/types";
+
+const topics = [
+  faker.lorem.word(5),
+  faker.lorem.word(5),
+  faker.lorem.word(5),
+  faker.lorem.word(5),
+  faker.lorem.word(5),
+  faker.lorem.word(5),
+];
 
 function LandingPage() {
   const { publications, loading, error } = useSelector(publicationSelectors);
@@ -24,14 +33,9 @@ function LandingPage() {
     return null;
   }
 
-  const renderPublications = () => {
-    return publications.map((publication: IPublication) => {
-      return (
-        <Publication
-          key={`topics-you-follow-${publication._id}`}
-          label={publication.name}
-        />
-      );
+  const renderTopics = () => {
+    return topics.map((topic: string) => {
+      return <Publication key={`topics-you-follow-${topic}`} label={topic} />;
     });
   };
 
@@ -44,9 +48,12 @@ function LandingPage() {
       </div>
       <TrendingPosts />
       <Row>
-        <Col lg={{ span: 4, offset: 1, order: 2 }} className="text-uppercase pt-5">
+        <Col
+          lg={{ span: 4, offset: 1, order: 2 }}
+          className="text-uppercase pt-5"
+        >
           <h5>discover more of what matters to you</h5>
-          {renderPublications()}
+          {renderTopics()}
         </Col>
         <Col lg={7}>
           <PostList />

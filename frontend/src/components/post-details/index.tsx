@@ -22,7 +22,7 @@ function PostDetails() {
   return (
     <div className="w-75">
       <article>
-        <h3>{post.title}</h3>
+        <h1>{post.title}</h1>
         <DetailsHeader post={post} />
         <DetailsImg post={post} />
         <p>{post.body}</p>

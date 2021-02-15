@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { PublicationProps } from "../../store/publications/types";
+import { TopicProps } from "../../store/publications/types";
 
-function Publication({ label }: PublicationProps) {
+function Topic({ label }: TopicProps) {
   return (
     <Button variant="light" className="mr-2 mb-2">
       {label}
@@ -10,4 +10,4 @@ function Publication({ label }: PublicationProps) {
   );
 }
 
-export default Publication;
+export default Topic;

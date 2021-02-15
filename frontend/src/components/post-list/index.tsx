@@ -4,7 +4,7 @@ import { CardDeck } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import PostsSkeleton from "../../shared/post/PostsSkeleton";
 import { postSelectors } from "../../store";
-import PostListItem from "./PostListItem";
+import PostListItem from "../post-list-item";
 
 function PostList() {
   const { posts, loading, error } = useSelector(postSelectors);

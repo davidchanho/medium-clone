@@ -32,21 +32,16 @@ function DetailsBar() {
   const renderBody = () => {
     return (
       <Card.Body as={ListGroup}>
-        <ListGroup.Item>
-          <Clap />
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <Comments post={post} />
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <Bookmark post={post} />
-        </ListGroup.Item>
+        <Clap />
+        <Comments post={post} />
+        <Bookmark post={post} />
       </Card.Body>
     );
   };
 
   return (
     <Card className="w-25">
+      fdsgsdgsdgsdg
       {renderHeader()} {renderBody()}{" "}
     </Card>
   );
