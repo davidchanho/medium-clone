@@ -3,7 +3,7 @@ import { Dropdown } from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
 import { PostProps } from "../../store/posts/types";
 import Bookmark from "../bookmark";
-import PostOption from "../post-option";
+import PostOption from "./PostOption";
 
 const options = [
   "Dismiss this story",

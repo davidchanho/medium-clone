@@ -1,11 +1,10 @@
-import { shuffle } from "lodash";
 import React from "react";
 import { Card } from "react-bootstrap";
 import { BsBookmarks } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import Post from "../../shared/post";
 import { postSelectors } from "../../store";
+import Post from "../post";
 
 function ReadingList() {
   const { posts, loading, error } = useSelector(postSelectors);
@@ -23,20 +22,19 @@ function ReadingList() {
   }
 
   const renderPosts = () => {
-    return (
-      shuffle(posts)
+    return posts
       .slice(0, 5)
       .map((post) => (
-        <Post key={`post-${post._id}`} post={post} className="mb-3" />
-      ))
-    )
-  }
+        <Post key={`post-${post._id}`} post={post} className="mb-5" />
+      ));
+  };
 
   return (
     <Card className="mb-4">
       <Card.Header className="font-weight-bold text-uppercase d-flex align-items-center">
         <BsBookmarks className="mr-2" /> reading list
       </Card.Header>
+
       <Card.Body className="bg-light pt-1">
         {renderPosts()}
         <NavLink

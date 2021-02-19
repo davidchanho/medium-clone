@@ -10,6 +10,7 @@ function Comments({ post }: PostProps) {
       <ListGroup.Item className="d-flex align-items-center">
         <BiMessage className="mr-3" /> {post.comments.length}
       </ListGroup.Item>
+
       <Modal>
         <ModalHeader closeButton>Responses</ModalHeader>
         <ModalBody>

@@ -3,10 +3,10 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import LandingHero from "../../components/hero/LandingHero";
+import LandingNavbar from "../../components/navbar/LandingNavbar";
 import PostList from "../../components/post-list";
+import Topic from "../../components/topic";
 import TrendingPosts from "../../components/trending-posts";
-import LandingNavbar from "../../shared/navbar/LandingNavbar";
-import Publication from "../../shared/topic";
 import { publicationSelectors } from "../../store";
 
 const topics = [
@@ -35,7 +35,7 @@ function LandingPage() {
 
   const renderTopics = () => {
     return topics.map((topic: string) => {
-      return <Publication key={`topics-you-follow-${topic}`} label={topic} />;
+      return <Topic key={`topics-you-follow-${topic}`} label={topic} />;
     });
   };
 

@@ -2,9 +2,9 @@ import { shuffle } from "lodash";
 import React from "react";
 import { CardDeck } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import PostsSkeleton from "../../shared/post/PostsSkeleton";
 import { postSelectors } from "../../store";
-import PostListItem from "../post-list-item";
+import PostListItem from "./PostListItem";
+import PostsSkeleton from "../post/PostsSkeleton";
 
 function PostList() {
   const { posts, loading, error } = useSelector(postSelectors);
@@ -22,12 +22,10 @@ function PostList() {
   }
 
   const renderPosts = () => {
-    return (
-      shuffle(posts).map((post) => (
-        <PostListItem key={`post-${post._id}`} post={post} />
-      ))
-    )
-  }
+    return shuffle(posts).map((post) => (
+      <PostListItem key={`post-${post._id}`} post={post} />
+    ));
+  };
 
   return (
     <CardDeck className="w-100 d-flex flex-column pt-5">

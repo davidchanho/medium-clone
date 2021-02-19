@@ -3,9 +3,9 @@ import { Button, Col, Row } from "react-bootstrap";
 import { AiFillFacebook, AiFillLinkedin } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { FaTwitter } from "react-icons/fa";
-import PostOptions from "../../shared/post-options";
-import PostDate from "../../shared/post/PostDate";
 import { PostProps } from "../../store/posts/types";
+import PostOptions from "../post-options";
+import PostDate from "../post/PostDate";
 
 function DetailsHeader({ post }: PostProps) {
   return (

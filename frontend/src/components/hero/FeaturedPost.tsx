@@ -1,14 +1,14 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import Post from "../../shared/post";
-import PostImg from "../../shared/post/PostImg";
 import { PostProps } from "../../store/posts/types";
+import Post from "../post";
+import PostImg from "../post/PostImg";
 
 function FeaturedPost({ post }: PostProps) {
-  if(!post) {
-    return null
+  if (!post) {
+    return null;
   }
-  
+
   return (
     <Card className="d-flex justify-content-between mb-2">
       <Row>

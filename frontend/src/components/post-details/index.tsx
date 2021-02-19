@@ -20,14 +20,12 @@ function PostDetails() {
   }
 
   return (
-    <div className="w-75">
-      <article>
-        <h1>{post.title}</h1>
-        <DetailsHeader post={post} />
-        <DetailsImg post={post} />
-        <p>{post.body}</p>
-      </article>
-    </div>
+    <article className="w-75">
+      <h1>{post.title}</h1>
+      <DetailsHeader post={post} />
+      <DetailsImg post={post} />
+      <p className="m-4">{post.body}</p>
+    </article>
   );
 }
 

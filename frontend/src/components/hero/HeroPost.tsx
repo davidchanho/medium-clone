@@ -1,10 +1,10 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import PostHeader from "../../shared/post/PostHeader";
-import PostImg from "../../shared/post/PostImg";
-import PostSubtitle from "../../shared/post/PostSubtitle";
-import PostTitle from "../../shared/post/PostTitle";
 import { PostProps } from "../../store/posts/types";
+import PostHeader from "../post/PostHeader";
+import PostImg from "../post/PostImg";
+import PostSubtitle from "../post/PostSubtitle";
+import PostTitle from "../post/PostTitle";
 
 function HeroPost({ post }: PostProps) {
   if (!post) {
@@ -13,10 +13,12 @@ function HeroPost({ post }: PostProps) {
 
   return (
     <Card key={`hero-${post._id}`}>
-      <PostImg post={post} className="mb-2 h-100 w-100" />
-      <PostHeader post={post} className="mb-2" />
-      <PostTitle post={post} className="mb-2" />
-      <PostSubtitle post={post} className="mb-2" />
+      <div>
+        <PostImg post={post} className="mb-2 h-100 w-100" />
+        <PostHeader post={post} className="mb-2" />
+        <PostTitle post={post} className="mb-2" />
+        <PostSubtitle post={post} className="mb-2" />
+      </div>
       <div className="text-secondary d-flex">
         Read More &middot; {post.readingTime}
       </div>

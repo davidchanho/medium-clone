@@ -1,6 +1,6 @@
 import React from "react";
-import Post from "../../shared/post";
 import { IPost } from "../../store/posts/types";
+import Post from "../post";
 
 interface TrendingPostProps {
   post: IPost;

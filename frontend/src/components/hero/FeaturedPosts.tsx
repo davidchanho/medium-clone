@@ -1,4 +1,3 @@
-import { shuffle } from "lodash";
 import React from "react";
 import { CardDeck } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -21,7 +20,7 @@ function FeaturedPosts() {
   }
 
   const renderPosts = () => {
-    return shuffle(posts)
+    return posts
       .slice(0, 4)
       .map((post) => <FeaturedPost key={`featured-${post._id}`} post={post} />);
   };

@@ -2,7 +2,7 @@ import faker from "faker";
 import React from "react";
 import { Button } from "react-bootstrap";
 import { BsPlus } from "react-icons/bs";
-import Publication from "../../shared/topic";
+import Topic from "../topic";
 
 const topics = [
   faker.lorem.word(5),
@@ -16,7 +16,7 @@ const topics = [
 function TopicsYouFollow() {
   const renderTopics = () => {
     return topics.map((topic: string) => {
-      return <Publication key={`topics-you-follow-${topic}`} label={topic} />;
+      return <Topic key={`topics-you-follow-${topic}`} label={topic} />;
     });
   };
 

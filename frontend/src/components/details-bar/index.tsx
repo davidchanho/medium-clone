@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
 import { useSelector } from "../../hooks/useSelector";
-import Bookmark from "../../shared/bookmark";
 import { postSelectors } from "../../store/posts/selectors";
+import Bookmark from "../bookmark";
 import Clap from "../clap";
 import Comments from "../comments";
 
@@ -42,7 +42,7 @@ function DetailsBar() {
   return (
     <Card className="w-25">
       fdsgsdgsdgsdg
-      {renderHeader()} {renderBody()}{" "}
+      {renderHeader()} {renderBody()}
     </Card>
   );
 }

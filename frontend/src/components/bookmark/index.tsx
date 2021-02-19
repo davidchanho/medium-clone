@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { ListGroup } from "react-bootstrap";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
@@ -24,13 +23,13 @@ function Bookmark({ post }: PostProps) {
   };
 
   return (
-    <ListGroup.Item className="d-flex align-items-center">
+    <>
       {isBookmark ? (
-        <BsBookmarkFill onClick={onBookmarkPost} size="28" />
+        <BsBookmarkFill onClick={onBookmarkPost} size="22" />
       ) : (
-        <BsBookmark onClick={onBookmarkPost} size="28" />
+        <BsBookmark onClick={onBookmarkPost} size="22" />
       )}
-    </ListGroup.Item>
+    </>
   );
 }
 

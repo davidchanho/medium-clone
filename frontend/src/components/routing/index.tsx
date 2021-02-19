@@ -1,12 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LandingPage from "../../pages/landing-page";
 import PostDetailsPage from "../../pages/post-details-page";
 import PostFormPage from "../../pages/post-form-page";
 import PostsPage from "../../pages/posts-page";
 import ReadingListPage from "../../pages/reading-list-page";
 import UpgradePage from "../../pages/upgrade-page";
-import Template from "../../shared/template";
+import Template from "../template";
 
 function Routing() {
   return (
