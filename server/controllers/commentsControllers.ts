@@ -5,7 +5,11 @@ export default {
   getComments: (req: Request, res: Response) => {
     db.Comment.find({})
       .populate("posts")
-      .populate("users")
+      .populate({
+        path: "user",
+        select: "avatar name about email",
+        model: "user",
+      })
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },

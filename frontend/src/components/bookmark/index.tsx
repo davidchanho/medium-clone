@@ -11,7 +11,7 @@ function Bookmark({ post }: PostProps) {
   const { user } = useSelector(userSelectors);
 
   useEffect(() => {
-    if (user?.bookmarks.includes(post)) {
+    if (user?.bookmarks?.includes(post)) {
       setBookmark(true);
     }
   }, [user?.bookmarks]);
@@ -22,15 +22,15 @@ function Bookmark({ post }: PostProps) {
     }
   };
 
-  return (
-    <>
-      {isBookmark ? (
-        <BsBookmarkFill onClick={onBookmarkPost} size="22" />
-      ) : (
-        <BsBookmark onClick={onBookmarkPost} size="22" />
-      )}
-    </>
-  );
+  const renderBookmark = () => {
+    if (isBookmark) {
+      return <BsBookmarkFill onClick={onBookmarkPost} size="22" />;
+    }
+
+    return <BsBookmark onClick={onBookmarkPost} size="22" />;
+  };
+
+  return <>{renderBookmark()}</>;
 }
 
 export default Bookmark;

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PostDetailsPage from "../../pages/post-details-page";
 import PostFormPage from "../../pages/post-form-page";
 import PostsPage from "../../pages/posts-page";
@@ -9,7 +9,7 @@ import Template from "../template";
 
 function Routing() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         {/* <Route path="/" element={<LandingPage />} /> */}
         <Route element={<Template />}>
@@ -20,7 +20,7 @@ function Routing() {
         </Route>
         <Route path="/upgrade" element={<UpgradePage />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

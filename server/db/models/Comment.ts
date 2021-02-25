@@ -1,8 +1,10 @@
 import { Document, model, Schema } from "mongoose";
+import { IUserDoc } from "./User";
 
 export interface ICommentDoc extends Document {
   postId: string;
   userId: string;
+  user: IUserDoc;
   body: string;
   date: string;
 }
@@ -13,10 +15,7 @@ const commentSchema = new Schema(
       type: String,
       ref: "post",
     },
-    userId: {
-      type: String,
-      ref: "user",
-    },
+    user: { type: Schema.Types.ObjectId, ref: "user" },
     body: {
       type: String,
       minlength: [6, "comment body must be at least 6 characters long"],

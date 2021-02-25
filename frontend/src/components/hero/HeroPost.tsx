@@ -1,26 +1,39 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { PostProps } from "../../store/posts/types";
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { postSelectors } from "../../store";
 import PostHeader from "../post/PostHeader";
 import PostImg from "../post/PostImg";
 import PostSubtitle from "../post/PostSubtitle";
 import PostTitle from "../post/PostTitle";
 
-function HeroPost({ post }: PostProps) {
-  if (!post) {
+function HeroPost() {
+  const { hero, loading, error } = useSelector(postSelectors);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
+  if (!hero) {
     return null;
   }
 
   return (
-    <Card key={`hero-${post._id}`}>
-      <div>
-        <PostImg post={post} className="mb-2 h-100 w-100" />
-        <PostHeader post={post} className="mb-2" />
-        <PostTitle post={post} className="mb-2" />
-        <PostSubtitle post={post} className="mb-2" />
-      </div>
+    <Card key={`hero-${hero._id}`}>
+      <NavLink to={`/${hero._id}`} className="text-secondary">
+        <PostImg post={hero} className="mb-2 h-100 w-100" />
+        <PostHeader post={hero} className="mb-2" />
+        <PostTitle post={hero} className="mb-2" />
+        <PostSubtitle post={hero} className="mb-2" />
+      </NavLink>
       <div className="text-secondary d-flex">
-        Read More &middot; {post.readingTime}
+        <NavLink to={`/${hero._id}`}>Read More</NavLink> &middot;{" "}
+        {hero.readingTime}
       </div>
     </Card>
   );

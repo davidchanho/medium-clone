@@ -5,7 +5,7 @@ import { postSelectors } from "../../store";
 import FeaturedPost from "./FeaturedPost";
 
 function FeaturedPosts() {
-  const { posts, loading, error } = useSelector(postSelectors);
+  const { featured, loading, error } = useSelector(postSelectors);
 
   if (loading) {
     return <h2>Loading...</h2>;
@@ -15,14 +15,14 @@ function FeaturedPosts() {
     return <h2>{error}</h2>;
   }
 
-  if (!posts) {
+  if (!featured) {
     return null;
   }
 
   const renderPosts = () => {
-    return posts
-      .slice(0, 4)
-      .map((post) => <FeaturedPost key={`featured-${post._id}`} post={post} />);
+    return featured.map((post) => (
+      <FeaturedPost key={`featured-${post._id}`} post={post} />
+    ));
   };
 
   return (

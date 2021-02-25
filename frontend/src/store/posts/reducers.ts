@@ -1,7 +1,7 @@
 import produce from "immer";
-import { IPost } from "./types";
-import { ActionTypes } from "../actionTypes";
 import { Action } from "../actions";
+import { ActionTypes } from "../actionTypes";
+import { IPost } from "./types";
 
 export const initialPost: IPost = {
   _id: "",
@@ -18,6 +18,10 @@ export const initialPost: IPost = {
 export interface IPostsState {
   posts: IPost[];
   post: IPost;
+  hero: IPost;
+  trending: IPost[];
+  featured: IPost[];
+  reading: IPost[];
   loading: boolean;
   error: string;
 }
@@ -25,6 +29,10 @@ export interface IPostsState {
 const initialPostsState: IPostsState = {
   posts: [],
   post: initialPost,
+  hero: initialPost,
+  trending: [],
+  featured: [],
+  reading: [],
   loading: false,
   error: "",
 };
@@ -41,6 +49,10 @@ const postsReducers = produce(
         return state;
       case ActionTypes.FETCH_POSTS_SUCCESS:
         state.posts = action.payload;
+        state.hero = action.payload[0];
+        state.trending = action.payload.slice(0, 5);
+        state.featured = action.payload.slice(0, 4);
+        state.reading = action.payload.slice(0, 4);
         state.loading = false;
         return state;
       case ActionTypes.FETCH_POSTS_FAIL:

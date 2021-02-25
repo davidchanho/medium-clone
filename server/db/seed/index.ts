@@ -1,10 +1,19 @@
-import mongoose  from 'mongoose';
 import EventEmitter from "events";
-import _ from "lodash";
-import { calcReadTime, generateBody, generateDate, generateId, generatePhoto, generateRandomNumber, generateSampleSize } from './helpers';
-import { connectDb } from '..';
 import faker from "faker";
+import _ from "lodash";
+import mongoose from "mongoose";
+import { connectDb } from "..";
 import db from "../models";
+import { IUserDoc } from "./../models/User";
+import {
+  calcReadTime,
+  generateBody,
+  generateDate,
+  generateId,
+  generatePhoto,
+  generateRandomNumber,
+  generateSampleSize,
+} from "./helpers";
 
 EventEmitter.defaultMaxListeners = 20;
 
@@ -19,16 +28,17 @@ export const generatePub = (publicationId: mongoose.Types._ObjectId) => {
   });
 };
 
-const generatePost = (
+export const generatePost = (
   postId: mongoose.Types._ObjectId,
-  publicationId: mongoose.Types._ObjectId
+  publicationId: mongoose.Types._ObjectId,
+  userId: mongoose.Types._ObjectId
 ) => {
   const body = generateBody();
 
   return new db.Post({
     _id: postId,
     publicationId,
-    userId: "",
+    userId,
     title: _.capitalize(faker.lorem.words(3)),
     body,
     image: generatePhoto(200, 135),
@@ -51,63 +61,71 @@ export const generateUser = () => {
   });
 };
 
-const generateComment = (postId: mongoose.Types._ObjectId) => {
-  const body = generateBody();
-
+const generateComment = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
   return new db.Comment({
     postId,
-    userId: "",
-    body,
+    userId: user._id,
+    user,
+    body: generateBody(),
     date: generateDate(),
   });
 };
 
-const generateComments = (postId: mongoose.Types._ObjectId) => {
+const generateComments = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
   return _.times(generateRandomNumber(), () => {
-    const newComment = generateComment(postId);
+    const comment = generateComment(postId, user);
 
-    newComment.save();
+    comment.save();
 
-    return newComment;
+    return comment;
   });
 };
 
-export const generatePosts = (publicationId: mongoose.Types._ObjectId) => {
+export const generatePosts = (
+  publicationId: mongoose.Types._ObjectId,
+  user: IUserDoc
+) => {
   return _.times(generateRandomNumber(), () => {
     const postId = generateId();
 
-    const newPost = generatePost(postId, publicationId);
+    const userId = user._id;
 
-    const comments = generateComments(postId);
+    const post = generatePost(postId, publicationId, userId);
 
-    newPost.comments = comments;
+    const comments = generateComments(postId, userId);
 
-    newPost.save();
+    const commentsSample = generateSampleSize(comments);
+    user.comments = commentsSample;
 
-    return newPost;
+    post.userId = userId;
+    post.comments = comments;
+
+    post.save();
+
+    return post;
   });
 };
 
-
-const seed = () => _.times(PUBLICATIONS_AMOUNT, () => {
+const seed = () =>
+  _.times(PUBLICATIONS_AMOUNT, () => {
     connectDb();
 
     mongoose.connection.dropDatabase();
 
     const publicationId = generateId();
 
-    const newPub = generatePub(publicationId);
+    const publication = generatePub(publicationId);
 
-    const posts = generatePosts(publicationId);
+    const user = generateUser();
+    const posts = generatePosts(publicationId, user);
 
     const postsSample = generateSampleSize(posts);
 
-    const user = generateUser();
-
-    newPub.posts = posts;
+    publication.posts = posts;
     user.posts = postsSample;
+    user.bookmarks = postsSample;
 
-    Promise.all([newPub.save(), user.save()])
+    Promise.all([publication.save(), user.save()])
       .then(() => {
         console.log("seeding successful");
         process.exit(0);
@@ -117,7 +135,5 @@ const seed = () => _.times(PUBLICATIONS_AMOUNT, () => {
         process.exit(1);
       });
   });
-
-
 
 seed();

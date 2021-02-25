@@ -1,4 +1,3 @@
-import { shuffle } from "lodash";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -23,21 +22,11 @@ function Hero() {
     return null;
   }
 
-  const renderHeroPost = () => {
-    return (
-      <>
-        {shuffle(posts)
-          .slice(0, 1)
-          .map((post) => (
-            <HeroPost post={post} />
-          ))}
-      </>
-    );
-  };
-
   return (
     <Row className="border-bottom p-5">
-      <Col lg={4}>{renderHeroPost()}</Col>
+      <Col lg={4}>
+        <HeroPost />
+      </Col>
       <Col lg={4}>
         <FeaturedPosts />
       </Col>

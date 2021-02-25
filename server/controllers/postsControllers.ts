@@ -6,13 +6,13 @@ export default {
     db.Post.find({})
       .populate("comments")
       .populate("users")
+      .limit(5)
+      .skip(5)
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
   getPost: (req: Request, res: Response) => {
     db.Post.findById(req.params.id)
-      .populate("comments")
-      .populate("users")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },

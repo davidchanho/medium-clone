@@ -7,26 +7,24 @@ import { postSelectors } from "../../store";
 import Post from "../post";
 
 function ReadingList() {
-  const { posts, loading, error } = useSelector(postSelectors);
+  const { reading, loading, error } = useSelector(postSelectors);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+  const renderList = () => {
+    if (loading) {
+      return <h2>Loading...</h2>;
+    }
 
-  if (error) {
-    return <h2>{error}</h2>;
-  }
+    if (error) {
+      return <h2>{error}</h2>;
+    }
 
-  if (!posts) {
-    return null;
-  }
+    if (!reading) {
+      return null;
+    }
 
-  const renderPosts = () => {
-    return posts
-      .slice(0, 5)
-      .map((post) => (
-        <Post key={`post-${post._id}`} post={post} className="mb-5" />
-      ));
+    return reading.map((post) => (
+      <Post key={`post-${post._id}`} post={post} className="mb-5" />
+    ));
   };
 
   return (
@@ -36,7 +34,7 @@ function ReadingList() {
       </Card.Header>
 
       <Card.Body className="bg-light pt-1">
-        {renderPosts()}
+        {renderList()}
         <NavLink
           to="/reading-list"
           className="text-success text-decoration-none"
