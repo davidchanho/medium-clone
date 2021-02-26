@@ -13,7 +13,7 @@ function PostForm() {
     register,
   } = usePostForm();
 
-  const { title, body, publicationId } = postForm;
+  const { title, body } = postForm;
 
   const renderOptions = () => {
     return publications.map((publication: IPublication) => {
@@ -57,7 +57,6 @@ function PostForm() {
       <label>Publication</label>
       <select
         onChange={onChange}
-        value={publicationId}
         name="publicationId"
         ref={register}
       >

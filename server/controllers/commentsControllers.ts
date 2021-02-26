@@ -15,8 +15,6 @@ export default {
   },
   getComment: (req: Request, res: Response) => {
     db.Comment.findById(req.params.id)
-      .populate("posts")
-      .populate("users")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },

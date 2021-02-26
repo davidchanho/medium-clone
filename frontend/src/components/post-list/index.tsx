@@ -1,10 +1,9 @@
-import { shuffle } from "lodash";
 import React from "react";
 import { CardDeck } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
-import PostListItem from "./PostListItem";
 import PostsSkeleton from "../post/PostsSkeleton";
+import PostListItem from "./PostListItem";
 
 function PostList() {
   const { posts, loading, error } = useSelector(postSelectors);
@@ -22,7 +21,7 @@ function PostList() {
   }
 
   const renderPosts = () => {
-    return shuffle(posts).map((post) => (
+    return posts.map((post) => (
       <PostListItem key={`post-${post._id}`} post={post} />
     ));
   };

@@ -3,7 +3,6 @@ import { IUserDoc } from "./User";
 
 export interface ICommentDoc extends Document {
   postId: string;
-  userId: string;
   user: IUserDoc;
   body: string;
   date: string;

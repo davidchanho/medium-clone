@@ -17,7 +17,6 @@ export const usePostForm = () => {
     const { name, value } = e.target;
     setPostForm({
       ...postForm,
-      publicationId: publications[0]._id,
       [name]: value,
     });
   };
@@ -36,7 +35,6 @@ export const usePostForm = () => {
       ...initialPost,
       body: postForm.body,
       title: postForm.title,
-      publicationId: postForm.publicationId,
       date: new Date().toLocaleDateString()
     }
     if (

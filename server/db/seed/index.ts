@@ -4,6 +4,7 @@ import _ from "lodash";
 import mongoose from "mongoose";
 import { connectDb } from "..";
 import db from "../models";
+import { IPublicationDoc } from "./../models/Publication";
 import { IUserDoc } from "./../models/User";
 import {
   calcReadTime,
@@ -30,21 +31,42 @@ export const generatePub = (publicationId: mongoose.Types._ObjectId) => {
 
 export const generatePost = (
   postId: mongoose.Types._ObjectId,
-  publicationId: mongoose.Types._ObjectId,
-  userId: mongoose.Types._ObjectId
+  user: IUserDoc,
+  publication: IPublicationDoc
 ) => {
   const body = generateBody();
 
   return new db.Post({
     _id: postId,
-    publicationId,
-    userId,
+    publication,
+    user,
     title: _.capitalize(faker.lorem.words(3)),
     body,
     image: generatePhoto(200, 135),
     date: generateDate(),
     readingTime: calcReadTime(body),
     comments: [],
+  });
+};
+
+export const generatePosts = (publication: IPublicationDoc, user: IUserDoc) => {
+  return _.times(generateRandomNumber(), () => {
+    const postId = generateId();
+
+    const post = generatePost(postId, user, publication);
+
+    const comments = generateComments(postId, user);
+
+    const commentsSample = generateSampleSize(comments);
+    user.comments = commentsSample;
+
+    post.publication = publication;
+    post.user = user;
+    post.comments = comments;
+
+    post.save();
+
+    return post;
   });
 };
 
@@ -56,6 +78,9 @@ export const generateUser = () => {
     password: faker.internet.password(),
     name: `${faker.name.firstName()} ${faker.name.lastName()}`,
     about: faker.lorem.lines(4),
+    followers: [],
+    publications: [],
+    bookmarks: [],
     posts: [],
     comments: [],
   });
@@ -81,31 +106,6 @@ const generateComments = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
   });
 };
 
-export const generatePosts = (
-  publicationId: mongoose.Types._ObjectId,
-  user: IUserDoc
-) => {
-  return _.times(generateRandomNumber(), () => {
-    const postId = generateId();
-
-    const userId = user._id;
-
-    const post = generatePost(postId, publicationId, userId);
-
-    const comments = generateComments(postId, userId);
-
-    const commentsSample = generateSampleSize(comments);
-    user.comments = commentsSample;
-
-    post.userId = userId;
-    post.comments = comments;
-
-    post.save();
-
-    return post;
-  });
-};
-
 const seed = () =>
   _.times(PUBLICATIONS_AMOUNT, () => {
     connectDb();
@@ -117,7 +117,7 @@ const seed = () =>
     const publication = generatePub(publicationId);
 
     const user = generateUser();
-    const posts = generatePosts(publicationId, user);
+    const posts = generatePosts(publication, user);
 
     const postsSample = generateSampleSize(posts);
 

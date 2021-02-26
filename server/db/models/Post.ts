@@ -1,11 +1,14 @@
 import { Document, model, Schema } from "mongoose";
 import { ICommentDoc } from "./Comment";
+import { IPublicationDoc } from "./Publication";
+import { IUserDoc } from "./User";
 
 export interface IPostDoc extends Document {
-  publicationId: string;
-  userId: string;
+  publication: IPublicationDoc;
+  user: IUserDoc;
   title: string;
   body: string;
+  image: string;
   readingTime: string;
   date: string;
   comments: ICommentDoc[];
@@ -13,14 +16,11 @@ export interface IPostDoc extends Document {
 
 const postSchema = new Schema(
   {
-    publicationId: {
-      type: String,
+    publication: {
+      type: Schema.Types.ObjectId,
       ref: "publication",
     },
-    userId: {
-      type: String,
-      ref: "user",
-    },
+    user: { type: Schema.Types.ObjectId, ref: "user" },
     title: {
       type: String,
       minlength: [6, "post title must be at least 6 characters long"],
@@ -39,7 +39,7 @@ const postSchema = new Schema(
     readingTime: {
       type: String,
     },
-    comments: [{ type: String, ref: "comment" }],
+    comments: [{ type: Schema.Types.ObjectId, ref: "comment" }],
     date: {
       type: String,
       default: new Date().toString(),

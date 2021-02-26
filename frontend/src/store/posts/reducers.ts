@@ -1,12 +1,14 @@
 import produce from "immer";
 import { Action } from "../actions";
 import { ActionTypes } from "../actionTypes";
+import { initialPublication } from "./../publications/reducers";
+import { initialUser } from "./../users/reducers";
 import { IPost } from "./types";
 
 export const initialPost: IPost = {
   _id: "",
-  publicationId: "",
-  userId: "",
+  publication: initialPublication,
+  user: initialUser,
   title: "",
   body: "",
   image: "",
@@ -50,7 +52,7 @@ const postsReducers = produce(
       case ActionTypes.FETCH_POSTS_SUCCESS:
         state.posts = action.payload;
         state.hero = action.payload[0];
-        state.trending = action.payload.slice(0, 5);
+        state.trending = action.payload.slice(0, 6);
         state.featured = action.payload.slice(0, 4);
         state.reading = action.payload.slice(0, 4);
         state.loading = false;

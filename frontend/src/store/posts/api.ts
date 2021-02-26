@@ -14,8 +14,8 @@ export const posts = {
     return data;
   },
   addPost(post: IPost) {
-    const { title, body, publicationId } = post;
-    axios.post<any>(publicationsUrl, { title, body, publicationId });
+    const { title, body } = post;
+    axios.post<any>(publicationsUrl, { title, body });
   },
   deletePost(_id: string) {
     axios.delete<string>(postsUrl + _id);
