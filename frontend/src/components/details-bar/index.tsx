@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, ListGroup } from "react-bootstrap";
+import { Button, Card, Dropdown, ListGroup } from "react-bootstrap";
 import { useSelector } from "../../hooks/useSelector";
 import { postSelectors } from "../../store/posts/selectors";
 import Bookmark from "../bookmark";
@@ -21,28 +21,18 @@ function DetailsBar() {
     return null;
   }
 
-  const renderHeader = () => {
-    return (
-      <Card.Header className="bg-white">
+  return (
+    <Card className="w-25">
+      <Card.Header className="bg-white mb-3">
+        <p className="mb-3">{post?.publication?.name}</p>
         <Button>Follow</Button>
-      </Card.Header>
-    );
-  };
-
-  const renderBody = () => {
-    return (
+      </Card.Header>{" "}
+      <Dropdown.Divider />
       <Card.Body as={ListGroup}>
         <Clap />
         <Comments post={post} />
         <Bookmark post={post} />
       </Card.Body>
-    );
-  };
-
-  return (
-    <Card className="w-25">
-      fdsgsdgsdgsdg
-      {renderHeader()} {renderBody()}
     </Card>
   );
 }

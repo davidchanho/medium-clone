@@ -12,7 +12,6 @@ function PostDetailsPage() {
     getPost(params.id);
   }, []);
 
-
   return (
     <div className="d-flex">
       <DetailsBar />

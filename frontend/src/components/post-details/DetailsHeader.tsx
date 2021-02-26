@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { AiFillFacebook, AiFillLinkedin } from "react-icons/ai";
-import { BiUserCircle } from "react-icons/bi";
 import { FaTwitter } from "react-icons/fa";
 import { PostProps } from "../../store/posts/types";
 import PostOptions from "../post-options";
@@ -12,10 +11,10 @@ function DetailsHeader({ post }: PostProps) {
     <div className="d-flex align-items-center justify-content-between flex-row mb-3">
       <Row className="d-flex align-items-center flex-row">
         <Col xs={2}>
-          <BiUserCircle size={44} />
+          <img src={post?.user?.avatar} />
         </Col>
         <Col>
-          name <Button size="sm">Follow</Button>
+          {post?.user?.name} <Button size="sm">Follow</Button>
           <PostDate post={post} />
         </Col>
       </Row>
