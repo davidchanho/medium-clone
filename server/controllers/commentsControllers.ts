@@ -4,17 +4,18 @@ import db from "../db/models";
 export default {
   getComments: (req: Request, res: Response) => {
     db.Comment.find({})
-      .populate("posts")
       .populate({
         path: "user",
         select: "avatar name about email",
         model: "user",
       })
+      .select("-postId")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
   getComment: (req: Request, res: Response) => {
     db.Comment.findById(req.params.id)
+      .select("-postId")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },
