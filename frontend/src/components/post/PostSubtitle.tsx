@@ -6,10 +6,6 @@ import { PostProps } from "../../store/posts/types";
 function PostSubtitle({ post, className }: PostProps) {
   const renderSubtitle = clampText(post.body, 50);
 
-  if(!post) {
-    return null
-  }
-
   return (
     <Card.Subtitle className={`text-capitalize text-secondary ${className}`}>
       {renderSubtitle}

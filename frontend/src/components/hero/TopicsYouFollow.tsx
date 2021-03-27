@@ -4,14 +4,7 @@ import { Button } from "react-bootstrap";
 import { BsPlus } from "react-icons/bs";
 import Topic from "../topic";
 
-const topics = [
-  faker.lorem.word(5),
-  faker.lorem.word(5),
-  faker.lorem.word(5),
-  faker.lorem.word(5),
-  faker.lorem.word(5),
-  faker.lorem.word(5),
-];
+const topics = ["topic12", "topic22", "topic32"];
 
 function TopicsYouFollow() {
   const renderTopics = () => {

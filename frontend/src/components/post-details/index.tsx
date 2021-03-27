@@ -7,26 +7,18 @@ import DetailsImg from "./DetailsImg";
 function PostDetails() {
   const { post, loading, error } = useSelector(postSelectors);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+  const renderPost = () => {
+    return (
+      <>
+        <h1>{post.title}</h1>
+        <DetailsHeader post={post} />
+        <DetailsImg post={post} />
+        <p className="m-4">{post.body}</p>{" "}
+      </>
+    );
+  };
 
-  if (error) {
-    return <h2>{error}</h2>;
-  }
-
-  if (!post) {
-    return null;
-  }
-
-  return (
-    <article className="w-75">
-      <h1>{post.title}</h1>
-      <DetailsHeader post={post} />
-      <DetailsImg post={post} />
-      <p className="m-4">{post.body}</p>
-    </article>
-  );
+  return <article className="w-75">{renderPost()}</article>;
 }
 
 export default PostDetails;

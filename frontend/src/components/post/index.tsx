@@ -9,10 +9,6 @@ import PostTitle from "./PostTitle";
 function Post({ post }: PostProps) {
   const { onGetPost } = useGetPost(post);
 
-  if (!post) {
-    return null;
-  }
-
   return (
     <PostContainer onClick={onGetPost}>
       <PostHeader post={post} />

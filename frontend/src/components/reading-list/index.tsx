@@ -11,28 +11,6 @@ function ReadingList() {
   const [key, setKey] = useState<string>("saved");
   const { user, loading, error } = useSelector(userSelectors);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  if (!user) {
-    return null;
-  }
-
-  const items = [
-    {
-      title: `Saved (${user?.bookmarks.length})`,
-      panel: <Saved />,
-    },
-    { title: "Archived", panel: <Archived /> },
-    { title: "Highlights", panel: <Highlight /> },
-    { title: "Recent", panel: <Recent /> },
-  ];
-
   const onSelect = (k: any) => {
     if (k) {
       return setKey(k);
@@ -40,6 +18,16 @@ function ReadingList() {
   };
 
   const renderTabs = () => {
+    const items = [
+      {
+        title: `Saved (${user?.bookmarks.length})`,
+        panel: <Saved />,
+      },
+      { title: "Archived", panel: <Archived /> },
+      { title: "Highlights", panel: <Highlight /> },
+      { title: "Recent", panel: <Recent /> },
+    ];
+
     return items.map(({ title, panel }) => {
       return (
         <Tab key={title} eventKey={title} title={title}>

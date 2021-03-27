@@ -1,38 +1,19 @@
 import faker from "faker";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
 import LandingHero from "../../components/hero/LandingHero";
 import LandingNavbar from "../../components/navbar/LandingNavbar";
 import PostList from "../../components/post-list";
 import Topic from "../../components/topic";
 import TrendingPosts from "../../components/trending-posts";
-import { publicationSelectors } from "../../store";
 
 const topics = [
-  faker.lorem.word(5),
-  faker.lorem.word(5),
-  faker.lorem.word(5),
-  faker.lorem.word(5),
-  faker.lorem.word(5),
-  faker.lorem.word(5),
+ 'topic1',
+ 'topic2',
+ 'topic3'
 ];
 
 function LandingPage() {
-  const { publications, loading, error } = useSelector(publicationSelectors);
-
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
-
-  if (error) {
-    return <h2>{error}</h2>;
-  }
-
-  if (!publications) {
-    return null;
-  }
-
   const renderTopics = () => {
     return topics.map((topic: string) => {
       return <Topic key={`topics-you-follow-${topic}`} label={topic} />;

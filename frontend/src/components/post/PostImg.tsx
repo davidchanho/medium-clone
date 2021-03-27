@@ -14,10 +14,6 @@ function PostImg({
 
   const image = post.image;
 
-  if (!post) {
-    return null;
-  }
-
   return (
     <Card.Img
       src={image ? image : placeholder}

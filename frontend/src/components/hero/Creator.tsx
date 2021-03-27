@@ -14,7 +14,7 @@ function Creator({ user }: CreatorProps) {
 
       <div className="w-50 mx-2">
         <p className="font-weight-bold">{user.name}</p>
-        <p>{clampText(user.about, 35)}</p>
+        <p>{user && clampText(user.about, 35)}</p>
       </div>
 
       <Button variant="success" className="h-50 my-auto">

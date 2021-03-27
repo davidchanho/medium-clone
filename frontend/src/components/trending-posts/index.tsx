@@ -10,14 +10,6 @@ function TrendingPosts() {
   const { posts, loading, error } = useSelector(postSelectors);
   const shufflePosts = shuffle(posts);
 
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (error) {
-    return <h1>{error}</h1>;
-  }
-
   const renderPosts = () => {
     return shufflePosts
       .slice(0, 6)

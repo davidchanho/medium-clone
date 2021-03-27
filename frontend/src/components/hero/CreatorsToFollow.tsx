@@ -8,23 +8,11 @@ import Creator from "./Creator";
 function CreatorsToFollow() {
   const { users, loading, error } = useSelector(userSelectors);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
-
-  if (error) {
-    return <h2>{error}</h2>;
-  }
-
-  if (!users) {
-    return null;
-  }
-
   const renderCreators = () => {
     return (
-      <ListGroup>
+      <ListGroup >
         {users.slice(0, 2).map((user: IUser) => {
-          return <Creator user={user} />;
+          return <Creator key={`creators-to-follow-${user._id}`} user={user} />;
         })}
       </ListGroup>
     );

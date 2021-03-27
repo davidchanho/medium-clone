@@ -8,15 +8,15 @@ import { userSelectors } from "../../store";
 function UserNavMenu() {
   const { user, loading, error } = useSelector(userSelectors);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
   const renderToggle = () => {
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
+    if (error) {
+      return <div>{error}</div>;
+    }
+
     if (user?.avatar) {
       <img src={user?.avatar} className="rounded" />;
     }
@@ -25,6 +25,14 @@ function UserNavMenu() {
   };
 
   const renderHeader = () => {
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
+    if (error) {
+      return <div>{error}</div>;
+    }
+
     return (
       <Dropdown.Item className="d-flex align-items-center">
         <img src={user?.photo} className="rounded mr-2 py-2" />

@@ -6,10 +6,6 @@ import { PostProps } from "../../store/posts/types";
 function PostDate({ post }: PostProps) {
   const date = formatDate(post.date);
 
-  if (!post) {
-    return null;
-  }
-
   return (
     <Card.Text className="text-secondary">
       {date} &middot; {post.readingTime}

@@ -14,9 +14,6 @@ const options = [
 ];
 
 function PostOptions({ post }: PostProps) {
-  if (!post) {
-    return null;
-  }
 
   return (
     <Dropdown className="mt-auto d-flex align-items-center justify-content-between">

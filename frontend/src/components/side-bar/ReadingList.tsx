@@ -10,18 +10,6 @@ function ReadingList() {
   const { reading, loading, error } = useSelector(postSelectors);
 
   const renderList = () => {
-    if (loading) {
-      return <h2>Loading...</h2>;
-    }
-
-    if (error) {
-      return <h2>{error}</h2>;
-    }
-
-    if (!reading) {
-      return null;
-    }
-
     return reading.map((post) => (
       <Post key={`post-${post._id}`} post={post} className="mb-5" />
     ));

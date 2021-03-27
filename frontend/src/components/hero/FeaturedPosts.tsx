@@ -7,20 +7,8 @@ import FeaturedPost from "./FeaturedPost";
 function FeaturedPosts() {
   const { featured, loading, error } = useSelector(postSelectors);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
-
-  if (error) {
-    return <h2>{error}</h2>;
-  }
-
-  if (!featured) {
-    return null;
-  }
-
   const renderPosts = () => {
-    return featured.map((post) => (
+      return featured.map((post) => (
       <FeaturedPost key={`featured-${post._id}`} post={post} />
     ));
   };
