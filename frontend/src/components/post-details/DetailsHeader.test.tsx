@@ -1,11 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Comment from ".";
 import { testPost } from "../../tests";
+import DetailsHeader from "./DetailsHeader";
 
-describe("Comment", () => {
+describe("DetailsHeader", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Comment post={testPost} />).toJSON();
+    const tree = renderer.create(<DetailsHeader post={testPost} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

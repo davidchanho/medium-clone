@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostHeader renders correctly 1`] = `
+<p
+  className="d-flex align-items-end mb-1 undefined card-text"
+>
+  <img
+    className="mr-1 rounded"
+    src="test"
+  />
+   
+  test
+   in 
+  test
+</p>
+`;

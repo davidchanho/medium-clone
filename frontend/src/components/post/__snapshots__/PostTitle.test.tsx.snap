@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostTitle renders correctly 1`] = `
+<div
+  className="text-capitalize mb-1 undefined card-title h5"
+>
+  test
+</div>
+`;

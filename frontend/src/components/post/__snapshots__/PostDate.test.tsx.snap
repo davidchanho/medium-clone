@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostDate renders correctly 1`] = `
+<p
+  className="text-secondary card-text"
+>
+  Invalid Date
+   · 
+  test
+</p>
+`;
