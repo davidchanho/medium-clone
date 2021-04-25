@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 
 function LandingHero() {
   return (
-    <div>
+    <div className='bg-yellow'>
       <h4>Where good ideas find you</h4>
 
       <p>Read and share new perspectives on just about any topic.</p>

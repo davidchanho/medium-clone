@@ -1,4 +1,3 @@
-import faker from "faker";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import LandingHero from "../../components/hero/LandingHero";
@@ -7,11 +6,7 @@ import PostList from "../../components/post-list";
 import Topic from "../../components/topic";
 import TrendingPosts from "../../components/trending-posts";
 
-const topics = [
- 'topic1',
- 'topic2',
- 'topic3'
-];
+const topics = ["topic1", "topic2", "topic3"];
 
 function LandingPage() {
   const renderTopics = () => {
@@ -22,8 +17,9 @@ function LandingPage() {
 
   return (
     <div>
-      <div className="bg-yellow">
-        <LandingNavbar />
+      <LandingNavbar />
+
+      <div>
         <LandingHero />
         <img src="https://miro.medium.com/max/770/1*qcAZgT4Sk37MPSTGBH2KUw.png" />
       </div>

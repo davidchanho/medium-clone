@@ -9,6 +9,12 @@ function PostList() {
   const { posts, loading, error } = useSelector(postSelectors);
 
   const renderPosts = () => {
+    if (loading) {
+      return <div>Loading</div>;
+    }
+    if(error) {
+      return <div>error</div>;
+    }
     return posts.map((post) => (
       <PostListItem key={`post-${post._id}`} post={post} />
     ));

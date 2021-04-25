@@ -1,22 +1,9 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import "./App.scss";
+import React from "react";
 import Routing from "./components/routing";
-import { useActions } from "./hooks/useActions";
-import { userSelectors } from "./store";
+import { useFetchPosts } from "./hooks/useFetchPosts";
 
 function App() {
-  const { getPosts, getPublications, getUser, getUsers } = useActions();
-  const { user } = useSelector(userSelectors);
-
-  useEffect(() => {
-    getPosts();
-    getPublications();
-    getUsers();
-    if (!user?._id) {
-      getUser("6024670da4cf7653c06c6dd3");
-    }
-  }, []);
+  useFetchPosts();
 
   return <Routing />;
 }

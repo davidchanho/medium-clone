@@ -4,11 +4,9 @@ import Navbar from "../navbar";
 
 function Template() {
   return (
-    <div className="mx-auto">
+    <div>
       <Navbar />
-      <div className="mx-5">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 }
