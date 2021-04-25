@@ -11,10 +11,10 @@ function PostsPage() {
       <Hero />
       <TrendingPosts />
       <Row>
-        <Col lg={{ span: 4, offset: 1, order: 2 }}>
+        <Col lg={{ span: 4, offset: 1, order: 2 }} xs={12}>
           <SideBar />
         </Col>
-        <Col lg={7}>
+        <Col lg={7} xs={12}>
           <PostList />
         </Col>
       </Row>

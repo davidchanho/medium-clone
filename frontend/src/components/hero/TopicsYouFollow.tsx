@@ -1,6 +1,5 @@
-import faker from "faker";
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, ListGroup } from "react-bootstrap";
 import { BsPlus } from "react-icons/bs";
 import Topic from "../topic";
 
@@ -16,12 +15,12 @@ function TopicsYouFollow() {
   return (
     <div>
       <p className="text-uppercase font-weight-bold mb-2">Topics you follow</p>
-      <div className="d-flex flex-wrap">
+      <ListGroup variant="flush">
         {renderTopics()}
         <Button variant="light" size="sm" className="p-2 h-50">
           <BsPlus />
         </Button>
-      </div>
+      </ListGroup>
     </div>
   );
 }

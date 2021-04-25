@@ -1,12 +1,12 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { ListGroupItem } from "react-bootstrap";
 import { TopicProps } from "../../store/publications/types";
 
 function Topic({ label }: TopicProps) {
   return (
-    <Button variant="light" className="mr-2 mb-2">
+    <ListGroupItem variant="light" className="mr-2 mb-2">
       {label}
-    </Button>
+    </ListGroupItem>
   );
 }
 

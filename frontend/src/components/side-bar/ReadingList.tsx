@@ -7,7 +7,7 @@ import { postSelectors } from "../../store";
 import Post from "../post";
 
 function ReadingList() {
-  const { reading, loading, error } = useSelector(postSelectors);
+  const { reading } = useSelector(postSelectors);
 
   const renderList = () => {
     return reading.map((post) => (
