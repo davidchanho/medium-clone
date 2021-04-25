@@ -1,8 +1,8 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
-import { BsThreeDots } from "react-icons/bs";
 import { PostProps } from "../../store/posts/types";
 import Bookmark from "../bookmark";
+import { IconThreeDots } from "../_shared/icons";
 import PostOption from "./PostOption";
 
 const options = [
@@ -14,15 +14,14 @@ const options = [
 ];
 
 function PostOptions({ post }: PostProps) {
-
   return (
     <Dropdown className="mt-auto d-flex align-items-center justify-content-between">
       <Dropdown.ItemText className="p-0">
-        <Bookmark post={post} />
+        <Bookmark />
       </Dropdown.ItemText>
 
       <Dropdown.Toggle className="ml-2 bg-white text-secondary shadow-none">
-        <BsThreeDots />
+        <IconThreeDots />
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="d-flex flex-column">

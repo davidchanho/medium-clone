@@ -28,7 +28,7 @@ function PublicationsBar() {
   return (
     <Carousel ssr responsive={responsive}>
       {publications.map((publication: IPublication) => {
-        return <PublicationItem publication={publication} />;
+        return <PublicationItem {...publication} />;
       })}
     </Carousel>
   );

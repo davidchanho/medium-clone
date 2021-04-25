@@ -1,20 +1,15 @@
-import localForage from "localforage";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { createLogger } from "redux-logger";
 import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
-
-// localForage
-localForage.config({
-  driver: localForage.INDEXEDDB,
-});
 
 // redux-perist
 const persistConfig = {
   key: "medium",
-  storage: localForage,
+  storage,
   whitelist: ["posts", "publications", "comments"],
 };
 

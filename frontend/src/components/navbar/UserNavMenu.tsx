@@ -1,9 +1,9 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
-import { BiUserCircle } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { userSelectors } from "../../store";
+import { IconUserCircle } from "../_shared/icons";
 
 function UserNavMenu() {
   const { user, loading, error } = useSelector(userSelectors);
@@ -21,7 +21,7 @@ function UserNavMenu() {
       <img src={user?.avatar} className="rounded" />;
     }
 
-    return <BiUserCircle />;
+    return <IconUserCircle />;
   };
 
   const renderHeader = () => {

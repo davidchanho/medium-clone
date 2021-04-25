@@ -1,10 +1,9 @@
 import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import { AiFillFacebook, AiFillLinkedin } from "react-icons/ai";
-import { FaTwitter } from "react-icons/fa";
 import { PostProps } from "../../store/posts/types";
 import PostOptions from "../post-options";
 import PostDate from "../post/PostDate";
+import { IconFacebook, IconLinkedin, IconTwitter } from "../_shared/icons";
 
 function DetailsHeader({ post }: PostProps) {
   return (
@@ -20,8 +19,8 @@ function DetailsHeader({ post }: PostProps) {
       </Row>
 
       <div className="d-flex align-items-center">
-        <FaTwitter size="28" />
-        <AiFillLinkedin size="28" /> <AiFillFacebook size="28" />
+        <IconTwitter size="28" />
+        <IconLinkedin size="28" /> <IconFacebook size="28" />
         <PostOptions post={post} />
       </div>
     </div>

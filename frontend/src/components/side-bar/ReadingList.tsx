@@ -1,10 +1,10 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { BsBookmarks } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { postSelectors } from "../../store";
 import Post from "../post";
+import { IconBookmarks } from "../_shared/icons";
 
 function ReadingList() {
   const { reading } = useSelector(postSelectors);
@@ -18,7 +18,7 @@ function ReadingList() {
   return (
     <Card className="mb-4">
       <Card.Header className="font-weight-bold text-uppercase d-flex align-items-center">
-        <BsBookmarks className="mr-2" /> reading list
+        <IconBookmarks className="mr-2" /> reading list
       </Card.Header>
 
       <Card.Body className="bg-light pt-1">

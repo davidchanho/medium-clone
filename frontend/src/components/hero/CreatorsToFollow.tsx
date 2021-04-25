@@ -6,13 +6,13 @@ import { IUser } from "../../store/users/types";
 import Creator from "./Creator";
 
 function CreatorsToFollow() {
-  const { users, loading, error } = useSelector(userSelectors);
+  const { users} = useSelector(userSelectors);
 
   const renderCreators = () => {
     return (
-      <ListGroup >
+      <ListGroup>
         {users.slice(0, 2).map((user: IUser) => {
-          return <Creator key={`creators-to-follow-${user._id}`} user={user} />;
+          return <Creator key={`creators-to-follow-${user._id}`} {...user} />;
         })}
       </ListGroup>
     );

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
-import { userSelectors } from "../../store";
-import { PostProps } from "../../store/posts/types";
+import { postSelectors, userSelectors } from "../../store";
+import { IconBookmark, IconBookmarkFill } from "../_shared/icons";
 
-function Bookmark({ post }: PostProps) {
+function Bookmark() {
+  const { post } = useSelector(postSelectors);
+  const { user } = useSelector(userSelectors);
   const { bookmarkPost } = useActions();
   const [isBookmark, setBookmark] = useState<boolean>(false);
-  const { user } = useSelector(userSelectors);
 
   useEffect(() => {
     if (user?.bookmarks?.includes(post)) {
@@ -19,18 +19,19 @@ function Bookmark({ post }: PostProps) {
   const onBookmarkPost = () => {
     if (post._id) {
       bookmarkPost(post);
+      setBookmark(!isBookmark);
     }
   };
 
-  const renderBookmark = () => {
+  const renderBookmarkIcon = () => {
     if (isBookmark) {
-      return <BsBookmarkFill onClick={onBookmarkPost} size="22" />;
+      return <IconBookmarkFill />;
     }
 
-    return <BsBookmark onClick={onBookmarkPost} size="22" />;
+    return <IconBookmark />;
   };
 
-  return <>{renderBookmark()}</>;
+  return <span onClick={onBookmarkPost}>{renderBookmarkIcon()}</span>;
 }
 
 export default Bookmark;

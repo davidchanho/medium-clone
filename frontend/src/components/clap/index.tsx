@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ListGroup } from "react-bootstrap";
-import { FaRegHandPaper } from "react-icons/fa";
+import { IconClap } from "../_shared/icons";
 
 function Clap() {
   const [claps, setClaps] = useState<number>(0);
@@ -11,7 +11,7 @@ function Clap() {
 
   return (
     <ListGroup.Item className="d-flex align-items-center">
-      <FaRegHandPaper onClick={incrementClap} className="mr-3" />
+      <IconClap onClick={incrementClap} className="mr-3" />
       {claps}
     </ListGroup.Item>
   );

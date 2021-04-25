@@ -3,20 +3,16 @@ import { ListGroupItem } from "react-bootstrap";
 import { useActions } from "../../hooks/useActions";
 import { IPublication } from "../../store/publications/types";
 
-interface PublicationItemProps {
-  publication: IPublication;
-}
-
-function PublicationItem({ publication }: PublicationItemProps) {
+function PublicationItem({ _id, name }: IPublication) {
   const { getPublication } = useActions();
 
   const onGetPublication = () => {
-    getPublication(publication._id);
+    getPublication(_id);
   };
 
   return (
-    <ListGroupItem action key={publication._id} onClick={onGetPublication}>
-      {publication.name}
+    <ListGroupItem action key={_id} onClick={onGetPublication}>
+      {name}
     </ListGroupItem>
   );
 }

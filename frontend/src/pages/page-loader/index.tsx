@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactComponent as MediumMobile } from "../../asset/mediumMobile.svg";
 import styles from "./PageLoader.module.scss";
 
 function PageLoader() {
@@ -7,7 +6,7 @@ function PageLoader() {
     <div
       className={`vw-100 vh-100 d-flex align-items-center justify-content-center ${styles.pageLoader}`}
     >
-      <MediumMobile />
+      <img src="/mediumMobile.svg" alt="" />
     </div>
   );
 }

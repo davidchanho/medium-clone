@@ -7,7 +7,7 @@ import Clap from "../clap";
 import Comments from "../comments";
 
 function DetailsBar() {
-  const { post, loading, error } = useSelector(postSelectors);
+  const { post } = useSelector(postSelectors);
 
   const renderPost = () => {
     return (
@@ -19,8 +19,8 @@ function DetailsBar() {
         <Dropdown.Divider />
         <Card.Body as={ListGroup}>
           <Clap />
-          <Comments post={post} />
-          <Bookmark post={post} />
+          <Comments />
+          <Bookmark />
         </Card.Body>
       </h2>
     );

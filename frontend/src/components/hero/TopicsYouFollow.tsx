@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ListGroup } from "react-bootstrap";
-import { BsPlus } from "react-icons/bs";
 import Topic from "../topic";
+import { IconPlus } from "../_shared/icons";
 
 const topics = ["topic12", "topic22", "topic32"];
 
@@ -18,7 +18,7 @@ function TopicsYouFollow() {
       <ListGroup variant="flush">
         {renderTopics()}
         <Button variant="light" size="sm" className="p-2 h-50">
-          <BsPlus />
+          <IconPlus />
         </Button>
       </ListGroup>
     </div>
