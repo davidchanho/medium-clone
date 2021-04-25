@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import { PostProps } from "../../store/posts/types";
+import { IPost } from "../../types";
 import styles from "./DetailsImg.module.scss";
 
-function DetailsImg({ post }: PostProps) {
+function DetailsImg({ image }: IPost) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -12,19 +12,11 @@ function DetailsImg({ post }: PostProps) {
 
   return (
     <>
-      <img
-        src={post.image}
-        className={styles.detailsImg}
-        onClick={toggleOpen}
-      />
-        
+      <img src={image} className={styles.detailsImg} onClick={toggleOpen} />
+
       <Modal show={isOpen} className={styles.detailsModal}>
         <Modal.Body>
-          <img
-            src={post.image}
-            className={styles.detailsImg}
-            onClick={toggleOpen}
-          />
+          <img src={image} className={styles.detailsImg} onClick={toggleOpen} />
         </Modal.Body>
       </Modal>
     </>

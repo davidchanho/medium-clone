@@ -5,11 +5,11 @@ import { postSelectors } from "../../store";
 import FeaturedPost from "./FeaturedPost";
 
 function FeaturedPosts() {
-  const { featured, loading, error } = useSelector(postSelectors);
+  const { featured } = useSelector(postSelectors);
 
   const renderPosts = () => {
-      return featured.map((post) => (
-      <FeaturedPost key={`featured-${post._id}`} post={post} />
+    return featured.map((post) => (
+      <FeaturedPost key={`featured-${post._id}`} {...post} />
     ));
   };
 

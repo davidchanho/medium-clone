@@ -5,15 +5,16 @@ import DetailsHeader from "./DetailsHeader";
 import DetailsImg from "./DetailsImg";
 
 function PostDetails() {
-  const { post, loading, error } = useSelector(postSelectors);
+  const { post } = useSelector(postSelectors);
+  const { title, body } = post;
 
   const renderPost = () => {
     return (
       <>
-        <h1>{post.title}</h1>
-        <DetailsHeader post={post} />
-        <DetailsImg post={post} />
-        <p className="m-4">{post.body}</p>{" "}
+        <h1>{title}</h1>
+        <DetailsHeader {...post} />
+        <DetailsImg {...post} />
+        <p className="m-4">{body}</p>{" "}
       </>
     );
   };

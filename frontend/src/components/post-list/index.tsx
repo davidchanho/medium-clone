@@ -16,7 +16,7 @@ function PostList() {
       return <div>error</div>;
     }
     return posts.map((post) => (
-      <PostListItem key={`post-${post._id}`} post={post} />
+      <PostListItem key={`post-${post._id}`} {...post} />
     ));
   };
 

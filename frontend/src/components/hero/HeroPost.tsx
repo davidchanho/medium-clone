@@ -9,16 +9,16 @@ import PostSubtitle from "../post/PostSubtitle";
 import PostTitle from "../post/PostTitle";
 
 function HeroPost() {
-  const { hero, loading, error } = useSelector(postSelectors);
+  const { hero } = useSelector(postSelectors);
 
   const renderHero = () => {
     return (
       <>
         <NavLink to={`/${hero._id}`} className="text-secondary">
-          <PostImg post={hero} className="mb-2 h-100 w-100" />
-          <PostHeader post={hero} className="mb-2" />
-          <PostTitle post={hero} className="mb-2" />
-          <PostSubtitle post={hero} className="mb-2" />
+          <PostImg {...hero} className="mb-2 h-100 w-100" />
+          <PostHeader {...hero} />
+          <PostTitle {...hero} />
+          <PostSubtitle {...hero} />
         </NavLink>
         <div className="text-secondary d-flex">
           <NavLink to={`/${hero._id}`}>Read More</NavLink> &middot;{" "}

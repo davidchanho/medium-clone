@@ -9,7 +9,7 @@ function TrendingPosts() {
 
   const renderPosts = () => {
     return trending.map((post, index) => (
-      <TrendingPost key={post._id} post={post} index={index} />
+      <TrendingPost key={post._id} {...post} index={index} />
     ));
   };
 

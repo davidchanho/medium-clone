@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import LandingHero from "../../components/hero/LandingHero";
-import LandingNavbar from "../../components/navbar/LandingNavbar";
 import PostList from "../../components/post-list";
 import Topic from "../../components/topic";
 import TrendingPosts from "../../components/trending-posts";
+import LandingNavbar from "../../components/navbar/LandingNavbar";
 
 const topics = ["topic1", "topic2", "topic3"];
 

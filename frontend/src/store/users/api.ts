@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IUser } from "./types";
+import { IUser } from "../../types/user";
 
 export const usersUrl = "/api/users/";
 

@@ -1,9 +1,9 @@
 import { Dispatch } from "redux";
-import db from "../api";
-import { IPost } from "../posts/types";
-import { ActionTypes } from "../actionTypes";
+import { IPost } from "../../types/post";
+import { IUser } from "../../types/user";
 import { Action } from "../actions";
-import { IUser } from "./types";
+import { ActionTypes } from "../actionTypes";
+import db from "../api";
 
 export const getUsers = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_USERS });
@@ -22,9 +22,7 @@ export const getUsers = () => async (dispatch: Dispatch<Action>) => {
   }
 };
 
-export const getUser = (_id: string) => async (
-  dispatch: Dispatch<Action>
-) => {
+export const getUser = (_id: string) => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_USER });
 
   try {
@@ -41,9 +39,7 @@ export const getUser = (_id: string) => async (
   }
 };
 
-export const addUser = (user: IUser) => async (
-  dispatch: Dispatch<Action>
-) => {
+export const addUser = (user: IUser) => async (dispatch: Dispatch<Action>) => {
   try {
     db.addUser(user);
     dispatch({ type: ActionTypes.ADD_USER, payload: user });

@@ -1,19 +1,19 @@
 import React from "react";
 import { useGetPost } from "../../hooks/useGetPost";
-import { PostProps } from "../../store/posts/types";
+import { IPost } from "../../types";
 import PostContainer from "./PostContainer";
 import PostDate from "./PostDate";
 import PostHeader from "./PostHeader";
 import PostTitle from "./PostTitle";
 
-function Post({ post }: PostProps) {
+function Post({ ...post }: IPost) {
   const { onGetPost } = useGetPost(post);
 
   return (
     <PostContainer onClick={onGetPost}>
-      <PostHeader post={post} />
-      <PostTitle post={post} />
-      <PostDate post={post} />
+      <PostHeader {...post} />
+      <PostTitle {...post} />
+      <PostDate {...post} />
     </PostContainer>
   );
 }

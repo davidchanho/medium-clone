@@ -5,7 +5,7 @@ import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
 import { publicationSelectors } from "../../store";
 import { initialPost } from "../../store/posts/reducers";
-import { IPost } from "../../store/posts/types";
+import { IPost } from "../../types";
 
 export const usePostForm = () => {
   const [postForm, setPostForm] = useState<IPost>(initialPost);

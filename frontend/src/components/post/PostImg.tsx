@@ -1,14 +1,14 @@
 import React from "react";
 import { Card, ImageProps } from "react-bootstrap";
 import { useGetPost } from "../../hooks/useGetPost";
-import { PostProps } from "../../store/posts/types";
+import { IPost } from "../../types";
 
 function PostImg({
-  post,
   width = 200,
   height = 135,
   className,
-}: PostProps & ImageProps) {
+  ...post
+}: IPost & ImageProps) {
   const { onGetPost } = useGetPost(post);
 
   const image = post.image;

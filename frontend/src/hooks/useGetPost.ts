@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { IPost } from "./../store/posts/types";
+import { IPost } from "../types";
 
 export const useGetPost = (post: IPost) => {
   const navigate = useNavigate();

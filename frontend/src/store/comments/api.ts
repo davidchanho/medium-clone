@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IComment } from "./types";
+import { IComment } from "../../types/comment";
 import { postsUrl } from "../posts/api";
 
 const commentsUrl = "/api/comments/";

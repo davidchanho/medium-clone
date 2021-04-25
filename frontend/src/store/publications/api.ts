@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IPublication } from "./types";
+import { IPublication } from "../../types/publication";
 
 export const publicationsUrl = "/api/publications/";
 

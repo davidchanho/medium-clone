@@ -1,14 +1,12 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { formatDate } from "../../helpers/formatDate";
-import { PostProps } from "../../store/posts/types";
+import { IPost } from "../../types";
 
-function PostDate({ post }: PostProps) {
-  const date = formatDate(post.date);
-
+function PostDate({ date, readingTime }: IPost) {
   return (
     <Card.Text className="text-secondary">
-      {date} &middot; {post.readingTime}
+      {formatDate(date)} &middot; {readingTime}
     </Card.Text>
   );
 }

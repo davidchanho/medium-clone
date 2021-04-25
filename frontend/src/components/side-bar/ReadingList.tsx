@@ -11,7 +11,7 @@ function ReadingList() {
 
   const renderList = () => {
     return reading.map((post) => (
-      <Post key={`post-${post._id}`} post={post} className="mb-5" />
+      <Post key={`post-${post._id}`} {...post} />
     ));
   };
 

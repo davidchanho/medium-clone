@@ -1,9 +1,9 @@
 import produce from "immer";
+import { IPost } from "../../types/post";
 import { Action } from "../actions";
 import { ActionTypes } from "../actionTypes";
 import { initialPublication } from "./../publications/reducers";
 import { initialUser } from "./../users/reducers";
-import { IPost } from "./types";
 
 export const initialPost: IPost = {
   _id: "",

@@ -1,14 +1,13 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
 import { useActions } from "../../hooks/useActions";
-import { IPost } from "../../store/posts/types";
+import { IPost } from "../../types";
 
-interface PostOptionProps {
-  post: IPost;
+interface PostOptionProps extends IPost {
   label: string;
 }
 
-function PostOption({ post, label }: PostOptionProps) {
+function PostOption({ label, ...post }: PostOptionProps) {
   const { deletePost } = useActions();
 
   const onDeletePost = () => {

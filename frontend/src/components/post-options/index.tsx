@@ -1,6 +1,6 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
-import { PostProps } from "../../store/posts/types";
+import { IPost } from "../../types";
 import Bookmark from "../bookmark";
 import { IconThreeDots } from "../_shared/icons";
 import PostOption from "./PostOption";
@@ -13,7 +13,7 @@ const options = [
   "Block this author",
 ];
 
-function PostOptions({ post }: PostProps) {
+function PostOptions({ ...post }: IPost) {
   return (
     <Dropdown className="mt-auto d-flex align-items-center justify-content-between">
       <Dropdown.ItemText className="p-0">
@@ -26,7 +26,7 @@ function PostOptions({ post }: PostProps) {
 
       <Dropdown.Menu className="d-flex flex-column">
         {options.map((option) => {
-          return <PostOption key={option} post={post} label={option} />;
+          return <PostOption key={option} {...post} label={option} />;
         })}
       </Dropdown.Menu>
     </Dropdown>

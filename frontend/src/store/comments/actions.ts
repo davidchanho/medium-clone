@@ -1,4 +1,4 @@
-import { IComment } from "./types";
+import { IComment } from "../../types/comment";
 import { ActionTypes } from "../actionTypes";
 
 export interface GetCommentsAction {
@@ -44,7 +44,6 @@ export interface UpdateCommentAction {
   payload: IComment;
 }
 
-
 export type CommentsAction =
   | GetCommentsAction
   | GetCommentsSuccessAction
@@ -54,4 +53,4 @@ export type CommentsAction =
   | GetCommentFailAction
   | AddCommentAction
   | DeleteCommentAction
-  | UpdateCommentAction
+  | UpdateCommentAction;

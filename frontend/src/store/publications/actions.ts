@@ -1,4 +1,4 @@
-import { IPublication } from "./types";
+import { IPublication } from "../../types/publication";
 import { ActionTypes } from "../actionTypes";
 
 export interface GetPublicationsAction {

@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import { useSelector } from "react-redux";
 import { publicationSelectors } from "../../store";
-import { IPublication } from "../../store/publications/types";
+import { IPublication } from "../../types";
 import PublicationItem from "./PublicationItem";
 
 const responsive = {

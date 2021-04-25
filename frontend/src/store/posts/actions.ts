@@ -1,4 +1,4 @@
-import { IPost } from "./types";
+import { IPost } from "../../types/post";
 import { ActionTypes } from "../actionTypes";
 
 export interface GetPostsAction {

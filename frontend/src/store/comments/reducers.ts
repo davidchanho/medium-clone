@@ -1,7 +1,7 @@
 import produce from "immer";
-import { IComment } from "./types";
-import { ActionTypes } from "../actionTypes";
+import { IComment } from "../../types/comment";
 import { Action } from "../actions";
+import { ActionTypes } from "../actionTypes";
 
 export const initialComment: IComment = {
   _id: "",

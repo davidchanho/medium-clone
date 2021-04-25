@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ListGroupItem } from "react-bootstrap";
 import { clampText } from "../../helpers/clampText";
-import { IUser } from "../../store/users/types";
+import { IUser } from "../../types";
 
 function Creator({ photo, name, about }: IUser) {
   return (

@@ -1,7 +1,3 @@
-export interface TopicProps {
-  label: string;
-}
-
 export interface IPublication {
   _id: string;
   name: string;
