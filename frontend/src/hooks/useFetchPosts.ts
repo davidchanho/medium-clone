@@ -14,5 +14,5 @@ export const useFetchPosts = () => {
     if (!user?._id) {
       getUser("6024670da4cf7653c06c6dd3");
     }
-  }, []);
+  }, [getPosts, getPublications, getUser, getUsers, user?._id]);
 };

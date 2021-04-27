@@ -2,6 +2,7 @@
 
 exports[`DetailsImg renders correctly 1`] = `
 <img
+  alt="test"
   className="detailsImg"
   onClick={[Function]}
   src="test"

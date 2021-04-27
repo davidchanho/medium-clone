@@ -5,9 +5,7 @@ import PostImg from "./PostImg";
 
 describe("PostImg", () => {
   it("renders correctly", () => {
-    const tree = renderer
-      .create(<PostImg post={testPost}/>)
-      .toJSON();
+    const tree = renderer.create(<PostImg {...testPost} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

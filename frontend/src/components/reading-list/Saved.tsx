@@ -4,7 +4,7 @@ import { useSelector } from "../../hooks/useSelector";
 import { userSelectors } from "../../store";
 
 function Saved() {
-  const { user, loading, error } = useSelector(userSelectors);
+  const { user } = useSelector(userSelectors);
 
   const renderUser = () => {
     return user?.bookmarks.map((bookmark) => {

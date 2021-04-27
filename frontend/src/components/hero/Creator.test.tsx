@@ -5,7 +5,7 @@ import Creator from "./Creator";
 
 describe("Creator", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Creator user={testUser} />).toJSON();
+    const tree = renderer.create(<Creator {...testUser} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

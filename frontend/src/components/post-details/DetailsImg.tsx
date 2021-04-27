@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import { IPost } from "../../types";
 import styles from "./DetailsImg.module.scss";
 
-function DetailsImg({ image }: IPost) {
+function DetailsImg({ title, image }: IPost) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -12,11 +12,21 @@ function DetailsImg({ image }: IPost) {
 
   return (
     <>
-      <img src={image} className={styles.detailsImg} onClick={toggleOpen} />
+      <img
+        src={image}
+        className={styles.detailsImg}
+        alt={title}
+        onClick={toggleOpen}
+      />
 
       <Modal show={isOpen} className={styles.detailsModal}>
         <Modal.Body>
-          <img src={image} className={styles.detailsImg} onClick={toggleOpen} />
+          <img
+            src={image}
+            className={styles.detailsImg}
+            alt={title}
+            onClick={toggleOpen}
+          />
         </Modal.Body>
       </Modal>
     </>

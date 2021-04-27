@@ -5,7 +5,7 @@ import PostFormPage from "../../pages/post-form-page";
 import PostsPage from "../../pages/posts-page";
 import ReadingListPage from "../../pages/reading-list-page";
 import UpgradePage from "../../pages/upgrade-page";
-import Template from "../template";
+import Template from "../../pages/template";
 
 function Routing() {
   return (

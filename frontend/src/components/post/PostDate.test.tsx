@@ -5,9 +5,7 @@ import PostDate from "./PostDate";
 
 describe("PostDate", () => {
   it("renders correctly", () => {
-    const tree = renderer
-      .create(<PostDate post={testPost}/>)
-      .toJSON();
+    const tree = renderer.create(<PostDate {...testPost} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

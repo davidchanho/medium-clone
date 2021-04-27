@@ -5,7 +5,7 @@ import FeaturedPost from "./FeaturedPost";
 
 describe("FeaturedPost", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<FeaturedPost post={testPost} />).toJSON();
+    const tree = renderer.create(<FeaturedPost {...testPost} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -9,7 +9,7 @@ import Saved from "./Saved";
 
 function ReadingList() {
   const [key, setKey] = useState<string>("saved");
-  const { user, loading, error } = useSelector(userSelectors);
+  const { user } = useSelector(userSelectors);
 
   const onSelect = (k: any) => {
     if (k) {

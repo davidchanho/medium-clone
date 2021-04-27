@@ -14,7 +14,7 @@ function Bookmark() {
     if (user?.bookmarks?.includes(post)) {
       setBookmark(true);
     }
-  }, [user?.bookmarks]);
+  }, [user?.bookmarks, post]);
 
   const onBookmarkPost = () => {
     if (post._id) {

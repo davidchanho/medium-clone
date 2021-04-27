@@ -5,7 +5,7 @@ import Nav from "./Nav";
 
 function Navbar() {
   return (
-    <BsNavbar bg="white" expand="md" className='p-0 m-0'>
+    <BsNavbar bg="white" expand="md">
       <Brand />
       <BsNavbar.Toggle aria-controls="basic-navbar-nav" />
       <BsNavbar.Collapse id="basic-navbar-nav">

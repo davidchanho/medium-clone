@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostOption renders correctly 1`] = `
+<a
+  className="dropdown-item"
+  href="#"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+>
+  test
+</a>
+`;

@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "react-bootstrap/esm/Card";
+import { Card } from "react-bootstrap";
 import { clampText } from "../../helpers/clampText";
 import { IPost } from "../../types";
 

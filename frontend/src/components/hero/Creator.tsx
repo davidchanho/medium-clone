@@ -6,7 +6,7 @@ import { IUser } from "../../types";
 function Creator({ photo, name, about }: IUser) {
   return (
     <ListGroupItem className="w-100 d-flex justify-content-between">
-      <img src={photo} className="rounded-circle" />
+      <img src={photo} alt="creator avatar" className="rounded-circle" />
 
       <div className="w-50 mx-2">
         <p className="font-weight-bold">{name}</p>

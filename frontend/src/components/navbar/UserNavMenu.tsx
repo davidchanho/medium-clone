@@ -18,7 +18,7 @@ function UserNavMenu() {
     }
 
     if (user?.avatar) {
-      <img src={user?.avatar} className="rounded" />;
+      <img src={user?.avatar} alt="user avatar" className="rounded" />;
     }
 
     return <IconUserCircle />;
@@ -35,7 +35,11 @@ function UserNavMenu() {
 
     return (
       <Dropdown.Item className="d-flex align-items-center">
-        <img src={user?.photo} className="rounded mr-2 py-2" />
+        <img
+          src={user?.photo}
+          alt="user avatar"
+          className="rounded mr-2 py-2"
+        />
         <div>
           <p>{user?.name}</p>
           <p>@{user?.email.split("@")[0]}</p>

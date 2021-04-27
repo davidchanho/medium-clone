@@ -8,29 +8,33 @@ exports[`TopicsYouFollow renders correctly 1`] = `
     Topics you follow
   </p>
   <div
-    className="d-flex flex-wrap"
+    className="list-group list-group-flush"
+    onKeyDown={[Function]}
   >
-    <button
-      className="mr-2 mb-2 btn btn-light"
+    <div
+      className="mr-2 mb-2 list-group-item list-group-item-light"
+      data-rb-event-key={null}
       disabled={false}
-      type="button"
+      onClick={[Function]}
     >
-      topic12
-    </button>
-    <button
-      className="mr-2 mb-2 btn btn-light"
+      topic1
+    </div>
+    <div
+      className="mr-2 mb-2 list-group-item list-group-item-light"
+      data-rb-event-key={null}
       disabled={false}
-      type="button"
+      onClick={[Function]}
     >
-      topic22
-    </button>
-    <button
-      className="mr-2 mb-2 btn btn-light"
+      topic2
+    </div>
+    <div
+      className="mr-2 mb-2 list-group-item list-group-item-light"
+      data-rb-event-key={null}
       disabled={false}
-      type="button"
+      onClick={[Function]}
     >
-      topic32
-    </button>
+      topic3
+    </div>
     <button
       className="p-2 h-50 btn btn-light btn-sm"
       disabled={false}

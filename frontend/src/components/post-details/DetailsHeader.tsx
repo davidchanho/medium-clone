@@ -10,7 +10,7 @@ function DetailsHeader({ ...post }: IPost) {
     <div className="d-flex align-items-center justify-content-between flex-row mb-3">
       <Row className="d-flex align-items-center flex-row">
         <Col xs={2}>
-          <img src={post?.user?.avatar} />
+          <img src={post?.user?.avatar} alt={post?.user?.name} />
         </Col>
         <Col>
           {post?.user?.name} <Button size="sm">Follow</Button>

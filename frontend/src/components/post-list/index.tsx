@@ -10,9 +10,9 @@ function PostList() {
 
   const renderPosts = () => {
     if (loading) {
-      return <div>Loading</div>;
+      return <PostsSkeleton amount={5} />;
     }
-    if(error) {
+    if (error) {
       return <div>error</div>;
     }
     return posts.map((post) => (

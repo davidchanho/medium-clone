@@ -5,7 +5,7 @@ import DetailsImg from "./DetailsImg";
 
 describe("DetailsImg", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<DetailsImg post={testPost} />).toJSON();
+    const tree = renderer.create(<DetailsImg {...testPost} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

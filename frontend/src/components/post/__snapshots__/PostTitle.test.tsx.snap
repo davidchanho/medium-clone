@@ -2,7 +2,7 @@
 
 exports[`PostTitle renders correctly 1`] = `
 <div
-  className="text-capitalize mb-1 undefined card-title h5"
+  className="text-capitalize mb-1 card-title h5"
 >
   test
 </div>

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostOptions renders correctly 1`] = `
+<div
+  className="mt-auto d-flex align-items-center justify-content-between dropdown"
+>
+  <span
+    className="p-0 dropdown-item-text"
+  >
+    <span
+      onClick={[Function]}
+    >
+      <svg
+        fill="currentColor"
+        height="22"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 16 16"
+        width="22"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clipRule="evenodd"
+          d="M8 12l5 3V3a2 2 0 00-2-2H5a2 2 0 00-2 2v12l5-3zm-4 1.234l4-2.4 4 2.4V3a1 1 0 00-1-1H5a1 1 0 00-1 1v10.234z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </span>
+  </span>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="ml-2 bg-white text-secondary shadow-none dropdown-toggle btn btn-primary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 16 16"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M3 9.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
+        fillRule="evenodd"
+      />
+    </svg>
+  </button>
+</div>
+`;

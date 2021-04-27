@@ -10,7 +10,7 @@ function PostDetailsPage() {
 
   useEffect(() => {
     getPost(params.id);
-  }, []);
+  }, [getPost, params.id]);
 
   return (
     <div className="d-flex">

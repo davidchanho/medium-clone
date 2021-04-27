@@ -5,7 +5,7 @@ import PostTitle from "./PostTitle";
 
 describe("PostTitle", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<PostTitle post={testPost} />).toJSON();
+    const tree = renderer.create(<PostTitle {...testPost} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

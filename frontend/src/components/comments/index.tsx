@@ -1,6 +1,9 @@
 import React from "react";
-import { FormControl, ListGroup, Modal, ModalBody } from "react-bootstrap";
-import ModalHeader from "react-bootstrap/esm/ModalHeader";
+import {
+  FormControl,
+  ListGroup,
+  Modal
+} from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
 import { IconMessage } from "../_shared/icons";
@@ -14,10 +17,10 @@ function Comments() {
       </ListGroup.Item>
 
       <Modal>
-        <ModalHeader closeButton>Responses</ModalHeader>
-        <ModalBody>
+        <Modal.Header closeButton>Responses</Modal.Header>
+        <Modal.Body>
           <FormControl />
-        </ModalBody>
+        </Modal.Body>
       </Modal>
     </>
   );
