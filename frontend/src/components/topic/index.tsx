@@ -4,7 +4,7 @@ import { ITopic } from "../../types";
 
 function Topic({ name }: ITopic) {
   return (
-    <ListGroupItem action className="mr-2 mb-2 text-bold">
+    <ListGroupItem action className="mr-2 mb-2 font-weight-bold">
       {name}
     </ListGroupItem>
   );

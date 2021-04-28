@@ -1,10 +1,11 @@
 import axios from "axios";
-import { IComment, IPost, IPublication, IUser } from "../types";
+import { IComment, IPost, IPublication, ITopic, IUser } from "../types";
 
 const commentsUrl = "/api/comments/";
 const postsUrl = "/api/posts/";
 const publicationsUrl = "/api/publications/";
 const usersUrl = "/api/users/";
+const topicsUrl = "/api/topics/";
 
 const API = {
   async getComments() {
@@ -49,6 +50,10 @@ const API = {
   },
   async getPublication(_id: string) {
     const { data } = await axios.get<IPublication>(publicationsUrl + _id);
+    return data;
+  },
+  async getTopics() {
+    const { data } = await axios.get<ITopic[]>(topicsUrl);
     return data;
   },
   async getUsers() {

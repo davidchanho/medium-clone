@@ -273,3 +273,20 @@ export const bookmarkPost = (post: IPost) => async (
     console.log(err);
   }
 };
+
+export const getTopics = () => async (dispatch: Dispatch<Action>) => {
+  dispatch({ type: ActionTypes.FETCH_TOPICS });
+
+  try {
+    const data = await API.getTopics();
+    dispatch({
+      type: ActionTypes.FETCH_TOPICS_SUCCESS,
+      payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: ActionTypes.FETCH_TOPICS_FAIL,
+      payload: err,
+    });
+  }
+};

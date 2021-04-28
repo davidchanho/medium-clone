@@ -12,3 +12,6 @@ export const publicationSelectors = (state: RootState) => {
 export const userSelectors = (state: RootState) => {
   return state.users;
 };
+export const topicSelectors = (state: RootState) => {
+  return state.topics;
+};

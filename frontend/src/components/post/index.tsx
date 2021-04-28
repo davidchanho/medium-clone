@@ -13,11 +13,11 @@ function Post({ ...post }: IPost) {
       className="d-flex flex-column bg-inherit pointer mb-2"
       onClick={onGetPost}
     >
-      <Card.Text className="d-flex align-items-end mb-1">
+      <Card.Text className="d-flex align-items-start mb-1">
         <img
           src={post?.publication?.icon}
           alt={post?.publication?.name}
-          className="mr-1 rounded"
+          className="mr-1 mt-1 rounded"
         />{" "}
         {post?.user?.name} in {post?.publication?.name}
       </Card.Text>

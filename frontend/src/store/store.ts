@@ -9,7 +9,8 @@ import reducers from "./reducers";
 const persistConfig = {
   key: "medium",
   storage,
-  whitelist: ["posts", "publications", "comments"],
+  whitelist: ["posts", "publications", "comments", "topics"],
+  blacklist: ["users"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

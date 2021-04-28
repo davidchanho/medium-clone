@@ -134,7 +134,7 @@ const seed = () =>
     user.posts = postsSample;
     user.bookmarks = postsSample;
 
-    Promise.all([publication.save(), user.save()])
+    Promise.all([publication.save(), user.save(), topic.save()])
       .then(() => {
         console.log("seeding successful");
         process.exit(0);

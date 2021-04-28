@@ -1,13 +1,15 @@
 import React from "react";
+import { useSelector } from "../../hooks/useSelector";
+import { topicSelectors } from "../../store";
 import Topic from "../topic";
 
 function TopicList() {
-  const topics = ["topic1", "topic2", "topic3"];
+  const { topics } = useSelector(topicSelectors);
 
   return (
     <>
-      {topics.map((topic: string) => (
-        <Topic key={`topics-you-follow-${topic}`} name={topic} />
+      {topics.map((topic) => (
+        <Topic key={`topics-you-follow-${topic}`} name={topic.name} />
       ))}
     </>
   );
