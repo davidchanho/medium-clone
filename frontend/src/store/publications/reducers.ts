@@ -1,13 +1,13 @@
 import produce from "immer";
-import { nanoid } from "nanoid";
 import { IPublication } from "../../types/publication";
 import { Action } from "../actions";
 import { ActionTypes } from "../actionTypes";
 
 export const initialPublication: IPublication = {
-  _id: nanoid(),
+  _id: "",
   name: "",
   icon: "",
+  topics: [],
 };
 
 export interface IPublicationsState {

@@ -15,16 +15,6 @@ function PostForm() {
 
   const { title, body } = postForm;
 
-  const renderOptions = () => {
-    return publications.map((publication: IPublication) => {
-      return (
-        <option key={publication._id} value={publication._id}>
-          {publication.name}
-        </option>
-      );
-    });
-  };
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -55,12 +45,14 @@ function PostForm() {
       <label>Image</label>
       <input type="file" accept="image/*" onChange={onFileChange} />
       <label>Publication</label>
-      <select
-        onChange={onChange}
-        name="publicationId"
-        ref={register}
-      >
-        {renderOptions()}
+      <select onChange={onChange} name="publicationId" ref={register}>
+        {publications.map((publication: IPublication) => {
+          return (
+            <option key={publication._id} value={publication._id}>
+              {publication.name}
+            </option>
+          );
+        })}
       </select>
       <button type="submit">submit</button>
     </form>

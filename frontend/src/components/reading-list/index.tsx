@@ -17,29 +17,25 @@ function ReadingList() {
     }
   };
 
-  const renderTabs = () => {
-    const items = [
-      {
-        title: `Saved (${user?.bookmarks.length})`,
-        panel: <Saved />,
-      },
-      { title: "Archived", panel: <Archived /> },
-      { title: "Highlights", panel: <Highlight /> },
-      { title: "Recent", panel: <Recent /> },
-    ];
-
-    return items.map(({ title, panel }) => {
-      return (
-        <Tab key={title} eventKey={title} title={title}>
-          {panel}
-        </Tab>
-      );
-    });
-  };
+  const items = [
+    {
+      title: `Saved (${user?.bookmarks?.length})`,
+      panel: <Saved />,
+    },
+    { title: "Archived", panel: <Archived /> },
+    { title: "Highlights", panel: <Highlight /> },
+    { title: "Recent", panel: <Recent /> },
+  ];
 
   return (
     <Tabs activeKey={key} onSelect={onSelect} id="readingList">
-      {renderTabs()}
+      {items.map(({ title, panel }) => {
+        return (
+          <Tab key={title} eventKey={title} title={title}>
+            {panel}
+          </Tab>
+        );
+      })}
     </Tabs>
   );
 }

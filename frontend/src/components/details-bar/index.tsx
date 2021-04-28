@@ -9,8 +9,8 @@ import Comments from "../comments";
 function DetailsBar() {
   const { post } = useSelector(postSelectors);
 
-  const renderPost = () => {
-    return (
+  return (
+    <Card className="w-25">
       <h2>
         <Card.Header className="bg-white mb-3">
           <p className="mb-3">{post?.publication?.name}</p>
@@ -23,10 +23,8 @@ function DetailsBar() {
           <Bookmark />
         </Card.Body>
       </h2>
-    );
-  };
-
-  return <Card className="w-25">{renderPost()}</Card>;
+    </Card>
+  );
 }
 
 export default DetailsBar;

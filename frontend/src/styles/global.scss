@@ -1,4 +1,5 @@
 @use 'reset';
+$enable-caret: false;
 @import "bootstrap/scss/bootstrap-reboot.scss";
 @import "bootstrap/scss/bootstrap.scss";
 @import "react-multi-carousel/lib/styles.css";

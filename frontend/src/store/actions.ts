@@ -1,5 +1,5 @@
 import { ActionTypes } from ".";
-import { IComment, IPost, IPublication, IUser } from "../types";
+import { IComment, IPost, IPublication, ITopic, IUser } from "../types";
 
 export interface GetCommentsAction {
   type: ActionTypes.FETCH_COMMENTS;
@@ -115,6 +115,20 @@ export interface GetPublicationFailAction {
   payload: string;
 }
 
+export interface GetTopicsAction {
+  type: ActionTypes.FETCH_TOPICS;
+}
+
+export interface GetTopicsSuccessAction {
+  type: ActionTypes.FETCH_TOPICS_SUCCESS;
+  payload: ITopic[];
+}
+
+export interface GetTopicsFailAction {
+  type: ActionTypes.FETCH_TOPICS_FAIL;
+  payload: string;
+}
+
 export interface GetUsersAction {
   type: ActionTypes.FETCH_USERS;
 }
@@ -188,6 +202,9 @@ export type Action =
   | GetPublicationAction
   | GetPublicationSuccessAction
   | GetPublicationFailAction
+  | GetTopicsAction
+  | GetTopicsSuccessAction
+  | GetTopicsFailAction
   | GetUsersAction
   | GetUsersSuccessAction
   | GetUsersFailAction

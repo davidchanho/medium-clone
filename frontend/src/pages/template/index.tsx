@@ -1,15 +1,13 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import Navbar from "../../components/navbar";
+import styles from "./Template.module.scss";
 
 function Template() {
   return (
-    <div>
+    <div className={styles.container}>
       <Navbar />
-      <Container>
-        <Outlet />
-      </Container>
+      <Outlet />
     </div>
   );
 }

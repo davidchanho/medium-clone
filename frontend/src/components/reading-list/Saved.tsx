@@ -6,17 +6,15 @@ import { userSelectors } from "../../store";
 function Saved() {
   const { user } = useSelector(userSelectors);
 
-  const renderUser = () => {
-    return user?.bookmarks.map((bookmark) => {
-      return (
+  return (
+    <ListGroup>
+      {user?.bookmarks.map((bookmark) => (
         <ListGroupItem key={`saved-${bookmark._id}`}>
           {bookmark.title}
         </ListGroupItem>
-      );
-    });
-  };
-
-  return <ListGroup>{renderUser()}</ListGroup>;
+      ))}
+    </ListGroup>
+  );
 }
 
 export default Saved;

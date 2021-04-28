@@ -1,3 +1,4 @@
 export interface ITopic {
-  label: string;
+  _id?: string;
+  name: string;
 }

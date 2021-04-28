@@ -18,6 +18,7 @@ export const testPublication = {
   _id: "test",
   name: "test",
   icon: "test",
+  topic: [{ name: "test" }],
 };
 
 export const testPost = {

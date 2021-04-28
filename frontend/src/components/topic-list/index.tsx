@@ -7,7 +7,7 @@ function TopicList() {
   return (
     <>
       {topics.map((topic: string) => (
-        <Topic key={`topics-you-follow-${topic}`} label={topic} />
+        <Topic key={`topics-you-follow-${topic}`} name={topic} />
       ))}
     </>
   );
