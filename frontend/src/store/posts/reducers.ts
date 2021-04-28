@@ -15,6 +15,7 @@ export const initialPost: IPost = {
   date: "",
   readingTime: "",
   comments: [],
+  excerpt: 0,
 };
 
 export interface IPostsState {

@@ -1,7 +1,6 @@
 import React from "react";
-import { Button, ListGroup } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 import TopicList from "../topic-list";
-import { IconPlus } from "../icons";
 
 function TopicsYouFollow() {
   return (
@@ -9,9 +8,7 @@ function TopicsYouFollow() {
       <p className="text-uppercase font-weight-bold mb-2">Topics you follow</p>
       <ListGroup variant="flush">
         <TopicList />
-        <Button variant="light" size="sm" className="p-2 h-50">
-          <IconPlus />
-        </Button>
+        <a className="text-success">See More</a>
       </ListGroup>
     </div>
   );

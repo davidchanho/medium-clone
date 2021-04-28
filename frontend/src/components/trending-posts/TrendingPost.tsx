@@ -6,7 +6,7 @@ interface TrendingPostProps extends IPost {
   index: number;
 }
 
-function TrendingPost({ index, ...post}: TrendingPostProps) {
+function TrendingPost({ index, ...post }: TrendingPostProps) {
   return (
     <div className="d-flex">
       <h3 className="text-muted mr-4">0{index + 1}</h3>

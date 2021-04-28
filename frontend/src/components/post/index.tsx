@@ -1,10 +1,9 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { clampText } from "../../helpers/clampText";
+import { formatDate } from "../../helpers/formatDate";
 import { useGetPost } from "../../hooks/useGetPost";
 import { IPost } from "../../types";
-import PostDate from "./PostDate";
-import PostHeader from "./PostHeader";
-import PostTitle from "./PostTitle";
 
 function Post({ ...post }: IPost) {
   const { onGetPost } = useGetPost(post);
@@ -14,9 +13,21 @@ function Post({ ...post }: IPost) {
       className="d-flex flex-column bg-inherit pointer mb-2"
       onClick={onGetPost}
     >
-      <PostHeader {...post} />
-      <PostTitle {...post} />
-      <PostDate {...post} />
+      <Card.Text className="d-flex align-items-end mb-1">
+        <img
+          src={post?.publication?.icon}
+          alt={post?.publication?.name}
+          className="mr-1 rounded"
+        />{" "}
+        {post?.user?.name} in {post?.publication?.name}
+      </Card.Text>
+      <Card.Title className="text-capitalize mb-1">{post?.title}</Card.Title>
+      <Card.Text className="text-secondary">
+        {post.excerpt ? clampText(post?.body, post?.excerpt) : ""}
+      </Card.Text>
+      <Card.Text className="text-secondary">
+        {formatDate(post?.date)} &middot; {post?.readingTime}
+      </Card.Text>
     </Card>
   );
 }

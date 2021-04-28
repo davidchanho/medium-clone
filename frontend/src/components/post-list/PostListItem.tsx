@@ -2,12 +2,9 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useGetPost } from "../../hooks/useGetPost";
 import { IPost } from "../../types";
+import Post from "../post";
 import PostOptions from "../post-options";
-import PostDate from "../post/PostDate";
-import PostHeader from "../post/PostHeader";
 import PostImg from "../post/PostImg";
-import PostSubtitle from "../post/PostSubtitle";
-import PostTitle from "../post/PostTitle";
 
 function PostListItem({ ...post }: IPost) {
   const { onGetPost } = useGetPost(post);
@@ -16,10 +13,7 @@ function PostListItem({ ...post }: IPost) {
     <Card className="d-flex flex-row mb-1 w-100">
       <Card.Header className="bg-white d-flex justify-content-between pointer w-75">
         <div className="pointer" onClick={onGetPost}>
-          <PostHeader {...post} />
-          <PostTitle {...post} />
-          <PostSubtitle {...post} />
-          <PostDate {...post} />
+          <Post {...post} excerpt={60} />
         </div>
 
         <PostOptions {...post} />

@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  FormControl,
-  ListGroup,
-  Modal
-} from "react-bootstrap";
+import { FormControl, ListGroup, Modal } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
 import { IconMessage } from "../icons";
@@ -13,7 +9,7 @@ function Comments() {
   return (
     <>
       <ListGroup.Item className="d-flex align-items-center justify-content-between">
-        <IconMessage className="mr-3" /> {post.comments.length}
+        <IconMessage className="mr-3" /> {post?.comments?.length}
       </ListGroup.Item>
 
       <Modal>

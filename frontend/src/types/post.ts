@@ -12,4 +12,5 @@ export interface IPost {
   readingTime: string;
   date: string;
   comments: IComment[];
+  excerpt?: number;
 }
