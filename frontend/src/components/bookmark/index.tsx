@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
 import { postSelectors, userSelectors } from "../../store";
-import { IconBookmark, IconBookmarkFill } from "../_shared/icons";
+import { IconBookmark, IconBookmarkFill } from "../icons";
 
 function Bookmark() {
   const { post } = useSelector(postSelectors);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Nav as BsNav, NavLink } from "react-bootstrap";
-import { IconBell, IconBookmarks, IconSearch } from "../_shared/icons";
+import { IconBell, IconBookmarks, IconSearch } from "../icons";
 import UserNavMenu from "./UserNavMenu";
 
 function Nav() {

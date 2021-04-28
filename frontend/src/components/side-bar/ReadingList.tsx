@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { postSelectors } from "../../store";
 import Post from "../post";
-import { IconBookmarks } from "../_shared/icons";
+import { IconBookmarks } from "../icons";
 
 function ReadingList() {
   const { reading } = useSelector(postSelectors);

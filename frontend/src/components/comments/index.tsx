@@ -6,7 +6,7 @@ import {
 } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
-import { IconMessage } from "../_shared/icons";
+import { IconMessage } from "../icons";
 
 function Comments() {
   const { post } = useSelector(postSelectors);

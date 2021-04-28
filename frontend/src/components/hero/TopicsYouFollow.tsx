@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ListGroup } from "react-bootstrap";
 import TopicList from "../topic-list";
-import { IconPlus } from "../_shared/icons";
+import { IconPlus } from "../icons";
 
 function TopicsYouFollow() {
   return (

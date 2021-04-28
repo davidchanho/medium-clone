@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ListGroup } from "react-bootstrap";
-import { IconClap } from "../_shared/icons";
+import { IconClap } from "../icons";
 
 function Clap() {
   const [claps, setClaps] = useState<number>(0);

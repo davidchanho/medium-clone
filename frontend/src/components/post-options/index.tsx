@@ -2,7 +2,7 @@ import React from "react";
 import { Dropdown } from "react-bootstrap";
 import { IPost } from "../../types";
 import Bookmark from "../bookmark";
-import { IconThreeDots } from "../_shared/icons";
+import { IconThreeDots } from "../icons";
 import PostOption from "./PostOption";
 
 const options = [

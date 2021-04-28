@@ -14,7 +14,7 @@ function Hero() {
       <Col lg={4} xs={12}>
         <FeaturedPosts />
       </Col>
-      <Col xs={12}>
+      <Col lg={4} xs={12}>
         <CreatorsToFollow />
         <TopicsYouFollow />
       </Col>

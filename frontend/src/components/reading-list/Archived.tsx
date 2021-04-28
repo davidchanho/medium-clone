@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import { IconArchive } from "../_shared/icons";
+import { IconArchive } from "../icons";
 
 function Archived() {
   return (

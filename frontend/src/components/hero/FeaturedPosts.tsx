@@ -7,15 +7,11 @@ import FeaturedPost from "./FeaturedPost";
 function FeaturedPosts() {
   const { featured } = useSelector(postSelectors);
 
-  const renderPosts = () => {
-    return featured.map((post) => (
-      <FeaturedPost key={`featured-${post._id}`} {...post} />
-    ));
-  };
-
   return (
     <CardDeck className="d-flex flex-column border-right">
-      {renderPosts()}
+      {featured.map((post) => (
+        <FeaturedPost key={`featured-${post._id}`} {...post} />
+      ))}
     </CardDeck>
   );
 }

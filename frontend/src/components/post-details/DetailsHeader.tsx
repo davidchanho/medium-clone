@@ -3,7 +3,7 @@ import { Button, Col, Row } from "react-bootstrap";
 import { IPost } from "../../types";
 import PostOptions from "../post-options";
 import PostDate from "../post/PostDate";
-import { IconFacebook, IconLinkedin, IconTwitter } from "../_shared/icons";
+import { IconFacebook, IconLinkedin, IconTwitter } from "../icons";
 
 function DetailsHeader({ ...post }: IPost) {
   return (

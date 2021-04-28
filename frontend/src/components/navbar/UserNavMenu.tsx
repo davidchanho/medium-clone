@@ -3,7 +3,7 @@ import { Dropdown } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { userSelectors } from "../../store";
-import { IconUserCircle } from "../_shared/icons";
+import { IconUserCircle } from "../icons";
 
 function UserNavMenu() {
   const { user, loading, error } = useSelector(userSelectors);
