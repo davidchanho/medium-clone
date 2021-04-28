@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card, Dropdown, ListGroup } from "react-bootstrap";
 import { useSelector } from "../../hooks/useSelector";
-import { postSelectors } from "../../store/posts/selectors";
+import { postSelectors } from "../../store";
 import Bookmark from "../bookmark";
 import Clap from "../clap";
 import Comments from "../comments";

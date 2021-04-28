@@ -8,20 +8,14 @@ import Creator from "./Creator";
 function CreatorsToFollow() {
   const { users} = useSelector(userSelectors);
 
-  const renderCreators = () => {
-    return (
-      <ListGroup>
+  return (
+    <div className="mb-3">
+      <p className="text-uppercase font-weight-bold mb-2">Creators to follow</p>{" "}
+       <ListGroup>
         {users.slice(0, 2).map((user: IUser) => {
           return <Creator key={`creators-to-follow-${user._id}`} {...user} />;
         })}
       </ListGroup>
-    );
-  };
-
-  return (
-    <div className="mb-3">
-      <p className="text-uppercase font-weight-bold mb-2">Creators to follow</p>{" "}
-      {renderCreators()}
     </div>
   );
 }

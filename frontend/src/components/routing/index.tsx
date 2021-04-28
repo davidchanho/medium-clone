@@ -5,7 +5,6 @@ import PostFormPage from "../../pages/post-form-page";
 import PostsPage from "../../pages/posts-page";
 import ReadingListPage from "../../pages/reading-list-page";
 import Template from "../../pages/template";
-import UpgradePage from "../../pages/upgrade-page";
 
 function Routing() {
   return (
@@ -17,7 +16,6 @@ function Routing() {
           <Route path="/:id" element={<PostDetailsPage />} />
           <Route path="/reading-list" element={<ReadingListPage />} />
         </Route>
-        <Route path="/upgrade" element={<UpgradePage />} />
       </Routes>
     </Router>
   );

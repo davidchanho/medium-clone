@@ -6,55 +6,25 @@ import { userSelectors } from "../../store";
 import { IconUserCircle } from "../icons";
 
 function UserNavMenu() {
-  const { user, loading, error } = useSelector(userSelectors);
-
-  const renderToggle = () => {
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-
-    if (error) {
-      return <div>{error}</div>;
-    }
-
-    if (user?.avatar) {
-      <img src={user?.avatar} alt="user avatar" className="rounded" />;
-    }
-
-    return <IconUserCircle />;
-  };
-
-  const renderHeader = () => {
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-
-    if (error) {
-      return <div>{error}</div>;
-    }
-
-    return (
-      <Dropdown.Item className="d-flex align-items-center">
-        <img
-          src={user?.photo}
-          alt="user avatar"
-          className="rounded mr-2 py-2"
-        />
-        <div>
-          <p>{user?.name}</p>
-          <p>@{user?.email.split("@")[0]}</p>
-        </div>
-      </Dropdown.Item>
-    );
-  };
+  const { user } = useSelector(userSelectors);
 
   return (
     <Dropdown alignRight>
       <Dropdown.Toggle className="text-muted shadow-none">
-        {renderToggle()}
+        <IconUserCircle />
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        {renderHeader()}
+        <Dropdown.Item className="d-flex align-items-center">
+          <img
+            src={user?.photo}
+            alt="user avatar"
+            className="rounded mr-2 py-2"
+          />
+          <div>
+            <p>{user?.name}</p>
+            <p>@{user?.email.split("@")[0]}</p>
+          </div>
+        </Dropdown.Item>
         <Dropdown.Divider />
         <Dropdown.Item as={NavLink} to="/create">
           Write a story
