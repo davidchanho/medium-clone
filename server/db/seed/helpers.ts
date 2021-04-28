@@ -32,6 +32,10 @@ export const generateBody = () => {
   return _.capitalize(faker.lorem.paragraph(5));
 };
 
+export const generateTopicName = () => {
+  return _.capitalize(faker.lorem.word(8));
+};
+
 export const generateSampleSize = (arr: any[]) => {
   const shuffledArr = _.shuffle(arr);
   return _.sampleSize(shuffledArr, generateRandomNumber());

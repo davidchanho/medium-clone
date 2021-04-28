@@ -17,7 +17,7 @@ const startDB = async () => {
     await connectDb();
   } catch (err) {
     console.error(err.message);
-    process.exit();
+    process.exit(0);
   }
 };
 

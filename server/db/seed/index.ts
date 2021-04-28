@@ -14,6 +14,7 @@ import {
   generatePhoto,
   generateRandomNumber,
   generateSampleSize,
+  generateTopicName,
 } from "./helpers";
 
 EventEmitter.defaultMaxListeners = 20;
@@ -106,6 +107,12 @@ const generateComments = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
   });
 };
 
+const generateTopic = () => {
+  return new db.Topic({
+    name: generateTopicName(),
+  });
+};
+
 const seed = () =>
   _.times(PUBLICATIONS_AMOUNT, () => {
     connectDb();
@@ -118,10 +125,12 @@ const seed = () =>
 
     const user = generateUser();
     const posts = generatePosts(publication, user);
+    const topic = generateTopic();
 
     const postsSample = generateSampleSize(posts);
 
     publication.posts = posts;
+    publication.topic = topic;
     user.posts = postsSample;
     user.bookmarks = postsSample;
 
