@@ -9,7 +9,7 @@ function TopicsYouFollow() {
       <ListGroup variant="flush">
         <TopicList />
         
-        <a className="text-success pointer">See More</a>
+        <a className="text-success pointer" href='#!'>See More</a>
       </ListGroup>
     </div>
   );

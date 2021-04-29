@@ -9,7 +9,7 @@ function Footer() {
       className="w-100 d-flex align-items-center justify-content-between"
     >
       <Navbar.Brand href="/">
-        <img src="../../assets/medium.svg" />
+        <img src="../../assets/medium.svg" alt='logo' />
       </Navbar.Brand>
       <Nav className="w-25 d-flex align-items-center justify-content-between">
         <NavLink to="#!" className="text-white">

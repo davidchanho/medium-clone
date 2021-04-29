@@ -14,7 +14,7 @@ function HeroPost() {
       <>
         <NavLink to={`/${hero._id}`} className="text-secondary">
           <PostImg {...hero} width={375} height={281.5} />
-          <Post {...hero} excerpt={280} />
+          <Post {...hero} excerpt={120} />
         </NavLink>
         <div className="text-secondary d-flex">
           <NavLink to={`/${hero._id}`}>Read More</NavLink> &middot;{" "}

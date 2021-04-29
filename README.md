@@ -47,8 +47,8 @@ This is a fullstack clone of Medium.com.
 - Programmatically seeded mock data into MongoDB database.
 - Unit test MongoDB, React, API, Node.js
 - Integration test MongoDB
-- managed state with Redux Toolkit and used its Redux Hooks to utilize it.
-
+- Managed state with Redux Toolkit and used its Redux Hooks to utilize it.
+- Code split routes with React Suspense and Lazy.
 ### Continued development
 
 I will experiment with other ways of doing things.
