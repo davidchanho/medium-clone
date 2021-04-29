@@ -24,7 +24,7 @@ function Bookmark() {
   };
 
   return (
-    <span onClick={onBookmarkPost}>
+    <span className="pointer" onClick={onBookmarkPost}>
       {isBookmark ? <IconBookmarkFill /> : <IconBookmark />}
     </span>
   );
