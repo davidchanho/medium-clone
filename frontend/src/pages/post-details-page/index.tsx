@@ -13,7 +13,7 @@ function PostDetailsPage() {
   }, [getPost, params.id]);
 
   return (
-    <div className="d-flex">
+    <div className="d-flex align-items-start">
       <DetailsBar />
       <PostDetails />
     </div>

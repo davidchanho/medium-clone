@@ -2,8 +2,8 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useGetPost } from "../../hooks/useGetPost";
 import { IPost } from "../../types";
-import Post from "../post";
 import PostOptions from "../post-options";
+import Post from "../post/Post";
 import PostImg from "../post/PostImg";
 
 function PostListItem({ ...post }: IPost) {
@@ -16,7 +16,6 @@ function PostListItem({ ...post }: IPost) {
           <Post {...post} excerpt={60} />
         </div>
 
-        <PostOptions {...post} />
       </Card.Header>
 
       <Card.Body className="w-25">

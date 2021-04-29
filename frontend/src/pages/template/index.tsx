@@ -1,14 +1,15 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "../../components/footer";
 import Navbar from "../../components/navbar";
-import styles from "./Template.module.scss";
 
 function Template() {
   return (
-    <div className={styles.container}>
+    <>
       <Navbar />
       <Outlet />
-    </div>
+      <Footer />
+    </>
   );
 }
 

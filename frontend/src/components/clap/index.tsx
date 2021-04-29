@@ -10,7 +10,7 @@ function Clap() {
   };
 
   return (
-    <ListGroup.Item className="d-flex align-items-center">
+    <ListGroup.Item className="d-flex align-items-center border-0">
       <IconClap onClick={incrementClap} className="mr-3" />
       {claps}
     </ListGroup.Item>

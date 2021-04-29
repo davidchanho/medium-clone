@@ -11,18 +11,16 @@ function DetailsBar() {
 
   return (
     <Card className="w-25">
-      <h2>
-        <Card.Header className="bg-white mb-3">
-          <p className="mb-3">{post?.publication?.name}</p>
-          <Button>Follow</Button>
-        </Card.Header>{" "}
-        <Dropdown.Divider />
-        <Card.Body as={ListGroup}>
-          <Clap />
-          <Comments />
-          <Bookmark />
-        </Card.Body>
-      </h2>
+      <Card.Header className="bg-white mb-3">
+        <p className="mb-3">{post?.publication?.name}</p>
+        <Button>Follow</Button>
+      </Card.Header>{" "}
+      <Dropdown.Divider />
+      <Card.Body as={ListGroup} horizontal>
+        <Clap />
+        <Comments />
+        <Bookmark />
+      </Card.Body>
     </Card>
   );
 }

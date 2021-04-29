@@ -23,15 +23,11 @@ function Bookmark() {
     }
   };
 
-  const renderBookmarkIcon = () => {
-    if (isBookmark) {
-      return <IconBookmarkFill />;
-    }
-
-    return <IconBookmark />;
-  };
-
-  return <span onClick={onBookmarkPost}>{renderBookmarkIcon()}</span>;
+  return (
+    <span onClick={onBookmarkPost}>
+      {isBookmark ? <IconBookmarkFill /> : <IconBookmark />}
+    </span>
+  );
 }
 
 export default Bookmark;

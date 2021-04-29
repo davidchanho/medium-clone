@@ -8,7 +8,7 @@
     "frontend": "cd .. && cd frontend && npm start",
     "seed": "cd db && cd seed && ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "all": "npm-run-all --parallel server frontend"
+    "start": "npm-run-all --parallel server frontend"
   },
   "keywords": [],
   "author": "",

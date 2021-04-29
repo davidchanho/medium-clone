@@ -8,7 +8,8 @@ function TopicsYouFollow() {
       <p className="text-uppercase font-weight-bold mb-2">Topics you follow</p>
       <ListGroup variant="flush">
         <TopicList />
-        <a className="text-success">See More</a>
+        
+        <a className="text-success pointer">See More</a>
       </ListGroup>
     </div>
   );

@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { IPost } from "../../types";
+import { IconFacebook, IconLinkedin, IconTwitter } from "../icons";
 import PostOptions from "../post-options";
 
-import { IconFacebook, IconLinkedin, IconTwitter } from "../icons";
-
 function DetailsHeader({ ...post }: IPost) {
+  
   return (
     <div className="d-flex align-items-center justify-content-between flex-row mb-3">
       <Row className="d-flex align-items-center flex-row">
@@ -19,7 +19,8 @@ function DetailsHeader({ ...post }: IPost) {
 
       <div className="d-flex align-items-center">
         <IconTwitter size="28" />
-        <IconLinkedin size="28" /> <IconFacebook size="28" />
+        <IconLinkedin size="28" />
+        <IconFacebook size="28" />
         <PostOptions {...post} />
       </div>
     </div>

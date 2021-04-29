@@ -8,7 +8,7 @@ export interface IPost {
   user: IUser;
   title: string;
   body: string;
-  image: string;
+  image?: string;
   readingTime: string;
   date: string;
   comments: IComment[];

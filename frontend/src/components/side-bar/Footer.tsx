@@ -16,7 +16,7 @@ function Footer() {
     <div className="d-flex flex-wrap">
       {items.map((item) => {
         return (
-          <p className="mx-3" key={item}>
+          <p className="mx-3 pointer" key={item}>
             {item}
           </p>
         );

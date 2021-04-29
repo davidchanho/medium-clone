@@ -8,7 +8,7 @@ function Comments() {
   const { post } = useSelector(postSelectors);
   return (
     <>
-      <ListGroup.Item className="d-flex align-items-center justify-content-between">
+      <ListGroup.Item className="d-flex align-items-center justify-content-between border-0">
         <IconMessage className="mr-3" /> {post?.comments?.length}
       </ListGroup.Item>
 

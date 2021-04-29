@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { IPost } from "../../types";
-import styles from "./DetailsImg.module.scss";
 
 function DetailsImg({ title, image }: IPost) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,21 +11,11 @@ function DetailsImg({ title, image }: IPost) {
 
   return (
     <>
-      <img
-        src={image}
-        className={styles.detailsImg}
-        alt={title}
-        onClick={toggleOpen}
-      />
+      <img src={image} alt={title} onClick={toggleOpen} className="w-100" />
 
-      <Modal show={isOpen} className={styles.detailsModal}>
+      <Modal show={isOpen}>
         <Modal.Body>
-          <img
-            src={image}
-            className={styles.detailsImg}
-            alt={title}
-            onClick={toggleOpen}
-          />
+          <img src={image} alt={title} onClick={toggleOpen} />
         </Modal.Body>
       </Modal>
     </>

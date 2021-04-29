@@ -4,7 +4,6 @@ import db from "../db/models";
 export default {
   getUsers: (req: Request, res: Response) => {
     db.User.find({})
-      .select("avatar photo name")
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },

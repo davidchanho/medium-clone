@@ -8,18 +8,14 @@ function PostDetails() {
   const { post } = useSelector(postSelectors);
   const { title, body } = post;
 
-  const renderPost = () => {
-    return (
-      <>
-        <h1>{title}</h1>
-        <DetailsHeader {...post} />
-        <DetailsImg {...post} />
-        <p className="m-4">{body}</p>{" "}
-      </>
-    );
-  };
-
-  return <article className="w-75">{renderPost()}</article>;
+  return (
+    <article className="w-75">
+      <h1>{title}</h1>
+      <DetailsHeader {...post} />
+      <DetailsImg {...post} />
+      <p className="m-4">{body}</p>{" "}
+    </article>
+  );
 }
 
 export default PostDetails;

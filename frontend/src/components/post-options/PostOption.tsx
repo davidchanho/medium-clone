@@ -7,12 +7,12 @@ interface PostOptionProps extends IPost {
   label: string;
 }
 
-function PostOption({ label, ...post }: PostOptionProps) {
+function PostOption({ label, _id }: PostOptionProps) {
   const { deletePost } = useActions();
 
   const onDeletePost = () => {
-    if (post._id) {
-      deletePost(post._id);
+    if (_id) {
+      deletePost(_id);
     }
   };
 
