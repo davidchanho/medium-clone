@@ -1,4 +1,4 @@
-import { Dispatch } from "react";
+import { Dispatch, useState } from "react";
 import { Action, ActionTypes } from ".";
 import { IComment, IPost, IUser } from "../types";
 import API from "./api";
@@ -80,7 +80,6 @@ export const updateComment = (comment: IComment) => async (
 
 export const getPosts = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.FETCH_POSTS });
-
   try {
     const data = await API.getPosts();
 

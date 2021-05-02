@@ -3,6 +3,8 @@ import db from "../db/models";
 
 export default {
   getPosts: (req: Request, res: Response) => {
+    const skip = req.query.skip ? Number(req.query.skip) : 0;
+    
     db.Post.find({})
       .populate({
         path: "user",
@@ -15,8 +17,8 @@ export default {
         model: "publication",
       })
       .select("image title body readingTime date user publication")
-      .limit(6)
-      .skip(6)
+      .limit(5)
+      .skip(skip)
       .then((model) => res.json(model))
       .catch((err) => res.status(422).json(err));
   },

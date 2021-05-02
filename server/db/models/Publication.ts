@@ -1,12 +1,11 @@
 import { Document, model, Schema } from "mongoose";
 import { IPostDoc } from "./Post";
-import { ITopicDoc } from "./Topic";
 
 export interface IPublicationDoc extends Document {
   name: string;
   icon: string;
   posts: IPostDoc[];
-  topic: ITopicDoc;
+  topic: string;
 }
 
 const publicationSchema = new Schema({
@@ -17,7 +16,7 @@ const publicationSchema = new Schema({
   },
   icon: { type: String },
   posts: [{ type: Schema.Types.ObjectId, ref: "post" }],
-  topic: [{ type: Schema.Types.ObjectId, ref: "topic" }],
+  topic: { type: String, ref: "topic" },
 });
 
 const Publication = model<IPublicationDoc>("publication", publicationSchema);
