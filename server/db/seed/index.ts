@@ -130,7 +130,7 @@ const seed = () =>
     const postsSample = generateSampleSize(posts);
 
     publication.posts = posts;
-    publication.topic = topic;
+    publication.topic = topic.name;
     user.posts = postsSample;
     user.bookmarks = postsSample;
 

@@ -13,7 +13,7 @@ router
 router
   .route("/:id")
   .get(postsControllers.getPost)
-  .put(postsControllers.updatePost)
+  .patch(postsControllers.updatePost)
   .delete(postsControllers.deletePost);
 
 export default router;

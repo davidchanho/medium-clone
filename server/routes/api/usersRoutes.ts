@@ -10,7 +10,7 @@ router.route("/").get(usersControllers.getUsers).post(usersControllers.addUser);
 router
   .route("/:id")
   .get(usersControllers.getUser)
-  .put(usersControllers.updateUser)
+  .patch(usersControllers.updateUser)
   .delete(usersControllers.deleteUser);
 
 export default router;

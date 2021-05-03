@@ -13,7 +13,7 @@ router
 router
   .route("/:id")
   .get(commentsControllers.getComment)
-  .put(commentsControllers.updateComment)
+  .patch(commentsControllers.updateComment)
   .delete(commentsControllers.deleteComment);
 
 export default router;

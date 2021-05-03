@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import db from "../db/models";
 import { ICommentDoc } from "../db/models/Comment";
 import { IPostDoc } from "../db/models/Post";
@@ -112,6 +113,18 @@ describe("tests association", () => {
     ]).then(() => done());
   });
 
+  async function removeAllCollections() {
+    const collections = Object.keys(mongoose.connection.collections);
+    for (const collectionName of collections) {
+      const collection = mongoose.connection.collections[collectionName];
+      await collection.deleteMany({});
+    }
+  }
+
+  afterEach(async () => {
+    await removeAllCollections();
+  });
+
   it("should check if publication exists", (done) => {
     db.Publication.findById(newPublication._id).then(() => {
       expect(newPublication.id).toBeDefined();
@@ -135,7 +148,6 @@ describe("tests association", () => {
 
   it("should check if topic exists in publication", (done) => {
     db.Publication.findById(newPublication._id).then(() => {
-      console.log(newPublication.topic);
       expect(newPublication.topic).toBe(newTopic.name);
       done();
     });
