@@ -1,8 +1,8 @@
 import "jest-chain";
 import "jest-extended";
-import mongoose from "mongoose";
+import { Types } from "mongoose";
 import {
-    calcReadTime,
+  calcReadTime,
   generateBody,
   generateDate,
   generateId,
@@ -15,21 +15,21 @@ import {
 describe("tests generateRandomNumber", () => {
   it("should return a number", () => {
     const num = generateRandomNumber();
-    expect(num).toBeNumber();
+    expect(num).toBeNumber().toBeGreaterThanOrEqual(3).toBeLessThanOrEqual(7);
   });
 });
 
 describe("tests generateId", () => {
   it("should return a mongodb id", () => {
     const id = generateId();
-    expect(id).toBeInstanceOf(mongoose.Types.ObjectId);
+    expect(typeof id).toBe(Types.ObjectId);
   });
 });
 
 describe("tests generateDate", () => {
   it("should return a Date", () => {
     const date = generateDate();
-    expect(date).toBeDate();
+    expect(date).toBeDate().toBeTruthy();
   });
 });
 

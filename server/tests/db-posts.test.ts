@@ -4,7 +4,7 @@ import db from "../db/models";
 import { IPostDoc } from "../db/models/Post";
 import testDB from "./testDB";
 
-const newPost = {
+const post = {
   title: "testing",
   body: "testing",
   image: "testing",
@@ -13,7 +13,13 @@ const newPost = {
 };
 
 describe("tests posts", () => {
-  beforeAll(() => testDB());
+  let newPost: IPostDoc;
+
+  beforeAll(async (done) => {
+    testDB();
+    newPost = new db.Post(post);
+    Promise.all([newPost.save()]).then(() => done());
+  });
 
   afterAll(async () => {
     await mongoose.connection.collections.posts.deleteMany({});
@@ -41,39 +47,35 @@ describe("tests posts", () => {
   });
 
   it("should find post by id", (done) => {
-    db.Post.create(newPost).then((post: IPostDoc) => {
-      db.Post.findById(post._id).then(() => {
-        expect(200);
-        assert(post._id !== null);
-        assert(post.title === newPost.title);
-        assert(post.body === newPost.body);
-        assert(post.image === newPost.image);
-        assert(post.readingTime === newPost.readingTime);
-        assert(post.date === newPost.date);
-        done();
-      });
+    db.Post.findById(newPost._id).then(() => {
+      expect(200);
+      assert(newPost._id !== null);
+      assert(newPost.title === post.title);
+      assert(newPost.body === post.body);
+      assert(newPost.image === post.image);
+      assert(newPost.readingTime === post.readingTime);
+      assert(newPost.date === post.date);
+      done();
     });
   });
 
   it("should update post title", (done) => {
-    db.Post.create(newPost).then((post: IPostDoc) => {
-      db.Post.findOneAndUpdate({ _id: post._id }, { title: "newpost" }).then(
-        () => {
-          db.Post.findById(post._id).then((post: any) => {
-            expect(200);
-            assert(post.title === "newpost");
-            done();
-          });
-        }
-      );
-    });
+    db.Post.findOneAndUpdate({ _id: newPost._id }, { title: "newpost" }).then(
+      () => {
+        db.Post.findById(newPost._id).then((post: any) => {
+          expect(200);
+          assert(post.title === "newpost");
+          done();
+        });
+      }
+    );
   });
 
   it("should find one and delete post", (done) => {
-    db.Post.create(newPost).then((post: IPostDoc) => {
-      db.Post.findByIdAndDelete(post._id).then(() => {
+    db.Post.findOneAndDelete({ _id: newPost._id }).then(() => {
+      db.Post.findById(newPost._id).then((post: any) => {
         expect(200);
-        expect(post._id).toBe(post._id);
+        expect(post).toBeNull();
         done();
       });
     });

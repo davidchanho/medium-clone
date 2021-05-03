@@ -9,22 +9,18 @@ import PostImg from "../post/PostImg";
 function HeroPost() {
   const { hero } = useSelector(postSelectors);
 
-  const renderHero = () => {
-    return (
-      <>
-        <NavLink to={`/${hero._id}`} className="text-secondary">
-          <PostImg {...hero} width={375} height={281.5} />
-          <Post {...hero} excerpt={120} />
-        </NavLink>
-        <div className="text-secondary d-flex">
-          <NavLink to={`/${hero._id}`}>Read More</NavLink> &middot;{" "}
-          {hero.readingTime}
-        </div>
-      </>
-    );
-  };
-
-  return <Card>{renderHero()}</Card>;
+  return (
+    <Card>
+      <NavLink to={`/${hero?._id}`} className="text-secondary">
+        <PostImg {...hero} width={375} height={281.5} />
+        <Post {...hero} excerpt={120} />
+      </NavLink>
+      <div className="text-secondary d-flex">
+        <NavLink to={`/${hero?._id}`}>Read More</NavLink> &middot;{" "}
+        {hero?.readingTime}
+      </div>
+    </Card>
+  );
 }
 
 export default HeroPost;

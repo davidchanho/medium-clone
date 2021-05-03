@@ -9,7 +9,7 @@ function TrendingPosts() {
 
   return (
     <div className="border-bottom mt-4 pb-4">
-      <div className="w-75 d-flex justify-content-center flex-column mx-auto">
+      <div className="d-flex justify-content-center flex-column mx-auto">
         <div className="d-flex align-items-center">
           <img
             className="mr-2"

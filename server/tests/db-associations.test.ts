@@ -50,7 +50,7 @@ const publication = {
   name: "testing",
   icon: "testing",
   posts: [],
-  topic: {},
+  topic: '',
 };
 
 const comment = {

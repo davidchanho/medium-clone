@@ -19,7 +19,9 @@ function PostsPage() {
       </Helmet>
 
       <Hero />
+
       <TrendingPosts />
+      
       <Row>
         <Col lg={{ span: 4, order: 2 }} xs={12}>
           <SideBar />

@@ -4,15 +4,20 @@ import db from "../db/models";
 import { ICommentDoc } from "../db/models/Comment";
 import testDB from "./testDB";
 
-const newComment = {
+const comment = {
   postId: "testing",
-  comment: {},
   body: "testing",
   date: "testing",
 };
 
 describe("tests comments", () => {
-  beforeAll(() => testDB());
+  let newComment: ICommentDoc;
+
+  beforeAll(async (done) => {
+    testDB();
+    newComment = new db.Comment(comment);
+    Promise.all([newComment.save()]).then(() => done());
+  });
 
   afterAll(async () => {
     await mongoose.connection.collections.comments.deleteMany({});
@@ -22,9 +27,9 @@ describe("tests comments", () => {
     db.Comment.create(newComment).then((comment: ICommentDoc) => {
       expect(201);
       assert(comment._id !== null);
-      assert(comment.postId === newComment.postId);
-      assert(comment.body === newComment.body);
-      assert(comment.date === newComment.date);
+      assert(comment.postId === comment.postId);
+      assert(comment.body === comment.body);
+      assert(comment.date === comment.date);
       done();
     });
   });
@@ -38,38 +43,34 @@ describe("tests comments", () => {
   });
 
   it("should find comment by id", (done) => {
-    db.Comment.create(newComment).then((comment: ICommentDoc) => {
-      db.Comment.findById(comment._id).then(() => {
+    db.Comment.findById(newComment._id).then(() => {
+      expect(200);
+      assert(newComment._id !== null);
+      assert(newComment.postId === comment.postId);
+      assert(newComment.body === comment.body);
+      assert(newComment.date === comment.date);
+      done();
+    });
+  });
+
+  it("should update comment body", (done) => {
+    db.Comment.findOneAndUpdate(
+      { _id: newComment._id },
+      { body: "comment2" }
+    ).then(() => {
+      db.Comment.findById(newComment._id).then((comment: any) => {
         expect(200);
-        assert(comment._id !== null);
-        assert(comment.postId === newComment.postId);
-        assert(comment.body === newComment.body);
-        assert(comment.date === newComment.date);
+        assert(comment.body === "comment2");
         done();
       });
     });
   });
 
-  it("should update comment body", (done) => {
-    db.Comment.create(newComment).then((comment: ICommentDoc) => {
-      db.Comment.findOneAndUpdate(
-        { _id: comment._id },
-        { body: "comment2" }
-      ).then(() => {
-        db.Comment.findById(comment._id).then((comment: any) => {
-          expect(200);
-          assert(comment.body === "comment2");
-          done();
-        });
-      });
-    });
-  });
-
   it("should find one and delete comment", (done) => {
-    db.Comment.create(newComment).then((comment: ICommentDoc) => {
-      db.Comment.findByIdAndDelete(comment._id).then(() => {
+    db.Comment.findOneAndDelete({ _id: newComment._id }).then(() => {
+      db.Comment.findById(newComment._id).then((comment: any) => {
         expect(200);
-        expect(comment._id).toBe(comment._id);
+        expect(comment).toBeNull();
         done();
       });
     });

@@ -1,7 +1,7 @@
 import request from "supertest";
 import db from "../db/models";
-import app from "../server";
 import { IUserDoc } from "../db/models/User";
+import app from "../server";
 
 const user = {
   avatar: "testing",
@@ -22,6 +22,7 @@ describe("Test /api/users end points", () => {
 
   test("Test POST /api/users", async (done) => {
     const res = await request(app).post("/api/users").send(user);
+
     done();
   });
 
@@ -31,6 +32,7 @@ describe("Test /api/users end points", () => {
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
       .expect(200);
+
     done();
   });
 
@@ -66,6 +68,7 @@ describe("Test /api/users end points", () => {
     const res = await request(app)
       .delete(`/api/users/${newUser._id}`)
       .expect(200);
+      
     done();
   });
 });

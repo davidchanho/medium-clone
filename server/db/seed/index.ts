@@ -21,7 +21,7 @@ EventEmitter.defaultMaxListeners = 20;
 
 export const PUBLICATIONS_AMOUNT = 5;
 
-export const generatePub = (publicationId: mongoose.Types._ObjectId) => {
+export const generatePublication = (publicationId: mongoose.Types._ObjectId) => {
   return new db.Publication({
     _id: publicationId,
     icon: generatePhoto(20, 20),
@@ -121,7 +121,7 @@ const seed = () =>
 
     const publicationId = generateId();
 
-    const publication = generatePub(publicationId);
+    const publication = generatePublication(publicationId);
 
     const user = generateUser();
     const posts = generatePosts(publication, user);
