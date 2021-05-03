@@ -26,6 +26,7 @@ describe("tests topics", () => {
 
   it("should find all topics", (done) => {
     db.Topic.find({}).then((topics: ITopicDoc[]) => {
+      expect(200);
       assert(topics.length !== 0);
       done();
     });

@@ -33,6 +33,7 @@ describe("tests publications", () => {
 
   it("should find all publications", (done) => {
     db.Publication.find({}).then((publications: IPublicationDoc[]) => {
+      expect(200);
       assert(publications.length === 1);
       done();
     });

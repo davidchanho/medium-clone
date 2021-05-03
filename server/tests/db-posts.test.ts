@@ -34,6 +34,7 @@ describe("tests posts", () => {
 
   it("should find all posts", (done) => {
     db.Post.find({}).then((posts: IPostDoc[]) => {
+      expect(200);
       assert(posts.length === 1);
       done();
     });

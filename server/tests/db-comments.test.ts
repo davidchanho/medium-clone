@@ -31,6 +31,7 @@ describe("tests comments", () => {
 
   it("should find all comments", (done) => {
     db.Comment.find({}).then((comments: ICommentDoc[]) => {
+      expect(200);
       assert(comments.length === 1);
       done();
     });

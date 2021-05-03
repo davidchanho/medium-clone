@@ -41,6 +41,7 @@ describe("tests users", () => {
 
   it("should find all users", (done) => {
     db.User.find({}).then((users: IUserDoc[]) => {
+      expect(200);
       assert(users.length === 1);
       done();
     });
