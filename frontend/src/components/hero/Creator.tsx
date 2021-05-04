@@ -1,5 +1,4 @@
-import React from "react";
-import { Button, ListGroupItem, ListGroupItemProps } from "react-bootstrap";
+import React, { HTMLAttributes } from "react";
 import { clampText } from "../../helpers/clampText";
 import { IUser } from "../../types";
 
@@ -9,23 +8,18 @@ function Creator({
   about,
   className,
   ...props
-}: IUser & ListGroupItemProps) {
+}: IUser & HTMLAttributes<HTMLLIElement>) {
   return (
-    <ListGroupItem
-      className={`w-100 border-0 d-flex align-items-center justify-content-between ${className}`}
-      {...props}
-    >
-      <img src={photo} alt="creator avatar" className="rounded-circle" width='60' height='60' />
+    <li className={className} {...props}>
+      <img src={photo} alt="creator avatar" width="60" height="60" />
 
-      <div className="w-50 mx-2">
-        <p className="font-weight-bold">{name}</p>
+      <div>
+        <p>{name}</p>
         <p>{about && clampText(about, 35)}</p>
       </div>
 
-      <Button variant="success" className="h-50 my-auto">
-        Follow
-      </Button>
-    </ListGroupItem>
+      <button>Follow</button>
+    </li>
   );
 }
 

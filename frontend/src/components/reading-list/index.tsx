@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Tab, Tabs } from "react-bootstrap";
 import { useSelector } from "../../hooks/useSelector";
 import { userSelectors } from "../../store";
 import Archived from "./Archived";
@@ -28,15 +27,11 @@ function ReadingList() {
   ];
 
   return (
-    <Tabs activeKey={key} onSelect={onSelect} id="readingList">
+    <ul>
       {items.map(({ title, panel }) => {
-        return (
-          <Tab key={title} eventKey={title} title={title}>
-            {panel}
-          </Tab>
-        );
+        return <li key={title}>{panel}</li>;
       })}
-    </Tabs>
+    </ul>
   );
 }
 

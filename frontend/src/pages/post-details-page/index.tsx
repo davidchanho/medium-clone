@@ -17,7 +17,7 @@ function PostDetailsPage() {
   }, [getPost, params.id]);
 
   return (
-    <div className="d-flex align-items-start">
+    <div>
       <Helmet>
         <title>{post.title}</title>
         <meta name="description" content={post.title} />

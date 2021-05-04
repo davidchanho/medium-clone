@@ -1,5 +1,4 @@
 import React from "react";
-import { CardDeck } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../store";
 import PostsSkeleton from "../post/PostsSkeleton";
@@ -20,11 +19,7 @@ function PostList() {
     ));
   };
 
-  return (
-    <CardDeck className="w-100 d-flex flex-column pt-5">
-      {renderPosts()}
-    </CardDeck>
-  );
+  return <div>{renderPosts()}</div>;
 }
 
 export default PostList;

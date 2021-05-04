@@ -7,8 +7,8 @@ function Template() {
   return (
     <>
       <Navbar />
-      <Outlet />
-      <Footer />
+      {/* <Outlet /> */}
+      {/* <Footer /> */}
     </>
   );
 }

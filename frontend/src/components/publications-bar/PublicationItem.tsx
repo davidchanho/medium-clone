@@ -1,5 +1,4 @@
 import React from "react";
-import { ListGroupItem } from "react-bootstrap";
 import { useActions } from "../../hooks/useActions";
 import { IPublication } from "../../types";
 
@@ -10,11 +9,7 @@ function PublicationItem({ _id, name }: IPublication) {
     getPublication(_id);
   };
 
-  return (
-    <ListGroupItem action key={_id} onClick={onGetPublication}>
-      {name}
-    </ListGroupItem>
-  );
+  return <li onClick={onGetPublication}>{name}</li>;
 }
 
 export default PublicationItem;

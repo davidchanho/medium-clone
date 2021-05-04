@@ -1,5 +1,4 @@
 import React from "react";
-import { Dropdown } from "react-bootstrap";
 import { IPost } from "../../types";
 import Bookmark from "../bookmark";
 import { IconThreeDots } from "../icons";
@@ -15,21 +14,21 @@ const options = [
 
 function PostOptions({ ...post }: IPost) {
   return (
-    <Dropdown className="mt-auto d-flex align-items-center justify-content-between">
-      <Dropdown.ItemText className="p-0">
+    <div>
+      <div>
         <Bookmark />
-      </Dropdown.ItemText>
+      </div>
 
-      <Dropdown.Toggle className="ml-2 bg-white text-secondary shadow-none">
+      <div>
         <IconThreeDots />
-      </Dropdown.Toggle>
+      </div>
 
-      <Dropdown.Menu className="d-flex flex-column">
+      <div>
         {options.map((option) => {
           return <PostOption key={option} {...post} label={option} />;
         })}
-      </Dropdown.Menu>
-    </Dropdown>
+      </div>
+    </div>
   );
 }
 

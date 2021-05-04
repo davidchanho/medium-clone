@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Modal } from "react-bootstrap";
 import { IPost } from "../../types";
 
 function DetailsImg({ title, image }: IPost) {
@@ -13,11 +12,11 @@ function DetailsImg({ title, image }: IPost) {
     <>
       <img src={image} alt={title} onClick={toggleOpen} className="w-100" />
 
-      <Modal show={isOpen}>
-        <Modal.Body>
+      <div>
+        <div>
           <img src={image} alt={title} onClick={toggleOpen} />
-        </Modal.Body>
-      </Modal>
+        </div>
+      </div>
     </>
   );
 }

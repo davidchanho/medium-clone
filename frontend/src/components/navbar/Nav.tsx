@@ -1,29 +1,31 @@
 import React from "react";
-import { Button, Nav as BsNav, NavLink } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import { IconBell, IconBookmarks, IconSearch } from "../icons";
 import UserNavMenu from "./UserNavMenu";
 
 function Nav() {
   return (
-    <BsNav className="ml-auto my-auto">
-      <BsNav.Link>
+    <ul className="ml-auto my-auto">
+      <li>
         <IconSearch />
-      </BsNav.Link>
-      <BsNav.Link to="/reading-list" as={NavLink}>
-        <IconBookmarks />
-      </BsNav.Link>
-      <BsNav.Link>
+      </li>
+      <li>
+        <NavLink to="/reading-list">
+          <IconBookmarks />
+        </NavLink>
+      </li>
+      <li>
         <IconBell />
-      </BsNav.Link>
-      <BsNav.Link to="/upgrade" as={NavLink}>
-        <Button variant="dark" size="sm">
-          Upgrade
-        </Button>
-      </BsNav.Link>
-      <BsNav.Link>
+      </li>
+      <li>
+        <NavLink to="/upgrade">
+          <button>Upgrade</button>
+        </NavLink>
+      </li>
+      <li>
         <UserNavMenu />
-      </BsNav.Link>
-    </BsNav>
+      </li>
+    </ul>
   );
 }
 

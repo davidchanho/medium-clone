@@ -1,5 +1,4 @@
 import React from "react";
-import { Button, Card, Dropdown, ListGroup } from "react-bootstrap";
 import { useSelector } from "../../hooks/useSelector";
 import { postSelectors } from "../../store";
 import Bookmark from "../bookmark";
@@ -10,18 +9,18 @@ function DetailsBar() {
   const { post } = useSelector(postSelectors);
 
   return (
-    <Card className="w-25">
-      <Card.Header className="bg-white mb-3">
-        <p className="mb-3">{post?.publication?.name}</p>
-        <Button>Follow</Button>
-      </Card.Header>{" "}
-      <Dropdown.Divider />
-      <Card.Body as={ListGroup} horizontal>
+    <div>
+      <div>
+        <p>{post?.publication?.name}</p>
+        <button>Follow</button>
+      </div>{" "}
+      <div />
+      <div>
         <Clap />
         <Comments />
         <Bookmark />
-      </Card.Body>
-    </Card>
+      </div>
+    </div>
   );
 }
 

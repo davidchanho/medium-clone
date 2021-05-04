@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ListGroup } from "react-bootstrap";
 import { IconClap } from "../icons";
 
 function Clap() {
@@ -10,10 +9,10 @@ function Clap() {
   };
 
   return (
-    <ListGroup.Item className="d-flex align-items-center border-0">
-      <IconClap onClick={incrementClap} className="mr-3" />
+    <div>
+      <IconClap onClick={incrementClap} />
       {claps}
-    </ListGroup.Item>
+    </div>
   );
 }
 

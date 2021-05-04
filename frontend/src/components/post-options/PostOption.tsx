@@ -1,5 +1,4 @@
 import React from "react";
-import { Dropdown } from "react-bootstrap";
 import { useActions } from "../../hooks/useActions";
 import { IPost } from "../../types";
 
@@ -16,7 +15,7 @@ function PostOption({ label, _id }: PostOptionProps) {
     }
   };
 
-  return <Dropdown.Item onClick={onDeletePost}>{label}</Dropdown.Item>;
+  return <li onClick={onDeletePost}>{label}</li>;
 }
 
 export default PostOption;

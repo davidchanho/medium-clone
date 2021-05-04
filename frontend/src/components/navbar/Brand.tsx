@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import React from "react";
-import { Navbar, NavLink } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const greeting = () => {
   const currentTime = dayjs().hour();
@@ -13,9 +13,9 @@ const greeting = () => {
 
 function Brand() {
   return (
-    <Navbar.Brand to="/" as={NavLink} className="font-weight-bold">
+    <NavLink to="/">
       <img src="/medium.svg" alt="" width="180" height="34" /> {greeting()}
-    </Navbar.Brand>
+    </NavLink>
   );
 }
 

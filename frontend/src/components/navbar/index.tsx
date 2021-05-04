@@ -1,17 +1,16 @@
 import React from "react";
-import { Navbar as BsNavbar } from "react-bootstrap";
 import Brand from "./Brand";
 import Nav from "./Nav";
 
 function Navbar() {
   return (
-    <BsNavbar bg="white" expand="md">
+    <div>
       <Brand />
-      <BsNavbar.Toggle aria-controls="basic-navbar-nav" />
-      <BsNavbar.Collapse id="basic-navbar-nav">
+      <div aria-controls="basic-navbar-nav" />
+      <div id="basic-navbar-nav">
         <Nav />
-      </BsNavbar.Collapse>
-    </BsNavbar>
+      </div>
+    </div>
   );
 }
 

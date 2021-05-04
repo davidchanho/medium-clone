@@ -8,8 +8,8 @@ interface TrendingPostProps extends IPost {
 
 function TrendingPost({ index, ...post }: TrendingPostProps) {
   return (
-    <div className="d-flex">
-      <h3 className="text-muted mr-4">0{index + 1}</h3>
+    <div className="w-100 d-flex align-items-center justify-content-between">
+      <h3 className="w-25 text-muted">0{index + 1}</h3>
       <Post key={`post-${post._id}`} {...post} />
     </div>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import Hero from "../../components/hero";
 import PostList from "../../components/post-list";
@@ -18,18 +17,14 @@ function PostsPage() {
         <link rel="icon" type="image/svg+xml" href="/mediumMobile.svg" />
       </Helmet>
 
-      <Hero />
+      {/* <Hero /> */}
 
-      <TrendingPosts />
-      
-      <Row>
-        <Col lg={{ span: 4, order: 2 }} xs={12}>
-          <SideBar />
-        </Col>
-        <Col lg={{ span: 6, offset: 1 }} xs={12}>
-          <PostList />
-        </Col>
-      </Row>
+      {/* <TrendingPosts /> */}
+
+      {/* <div>
+        <SideBar />
+        <PostList />
+      </div> */}
     </>
   );
 }

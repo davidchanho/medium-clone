@@ -1,5 +1,4 @@
 import React from "react";
-import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { postSelectors } from "../../store";
@@ -10,7 +9,7 @@ function HeroPost() {
   const { hero } = useSelector(postSelectors);
 
   return (
-    <Card>
+    <div>
       <NavLink to={`/${hero?._id}`} className="text-secondary">
         <PostImg {...hero} width={375} height={281.5} />
         <Post {...hero} excerpt={120} />
@@ -19,7 +18,7 @@ function HeroPost() {
         <NavLink to={`/${hero?._id}`}>Read More</NavLink> &middot;{" "}
         {hero?.readingTime}
       </div>
-    </Card>
+    </div>
   );
 }
 

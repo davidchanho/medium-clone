@@ -1,5 +1,4 @@
-import React from "react";
-import { Card, ImageProps } from "react-bootstrap";
+import React, { ImgHTMLAttributes } from "react";
 import { useGetPost } from "../../hooks/useGetPost";
 import { IPost } from "../../types";
 
@@ -8,15 +7,15 @@ function PostImg({
   height = 135,
   className,
   ...post
-}: IPost & ImageProps) {
+}: IPost & ImgHTMLAttributes<HTMLImageElement>) {
   const { onGetPost } = useGetPost(post);
 
   const image = post.image;
 
   return (
-    <Card.Img
+    <img
       src={image ? image : "/imgPlaceholder.png"}
-      className={`${className} pointer`}
+      className={className}
       onClick={onGetPost}
       width={width}
       height={height}

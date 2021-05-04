@@ -1,9 +1,7 @@
-@use 'reset';
-$enable-caret: false;
-@import "bootstrap/scss/bootstrap-reboot.scss";
-@import "bootstrap/scss/bootstrap.scss";
-@import "react-multi-carousel/lib/styles.css";
+import "./reset.scss";
+import { createGlobalStyle } from "styled-components";
 
+const GlobalStyles = createGlobalStyle`
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -43,21 +41,6 @@ code {
   }
 }
 
-.nav-tabs {
-  .nav-item {
-    border: none;
-    color: rgb(141, 141, 141);
-    &.active {
-      font-weight: bold;
-      border-bottom: 1px solid black;
-    }
-  }
-}
-
-.tab-pane {
-  padding: 30px;
-}
-
 p {
   margin: 0;
   padding: 0;
@@ -66,3 +49,7 @@ p {
 .bg-yellow {
   background-color: #ffc017;
 }
+
+`;
+
+export default GlobalStyles;

@@ -3,16 +3,17 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import App from "./App";
-import "./styles/global.scss";
 import PageLoader from "./pages/page-loader";
 import * as serviceWorker from "./serviceWorker";
 import { persistor, store } from "./store/store";
+import GlobalStyles from "./styles/GlobalStyles";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={<PageLoader />} persistor={persistor}>
         <App />
+        <GlobalStyles />
       </PersistGate>
     </Provider>
   </React.StrictMode>,

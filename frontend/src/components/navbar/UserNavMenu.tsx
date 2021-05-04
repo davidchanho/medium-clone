@@ -1,5 +1,4 @@
 import React from "react";
-import { Dropdown } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { userSelectors } from "../../store";
@@ -9,45 +8,41 @@ function UserNavMenu() {
   const { user } = useSelector(userSelectors);
 
   return (
-    <Dropdown alignRight>
-      <Dropdown.Toggle className="text-muted shadow-none">
+    <div>
+      <div>
         <IconUserCircle />
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item className="d-flex align-items-center">
-          <img
-            src={user?.photo}
-            alt="user avatar"
-            className="rounded mr-2 py-2"
-          />
+      </div>
+      <ul>
+        <li>
+          <img src={user?.photo} alt="user avatar" />
           <div>
             <p>{user?.name}</p>
             <p>@{user?.email.split("@")[0]}</p>
           </div>
-        </Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item as={NavLink} to="/create">
-          Write a story
-        </Dropdown.Item>
-        <Dropdown.Item>Stories</Dropdown.Item>
-        <Dropdown.Item>Stats</Dropdown.Item>
-        <Dropdown.Item>Design your profile</Dropdown.Item>
-        <Dropdown.Item>Settings</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item as={NavLink} to="/reading-list">
-          Reading List
-        </Dropdown.Item>
-        <Dropdown.Item>Publications</Dropdown.Item>
-        <Dropdown.Item>Control your recommendations</Dropdown.Item>
-        <Dropdown.Item>Medium Partner Program</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item>Become a member</Dropdown.Item>
-        <Dropdown.Item>Help</Dropdown.Item>
-        <Dropdown.Item>Sign out</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item>Privacy Terms</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+        </li>
+        <div />
+        <li>
+          <NavLink to="/create">Write a story</NavLink>
+        </li>
+        <li>Stories</li>
+        <li>Stats</li>
+        <li>Design your profile</li>
+        <li>Settings</li>
+        <div />
+        <li>
+          <NavLink to="/reading-list">Reading List</NavLink>
+        </li>
+        <li>Publications</li>
+        <li>Control your recommendations</li>
+        <li>Medium Partner Program</li>
+        <div />
+        <li>Become a member</li>
+        <li>Help</li>
+        <li>Sign out</li>
+        <div />
+        <li>Privacy Terms</li>
+      </ul>
+    </div>
   );
 }
 
