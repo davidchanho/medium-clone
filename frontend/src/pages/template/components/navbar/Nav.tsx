@@ -1,14 +1,15 @@
 import React from "react";
+import { BsBell } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import {
-  IconBell,
-  IconBookmarks,
-  IconSearch,
-} from "../../../../components/icons";
+import { IconBookmarks } from "../../../../components/icons";
+import Search from "./Search";
 import UserNavMenu from "./UserNavMenu";
 
-const Container = styled.nav`
+const Container = styled.ul`
+  display: flex;
+  align-items: center;
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -17,27 +18,25 @@ const Container = styled.nav`
 function Nav() {
   return (
     <Container>
-      <ul>
-        <li>
-          <IconSearch />
-        </li>
-        <li>
-          <NavLink to="/reading-list">
-            <IconBookmarks />
-          </NavLink>
-        </li>
-        <li>
-          <IconBell />
-        </li>
-        <li>
-          <NavLink to="/upgrade">
-            <button>Upgrade</button>
-          </NavLink>
-        </li>
-        <li>
-          <UserNavMenu />
-        </li>
-      </ul>
+      <li>
+        <Search />
+      </li>
+      <li>
+        <NavLink to="/reading-list">
+          <IconBookmarks />
+        </NavLink>
+      </li>
+      <li>
+        <BsBell />
+      </li>
+      <li>
+        <NavLink to="/plans">
+          <button>Upgrade</button>
+        </NavLink>
+      </li>
+      <li>
+        <UserNavMenu />
+      </li>
     </Container>
   );
 }

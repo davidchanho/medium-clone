@@ -74,11 +74,11 @@ const postsReducers = produce(
         state.loading = false;
         state.error = action.payload;
         return state;
-      case ActionTypes.DELETE_POST:
-        const deletePostIndex = state.posts.findIndex(
+      case ActionTypes.DISMISS_POST:
+        const dismissIndex = state.posts.findIndex(
           (post) => post._id === action.payload
         );
-        if (deletePostIndex !== -1) state.posts.splice(deletePostIndex, 1);
+        if (dismissIndex !== -1) state.posts.splice(dismissIndex, 1);
         return state;
       case ActionTypes.UPDATE_POST:
         const updatePostIndex = state.posts.findIndex(

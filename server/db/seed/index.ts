@@ -87,7 +87,7 @@ export const generateUser = () => {
   });
 };
 
-const generateComment = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
+export const generateComment = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
   return new db.Comment({
     postId,
     userId: user._id,
@@ -97,7 +97,7 @@ const generateComment = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
   });
 };
 
-const generateComments = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
+export const generateComments = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
   return _.times(generateRandomNumber(), () => {
     const comment = generateComment(postId, user);
 
@@ -107,7 +107,7 @@ const generateComments = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
   });
 };
 
-const generateTopic = () => {
+export const generateTopic = () => {
   return new db.Topic({
     name: generateTopicName(),
   });

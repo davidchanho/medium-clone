@@ -77,8 +77,8 @@ export interface AddPostAction {
   payload: IPost;
 }
 
-export interface DeletePostAction {
-  type: ActionTypes.DELETE_POST;
+export interface DismissPostAction {
+  type: ActionTypes.DISMISS_POST;
   payload: string;
 }
 
@@ -194,7 +194,7 @@ export type Action =
   | GetPostSuccessAction
   | GetPostFailAction
   | AddPostAction
-  | DeletePostAction
+  | DismissPostAction
   | UpdatePostAction
   | GetPublicationsAction
   | GetPublicationsSuccessAction

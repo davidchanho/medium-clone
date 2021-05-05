@@ -1,8 +1,8 @@
 import React from "react";
-import Bookmark from "../bookmark";
+import { BsThreeDots } from "react-icons/bs";
 import { IPost } from "../../types";
+import Bookmark from "../bookmark";
 import PostOption from "./PostOption";
-import { IconThreeDots } from "../icons";
 
 const options = [
   "Dismiss this story",
@@ -20,7 +20,7 @@ function PostOptions({ ...post }: IPost) {
       </div>
 
       <div>
-        <IconThreeDots />
+        <BsThreeDots />
       </div>
 
       <div>

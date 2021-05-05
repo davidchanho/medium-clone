@@ -1,6 +1,6 @@
 import React from "react";
+import { BiMessage } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import { IconMessage } from "../../../../components/icons";
 import { postSelectors } from "../../../../store";
 
 function Comments() {
@@ -9,7 +9,7 @@ function Comments() {
   return (
     <>
       <div>
-        <IconMessage /> {post?.comments?.length}
+        <BiMessage /> {post?.comments?.length}
       </div>
 
       <div>

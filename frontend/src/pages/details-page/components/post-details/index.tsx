@@ -11,14 +11,13 @@ const Article = styled.article`
 
 function PostDetails() {
   const { post } = useSelector(postSelectors);
-  const { title, body } = post;
 
   return (
     <Article>
-      <h1>{title}</h1>
+      <h1>{post?.title}</h1>
       <DetailsHeader {...post} />
       <DetailsImg {...post} />
-      <p>{body}</p>{" "}
+      <p>{post?.body}</p>{" "}
     </Article>
   );
 }

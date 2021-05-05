@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  IconFacebook,
-  IconLinkedin,
-  IconTwitter,
-} from "../../../../components/icons";
+import { AiFillFacebook, AiFillLinkedin } from "react-icons/ai";
+import { FaTwitter } from "react-icons/fa";
 import PostOptions from "../../../../components/post-options";
 import { IPost } from "../../../../types";
 
@@ -20,9 +17,9 @@ function DetailsHeader({ ...post }: IPost) {
       </div>
 
       <div>
-        <IconTwitter size="28" />
-        <IconLinkedin size="28" />
-        <IconFacebook size="28" />
+        <FaTwitter size="28" />
+        <AiFillLinkedin size="28" />
+        <AiFillFacebook size="28" />
         <PostOptions {...post} />
       </div>
     </div>

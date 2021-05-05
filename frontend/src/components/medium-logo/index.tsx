@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { IconMedium } from "../../../../components/icons";
+import { ReactComponent as MediumIcon } from "../../assets/medium.svg";
 
 function MediumLogo({ ...props }) {
   return (
     <NavLink to="/">
-      <IconMedium {...props} />
+      <MediumIcon {...props} />
     </NavLink>
   );
 }

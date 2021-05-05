@@ -7,15 +7,15 @@ interface PostOptionProps extends IPost {
 }
 
 function PostOption({ label, _id }: PostOptionProps) {
-  const { deletePost } = useActions();
+  const { dismissPost } = useActions();
 
-  const onDeletePost = () => {
+  const onDismissPost = () => {
     if (_id) {
-      deletePost(_id);
+      dismissPost(_id);
     }
   };
 
-  return <li onClick={onDeletePost}>{label}</li>;
+  return <li onClick={onDismissPost}>{label}</li>;
 }
 
 export default PostOption;

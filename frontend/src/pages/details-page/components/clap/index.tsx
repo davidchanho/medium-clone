@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IconClap } from "../../../../components/icons";
+import { FaRegHandPaper } from "react-icons/fa";
 
 function Clap() {
   const [claps, setClaps] = useState<number>(0);
@@ -10,7 +10,7 @@ function Clap() {
 
   return (
     <div>
-      <IconClap onClick={incrementClap} />
+      <FaRegHandPaper onClick={incrementClap} />
       {claps}
     </div>
   );

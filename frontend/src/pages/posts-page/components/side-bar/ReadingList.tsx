@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { IconBookmarks } from "../../../../components/icons";
 import { postSelectors } from "../../../../store";
-import { IconBookmarks } from "../../../../components/_shared/icons";
 import Post from "../post";
 
 function ReadingList() {

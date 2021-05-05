@@ -123,14 +123,12 @@ export const addPost = (post: IPost) => async (dispatch: Dispatch<Action>) => {
   }
 };
 
-export const deletePost = (_id: string) => async (
+export const dismissPost = (_id: string) => async (
   dispatch: Dispatch<Action>
 ) => {
   try {
-    API.deletePost(_id);
-
     dispatch({
-      type: ActionTypes.DELETE_POST,
+      type: ActionTypes.DISMISS_POST,
       payload: _id,
     });
   } catch (err) {

@@ -9,7 +9,7 @@ export const theme = () => ({
   },
   colors: {
     primaryButton: colors.white["100"],
-    primaryButtonOutline: colors.grey["100"],
+    primaryButtonBorder: colors.grey["100"],
     primaryButtonText: colors.grey["100"],
 
     secondaryText: colors.grey["100"],
@@ -20,6 +20,9 @@ export const theme = () => ({
     successButton: colors.green["100"],
     successButtonHover: colors.green["200"],
     successButtonText: colors.white["100"],
+
+    upgradePrimary: colors.grey["200"],
+    upgradePrimaryHover: colors.green["100"],
 
     successText: colors.green["100"],
 

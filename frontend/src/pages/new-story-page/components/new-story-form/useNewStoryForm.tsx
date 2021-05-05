@@ -7,7 +7,7 @@ import { publicationSelectors } from "../../../../store";
 import { initialPost } from "../../../../store/posts/reducers";
 import { IPost } from "../../../../types";
 
-export const useCreateForm = () => {
+export const useNewStoryForm = () => {
   const [form, setForm] = useState<IPost>(initialPost);
   const { addPost } = useActions();
   const { publications } = useSelector(publicationSelectors);

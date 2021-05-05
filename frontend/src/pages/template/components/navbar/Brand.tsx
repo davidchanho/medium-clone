@@ -1,6 +1,14 @@
 import React from "react";
-import greetUserByTimeOfDay from "../../../../helpers/greetUserByTimeOfDay";
-import MediumLogo from "../medium-logo";
+import MediumLogo from "../../../../components/medium-logo";
+
+const greetUserByTimeOfDay = () => {
+  const currentTime = new Date().getHours();
+  return currentTime > 0 && currentTime < 12
+    ? "Good morning"
+    : currentTime > 12 && currentTime < 18
+    ? "Good afternoon"
+    : "Good evening";
+};
 
 function Brand() {
   return (

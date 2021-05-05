@@ -8,8 +8,8 @@ function DetailsHead() {
 
   return (
     <Helmet>
-      <title>{post.title}</title>
-      <meta name="description" content={post.title} />
+      <title>{post?.title}</title>
+      <meta name="description" content={post?.title} />
     </Helmet>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import MediumLogo from "../medium-logo";
+import MediumLogo from "../../../../components/medium-logo";
 
 const Container = styled.div`
   width: 100%;

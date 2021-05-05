@@ -10,11 +10,10 @@ function PostImg({
 }: IPost & ImgHTMLAttributes<HTMLImageElement>) {
   const { onGetPost } = useGetPost(post);
 
-  const image = post.image;
-
   return (
     <img
-      src={image ? image : "/imgPlaceholder.png"}
+      src={post.image}
+      alt=""
       className={className}
       onClick={onGetPost}
       width={width}

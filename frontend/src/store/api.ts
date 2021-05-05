@@ -38,9 +38,6 @@ const API = {
     const { title, body } = post;
     axios.post<any>(publicationsUrl, { title, body });
   },
-  deletePost(_id: string) {
-    axios.delete<string>(postsUrl + _id);
-  },
   updatePost(post: IPost) {
     axios.put<string>(postsUrl + post._id, post);
   },

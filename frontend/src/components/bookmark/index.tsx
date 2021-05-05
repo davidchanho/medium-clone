@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
 import { postSelectors, userSelectors } from "../../store";
-import { IconBookmark, IconBookmarkFill } from "../icons";
 
 function Bookmark() {
   const { post } = useSelector(postSelectors);
@@ -25,7 +25,7 @@ function Bookmark() {
 
   return (
     <span className="pointer" onClick={onBookmarkPost}>
-      {isBookmark ? <IconBookmarkFill /> : <IconBookmark />}
+      {isBookmark ? <BsBookmarkFill size="22" /> : <BsBookmark size="22" />}
     </span>
   );
 }

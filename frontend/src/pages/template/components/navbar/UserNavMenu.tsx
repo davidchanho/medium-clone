@@ -1,47 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
+import { BiUserCircle } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { IconUserCircle } from "../../../../components/icons";
 import { userSelectors } from "../../../../store";
 
 function UserNavMenu() {
   const { user } = useSelector(userSelectors);
+  const [show, setShow] = useState(false);
+
+  const toggleShow = () => {
+    setShow(!show);
+  };
 
   return (
     <div>
-      <div>
-        <IconUserCircle />
-      </div>
-      <ul>
-        <li>
-          <img src={user?.photo} alt="user avatar" />
-          <div>
-            <p>{user?.name}</p>
-            <p>@{user?.email.split("@")[0]}</p>
-          </div>
-        </li>
-        <div />
-        <li>
-          <NavLink to="/create">Write a story</NavLink>
-        </li>
-        <li>Stories</li>
-        <li>Stats</li>
-        <li>Design your profile</li>
-        <li>Settings</li>
-        <div />
-        <li>
-          <NavLink to="/reading-list">Reading List</NavLink>
-        </li>
-        <li>Publications</li>
-        <li>Control your recommendations</li>
-        <li>Medium Partner Program</li>
-        <div />
-        <li>Become a member</li>
-        <li>Help</li>
-        <li>Sign out</li>
-        <div />
-        <li>Privacy Terms</li>
-      </ul>
+      <BiUserCircle onClick={toggleShow} />
+      {show && (
+        <ul>
+          <li>
+            <img src={user?.photo} alt="user avatar" />
+            <div>
+              <p>{user?.name}</p>
+              <p>@{user?.email.split("@")[0]}</p>
+            </div>
+          </li>
+          <li>
+            <NavLink to="/new-story">Write a story</NavLink>
+          </li>
+          <li>
+            <NavLink to="/me/stories">Stories</NavLink>
+          </li>
+          <li>
+            <NavLink to="/me/stats">Stats</NavLink>
+          </li>
+          <li>Design your profile</li>
+          <li>
+            <NavLink to="/me/settings">Settings</NavLink>
+          </li>
+          <li>
+            <NavLink to="/reading-list">Reading List</NavLink>
+          </li>
+          <li>
+            <NavLink to="/me/publications">Publications</NavLink>
+          </li>
+          <li>
+            <NavLink to="/me/missioncontrol">
+              Control your recommendations
+            </NavLink>
+          </li>
+          <li>Medium Partner Program</li>
+          <li>Become a member</li>
+          <li>Help</li>
+          <li>Sign out</li>
+          <li>Privacy Terms</li>
+        </ul>
+      )}
     </div>
   );
 }

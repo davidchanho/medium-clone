@@ -4,6 +4,7 @@ export const grey = {
 };
 
 export const black = {
+  "50": "hsl(0, 0%, 3%)",
   "100": "hsl(0, 0%, 10%)",
   "200": "hsl(0, 0%, 16%)",
 };

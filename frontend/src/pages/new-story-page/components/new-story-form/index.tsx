@@ -1,8 +1,8 @@
 import React from "react";
 import { IPublication } from "../../../../types";
-import { useCreateForm } from "./useCreateForm";
+import { useNewStoryForm } from "./useNewStoryForm";
 
-function CreateForm() {
+function NewStoryForm() {
   const {
     form: { title, body },
     publications,
@@ -11,7 +11,7 @@ function CreateForm() {
     onFileChange,
     handleSubmit,
     register,
-  } = useCreateForm();
+  } = useNewStoryForm();
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -53,4 +53,4 @@ function CreateForm() {
   );
 }
 
-export default CreateForm;
+export default NewStoryForm;
