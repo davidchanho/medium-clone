@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { userSelectors } from "../../store";
-import { IconUserCircle } from "../icons";
+import { IconUserCircle } from "../../../../components/icons";
+import { userSelectors } from "../../../../store";
 
 function UserNavMenu() {
   const { user } = useSelector(userSelectors);

@@ -1,19 +1,17 @@
 import React from "react";
 import { IPublication } from "../../../../types";
-import { usePostForm } from "./usePostForm";
+import { useCreateForm } from "./useCreateForm";
 
-function PostForm() {
+function CreateForm() {
   const {
-    postForm,
+    form: { title, body },
     publications,
     onSubmit,
     onChange,
     onFileChange,
     handleSubmit,
     register,
-  } = usePostForm();
-
-  const { title, body } = postForm;
+  } = useCreateForm();
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -55,4 +53,4 @@ function PostForm() {
   );
 }
 
-export default PostForm;
+export default CreateForm;

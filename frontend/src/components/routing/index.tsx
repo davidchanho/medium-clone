@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Template from "../../pages/template";
-const PostDetailsPage = lazy(() => import("../../pages/post-details-page"));
-const PostFormPage = lazy(() => import("../../pages/post-form-page"));
+const DetailsPage = lazy(() => import("../../pages/details-page"));
+const CreatePage = lazy(() => import("../../pages/create-page"));
 const PostsPage = lazy(() => import("../../pages/posts-page"));
 const ReadingListPage = lazy(() => import("../../pages/reading-list-page"));
 
@@ -13,9 +13,9 @@ function Routing() {
         <Routes>
           <Route element={<Template />}>
             <Route path="/" element={<PostsPage />} />
-            <Route path="/create" element={<PostFormPage />} />
+            <Route path="/create" element={<CreatePage />} />
             <Route path="/reading-list" element={<ReadingListPage />} />
-            <Route path="/:id" element={<PostDetailsPage />} />
+            <Route path="/:id" element={<DetailsPage />} />
           </Route>
         </Routes>
       </Suspense>

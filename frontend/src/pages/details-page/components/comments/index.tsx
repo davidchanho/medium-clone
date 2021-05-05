@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { postSelectors } from "../../../../store";
 import { IconMessage } from "../../../../components/icons";
+import { postSelectors } from "../../../../store";
 
 function Comments() {
   const { post } = useSelector(postSelectors);

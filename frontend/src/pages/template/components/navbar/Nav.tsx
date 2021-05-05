@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { IconBell, IconBookmarks, IconSearch } from "../icons";
+import {
+  IconBell,
+  IconBookmarks,
+  IconSearch,
+} from "../../../../components/icons";
 import UserNavMenu from "./UserNavMenu";
 
 const Container = styled.nav`

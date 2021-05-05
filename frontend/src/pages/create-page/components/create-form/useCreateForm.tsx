@@ -7,16 +7,16 @@ import { publicationSelectors } from "../../../../store";
 import { initialPost } from "../../../../store/posts/reducers";
 import { IPost } from "../../../../types";
 
-export const usePostForm = () => {
-  const [postForm, setPostForm] = useState<IPost>(initialPost);
+export const useCreateForm = () => {
+  const [form, setForm] = useState<IPost>(initialPost);
   const { addPost } = useActions();
   const { publications } = useSelector(publicationSelectors);
   const navigate = useNavigate();
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setPostForm({
-      ...postForm,
+    setForm({
+      ...form,
       [name]: value,
     });
   };
@@ -30,19 +30,17 @@ export const usePostForm = () => {
 
   const { register, handleSubmit } = useForm<IPost>();
 
-  const onSubmit = (postForm: IPost) => {
+  const onSubmit = (form: IPost) => {
     const newPost = {
       ...initialPost,
-      body: postForm.body,
-      title: postForm.title,
-      date: new Date().toLocaleDateString()
-    }
-    if (
-      newPost.body.length > 6
-    ) {
+      body: form.body,
+      title: form.title,
+      date: new Date().toLocaleDateString(),
+    };
+    if (newPost.body.length > 6) {
       try {
         addPost(newPost);
-        setPostForm(initialPost);
+        setForm(initialPost);
         navigate("/");
       } catch (err) {
         console.log(err);
@@ -51,7 +49,7 @@ export const usePostForm = () => {
   };
 
   return {
-    postForm,
+    form,
     publications,
     onChange,
     onSubmit,

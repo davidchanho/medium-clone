@@ -1,19 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as TrendingIcon } from "../../../../assets/trending.svg";
+import { ReactComponent as TrendingIcon } from "./trending.svg";
 
 export const Header = styled.header`
   display: flex;
 `;
-
-export const Icon = styled(TrendingIcon)``;
 
 export const Title = styled.p``;
 
 function TrendingHeader() {
   return (
     <Header>
-      <Icon />
+      <TrendingIcon />
       <Title>TRENDING ON MEDIUM</Title>
     </Header>
   );
