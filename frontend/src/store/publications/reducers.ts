@@ -7,7 +7,7 @@ export const initialPublication: IPublication = {
   _id: "",
   name: "",
   icon: "",
-  topics: [],
+  topic: "",
 };
 
 export interface IPublicationsState {
