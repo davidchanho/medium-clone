@@ -1,34 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Creator renders correctly 1`] = `
-<div
-  className="w-100 d-flex justify-content-between list-group-item"
-  disabled={false}
-  onClick={[Function]}
+<li
+  _id="test"
+  avatar="test"
+  bookmarks={Array []}
+  comments={Array []}
+  email="test"
+  following={
+    Object {
+      "publications": Array [],
+      "users": Array [],
+    }
+  }
+  posts={Array []}
 >
   <img
     alt="creator avatar"
-    className="rounded-circle"
+    height="60"
     src="test"
+    width="60"
   />
-  <div
-    className="w-50 mx-2"
-  >
-    <p
-      className="font-weight-bold"
-    >
+  <div>
+    <p>
       test
     </p>
     <p>
       test...
     </p>
   </div>
-  <button
-    className="h-50 my-auto btn btn-success"
-    disabled={false}
-    type="button"
-  >
+  <button>
     Follow
   </button>
-</div>
+</li>
 `;

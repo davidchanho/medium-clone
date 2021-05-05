@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IconClap } from "../icons";
+import { IconClap } from "../_shared/icons";
 
 function Clap() {
   const [claps, setClaps] = useState<number>(0);

@@ -1,13 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Clap renders correctly 1`] = `
-<div
-  className="d-flex align-items-center list-group-item"
-  disabled={false}
-  onClick={[Function]}
->
+<div>
   <svg
-    className="mr-3"
     fill="currentColor"
     height="1em"
     onClick={[Function]}

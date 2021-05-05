@@ -1,13 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PostOptions renders correctly 1`] = `
-<div
-  className="mt-auto d-flex align-items-center justify-content-between dropdown"
->
-  <span
-    className="p-0 dropdown-item-text"
-  >
+<div>
+  <div>
     <span
+      className="pointer"
       onClick={[Function]}
     >
       <svg
@@ -31,15 +28,8 @@ exports[`PostOptions renders correctly 1`] = `
         />
       </svg>
     </span>
-  </span>
-  <button
-    aria-expanded={false}
-    aria-haspopup={true}
-    className="ml-2 bg-white text-secondary shadow-none dropdown-toggle btn btn-primary"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
+  </div>
+  <div>
     <svg
       fill="currentColor"
       height="1em"
@@ -60,6 +50,33 @@ exports[`PostOptions renders correctly 1`] = `
         fillRule="evenodd"
       />
     </svg>
-  </button>
+  </div>
+  <div>
+    <li
+      onClick={[Function]}
+    >
+      Dismiss this story
+    </li>
+    <li
+      onClick={[Function]}
+    >
+      Mute this author
+    </li>
+    <li
+      onClick={[Function]}
+    >
+      Mute this publication
+    </li>
+    <li
+      onClick={[Function]}
+    >
+      Report this story
+    </li>
+    <li
+      onClick={[Function]}
+    >
+      Block this author
+    </li>
+  </div>
 </div>
 `;

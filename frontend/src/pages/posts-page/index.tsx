@@ -1,10 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import Hero from "../../components/hero";
-import PostList from "../../components/post-list";
-import SideBar from "../../components/side-bar";
-import TrendingPosts from "../../components/trending-posts";
+import Trending from "../../components/trending";
+import TrendingList from "../../components/trending/TrendingList";
 import { useFetchPosts } from "../../hooks/useFetchPosts";
+import { useSelector } from "../../hooks/useSelector";
+import { postSelectors } from "../../store";
 
 function PostsPage() {
   useFetchPosts();
@@ -19,7 +19,7 @@ function PostsPage() {
 
       {/* <Hero /> */}
 
-      {/* <TrendingPosts /> */}
+      <Trending />
 
       {/* <div>
         <SideBar />

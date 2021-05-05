@@ -1,6 +1,6 @@
 import React from "react";
 import { IPost } from "../../types";
-import { IconFacebook, IconLinkedin, IconTwitter } from "../icons";
+import { IconFacebook, IconLinkedin, IconTwitter } from "../_shared/icons";
 import PostOptions from "../post-options";
 
 function DetailsHeader({ ...post }: IPost) {

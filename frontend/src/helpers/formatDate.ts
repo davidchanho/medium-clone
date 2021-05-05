@@ -1,14 +1,13 @@
-import dayjs from "dayjs";
-
 export const formatDate = (date: string) => {
   if (!date) {
     return;
   }
-  const currentYear = dayjs().get("year").toString();
+  const currentYear = new Date().getFullYear().toString();
+  const publishedDate = new Date(date).toDateString();
 
   if (date.includes(currentYear)) {
-    return dayjs(date).format("MMM DD");
+    return publishedDate.substr(4, 6);
   }
 
-  return dayjs(date).format("MMM DD, YYYY");
+  return publishedDate;
 };

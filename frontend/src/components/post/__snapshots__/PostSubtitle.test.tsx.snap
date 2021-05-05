@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`PostSubtitle renders correctly 1`] = `
-<div
-  className="text-capitalize text-secondary card-subtitle h6"
->
-  test...
-</div>
-`;

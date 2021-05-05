@@ -1,3 +1,3 @@
-export const font1 =
+export const primaryFont =
   "'Source Serif Pro', Georgia, Cambria, 'Times New Roman', Times, serif";
-export const font2 = "'Roboto', sans-serif";
+export const secondaryFont = "'Roboto', sans-serif";

@@ -22,7 +22,7 @@ export const testPublication = {
 };
 
 export const testPost = {
-  id: "test",
+  _id: "test",
   publication: testPublication,
   user: testUser,
   title: "test",
@@ -31,4 +31,5 @@ export const testPost = {
   readingTime: "test",
   date: "test",
   comments: [],
+  except: 32,
 };

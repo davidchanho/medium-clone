@@ -1,5 +1,5 @@
 import React from "react";
-import { IconArchive } from "../icons";
+import { IconArchive } from "../_shared/icons";
 
 function Archived() {
   return (

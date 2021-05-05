@@ -1,7 +1,7 @@
 import React from "react";
 import { IPost } from "../../types";
-import Bookmark from "../bookmark";
-import { IconThreeDots } from "../icons";
+import Bookmark from "../_shared/bookmark";
+import { IconThreeDots } from "../_shared/icons";
 import PostOption from "./PostOption";
 
 const options = [

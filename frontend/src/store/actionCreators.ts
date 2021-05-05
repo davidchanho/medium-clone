@@ -1,4 +1,4 @@
-import { Dispatch, useState } from "react";
+import { Dispatch } from "react";
 import { Action, ActionTypes } from ".";
 import { IComment, IPost, IUser } from "../types";
 import API from "./api";

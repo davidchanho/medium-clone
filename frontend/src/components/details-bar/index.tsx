@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "../../hooks/useSelector";
 import { postSelectors } from "../../store";
-import Bookmark from "../bookmark";
+import Bookmark from "../_shared/bookmark";
 import Clap from "../clap";
 import Comments from "../comments";
 
