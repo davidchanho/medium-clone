@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { ThemeProvider } from "styled-components";
 import App from "./App";
-import PageLoader from "./pages/page-loader";
+import PageLoader from "./components/page-loader";
 import * as serviceWorker from "./serviceWorker";
 import { persistor, store } from "./store/store";
 import GlobalStyles from "./styles/GlobalStyles";

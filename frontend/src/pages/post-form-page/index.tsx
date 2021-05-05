@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import PostForm from "../../components/post-form";
+import PostForm from "./components/post-form";
 
 function PostFormPage() {
   return (

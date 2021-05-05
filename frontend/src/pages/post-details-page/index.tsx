@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
-import DetailsBar from "../../components/details-bar";
-import PostDetails from "../../components/post-details";
+import DetailsBar from "./components/details-bar";
 import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
 import { postSelectors } from "../../store";
+import PostDetails from "./components/post-details";
 
 function PostDetailsPage() {
   const params = useParams();

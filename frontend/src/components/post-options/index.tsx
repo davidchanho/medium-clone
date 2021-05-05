@@ -1,8 +1,8 @@
 import React from "react";
+import Bookmark from "../bookmark";
 import { IPost } from "../../types";
-import Bookmark from "../_shared/bookmark";
-import { IconThreeDots } from "../_shared/icons";
 import PostOption from "./PostOption";
+import { IconThreeDots } from "../icons";
 
 const options = [
   "Dismiss this story",

@@ -1,30 +1,26 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import Trending from "../../components/trending";
-import TrendingList from "../../components/trending/TrendingList";
 import { useFetchPosts } from "../../hooks/useFetchPosts";
-import { useSelector } from "../../hooks/useSelector";
-import { postSelectors } from "../../store";
+import Hero from "./components/hero";
+import PostList from "./components/post-list";
+import PostsHead from "./components/posts-head";
+import SideBar from "./components/side-bar";
+import Trending from "./components/trending";
 
 function PostsPage() {
   useFetchPosts();
 
   return (
     <>
-      <Helmet>
-        <title>React Medium</title>
-        <meta name="description" content="React Medium" />
-        <link rel="icon" type="image/svg+xml" href="/mediumMobile.svg" />
-      </Helmet>
+      <PostsHead />
 
-      {/* <Hero /> */}
+      <Hero />
 
       <Trending />
 
-      {/* <div>
+      <div>
         <SideBar />
         <PostList />
-      </div> */}
+      </div>
     </>
   );
 }
