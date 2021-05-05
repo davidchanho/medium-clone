@@ -13,13 +13,9 @@ const items = [
 
 function Footer() {
   return (
-    <div className="d-flex flex-wrap">
+    <div>
       {items.map((item) => {
-        return (
-          <p className="mx-3 pointer" key={item}>
-            {item}
-          </p>
-        );
+        return <p key={item}>{item}</p>;
       })}
     </div>
   );

@@ -10,7 +10,7 @@ function PostsSkeleton({ amount }: PostsSkeletonProps) {
     .fill(null)
     .map((post, index) => <PostSkeleton key={`post-skeleton-${index}`} />);
 
-  return <div className="w-100 my-2">{arr}</div>;
+  return <div>{arr}</div>;
 }
 
 export default PostsSkeleton;

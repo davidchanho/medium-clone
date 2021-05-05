@@ -16,11 +16,7 @@ function PostForm() {
   const { title, body } = postForm;
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="d-flex flex-column"
-      noValidate
-    >
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <label>Title</label>
       <input
         placeholder="title"

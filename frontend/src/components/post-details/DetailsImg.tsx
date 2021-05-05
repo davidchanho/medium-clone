@@ -10,7 +10,7 @@ function DetailsImg({ title, image }: IPost) {
 
   return (
     <>
-      <img src={image} alt={title} onClick={toggleOpen} className="w-100" />
+      <img src={image} alt={title} onClick={toggleOpen} />
 
       <div>
         <div>

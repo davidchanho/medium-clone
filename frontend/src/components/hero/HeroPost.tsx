@@ -10,11 +10,11 @@ function HeroPost() {
 
   return (
     <div>
-      <NavLink to={`/${hero?._id}`} className="text-secondary">
+      <NavLink to={`/${hero?._id}`}>
         <PostImg {...hero} width={375} height={281.5} />
         <Post {...hero} excerpt={120} />
       </NavLink>
-      <div className="text-secondary d-flex">
+      <div>
         <NavLink to={`/${hero?._id}`}>Read More</NavLink> &middot;{" "}
         {hero?.readingTime}
       </div>
