@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<footer
+  className="sc-hKwCoD hAyHIU"
+>
+  <section
+    className="sc-eCImvq ehgDKL"
+  >
+    <article
+      className="sc-jRQAMF iNeymu"
+    >
+      <a
+        aria-current="page"
+        className="sc-gKckTs jOojji active"
+        href="#"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Learn More.
+      </a>
+      <p>
+        Medium is an open platform where 170 million readers come to find insightful and dynamic thinking. Here, expert and undiscovered voices alike dive into the heart of any topic and bring new ideas to the surface. 
+        <a
+          aria-current="page"
+          className="sc-iCfLBT jXWveb active"
+          href="#"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          Learn more
+        </a>
+      </p>
+    </article>
+    <article
+      className="sc-jRQAMF iNeymu"
+    >
+      <a
+        aria-current="page"
+        className="sc-gKckTs jOojji active"
+        href="#"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Make Medium yours.
+      </a>
+      <p>
+        Follow the writers, publications, and topics that matter to you, and you’ll see them on your homepage and in your inbox.
+         
+        <a
+          aria-current="page"
+          className="sc-iCfLBT jXWveb active"
+          href="#"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          Explore
+        </a>
+      </p>
+    </article>
+    <article
+      className="sc-jRQAMF iNeymu"
+    >
+      <a
+        aria-current="page"
+        className="sc-gKckTs jOojji active"
+        href="#"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Share your thinking.
+      </a>
+      <p>
+        If you have a story to tell, knowledge to share, or a perspective to offer — welcome home. It’s easy and free to post your thinking on any topic. 
+        <a
+          aria-current="page"
+          className="sc-iCfLBT jXWveb active"
+          href="#"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          Write on Medium
+        </a>
+      </p>
+    </article>
+  </section>
+  <div
+    className="sc-bdvvaa RAIwt"
+  >
+    <a
+      aria-current="page"
+      className="active"
+      href="/"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <svg
+        fill="white"
+        height="29"
+        width="145"
+      >
+        medium.svg
+      </svg>
+    </a>
+    <ul
+      className="sc-gsDJrp eBOCND"
+    >
+      <a
+        aria-current="page"
+        className="sc-dkPtyc iMpgWc active"
+        href="#!"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        About
+      </a>
+      <a
+        aria-current="page"
+        className="sc-dkPtyc iMpgWc active"
+        href="#!"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Help
+      </a>
+      <a
+        aria-current="page"
+        className="sc-dkPtyc iMpgWc active"
+        href="#!"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Legal
+      </a>
+    </ul>
+  </div>
+</footer>
+`;

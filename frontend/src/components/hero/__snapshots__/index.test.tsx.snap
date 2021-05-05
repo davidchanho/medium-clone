@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero renders correctly 1`] = `
+<div>
+  <div>
+    <a
+      aria-current="page"
+      className="text-secondary active"
+      href="/"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <img
+        height={281.5}
+        onClick={[Function]}
+        src="/imgPlaceholder.png"
+        width={375}
+      />
+      <div
+        className="sc-bdvvaa"
+        onClick={[Function]}
+      >
+        <header
+          className="sc-gsDJrp dSpPBI"
+        >
+          <img
+            alt=""
+            className="sc-dkPtyc gFABCv"
+            height="20"
+            src=""
+            width="20"
+          />
+           
+          <p>
+            
+             in 
+            
+          </p>
+        </header>
+        <div>
+          
+        </div>
+        <div>
+           · 
+          
+        </div>
+      </div>
+    </a>
+    <div
+      className="text-secondary d-flex"
+    >
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Read More
+      </a>
+       ·
+       
+      
+    </div>
+  </div>
+  <div />
+  <div>
+    <div>
+      <p>
+        Creators to follow
+      </p>
+       
+      <ul />
+    </div>
+    <div>
+      <p>
+        Topics you follow
+      </p>
+      <ul>
+        <a
+          href="#!"
+        >
+          See More
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

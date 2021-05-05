@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostForm renders correctly 1`] = `
+<form
+  className="d-flex flex-column"
+  noValidate={true}
+  onSubmit={[Function]}
+>
+  <label>
+    Title
+  </label>
+  <input
+    autoFocus={true}
+    minLength={6}
+    name="title"
+    onChange={[Function]}
+    placeholder="title"
+    type="text"
+    value=""
+  />
+  <label>
+    Body
+  </label>
+  <input
+    minLength={6}
+    name="body"
+    onChange={[Function]}
+    placeholder="body"
+    type="text"
+    value=""
+  />
+  <label>
+    Image
+  </label>
+  <input
+    accept="image/*"
+    onChange={[Function]}
+    type="file"
+  />
+  <label>
+    Publication
+  </label>
+  <select
+    name="publicationId"
+    onChange={[Function]}
+  />
+  <button
+    type="submit"
+  >
+    submit
+  </button>
+</form>
+`;

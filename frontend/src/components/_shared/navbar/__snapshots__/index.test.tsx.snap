@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders correctly 1`] = `
+<div>
+  <a
+    aria-current="page"
+    className="active"
+    href="/"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <svg
+      height="34"
+      width="180"
+    >
+      medium.svg
+    </svg>
+  </a>
+   
+  Good evening
+  <div
+    aria-controls="basic-navbar-nav"
+  />
+  <div
+    id="basic-navbar-nav"
+  >
+    <nav
+      className="sc-bdvvaa kmqwXi"
+    >
+      <ul>
+        <li>
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
+              fillRule="evenodd"
+            />
+            <path
+              clipRule="evenodd"
+              d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </li>
+        <li>
+          <a
+            className=""
+            href="/reading-list"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="M7 13l5 3V4a2 2 0 00-2-2H4a2 2 0 00-2 2v12l5-3zm-4 1.234l4-2.4 4 2.4V4a1 1 0 00-1-1H4a1 1 0 00-1 1v10.234z"
+                fillRule="evenodd"
+              />
+              <path
+                d="M14 14l-1-.6V2a1 1 0 00-1-1H4.268A2 2 0 016 0h6a2 2 0 012 2v12z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 16a2 2 0 002-2H6a2 2 0 002 2z"
+            />
+            <path
+              clipRule="evenodd"
+              d="M8 1.918l-.797.161A4.002 4.002 0 004 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 00-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 111.99 0A5.002 5.002 0 0113 6c0 .88.32 4.2 1.22 6z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </li>
+        <li>
+          <a
+            className=""
+            href="/upgrade"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <button>
+              Upgrade
+            </button>
+          </a>
+        </li>
+        <li>
+          <div>
+            <div>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12,8c-1.178,0-2,0.822-2,2s0.822,2,2,2s2-0.822,2-2S13.178,8,12,8z"
+                  fill="none"
+                />
+                <path
+                  d="M12,4c-4.337,0-8,3.663-8,8c0,2.176,0.923,4.182,2.39,5.641c0.757-1.8,2.538-3.068,4.61-3.068h2 c2.072,0,3.854,1.269,4.61,3.068C19.077,16.182,20,14.176,20,12C20,7.663,16.337,4,12,4z M12,14c-2.28,0-4-1.72-4-4s1.72-4,4-4 s4,1.72,4,4S14.28,14,12,14z"
+                  fill="none"
+                />
+                <path
+                  d="M13,16.572h-2c-1.432,0-2.629,1.01-2.926,2.354C9.242,19.604,10.584,20,12,20s2.758-0.396,3.926-1.073 C15.629,17.582,14.432,16.572,13,16.572z"
+                  fill="none"
+                />
+                <path
+                  d="M12,2C6.579,2,2,6.579,2,12c0,3.189,1.592,6.078,4,7.924V20h0.102C7.77,21.245,9.813,22,12,22s4.23-0.755,5.898-2H18 v-0.076c2.408-1.846,4-4.734,4-7.924C22,6.579,17.421,2,12,2z M8.074,18.927c0.297-1.345,1.494-2.354,2.926-2.354h2 c1.432,0,2.629,1.01,2.926,2.354C14.758,19.604,13.416,20,12,20S9.242,19.604,8.074,18.927z M17.61,17.641 c-0.757-1.8-2.538-3.068-4.61-3.068h-2c-2.072,0-3.854,1.269-4.61,3.068C4.923,16.182,4,14.176,4,12c0-4.337,3.663-8,8-8 s8,3.663,8,8C20,14.176,19.077,16.182,17.61,17.641z"
+                />
+                <path
+                  d="M12,6c-2.28,0-4,1.72-4,4s1.72,4,4,4s4-1.72,4-4S14.28,6,12,6z M12,12c-1.178,0-2-0.822-2-2s0.822-2,2-2s2,0.822,2,2 S13.178,12,12,12z"
+                />
+              </svg>
+            </div>
+            <ul>
+              <li>
+                <img
+                  alt="user avatar"
+                  src=""
+                />
+                <div>
+                  <p>
+                    
+                  </p>
+                  <p>
+                    @
+                    
+                  </p>
+                </div>
+              </li>
+              <div />
+              <li>
+                <a
+                  className=""
+                  href="/create"
+                  onClick={[Function]}
+                  style={Object {}}
+                >
+                  Write a story
+                </a>
+              </li>
+              <li>
+                Stories
+              </li>
+              <li>
+                Stats
+              </li>
+              <li>
+                Design your profile
+              </li>
+              <li>
+                Settings
+              </li>
+              <div />
+              <li>
+                <a
+                  className=""
+                  href="/reading-list"
+                  onClick={[Function]}
+                  style={Object {}}
+                >
+                  Reading List
+                </a>
+              </li>
+              <li>
+                Publications
+              </li>
+              <li>
+                Control your recommendations
+              </li>
+              <li>
+                Medium Partner Program
+              </li>
+              <div />
+              <li>
+                Become a member
+              </li>
+              <li>
+                Help
+              </li>
+              <li>
+                Sign out
+              </li>
+              <div />
+              <li>
+                Privacy Terms
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;

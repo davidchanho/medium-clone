@@ -5,6 +5,7 @@ import { IconMessage } from "../_shared/icons";
 
 function Comments() {
   const { post } = useSelector(postSelectors);
+
   return (
     <>
       <div>

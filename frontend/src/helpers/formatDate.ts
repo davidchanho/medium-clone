@@ -2,6 +2,7 @@ export const formatDate = (date: string) => {
   if (!date) {
     return;
   }
+
   const currentYear = new Date().getFullYear().toString();
   const publishedDate = new Date(date).toDateString();
 

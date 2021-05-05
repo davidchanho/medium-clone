@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostsPage renders correctly 1`] = `
+<div
+  className="sc-eCImvq jmgBPQ"
+>
+  <header
+    className="sc-bdvvaa eiZGns"
+  >
+    <svg
+      className="sc-gsDJrp"
+    >
+      trending.svg
+    </svg>
+    <p
+      className="sc-dkPtyc"
+    >
+      TRENDING ON MEDIUM
+    </p>
+  </header>
+  <div
+    className="sc-hKwCoD iCqUhI"
+  >
+    <span>
+      <span
+        className="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        style={
+          Object {
+            "height": 50,
+            "width": 150,
+          }
+        }
+      >
+        ‌
+      </span>
+      <span
+        className="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        style={
+          Object {
+            "height": 50,
+            "width": 150,
+          }
+        }
+      >
+        ‌
+      </span>
+      <span
+        className="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        style={
+          Object {
+            "height": 50,
+            "width": 150,
+          }
+        }
+      >
+        ‌
+      </span>
+      <span
+        className="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        style={
+          Object {
+            "height": 50,
+            "width": 150,
+          }
+        }
+      >
+        ‌
+      </span>
+      <span
+        className="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        style={
+          Object {
+            "height": 50,
+            "width": 150,
+          }
+        }
+      >
+        ‌
+      </span>
+      <span
+        className="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        style={
+          Object {
+            "height": 50,
+            "width": 150,
+          }
+        }
+      >
+        ‌
+      </span>
+    </span>
+  </div>
+</div>
+`;

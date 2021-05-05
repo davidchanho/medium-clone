@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "../../hooks/useSelector";
 import { topicSelectors } from "../../store";
-import Topic from "../topic";
+import Topic from "./Topic";
 
 function TopicList() {
   const { topics } = useSelector(topicSelectors);
