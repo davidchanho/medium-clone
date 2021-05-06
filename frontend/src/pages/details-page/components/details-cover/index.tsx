@@ -1,13 +1,9 @@
 import React from "react";
-import styled from "styled-components";
-
-const Cover = styled.div`
-  position: relative;
-`;
+import styles from "./index.module.scss";
 
 function DetailsCover() {
   return (
-    <Cover>
+    <div className={styles.cover}>
       <h1>
         How to read this story from Tim Denning — and everything else on Medium.
       </h1>
@@ -24,7 +20,7 @@ function DetailsCover() {
         <b>Reward great writing.</b> A portion of your membership fee will go
         toward the writers you read most.
       </p>
-    </Cover>
+    </div>
   );
 }
 

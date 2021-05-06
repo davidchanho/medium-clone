@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { postSelectors } from "../../../../store";
 import Post from "../post";
-import PostImg from "../post/PostImg";
+import PostImg from "../post-img";
 
 function HeroPost() {
   const { hero } = useSelector(postSelectors);

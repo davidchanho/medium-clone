@@ -1,5 +1,4 @@
-import axios from "axios";
-import { IComment, IPost, IPublication, ITopic, IUser } from "../types";
+import { IComment, IPost, IUser } from "../types";
 
 const commentsUrl = "/api/comments/";
 const postsUrl = "/api/posts/";
@@ -7,68 +6,129 @@ const publicationsUrl = "/api/publications/";
 const usersUrl = "/api/users/";
 const topicsUrl = "/api/topics/";
 
+async function postData(url = "", data = {}) {
+  try {
+    await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    console.log("Success:", data);
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+
+async function getData(url = "") {
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log("Success", response);
+    return response.json();
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+
+async function deleteData(url = "") {
+  try {
+    await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log("Success");
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+
+async function updateData(url = "", data = {}) {
+  try {
+    await fetch(url, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    console.log("Success");
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+
 const API = {
   async getComments() {
-    const { data } = await axios.get<IComment[]>(commentsUrl);
+    const data = await getData(commentsUrl);
     return data;
   },
   async getComment(_id: string) {
-    const { data } = await axios.get<IComment>(commentsUrl + _id);
+    const data = await getData(commentsUrl + _id);
     return data;
   },
   addComment(comment: IComment) {
-    const { body, postId } = comment;
-    axios.post<any>(postsUrl, { body, postId });
+    postData(commentsUrl, comment);
   },
   deleteComment(_id: string) {
-    axios.delete<string>(commentsUrl + _id);
+    deleteData(commentsUrl + _id);
   },
-  updateComment(post: IComment) {
-    axios.put<string>(commentsUrl + post._id, post);
+  updateComment(comment: IComment) {
+    updateData(commentsUrl + comment._id, comment);
   },
+
   async getPosts() {
-    const { data } = await axios.get<IPost[]>(postsUrl);
+    const data = await getData(postsUrl);
     return data;
   },
   async getPost(_id: string) {
-    const { data } = await axios.get<IPost>(postsUrl + _id);
+    const data = await getData(postsUrl + _id);
     return data;
   },
   addPost(post: IPost) {
-    const { title, body } = post;
-    axios.post<any>(publicationsUrl, { title, body });
+    postData(postsUrl, post);
   },
   updatePost(post: IPost) {
-    axios.put<string>(postsUrl + post._id, post);
+    updateData(postsUrl + post._id, post);
   },
+
   async getPublications() {
-    const { data } = await axios.get<IPublication[]>(publicationsUrl);
+    const data = await getData(publicationsUrl);
     return data;
   },
   async getPublication(_id: string) {
-    const { data } = await axios.get<IPublication>(publicationsUrl + _id);
+    const data = await getData(publicationsUrl + _id);
     return data;
   },
+
   async getTopics() {
-    const { data } = await axios.get<ITopic[]>(topicsUrl);
+    const data = await getData(topicsUrl);
     return data;
   },
+
   async getUsers() {
-    const { data } = await axios.get<IUser[]>(usersUrl);
+    const data = await getData(usersUrl);
     return data;
   },
   async getUser(_id: string) {
-    const { data } = await axios.get<IUser>(usersUrl + _id);
+    const data = await getData(usersUrl + _id);
     return data;
   },
   addUser(user: IUser) {
-    axios.post<any>(usersUrl, user.name);
+    postData(usersUrl, user);
   },
   deleteUser(_id: string) {
-    axios.delete<string>(usersUrl + _id);
+    deleteData(usersUrl + _id);
   },
-  updateUser(post: IUser) {
-    axios.put<string>(usersUrl + post._id, post);
+  updateUser(user: IUser) {
+    updateData(usersUrl + user._id, user);
   },
 };
 

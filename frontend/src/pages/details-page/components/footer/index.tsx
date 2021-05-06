@@ -1,75 +1,54 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import FooterNav from "./FooterNav";
-
-const Container = styled.footer`
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 3.2rem 7.625rem;
-  background-color: ${(props) => props.theme.colors.darkBackground};
-  color: ${(props) => props.theme.colors.white};
-`;
-
-const Section = styled.section`
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  border-bottom: 1px solid ${(props) => props.theme.colors.white};
-  padding-bottom: 20px;
-`;
-
-const Article = styled.article`
-  flex: 0.3;
-`;
-
-const Header = styled(NavLink)`
-  text-decoration: none;
-  font-size: 22px;
-  color: ${(props) => props.theme.colors.white};
-`;
-
-const Link = styled(NavLink)`
-  text-decoration: none;
-  color: ${(props) => props.theme.colors.white};
-`;
+import FooterNav from "../footer-nav";
+import styles from "./index.module.scss";
 
 function Footer() {
   return (
-    <Container>
-      <Section>
-        <Article>
-          <Header to="#">Learn More.</Header>
+    <div className={styles.footer}>
+      <section className={styles.section}>
+        <article className={styles.article}>
+          <NavLink className={styles.header} to="#">
+            Learn More.
+          </NavLink>
           <p>
             Medium is an open platform where 170 million readers come to find
             insightful and dynamic thinking. Here, expert and undiscovered
             voices alike dive into the heart of any topic and bring new ideas to
-            the surface. <Link to="#">Learn more</Link>
+            the surface.{" "}
+            <NavLink className={styles.link} to="#">
+              Learn more
+            </NavLink>
           </p>
-        </Article>
-        <Article>
-          <Header to="#">Make Medium yours.</Header>
+        </article>
+        <article className={styles.article}>
+          <NavLink className={styles.header} to="#">
+            Make Medium yours.
+          </NavLink>
           <p>
             Follow the writers, publications, and topics that matter to you, and
             you’ll see them on your homepage and in your inbox.{" "}
-            <Link to="#">Explore</Link>
+            <NavLink className={styles.link} to="#">
+              Explore
+            </NavLink>
           </p>
-        </Article>
-        <Article>
-          <Header to="#">Share your thinking.</Header>
+        </article>
+        <article className={styles.article}>
+          <NavLink className={styles.header} to="#">
+            Share your thinking.
+          </NavLink>
           <p>
             If you have a story to tell, knowledge to share, or a perspective to
             offer — welcome home. It’s easy and free to post your thinking on
-            any topic. <Link to="#">Write on Medium</Link>
+            any topic.{" "}
+            <NavLink className={styles.link} to="#">
+              Write on Medium
+            </NavLink>
           </p>
-        </Article>
-      </Section>
+        </article>
+      </section>
       <FooterNav />
-    </Container>
+    </div>
   );
 }
 

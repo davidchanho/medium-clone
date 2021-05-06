@@ -3,7 +3,7 @@ import PostOptions from "../../../../components/post-options";
 import Row from "../../../../components/row";
 import { IPost } from "../../../../types";
 import Post from "../post";
-import PostImg from "../post/PostImg";
+import PostImg from "../post-img";
 
 function PostListItem({ ...post }: IPost) {
   return (

@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import MediumLogo from "../../components/medium-logo";
 import PlansBenefits from "./components/plans-benefits";
-import PlansContainer from "./components/plans-container";
 import PlansForm from "./components/plans-form";
-import PlansFrequency from "./components/plans-frequency";
-import PlansOption from "./components/plans-option";
-import PlansSubtitle from "./components/plans-subtitle";
-import PlansTitle from "./components/plans-title";
-
+import styles from "./index.module.scss";
 function PlansPage() {
   const [open, setOpen] = useState(false);
   const [option, setOption] = useState("");
@@ -20,23 +15,25 @@ function PlansPage() {
   const handleClose = () => setOpen(false);
 
   return (
-    <PlansContainer>
+    <div className={styles.container}>
       <MediumLogo width="148" height="21" />
-      <PlansTitle>Get unlimited access to everything on Medium</PlansTitle>
-      <PlansSubtitle>
+      <h1 className={styles.title}>
+        Get unlimited access to everything on Medium
+      </h1>
+      <h2 className={styles.subtitle}>
         Plans starting at less than $1/week. Cancel anytime.
-      </PlansSubtitle>
+      </h2>
       <PlansBenefits />
-      <PlansOption onClick={() => handleOpen("5")}>
-        <PlansFrequency>Monthly</PlansFrequency>
+      <div className={styles.option} onClick={() => handleOpen("5")}>
+        <h3 className={styles.frequency}>Monthly</h3>
         <p>$5/month</p>
-      </PlansOption>
-      <PlansOption onClick={() => handleOpen("50")}>
-        <PlansFrequency>Annual</PlansFrequency>
+      </div>
+      <div className={styles.option} onClick={() => handleOpen("50")}>
+        <h3 className={styles.frequency}>Annual</h3>
         <p>$50/year (save $10)</p>
-      </PlansOption>
+      </div>
       {open && <PlansForm option={option} handleClose={handleClose} />}
-    </PlansContainer>
+    </div>
   );
 }
 

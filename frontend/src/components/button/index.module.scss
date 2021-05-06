@@ -1,0 +1,21 @@
+@import "../../styles/colors";
+
+.button {
+  outline: none;
+  cursor: pointer;
+  border-radius: 99em;
+  padding: 0 1rem;
+  height: 2.3125rem;
+  line-height: 2.3125rem;
+  background-color: $white;
+  border: 0.0625rem solid $grey-100;
+  color: $grey-100;
+
+  &.outline {
+    background-color: $green-100;
+  }
+
+  &:hover {
+    border: 0.0625rem solid $grey-100;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { IPost } from "../../../../types";
-import TrendingGrid from "./TrendingGrid";
+import styles from "./index.module.scss";
 import TrendingItem from "./TrendingItem";
 
 interface Props {
@@ -9,11 +9,11 @@ interface Props {
 
 function TrendingList({ trending }: Props) {
   return (
-    <TrendingGrid>
+    <div className={styles.grid}>
       {trending.map((post: IPost, index: number) => (
         <TrendingItem key={post._id} {...post} index={index} />
       ))}
-    </TrendingGrid>
+    </div>
   );
 }
 

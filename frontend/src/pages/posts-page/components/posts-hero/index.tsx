@@ -1,25 +1,20 @@
 import React from "react";
-import styled from "styled-components";
 import CreatorsToFollow from "./CreatorsToFollow";
 import FeaturedPosts from "./FeaturedPosts";
 import HeroPost from "./HeroPost";
+import styles from "./index.module.scss";
 import TopicsYouFollow from "./TopicsYouFollow";
-
-const Container = styled.div`
-  width: 50vw;
-  display: grid;
-`;
 
 function Hero() {
   return (
-    <Container>
+    <div className={styles.container}>
       <HeroPost />
       <FeaturedPosts />
       <div>
         <CreatorsToFollow />
         <TopicsYouFollow />
       </div>
-    </Container>
+    </div>
   );
 }
 

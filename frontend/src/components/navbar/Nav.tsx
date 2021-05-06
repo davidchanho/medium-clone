@@ -1,24 +1,15 @@
 import React from "react";
 import { BsBell } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import PrimaryButton from "../buttons/PrimaryButton";
+import Button from "../button";
 import { IconBookmarks } from "../icons";
-import Row from "../row";
+import styles from "./Nav.module.scss";
 import Search from "./Search";
 import UserNavMenu from "./UserNavMenu";
 
-const Container = styled(Row)`
-  flex: 0.2;
-
-  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    display: none;
-  }
-`;
-
 function Nav() {
   return (
-    <Container>
+    <div className={styles.nav}>
       <li>
         <Search />
       </li>
@@ -32,13 +23,13 @@ function Nav() {
       </li>
       <li>
         <NavLink to="/plans">
-          <PrimaryButton>Upgrade</PrimaryButton>
+          <Button>Upgrade</Button>
         </NavLink>
       </li>
       <li>
         <UserNavMenu />
       </li>
-    </Container>
+    </div>
   );
 }
 

@@ -1,13 +1,8 @@
-import styled from "styled-components";
+import React, { PropsWithChildren } from "react";
+import styles from "./index.module.scss";
 
-const Modal = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: ${(props) => props.theme.colors.white};
-  z-index: 100;
-`;
+function Modal({ children }: PropsWithChildren<{}>) {
+  return <div className={styles.modal}>{children}</div>;
+}
 
 export default Modal;

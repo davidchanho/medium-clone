@@ -1,20 +1,14 @@
 import React from "react";
-import styled from "styled-components";
-import Row from "../row";
 import Brand from "./Brand";
 import Nav from "./Nav";
-
-const Container = styled(Row)`
-  margin: 20px auto;
-  width: 80%;
-`;
+import styles from "./Nav.module.scss";
 
 function Navbar() {
   return (
-    <Container>
+    <div className={styles.navbar}>
       <Brand />
       <Nav />
-    </Container>
+    </div>
   );
 }
 

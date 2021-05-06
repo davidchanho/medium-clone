@@ -1,7 +1,7 @@
 import React from "react";
 import { IPost } from "../../../../types";
 import Post from "../post";
-import PostImg from "../post/PostImg";
+import PostImg from "../post-img";
 
 function FeaturedPost({ ...post }: IPost) {
   return (

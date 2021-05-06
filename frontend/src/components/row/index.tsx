@@ -1,11 +1,8 @@
-import styled from "styled-components";
+import React, { PropsWithChildren } from "react";
+import styles from "./index.module.scss";
 
-const Row = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  list-style-type: none;
-`;
+function Row({ children }: PropsWithChildren<{}>) {
+  return <div className={styles.row}>{children}</div>;
+}
 
 export default Row;

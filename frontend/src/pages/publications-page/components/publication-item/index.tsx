@@ -1,18 +1,18 @@
 import React from "react";
-import Button from "../../../../components/buttons";
-import Row from "../../../../components/row";
+import Button from "../../../../components/button";
 import { IPublication } from "../../../../types";
+import styles from "./index.module.scss";
 
 function PublicationItem({ ...publication }: IPublication) {
   return (
-    <Row>
+    <div className={styles.item}>
       <div>
         <img src={publication.icon} alt="" width={20} height={20} />
         {publication.name}{" "}
       </div>
 
       <Button>Follow</Button>
-    </Row>
+    </div>
   );
 }
 

@@ -1,28 +1,26 @@
 import React, { lazy, Suspense } from "react";
-import styled from "styled-components";
 import { useSelector } from "../../../../hooks/useSelector";
 import { postSelectors } from "../../../../store";
-import TrendingHeader from "./TrendingHeader";
+import styles from "./index.module.scss";
+import { ReactComponent as TrendingIcon } from "./trending.svg";
 import TrendingSkeleton from "./TrendingSkeleton";
 
 const TrendingList = lazy(() => import("./TrendingList"));
-
-const TrendingContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
 
 function Trending() {
   const { trending } = useSelector(postSelectors);
 
   return (
-    <TrendingContainer>
-      <TrendingHeader />
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <TrendingIcon />
+        <p>TRENDING ON MEDIUM</p>
+      </header>
+
       <Suspense fallback={<TrendingSkeleton />}>
         <TrendingList trending={trending} />
       </Suspense>
-    </TrendingContainer>
+    </div>
   );
 }
 

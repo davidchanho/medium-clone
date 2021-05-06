@@ -2,19 +2,15 @@ import React from "react";
 import { FaCcDiscover, FaCcMastercard, FaCcVisa } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
 import { IconClose } from "../../../../components/icons";
 import Modal from "../../../../components/modal";
 import Row from "../../../../components/row";
+import styles from "./index.module.scss";
 
 interface Props {
   option: string;
   handleClose: () => void;
 }
-
-const Section = styled.section`
-  border: 1px solid ${(props) => props.theme.colors.upgradePrimary};
-`;
 
 function PlansForm({ option, handleClose }: Props) {
   return (
@@ -26,7 +22,7 @@ function PlansForm({ option, handleClose }: Props) {
         <p>Total billed today</p>
         <p>{`$${option} USD`}</p>
       </Row>
-      <Section>
+      <section className={styles.section}>
         <div>
           <h3>Pay with</h3> <FaCcVisa /> <FaCcDiscover /> <FaCcMastercard />
           <div>
@@ -61,7 +57,7 @@ function PlansForm({ option, handleClose }: Props) {
           cycles.
         </p>
         <button>Pay with credit or debit card</button>
-      </Section>
+      </section>
     </Modal>
   );
 }
