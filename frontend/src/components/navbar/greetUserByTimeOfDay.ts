@@ -1,6 +1,3 @@
-import React from "react";
-import MediumLogo from "../../../../components/medium-logo";
-
 const greetUserByTimeOfDay = () => {
   const currentTime = new Date().getHours();
   return currentTime > 0 && currentTime < 12
@@ -10,12 +7,4 @@ const greetUserByTimeOfDay = () => {
     : "Good evening";
 };
 
-function Brand() {
-  return (
-    <>
-      <MediumLogo width="180" height="34" /> {greetUserByTimeOfDay()}
-    </>
-  );
-}
-
-export default Brand;
+export default greetUserByTimeOfDay

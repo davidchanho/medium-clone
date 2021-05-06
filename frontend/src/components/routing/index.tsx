@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Template from "../../pages/template";
+import Template from "../template";
 
 const SettingsPage = lazy(() => import("../../pages/settings-page"));
 const ReadingHistoryPage = lazy(

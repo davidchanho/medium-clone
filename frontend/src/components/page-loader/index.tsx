@@ -1,9 +1,10 @@
 import React from "react";
+import img from "../../assets/mediumMobile.svg";
 
 function PageLoader() {
   return (
     <div>
-      <img src="/mediumMobile.svg" alt="" />
+      <img src={img} alt="" />
     </div>
   );
 }

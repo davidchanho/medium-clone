@@ -1,40 +1,26 @@
 import React from "react";
-import { AiOutlineClose } from "react-icons/ai";
 import { FaCcDiscover, FaCcMastercard, FaCcVisa } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { IconClose } from "../../../../components/icons";
+import Modal from "../../../../components/modal";
+import Row from "../../../../components/row";
 
 interface Props {
   option: string;
   handleClose: () => void;
 }
 
-const Modal = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: ${(props) => props.theme.colors.white};
-  z-index: 100;
-`;
-
 const Section = styled.section`
   border: 1px solid ${(props) => props.theme.colors.upgradePrimary};
-`;
-
-const Row = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 `;
 
 function PlansForm({ option, handleClose }: Props) {
   return (
     <Modal>
       <Row>
-        <h1>Payment Method</h1> <AiOutlineClose onClick={handleClose} />
+        <h1>Payment Method</h1> <IconClose onClick={handleClose} />
       </Row>
       <Row>
         <p>Total billed today</p>

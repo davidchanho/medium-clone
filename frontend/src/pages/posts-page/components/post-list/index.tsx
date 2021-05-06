@@ -1,25 +1,21 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useSelector } from "react-redux";
 import { postSelectors } from "../../../../store";
+import PostListItem from "../post-list-item";
 import PostsSkeleton from "../post/PostsSkeleton";
-import PostListItem from "./PostListItem";
 
 function PostList() {
-  const { posts, loading, error } = useSelector(postSelectors);
+  const { posts } = useSelector(postSelectors);
 
-  const renderPosts = () => {
-    if (loading) {
-      return <PostsSkeleton amount={5} />;
-    }
-    if (error) {
-      return <div>error</div>;
-    }
-    return posts.map((post) => (
-      <PostListItem key={`post-${post._id}`} {...post} />
-    ));
-  };
-
-  return <div>{renderPosts()}</div>;
+  return (
+    <div>
+      <Suspense fallback={<PostsSkeleton amount={5} />}>
+        {posts.map((post) => (
+          <PostListItem key={`post-${post._id}`} {...post} />
+        ))}
+      </Suspense>
+    </div>
+  );
 }
 
 export default PostList;

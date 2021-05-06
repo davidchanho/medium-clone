@@ -7,10 +7,8 @@ function SideBar() {
   return (
     <div>
       <ReadingList />
-      <div>
-        <WhoToFollow />
-        <Footer />
-      </div>
+      <WhoToFollow />
+      <Footer />
     </div>
   );
 }

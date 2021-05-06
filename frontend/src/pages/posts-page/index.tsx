@@ -1,27 +1,29 @@
-import React from "react";
+import React, { lazy } from "react";
+import Row from "../../components/row";
 import { useFetchPosts } from "../../hooks/useFetchPosts";
-import Hero from "./components/hero";
-import PostList from "./components/post-list";
 import PostsHead from "./components/posts-head";
+import PostsHero from "./components/posts-hero";
 import SideBar from "./components/side-bar";
 import Trending from "./components/trending";
+
+const PostList = lazy(() => import("./components/post-list"));
 
 function PostsPage() {
   useFetchPosts();
 
   return (
-    <>
+    <div>
       <PostsHead />
 
-      <Hero />
+      <PostsHero />
 
       <Trending />
 
-      <div>
-        <SideBar />
+      <Row>
         <PostList />
-      </div>
-    </>
+        <SideBar />
+      </Row>
+    </div>
   );
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { userSelectors } from "../../../../store";
 import { IUser } from "../../../../types";
-import Creator from "../hero/Creator";
+import Creator from "../posts-hero/Creator";
 
 function WhoToFollow() {
   const { users } = useSelector(userSelectors);

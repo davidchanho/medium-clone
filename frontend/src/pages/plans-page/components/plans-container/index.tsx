@@ -1,9 +1,7 @@
 import styled from "styled-components";
+import Row from "../../../../components/row";
 
-const PlansContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+const PlansContainer = styled(Row)`
   flex-direction: column;
   height: 70vh;
   position: relative;

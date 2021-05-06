@@ -2,19 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import MediumLogo from "../../../../components/medium-logo";
+import Row from "../../../../components/row";
 
-const Container = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+const Container = styled(Row)`
+  padding-top: 10px;
 `;
 
-const LinkList = styled.ul`
+const LinkList = styled(Row)`
   flex: 0.25;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 `;
 
 const Link = styled(NavLink)`

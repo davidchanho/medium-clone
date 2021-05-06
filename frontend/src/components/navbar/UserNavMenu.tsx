@@ -2,23 +2,22 @@ import React, { useState } from "react";
 import { BiUserCircle } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { userSelectors } from "../../../../store";
+import { userSelectors } from "../../store";
 
 function UserNavMenu() {
   const { user } = useSelector(userSelectors);
   const [show, setShow] = useState(false);
 
-  const toggleShow = () => {
-    setShow(!show);
-  };
+  const toggleShow = () => setShow(!show);
 
   return (
     <div>
-      <BiUserCircle onClick={toggleShow} />
+      <BiUserCircle onClick={toggleShow} size={32} />
       {show && (
         <ul>
           <li>
             <img src={user?.photo} alt="user avatar" />
+
             <div>
               <p>{user?.name}</p>
               <p>@{user?.email.split("@")[0]}</p>
@@ -38,7 +37,7 @@ function UserNavMenu() {
             <NavLink to="/me/settings">Settings</NavLink>
           </li>
           <li>
-            <NavLink to="/reading-list">Reading List</NavLink>
+            <NavLink to="/me/list/queue">Reading List</NavLink>
           </li>
           <li>
             <NavLink to="/me/publications">Publications</NavLink>

@@ -9,7 +9,7 @@ function TopicList() {
   return (
     <>
       {topics.slice(0, 3).map((topic) => (
-        <Topic key={`topics-you-follow-${topic}`} name={topic.name} />
+        <Topic key={`topics-${topic._id}`} name={topic.name} />
       ))}
     </>
   );

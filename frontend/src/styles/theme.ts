@@ -27,7 +27,7 @@ export const theme = () => ({
     successText: colors.green["100"],
 
     darkBackground: colors.black["200"],
-    darkText: colors.black["100"],
+    darkText: colors.black["200"],
 
     white: colors.white["100"],
   },

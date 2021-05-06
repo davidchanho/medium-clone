@@ -26,7 +26,7 @@ function Search() {
 
   return (
     <SearchForm>
-      <BsSearch className="pointer" onClick={toggleShow} />{" "}
+      <BsSearch className="pointer" onClick={toggleShow} size={25} />{" "}
       <SearchInput show={show} placeholder="Search Medium" />
     </SearchForm>
   );

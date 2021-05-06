@@ -4,6 +4,8 @@ import styled from "styled-components";
 import FooterNav from "./FooterNav";
 
 const Container = styled.footer`
+  position: absolute;
+  bottom: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -18,6 +20,7 @@ const Section = styled.section`
   justify-content: space-between;
   gap: 20px;
   border-bottom: 1px solid ${(props) => props.theme.colors.white};
+  padding-bottom: 20px;
 `;
 
 const Article = styled.article`
