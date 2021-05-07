@@ -1,6 +1,4 @@
-import { IPost } from "../types";
-import { IPublication } from "./../types/publication";
-import { IUser } from "./../types/user";
+import { IPost, IPublication, IUser } from "../types";
 
 export const testUser: IUser = {
   _id: "test",

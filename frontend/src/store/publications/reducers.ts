@@ -1,5 +1,5 @@
+import { IPublication } from './../../types/index';
 import produce from "immer";
-import { IPublication } from "../../types/publication";
 import { Action } from "../actions";
 import { ActionTypes } from "../actionTypes";
 
