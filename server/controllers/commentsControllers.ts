@@ -10,29 +10,29 @@ export default {
         model: "user",
       })
       .select("-postId")
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
   getComment: (req: Request, res: Response) => {
     db.Comment.findById(req.params.id)
       .select("-postId")
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
   addComment: (req: Request, res: Response) => {
     db.Comment.create(req.body)
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
   deleteComment: (req: Request, res: Response) => {
     db.Comment.findById(req.params.id)
-      .then((model) => model?.remove())
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => model.remove())
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
   updateComment: (req: Request, res: Response) => {
     db.Comment.findByIdAndUpdate(req.params.id, req.body)
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
 };

@@ -2,6 +2,7 @@ import request from "supertest";
 import db from "../db/models";
 import { IUserDoc } from "../db/models/User";
 import app from "../server";
+import testDB from "./testDB";
 
 const user = {
   avatar: "testing",
@@ -16,6 +17,7 @@ describe("Test /api/users end points", () => {
   let newUser: IUserDoc;
 
   beforeAll(async (done) => {
+    testDB();
     newUser = new db.User(user);
     Promise.all([newUser.save()]).then(() => done());
   });
@@ -68,7 +70,7 @@ describe("Test /api/users end points", () => {
     const res = await request(app)
       .delete(`/api/users/${newUser._id}`)
       .expect(200);
-      
+
     done();
   });
 });

@@ -2,6 +2,7 @@ import request from "supertest";
 import db from "../db/models";
 import { IPublicationDoc } from "../db/models/Publication";
 import app from "../server";
+import testDB from "./testDB";
 
 const publication = {
   name: "testing",
@@ -12,6 +13,7 @@ describe("Test /api/publications end points", () => {
   let newPublication: IPublicationDoc;
 
   beforeAll(async (done) => {
+    testDB();
     newPublication = new db.Publication(publication);
     Promise.all([newPublication.save()]).then(() => done());
   });

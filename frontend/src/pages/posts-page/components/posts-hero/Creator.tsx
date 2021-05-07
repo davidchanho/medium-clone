@@ -7,10 +7,9 @@ function Creator({
   name,
   about,
   className,
-  ...props
 }: IUser & HTMLAttributes<HTMLLIElement>) {
   return (
-    <li className={className} {...props}>
+    <li className={className}>
       <img src={photo} alt="creator avatar" width="60" height="60" />
 
       <div>

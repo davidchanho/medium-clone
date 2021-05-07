@@ -5,8 +5,8 @@ export default {
   getPublications: (req: Request, res: Response) => {
     db.Publication.find({})
       .select("name")
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
   getPublication: (req: Request, res: Response) => {
     db.Publication.findById(req.params.id)
@@ -31,7 +31,7 @@ export default {
         },
       })
       .select("posts")
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
 };

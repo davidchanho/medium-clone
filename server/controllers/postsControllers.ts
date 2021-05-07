@@ -4,7 +4,7 @@ import db from "../db/models";
 export default {
   getPosts: (req: Request, res: Response) => {
     const skip = req.query.skip ? Number(req.query.skip) : 0;
-    
+
     db.Post.find({})
       .populate({
         path: "user",
@@ -19,8 +19,8 @@ export default {
       .select("image title body readingTime date user publication")
       .limit(5)
       .skip(skip)
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any[]) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
   getPost: (req: Request, res: Response) => {
     db.Post.findById(req.params.id)
@@ -45,23 +45,23 @@ export default {
         model: "publication",
       })
       .select("image title body readingTime date user publication comments")
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
   addPost: (req: Request, res: Response) => {
     db.Post.create(req.body)
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
   deletePost: (req: Request, res: Response) => {
     db.Post.findById(req.params.id)
-      .then((model) => model?.remove())
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => model.remove())
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
   updatePost: (req: Request, res: Response) => {
     db.Post.findByIdAndUpdate(req.params.id, req.body)
-      .then((model) => res.json(model))
-      .catch((err) => res.status(422).json(err));
+      .then((model: any) => res.json(model))
+      .catch((err: any) => res.status(422).json(err));
   },
 };

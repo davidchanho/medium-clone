@@ -28,13 +28,11 @@ This is a fullstack clone of Medium.com.
 ### Built with
 
 - Semantic HTML5 markup
-- Bootstrap - CSS framework
 - [SCSS](https://sass-lang.com/) - Added styling
 - [Typescript](https://www.typescriptlang.org/) - Javscript Superset
 - [React](https://reactjs.org/) - JS library
 - [Redux Toolkit](https://redux-toolkit.js.org/) - State management
 - [Redux-persist](https://github.com/rt2zz/redux-persist) - persists Redux data
-- [React-Bootstrap](https://react-bootstrap.github.io/) - React Bootstrap components
 
 - [Node.js](https://nodejs.org/en/) - backend runtime environment
 - [Express.js](https://expressjs.com/) - Node.js web framework
@@ -49,14 +47,13 @@ This is a fullstack clone of Medium.com.
 - Integration test MongoDB
 - Managed state with Redux Toolkit and used its Redux Hooks to utilize it.
 - Code split routes with React Suspense and Lazy.
+
 ### Continued development
 
 I will experiment with other ways of doing things.
 
 - Implement React Context as state management.
-- Another CSS Framework such as tailwind.css or only use SCSS.
 - Serverless or use another backend such as Django, Laravel or Spring Boot.
-- Styled Components
 
 ## Author
 

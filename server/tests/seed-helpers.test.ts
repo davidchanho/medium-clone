@@ -1,6 +1,4 @@
-import "jest-chain";
-import "jest-extended";
-import { Types } from "mongoose";
+import assert from "assert";
 import {
   calcReadTime,
   generateBody,
@@ -15,55 +13,58 @@ import {
 describe("tests generateRandomNumber", () => {
   it("should return a number", () => {
     const num = generateRandomNumber();
-    expect(num).toBeNumber().toBeGreaterThanOrEqual(3).toBeLessThanOrEqual(7);
+    assert(typeof num === "number");
+    assert(num >= 3);
+    assert(num <= 7);
   });
 });
 
 describe("tests generateId", () => {
   it("should return a mongodb id", () => {
     const id = generateId();
-    expect(typeof id).toBe(Types.ObjectId);
+    assert(typeof id === "object");
   });
 });
 
 describe("tests generateDate", () => {
-  it("should return a Date", () => {
+  it("should be defined", () => {
     const date = generateDate();
-    expect(date).toBeDate().toBeTruthy();
+    assert(typeof date !== "undefined");
   });
 });
 
 describe("tests calcReadTime", () => {
   it("should return a string", () => {
     const readingTime = calcReadTime(generateBody());
-    expect(readingTime).toBeString();
+    assert(typeof readingTime === "string");
   });
 });
 
 describe("tests generatePhoto", () => {
   it("should return a string", () => {
     const photo = generatePhoto(10, 10);
-    expect(photo).toBeString();
+    assert(typeof photo === "string");
   });
 });
 
 describe("tests generateBody", () => {
   it("should return a string", () => {
     const body = generateBody();
-    expect(body).toBeString();
+    assert(typeof body === "string");
   });
 });
 
 describe("tests generateTopicName", () => {
   it("should return a string", () => {
     const topic = generateTopicName();
-    expect(topic).toBeString();
+    assert(typeof topic === "string");
   });
 });
 
 describe("tests generateSampleSize", () => {
   it("should return a string", () => {
     const sample = generateSampleSize(["a", "b", "c"]);
-    expect(sample).toBeArray().toBeArrayOfSize(3).not.toBeEmpty();
+    assert(typeof sample === "object");
+    assert(sample.length === 3);
   });
 });

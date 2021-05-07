@@ -1,20 +1,12 @@
-import dotenv from "dotenv";
 import mongoose from "mongoose";
 
-dotenv.config();
-
 const testDB = async () => {
-  try {
-    await mongoose.connect("mongodb://localhost/test", {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true,
-    });
-  } catch (err) {
-    console.error(err.message);
-    process.exit(0);
-  }
+  await mongoose.connect("mongodb://localhost/test", {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  });
 };
 
 async function dropAllCollections() {

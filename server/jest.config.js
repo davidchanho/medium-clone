@@ -8,5 +8,4 @@ module.exports = {
   ],
   transform: tsjPreset.transform,
   testEnvironment: "node",
-  setupFilesAfterEnv: ["jest-extended", "jest-chain"],
 };

@@ -2,6 +2,7 @@ import request from "supertest";
 import db from "../db/models";
 import app from "../server";
 import { ICommentDoc } from "../db/models/Comment";
+import testDB from "./testDB";
 
 const comment = {
   postId: "",
@@ -13,6 +14,7 @@ describe("Test /api/comments end points", () => {
   let newComment: ICommentDoc;
 
   beforeAll(async (done) => {
+    testDB();
     newComment = new db.Comment(comment);
     Promise.all([newComment.save()]).then(() => done());
   });

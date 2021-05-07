@@ -2,6 +2,7 @@ import request from "supertest";
 import db from "../db/models";
 import { ITopicDoc } from "../db/models/Topic";
 import app from "../server";
+import testDB from "./testDB";
 
 const topic = {
   name: "testing",
@@ -11,6 +12,7 @@ describe("Test /api/topics end points", () => {
   let newTopic: ITopicDoc;
 
   beforeAll(async (done) => {
+    testDB();
     newTopic = new db.Topic(topic);
     Promise.all([newTopic.save()]).then(() => done());
   });

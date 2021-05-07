@@ -28,6 +28,8 @@ async function getData(url = "") {
       headers: {
         "Content-Type": "application/json",
       },
+      mode: "cors",
+      credentials: "same-origin",
     });
     console.log("Success", response);
     return response.json();

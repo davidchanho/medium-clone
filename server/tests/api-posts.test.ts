@@ -2,6 +2,7 @@ import request from "supertest";
 import db from "../db/models";
 import app from "../server";
 import { IPostDoc } from "./../db/models/Post";
+import testDB from "./testDB";
 
 const post = {
   title: "testing",
@@ -15,6 +16,7 @@ describe("Test /api/posts end points", () => {
   let newPost: IPostDoc;
 
   beforeAll(async (done) => {
+    testDB();
     newPost = new db.Post(post);
     Promise.all([newPost.save()]).then(() => done());
   });
