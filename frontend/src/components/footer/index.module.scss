@@ -1,0 +1,35 @@
+@use '../../styles' as *;
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.2rem 7.625rem;
+  background-color: black;
+  color: $white;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid $white;
+  padding-bottom: 20px;
+}
+
+.article {
+  flex: 0.3;
+}
+
+.link {
+  text-decoration: none;
+  color: $white;
+}
+
+.header {
+  @extend .link;
+  font-size: 22px;
+}
