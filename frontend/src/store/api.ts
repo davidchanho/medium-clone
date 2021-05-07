@@ -28,10 +28,8 @@ async function getData(url = "") {
       headers: {
         "Content-Type": "application/json",
       },
-      mode: "cors",
-      credentials: "same-origin",
     });
-    console.log("Success", response);
+    console.log("Success", response.json());
     return response.json();
   } catch (err) {
     console.error("Error:", err);
@@ -87,8 +85,9 @@ const API = {
   },
 
   async getPosts() {
-    const data = await getData(postsUrl);
-    return data;
+    const res = await fetch(postsUrl);
+
+    return res.json();
   },
   async getPost(_id: string) {
     const data = await getData(postsUrl + _id);

@@ -19,7 +19,7 @@ export default {
       .select("image title body readingTime date user publication")
       .limit(5)
       .skip(skip)
-      .then((model: any[]) => res.json(model))
+      .then((model: any) => res.json(model))
       .catch((err: any) => res.status(422).json(err));
   },
   getPost: (req: Request, res: Response) => {

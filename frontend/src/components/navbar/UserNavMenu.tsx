@@ -26,27 +26,13 @@ function UserNavMenu() {
           <li>
             <NavLink to="/new-story">Write a story</NavLink>
           </li>
-          <li>
-            <NavLink to="/me/stories">Stories</NavLink>
-          </li>
-          <li>
-            <NavLink to="/me/stats">Stats</NavLink>
-          </li>
+          <li>Stories</li>
+          <li>Stats</li>
           <li>Design your profile</li>
-          <li>
-            <NavLink to="/me/settings">Settings</NavLink>
-          </li>
-          <li>
-            <NavLink to="/me/list/queue">Reading List</NavLink>
-          </li>
-          <li>
-            <NavLink to="/me/publications">Publications</NavLink>
-          </li>
-          <li>
-            <NavLink to="/me/missioncontrol">
-              Control your recommendations
-            </NavLink>
-          </li>
+          <li>Settings</li>
+          <li>Reading List</li>
+          <li>Publications</li>
+          <li>Control your recommendations</li>
           <li>Medium Partner Program</li>
           <li>Become a member</li>
           <li>Help</li>
