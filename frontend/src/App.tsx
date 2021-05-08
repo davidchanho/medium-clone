@@ -3,7 +3,8 @@ import Routing from "./components/routing";
 import { useFetchPosts } from "./hooks/useFetchPosts";
 
 function App() {
-  useFetchPosts()
+  useFetchPosts();
+
   return <Routing />;
 }
 

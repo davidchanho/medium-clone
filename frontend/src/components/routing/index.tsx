@@ -12,13 +12,16 @@ function Routing() {
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<Template />}>
+          <Route element={<Template />}>
             <Route path="/" element={<PostsPage />} />
             <Route path="/new-story" element={<NewStoryPage />} />
-            <Route path="/:id" element={<DetailsPage />} />
+
+            <Route path="/post">
+              <Route path="/:id" element={<DetailsPage />} />
+            </Route>
           </Route>
 
-          <Route element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </Router>
