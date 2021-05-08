@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import DetailsBar from "../../components/details-bar";
+import Footer from "../../components/footer";
 import PostDetails from "../../components/post-details";
 import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
@@ -17,13 +18,17 @@ function PostDetailsPage() {
   }, [getPost, params.id]);
 
   return (
-    <div className="d-flex align-items-start">
+    <div>
       <Helmet>
         <title>{post.title}</title>
         <meta name="description" content={post.title} />
       </Helmet>
-      <DetailsBar />
-      <PostDetails />
+      <section className="d-flex align-items-start">
+        <DetailsBar />
+        <PostDetails />
+      </section>
+
+      <Footer />
     </div>
   );
 }
