@@ -1,5 +1,5 @@
 import produce from "immer";
-import { IUser } from "../../types/user";
+import { IUser } from "../../types";
 import { Action } from "../actions";
 import { ActionTypes } from "../actionTypes";
 

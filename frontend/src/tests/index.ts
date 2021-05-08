@@ -1,4 +1,6 @@
-export const testUser = {
+import { IPost, IPublication, IUser } from "../types";
+
+export const testUser: IUser = {
   _id: "test",
   avatar: "test",
   photo: "test",
@@ -14,15 +16,15 @@ export const testUser = {
   comments: [],
 };
 
-export const testPublication = {
+export const testPublication: IPublication = {
   _id: "test",
   name: "test",
   icon: "test",
-  topic: [{ name: "test" }],
+  topic: { _id: "test", name: "test" },
 };
 
-export const testPost = {
-  id: "test",
+export const testPost: IPost = {
+  _id: "test",
   publication: testPublication,
   user: testUser,
   title: "test",

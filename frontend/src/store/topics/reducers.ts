@@ -1,5 +1,5 @@
 import produce from "immer";
-import { ITopic } from "../../types/topic";
+import { ITopic } from "../../types";
 import { Action } from "../actions";
 import { ActionTypes } from "../actionTypes";
 

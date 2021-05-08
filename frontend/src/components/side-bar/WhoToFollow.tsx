@@ -20,7 +20,7 @@ function WhoToFollow() {
               <Creator
                 className="bg-light"
                 key={`creators-to-follow-${user._id}`}
-                {...user}
+                user={user}
               />
             );
           })}

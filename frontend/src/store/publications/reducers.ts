@@ -1,5 +1,5 @@
 import produce from "immer";
-import { IPublication } from "../../types/publication";
+import { IPublication } from "../../types";
 import { Action } from "../actions";
 import { ActionTypes } from "../actionTypes";
 
@@ -7,7 +7,7 @@ export const initialPublication: IPublication = {
   _id: "",
   name: "",
   icon: "",
-  topics: [],
+  topic: { _id: "", name: "" },
 };
 
 export interface IPublicationsState {

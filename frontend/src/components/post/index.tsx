@@ -25,8 +25,10 @@ function Post({ ...post }: IPost) {
       </Card.Text>
       <Card.Title className="text-capitalize mb-1">{post?.title}</Card.Title>
       <Card.Text className="text-secondary">
-        {post.excerpt ? clampText(post?.body, post?.excerpt) : ""}
-        {formatDate(post?.date)} &middot; {post?.readingTime}
+        <p>{post.excerpt ? clampText(post?.body, post?.excerpt) : ""}</p>
+        <p>
+          {formatDate(post?.date)} &middot; {post?.readingTime}
+        </p>
       </Card.Text>
     </Card>
   );

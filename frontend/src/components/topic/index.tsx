@@ -1,11 +1,15 @@
 import React from "react";
-import { Button, ListGroupItem } from "react-bootstrap";
-import { ITopic } from "../../types";
+import { ListGroupItem } from "react-bootstrap";
+import { TopicProps } from "../../types";
+import FollowButton from "../buttons/follow-button";
 
-function Topic({ name }: ITopic) {
+function Topic({ topic }: TopicProps) {
+  if (!topic) {
+    return null;
+  }
   return (
     <ListGroupItem className="mr-2 mb-2 font-weight-bold d-flex align-items-center justify-content-between">
-      {name} <Button variant='success' className='pill'>Follow</Button>
+      {topic.name} <FollowButton topic={topic} />
     </ListGroupItem>
   );
 }

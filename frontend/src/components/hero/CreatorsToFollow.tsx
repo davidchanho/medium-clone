@@ -13,7 +13,7 @@ function CreatorsToFollow() {
       <p className="text-uppercase font-weight-bold mb-2">Creators to follow</p>{" "}
        <ListGroup>
         {users.slice(0, 2).map((user: IUser) => {
-          return <Creator key={`creators-to-follow-${user._id}`} {...user} />;
+          return <Creator key={`creators-to-follow-${user._id}`} user={user} />;
         })}
       </ListGroup>
     </div>
