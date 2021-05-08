@@ -39,29 +39,21 @@ const usersReducers = produce(
       case ActionTypes.ADD_USER:
         state.users.push(action.payload);
         return state;
-      case ActionTypes.FETCH_USERS:
+      case ActionTypes.LOADING_USERS:
         state.loading = true;
         state.error = "";
         return state;
-      case ActionTypes.FETCH_USERS_SUCCESS:
+      case ActionTypes.FETCH_USERS:
         state.users = action.payload;
         state.loading = false;
         return state;
-      case ActionTypes.FETCH_USERS_FAIL:
+      case ActionTypes.ERROR_USERS:
         state.loading = false;
         state.error = action.payload;
         return state;
       case ActionTypes.FETCH_USER:
-        state.loading = true;
-        state.error = "";
-        return state;
-      case ActionTypes.FETCH_USER_SUCCESS:
         state.user = action.payload;
         state.loading = false;
-        return state;
-      case ActionTypes.FETCH_USER_FAIL:
-        state.loading = false;
-        state.error = action.payload;
         return state;
       case ActionTypes.DELETE_USER:
         const deleteUserIndex = state.users.findIndex(

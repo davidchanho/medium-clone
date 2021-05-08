@@ -30,29 +30,21 @@ const publicationsReducers = produce(
     action: Action
   ): IPublicationsState => {
     switch (action.type) {
-      case ActionTypes.FETCH_PUBLICATIONS:
+      case ActionTypes.LOADING_PUBLICATIONS:
         state.loading = true;
         state.error = "";
         return state;
-      case ActionTypes.FETCH_PUBLICATIONS_SUCCESS:
+      case ActionTypes.ERROR_PUBLICATIONS:
+        state.loading = false;
+        state.error = action.payload;
+        return state;
+      case ActionTypes.FETCH_PUBLICATIONS:
         state.publications = action.payload;
         state.loading = false;
         return state;
-      case ActionTypes.FETCH_PUBLICATIONS_FAIL:
-        state.loading = false;
-        state.error = action.payload;
-        return state;
       case ActionTypes.FETCH_PUBLICATION:
-        state.loading = true;
-        state.error = "";
-        return state;
-      case ActionTypes.FETCH_PUBLICATION_SUCCESS:
         state.publication = action.payload;
         state.loading = false;
-        return state;
-      case ActionTypes.FETCH_PUBLICATION_FAIL:
-        state.loading = false;
-        state.error = action.payload;
         return state;
       default:
         return state;

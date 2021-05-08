@@ -1,32 +1,23 @@
 import { ActionTypes } from ".";
 import { IComment, IPost, IPublication, ITopic, IUser } from "../types";
 
-export interface GetCommentsAction {
-  type: ActionTypes.FETCH_COMMENTS;
+export interface LoadingCommentsAction {
+  type: ActionTypes.LOADING_COMMENTS;
 }
 
-export interface GetCommentsSuccessAction {
-  type: ActionTypes.FETCH_COMMENTS_SUCCESS;
+export interface ErrorCommentsAction {
+  type: ActionTypes.ERROR_COMMENTS;
+  payload: string;
+}
+
+export interface FetchCommentsAction {
+  type: ActionTypes.FETCH_COMMENTS;
   payload: IComment[];
 }
 
-export interface GetCommentsFailAction {
-  type: ActionTypes.FETCH_COMMENTS_FAIL;
-  payload: string;
-}
-
-export interface GetCommentAction {
+export interface FetchCommentAction {
   type: ActionTypes.FETCH_COMMENT;
-}
-
-export interface GetCommentSuccessAction {
-  type: ActionTypes.FETCH_COMMENT_SUCCESS;
   payload: IComment;
-}
-
-export interface GetCommentFailAction {
-  type: ActionTypes.FETCH_COMMENT_FAIL;
-  payload: string;
 }
 
 export interface AddCommentAction {
@@ -44,32 +35,23 @@ export interface UpdateCommentAction {
   payload: IComment;
 }
 
-export interface GetPostsAction {
-  type: ActionTypes.FETCH_POSTS;
+export interface LoadingPostsAction {
+  type: ActionTypes.LOADING_POSTS;
 }
 
-export interface GetPostsSuccessAction {
-  type: ActionTypes.FETCH_POSTS_SUCCESS;
+export interface FetchPostsAction {
+  type: ActionTypes.FETCH_POSTS;
   payload: IPost[];
 }
 
-export interface GetPostsFailAction {
-  type: ActionTypes.FETCH_POSTS_FAIL;
+export interface ErrorPostsAction {
+  type: ActionTypes.ERROR_POSTS;
   payload: string;
 }
 
-export interface GetPostAction {
+export interface FetchPostAction {
   type: ActionTypes.FETCH_POST;
-}
-
-export interface GetPostSuccessAction {
-  type: ActionTypes.FETCH_POST_SUCCESS;
   payload: IPost;
-}
-
-export interface GetPostFailAction {
-  type: ActionTypes.FETCH_POST_FAIL;
-  payload: string;
 }
 
 export interface AddPostAction {
@@ -87,74 +69,56 @@ export interface UpdatePostAction {
   payload: IPost;
 }
 
-export interface GetPublicationsAction {
-  type: ActionTypes.FETCH_PUBLICATIONS;
+export interface LoadingPublicationsAction {
+  type: ActionTypes.LOADING_PUBLICATIONS;
 }
 
-export interface GetPublicationsSuccessAction {
-  type: ActionTypes.FETCH_PUBLICATIONS_SUCCESS;
+export interface FetchPublicationsAction {
+  type: ActionTypes.FETCH_PUBLICATIONS;
   payload: IPublication[];
 }
 
-export interface GetPublicationsFailAction {
-  type: ActionTypes.FETCH_PUBLICATIONS_FAIL;
+export interface ErrorPublicationsAction {
+  type: ActionTypes.ERROR_PUBLICATIONS;
   payload: string;
 }
 
-export interface GetPublicationAction {
+export interface FetchPublicationAction {
   type: ActionTypes.FETCH_PUBLICATION;
-}
-
-export interface GetPublicationSuccessAction {
-  type: ActionTypes.FETCH_PUBLICATION_SUCCESS;
   payload: IPublication;
 }
 
-export interface GetPublicationFailAction {
-  type: ActionTypes.FETCH_PUBLICATION_FAIL;
-  payload: string;
+export interface LoadingTopicsAction {
+  type: ActionTypes.LOADING_TOPICS;
 }
 
-export interface GetTopicsAction {
+export interface FetchTopicsAction {
   type: ActionTypes.FETCH_TOPICS;
-}
-
-export interface GetTopicsSuccessAction {
-  type: ActionTypes.FETCH_TOPICS_SUCCESS;
   payload: ITopic[];
 }
 
-export interface GetTopicsFailAction {
-  type: ActionTypes.FETCH_TOPICS_FAIL;
+export interface ErrorTopicsAction {
+  type: ActionTypes.ERROR_TOPICS;
   payload: string;
 }
 
-export interface GetUsersAction {
-  type: ActionTypes.FETCH_USERS;
+export interface LoadingUsersAction {
+  type: ActionTypes.LOADING_USERS;
 }
 
-export interface GetUsersSuccessAction {
-  type: ActionTypes.FETCH_USERS_SUCCESS;
+export interface FetchUsersAction {
+  type: ActionTypes.FETCH_USERS;
   payload: IUser[];
 }
 
-export interface GetUsersFailAction {
-  type: ActionTypes.FETCH_USERS_FAIL;
+export interface ErrorUsersAction {
+  type: ActionTypes.ERROR_USERS;
   payload: string;
 }
 
-export interface GetUserAction {
+export interface FetchUserAction {
   type: ActionTypes.FETCH_USER;
-}
-
-export interface GetUserSuccessAction {
-  type: ActionTypes.FETCH_USER_SUCCESS;
   payload: IUser;
-}
-
-export interface GetUserFailAction {
-  type: ActionTypes.FETCH_USER_FAIL;
-  payload: string;
 }
 
 export interface AddUserAction {
@@ -178,39 +142,31 @@ export interface BookmarkPostAction {
 }
 
 export type Action =
-  | GetCommentsAction
-  | GetCommentsSuccessAction
-  | GetCommentsFailAction
-  | GetCommentAction
-  | GetCommentSuccessAction
-  | GetCommentFailAction
+  | FetchCommentsAction
+  | ErrorCommentsAction
+  | LoadingCommentsAction
+  | FetchCommentAction
   | AddCommentAction
   | DeleteCommentAction
   | UpdateCommentAction
-  | GetPostsAction
-  | GetPostsSuccessAction
-  | GetPostsFailAction
-  | GetPostAction
-  | GetPostSuccessAction
-  | GetPostFailAction
+  | FetchPostsAction
+  | ErrorPostsAction
+  | LoadingPostsAction
+  | FetchPostAction
   | AddPostAction
   | DeletePostAction
   | UpdatePostAction
-  | GetPublicationsAction
-  | GetPublicationsSuccessAction
-  | GetPublicationsFailAction
-  | GetPublicationAction
-  | GetPublicationSuccessAction
-  | GetPublicationFailAction
-  | GetTopicsAction
-  | GetTopicsSuccessAction
-  | GetTopicsFailAction
-  | GetUsersAction
-  | GetUsersSuccessAction
-  | GetUsersFailAction
-  | GetUserAction
-  | GetUserSuccessAction
-  | GetUserFailAction
+  | FetchPublicationsAction
+  | ErrorPublicationsAction
+  | LoadingPublicationsAction
+  | FetchPublicationAction
+  | FetchTopicsAction
+  | ErrorTopicsAction
+  | LoadingTopicsAction
+  | FetchUsersAction
+  | ErrorUsersAction
+  | LoadingUsersAction
+  | FetchUserAction
   | AddUserAction
   | DeleteUserAction
   | UpdateUserAction

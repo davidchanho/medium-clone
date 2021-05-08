@@ -1,20 +1,20 @@
-import { Dispatch, useState } from "react";
+import { Dispatch } from "react";
 import { Action, ActionTypes } from ".";
 import { IComment, IPost, IUser } from "../types";
 import API from "./api";
 
 export const getComments = () => async (dispatch: Dispatch<Action>) => {
-  dispatch({ type: ActionTypes.FETCH_COMMENTS });
+  dispatch({ type: ActionTypes.LOADING_COMMENTS });
 
   try {
     const data = await API.getComments();
     dispatch({
-      type: ActionTypes.FETCH_COMMENTS_SUCCESS,
+      type: ActionTypes.FETCH_COMMENTS,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: ActionTypes.FETCH_COMMENTS_FAIL,
+      type: ActionTypes.ERROR_COMMENTS,
       payload: err,
     });
   }
@@ -23,17 +23,17 @@ export const getComments = () => async (dispatch: Dispatch<Action>) => {
 export const getComment = (_id: string) => async (
   dispatch: Dispatch<Action>
 ) => {
-  dispatch({ type: ActionTypes.FETCH_COMMENT });
+  dispatch({ type: ActionTypes.LOADING_COMMENTS });
 
   try {
     const data = await API.getComment(_id);
     dispatch({
-      type: ActionTypes.FETCH_COMMENT_SUCCESS,
+      type: ActionTypes.FETCH_COMMENT,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: ActionTypes.FETCH_COMMENT_FAIL,
+      type: ActionTypes.ERROR_COMMENTS,
       payload: err,
     });
   }
@@ -79,35 +79,35 @@ export const updateComment = (comment: IComment) => async (
 };
 
 export const getPosts = () => async (dispatch: Dispatch<Action>) => {
-  dispatch({ type: ActionTypes.FETCH_POSTS });
+  dispatch({ type: ActionTypes.LOADING_POSTS });
   try {
     const data = await API.getPosts();
 
     dispatch({
-      type: ActionTypes.FETCH_POSTS_SUCCESS,
+      type: ActionTypes.FETCH_POSTS,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: ActionTypes.FETCH_POSTS_FAIL,
+      type: ActionTypes.ERROR_POSTS,
       payload: err,
     });
   }
 };
 
 export const getPost = (_id: string) => async (dispatch: Dispatch<Action>) => {
-  dispatch({ type: ActionTypes.FETCH_POST });
+  dispatch({ type: ActionTypes.LOADING_POSTS });
 
   try {
     const data = await API.getPost(_id);
 
     dispatch({
-      type: ActionTypes.FETCH_POST_SUCCESS,
+      type: ActionTypes.FETCH_POST,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: ActionTypes.FETCH_POST_FAIL,
+      type: ActionTypes.ERROR_POSTS,
       payload: err,
     });
   }
@@ -154,17 +154,17 @@ export const updatePost = (post: IPost) => async (
 };
 
 export const getPublications = () => async (dispatch: Dispatch<Action>) => {
-  dispatch({ type: ActionTypes.FETCH_PUBLICATIONS });
+  dispatch({ type: ActionTypes.LOADING_PUBLICATIONS });
 
   try {
     const data = await API.getPublications();
     dispatch({
-      type: ActionTypes.FETCH_PUBLICATIONS_SUCCESS,
+      type: ActionTypes.FETCH_PUBLICATIONS,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: ActionTypes.FETCH_PUBLICATIONS_FAIL,
+      type: ActionTypes.ERROR_PUBLICATIONS,
       payload: err,
     });
   }
@@ -173,51 +173,51 @@ export const getPublications = () => async (dispatch: Dispatch<Action>) => {
 export const getPublication = (_id: string) => async (
   dispatch: Dispatch<Action>
 ) => {
-  dispatch({ type: ActionTypes.FETCH_PUBLICATION });
+  dispatch({ type: ActionTypes.LOADING_PUBLICATIONS });
 
   try {
     const data = await API.getPublication(_id);
     dispatch({
-      type: ActionTypes.FETCH_PUBLICATION_SUCCESS,
+      type: ActionTypes.FETCH_PUBLICATION,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: ActionTypes.FETCH_PUBLICATION_FAIL,
+      type: ActionTypes.ERROR_PUBLICATIONS,
       payload: err,
     });
   }
 };
 
 export const getUsers = () => async (dispatch: Dispatch<Action>) => {
-  dispatch({ type: ActionTypes.FETCH_USERS });
+  dispatch({ type: ActionTypes.LOADING_USERS });
 
   try {
     const data = await API.getUsers();
     dispatch({
-      type: ActionTypes.FETCH_USERS_SUCCESS,
+      type: ActionTypes.FETCH_USERS,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: ActionTypes.FETCH_USERS_FAIL,
+      type: ActionTypes.ERROR_USERS,
       payload: err,
     });
   }
 };
 
 export const getUser = (_id: string) => async (dispatch: Dispatch<Action>) => {
-  dispatch({ type: ActionTypes.FETCH_USER });
+  dispatch({ type: ActionTypes.LOADING_USERS });
 
   try {
     const data = await API.getUser(_id);
     dispatch({
-      type: ActionTypes.FETCH_USER_SUCCESS,
+      type: ActionTypes.FETCH_USER,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: ActionTypes.FETCH_USER_FAIL,
+      type: ActionTypes.ERROR_USERS,
       payload: err,
     });
   }
@@ -274,17 +274,17 @@ export const bookmarkPost = (post: IPost) => async (
 };
 
 export const getTopics = () => async (dispatch: Dispatch<Action>) => {
-  dispatch({ type: ActionTypes.FETCH_TOPICS });
+  dispatch({ type: ActionTypes.LOADING_TOPICS });
 
   try {
     const data = await API.getTopics();
     dispatch({
-      type: ActionTypes.FETCH_TOPICS_SUCCESS,
+      type: ActionTypes.FETCH_TOPICS,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: ActionTypes.FETCH_TOPICS_FAIL,
+      type: ActionTypes.ERROR_TOPICS,
       payload: err,
     });
   }

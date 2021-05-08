@@ -46,11 +46,11 @@ const postsReducers = produce(
       case ActionTypes.ADD_POST:
         state.posts.push(action.payload);
         return state;
-      case ActionTypes.FETCH_POSTS:
+      case ActionTypes.LOADING_POSTS:
         state.loading = true;
         state.error = "";
         return state;
-      case ActionTypes.FETCH_POSTS_SUCCESS:
+      case ActionTypes.FETCH_POSTS:
         state.posts = action.payload;
         state.hero = action.payload[0];
         state.trending = action.payload.slice(0, 6);
@@ -58,21 +58,13 @@ const postsReducers = produce(
         state.reading = action.payload.slice(0, 4);
         state.loading = false;
         return state;
-      case ActionTypes.FETCH_POSTS_FAIL:
+      case ActionTypes.ERROR_POSTS:
         state.loading = false;
         state.error = action.payload;
         return state;
       case ActionTypes.FETCH_POST:
-        state.loading = true;
-        state.error = "";
-        return state;
-      case ActionTypes.FETCH_POST_SUCCESS:
         state.post = action.payload;
         state.loading = false;
-        return state;
-      case ActionTypes.FETCH_POST_FAIL:
-        state.loading = false;
-        state.error = action.payload;
         return state;
       case ActionTypes.DELETE_POST:
         const deletePostIndex = state.posts.findIndex(

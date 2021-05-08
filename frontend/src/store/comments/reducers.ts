@@ -34,29 +34,21 @@ const commentsReducers = produce(
       case ActionTypes.ADD_COMMENT:
         state.comments.push(action.payload);
         return state;
-      case ActionTypes.FETCH_COMMENTS:
+      case ActionTypes.LOADING_COMMENTS:
         state.loading = true;
         state.error = "";
         return state;
-      case ActionTypes.FETCH_COMMENTS_SUCCESS:
+      case ActionTypes.FETCH_COMMENTS:
         state.comments = action.payload;
         state.loading = false;
         return state;
-      case ActionTypes.FETCH_COMMENTS_FAIL:
+      case ActionTypes.ERROR_COMMENTS:
         state.loading = false;
         state.error = action.payload;
         return state;
       case ActionTypes.FETCH_COMMENT:
-        state.loading = true;
-        state.error = "";
-        return state;
-      case ActionTypes.FETCH_COMMENT_SUCCESS:
         state.comment = action.payload;
         state.loading = false;
-        return state;
-      case ActionTypes.FETCH_COMMENT_FAIL:
-        state.loading = false;
-        state.error = action.payload;
         return state;
       case ActionTypes.DELETE_COMMENT:
         const deleteCommentIndex = state.comments.findIndex(
