@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import PageLoader from "../../pages/page-loader";
+import PageLoader from "../page-loader";
 import Template from "../../pages/template";
 
 const PostDetailsPage = lazy(() => import("../../pages/post-details-page"));

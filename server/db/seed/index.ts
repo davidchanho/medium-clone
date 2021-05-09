@@ -9,6 +9,7 @@ import { IUserDoc } from "./../models/User";
 import {
   calcReadTime,
   generateBody,
+  generateClapsAmount,
   generateDate,
   generateId,
   generatePhoto,
@@ -21,7 +22,9 @@ EventEmitter.defaultMaxListeners = 20;
 
 export const PUBLICATIONS_AMOUNT = 5;
 
-export const generatePublication = (publicationId: mongoose.Types._ObjectId) => {
+export const generatePublication = (
+  publicationId: mongoose.Types._ObjectId
+) => {
   return new db.Publication({
     _id: publicationId,
     icon: generatePhoto(20, 20),
@@ -46,6 +49,7 @@ export const generatePost = (
     image: generatePhoto(200, 135),
     date: generateDate(),
     readingTime: calcReadTime(body),
+    claps: generateClapsAmount(),
     comments: [],
   });
 };
@@ -93,6 +97,7 @@ const generateComment = (postId: mongoose.Types._ObjectId, user: IUserDoc) => {
     userId: user._id,
     user,
     body: generateBody(),
+    claps: generateClapsAmount(),
     date: generateDate(),
   });
 };

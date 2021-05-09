@@ -6,12 +6,12 @@ import { IUser } from "../../types";
 import Creator from "./Creator";
 
 function CreatorsToFollow() {
-  const { users} = useSelector(userSelectors);
+  const { users } = useSelector(userSelectors);
 
   return (
-    <div className="mb-3">
+    <div className="w-100">
       <p className="text-uppercase font-weight-bold mb-2">Creators to follow</p>{" "}
-       <ListGroup>
+      <ListGroup className="w-100">
         {users.slice(0, 2).map((user: IUser) => {
           return <Creator key={`creators-to-follow-${user._id}`} user={user} />;
         })}

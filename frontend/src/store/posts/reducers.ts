@@ -15,6 +15,7 @@ export const initialPost: IPost = {
   date: "",
   readingTime: "",
   comments: [],
+  claps: 0,
   excerpt: 0,
 };
 

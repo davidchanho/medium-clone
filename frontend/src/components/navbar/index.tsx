@@ -5,7 +5,7 @@ import Nav from "./Nav";
 
 function Navbar() {
   return (
-    <BsNavbar bg="white" expand="md">
+    <BsNavbar bg="white" expand="md" className='p-0 m-0'>
       <Brand />
       <Nav />
     </BsNavbar>

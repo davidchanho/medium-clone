@@ -1,5 +1,6 @@
-import { Request, Response } from "express";
+import { Application, Request, response, Response } from "express";
 import db from "../db/models";
+import { OpenApi, Types, bodySchema } from "ts-openapi";
 
 export default {
   getPosts: (req: Request, res: Response) => {

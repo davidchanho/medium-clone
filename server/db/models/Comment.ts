@@ -5,6 +5,7 @@ export interface ICommentDoc extends Document {
   postId: string;
   user: IUserDoc;
   body: string;
+  claps: number;
   date: string;
 }
 
@@ -20,6 +21,7 @@ const commentSchema = new Schema(
       minlength: [6, "comment body must be at least 6 characters long"],
       required: [true, "comment body is required"],
     },
+    claps: { type: Number, default: 0 },
     date: {
       type: String,
       default: new Date().toString(),

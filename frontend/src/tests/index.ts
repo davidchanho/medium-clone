@@ -32,5 +32,6 @@ export const testPost: IPost = {
   image: "test",
   readingTime: "test",
   date: "test",
+  claps: 0,
   comments: [],
 };

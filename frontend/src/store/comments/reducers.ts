@@ -8,6 +8,7 @@ export const initialComment: IComment = {
   postId: "",
   userId: "",
   body: "",
+    claps:0,
   date: "",
 };
 

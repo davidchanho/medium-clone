@@ -4,6 +4,7 @@ import express from "express";
 import logger from "morgan";
 import startDB from "./db";
 import routes from "./routes";
+import { initOpenApi, openApiInstance } from "./openApi";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -15,7 +16,7 @@ app.use(compression());
 app.use(cors({ origin: `http://localhost:${PORT}` }));
 
 startDB();
-
+// initOpenApi(app, openApiInstance);
 app.use(routes);
 
 if (process.env.NODE_ENV !== "test") {

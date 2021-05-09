@@ -7,12 +7,10 @@ import FollowButton from "../buttons/follow-button";
 function Creator({
   user,
   className,
-  ...props
 }: UserProps & ListGroupItemProps) {
   return (
     <ListGroupItem
       className={`w-100 p-0 border-0 d-flex align-items-center justify-content-between ${className}`}
-      {...props}
     >
       <img
         src={user?.photo}

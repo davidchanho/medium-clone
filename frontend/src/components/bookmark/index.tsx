@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
+import { useSelector } from "../../hooks/useSelector";
 import { postSelectors, userSelectors } from "../../store";
 import { IconBookmark, IconBookmarkFill } from "../icons";
 

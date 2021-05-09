@@ -5,6 +5,7 @@ export interface IComment {
   postId: string;
   userId: string;
   body: string;
+  claps: number;
   date: string;
 }
 
@@ -21,6 +22,7 @@ export interface IPost {
   image?: string;
   readingTime: string;
   date: string;
+  claps: number;
   comments: IComment[];
   excerpt?: number;
 }

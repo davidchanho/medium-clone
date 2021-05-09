@@ -6,6 +6,10 @@ export const generateRandomNumber = () => {
   return _.random(3, 7);
 };
 
+export const generateClapsAmount = () => {
+  return _.random(1000, 10000);
+}
+
 export const generateId = () => {
   return new mongoose.Types.ObjectId();
 };

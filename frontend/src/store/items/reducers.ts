@@ -8,6 +8,7 @@ export const initialItem: IItem = {
   postId: "",
   userId: "",
   body: "",
+  claps: 0,
   date: "",
 };
 

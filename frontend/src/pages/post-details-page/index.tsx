@@ -19,7 +19,7 @@ function PostDetailsPage() {
   }, []);
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{post?.title}</title>
         <meta name="description" content={post?.title} />
@@ -37,7 +37,7 @@ function PostDetailsPage() {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -11,6 +11,7 @@ export interface IPostDoc extends Document {
   image: string;
   readingTime: string;
   date: string;
+  claps: number;
   comments: ICommentDoc[];
 }
 
@@ -39,6 +40,7 @@ const postSchema = new Schema(
     readingTime: {
       type: String,
     },
+    claps: { type: Number, default: 0 },
     comments: [{ type: Schema.Types.ObjectId, ref: "comment" }],
     date: {
       type: String,
