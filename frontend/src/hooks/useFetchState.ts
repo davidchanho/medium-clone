@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { userSelectors } from "../store";
 import { useActions } from "./useActions";
 
-export const useFetchPosts = () => {
+export const useFetchState = () => {
   const {
     getPosts,
     getPublications,

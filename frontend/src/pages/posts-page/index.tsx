@@ -5,10 +5,10 @@ import Hero from "../../components/hero";
 import PostList from "../../components/post-list";
 import SideBar from "../../components/side-bar";
 import TrendingPosts from "../../components/trending-posts";
-import { useFetchPosts } from "../../hooks/useFetchPosts";
+import { useFetchState } from "../../hooks/useFetchState";
 
 function PostsPage() {
-  useFetchPosts();
+  useFetchState();
 
   return (
     <>
@@ -21,7 +21,7 @@ function PostsPage() {
       <Hero />
 
       <TrendingPosts />
-      
+
       <Row>
         <Col lg={{ span: 4, order: 2 }} xs={12}>
           <SideBar />
