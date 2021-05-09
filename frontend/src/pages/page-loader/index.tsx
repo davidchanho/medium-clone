@@ -4,7 +4,7 @@ import { ReactComponent as MobileMediumLogo } from "../../assets/mediumMobile.sv
 function PageLoader() {
   return (
     <div className="vw-100 vh-100 d-flex align-items-center justify-content-center">
-      <MobileMediumLogo className="w-25 h-25" />
+      <MobileMediumLogo width="146" height='46' />
     </div>
   );
 }
