@@ -11,8 +11,8 @@ function TrendingPosts() {
 
   return (
     <div className="border-bottom">
-      <Container>
-        <div className="d-flex align-items-center">
+      <Container className=" my-5">
+        <div className="d-flex align-items-center mb-3">
           <TrendingLogo className="mr-2" width="28" height="29" />
           <p className="font-weight-bold text-uppercase">trending on medium</p>
         </div>

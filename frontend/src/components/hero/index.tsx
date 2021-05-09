@@ -7,14 +7,14 @@ import TopicsYouFollow from "./TopicsYouFollow";
 
 function Hero() {
   return (
-    <Row className="border-bottom p-5">
-      <Col lg={{ span: 4, offset: 1 }} xs={12}>
+    <Row className="border-bottom p-3 mx-5">
+      <Col lg={4} xs={12}>
         <HeroPost />
       </Col>
-      <Col lg={3} xs={12}>
+      <Col lg={4} xs={12}>
         <FeaturedPosts />
       </Col>
-      <Col lg={{ span: 3, offset: -1 }} xs={12}>
+      <Col lg={4} xs={12}>
         <CreatorsToFollow />
         <TopicsYouFollow />
       </Col>

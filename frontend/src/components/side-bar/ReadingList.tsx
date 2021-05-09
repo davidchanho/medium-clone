@@ -1,7 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
 import { postSelectors } from "../../store";
 import { IconBookmarks } from "../icons";
 import Post from "../post";
@@ -19,12 +18,9 @@ function ReadingList() {
         {reading.map((post) => (
           <Post key={`post-${post._id}`} {...post} />
         ))}
-        <NavLink
-          to="/reading-list"
-          className="text-success text-decoration-none"
-        >
+        <p className="text-success text-decoration-none">
           See your full reading list
-        </NavLink>
+        </p>
       </Card.Body>
     </Card>
   );

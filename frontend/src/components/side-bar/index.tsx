@@ -5,7 +5,7 @@ import WhoToFollow from "./WhoToFollow";
 
 function SideBar() {
   return (
-    <div className="py-5">
+    <div className="py-5 mx-5">
       <ReadingList />
       <div className="sticky-top">
         <WhoToFollow />

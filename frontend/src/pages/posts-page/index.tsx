@@ -15,7 +15,6 @@ function PostsPage() {
       <Helmet>
         <title>React Medium</title>
         <meta name="description" content="React Medium" />
-        <link rel="icon" type="image/svg+xml" href="/mediumMobile.svg" />
       </Helmet>
 
       <Hero />

@@ -11,7 +11,7 @@ function Creator({
 }: UserProps & ListGroupItemProps) {
   return (
     <ListGroupItem
-      className={`w-100 border-0 d-flex align-items-center justify-content-between ${className}`}
+      className={`w-100 p-0 border-0 d-flex align-items-center justify-content-between ${className}`}
       {...props}
     >
       <img
@@ -22,7 +22,7 @@ function Creator({
         height="60"
       />
 
-      <div className="w-50 mx-2">
+      <div className="w-75 mx-1">
         <p className="font-weight-bold">{user?.name}</p>
         <p>{user?.about && clampText(user?.about, 35)}</p>
       </div>
