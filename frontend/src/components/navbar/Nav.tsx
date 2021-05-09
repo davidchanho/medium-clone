@@ -5,21 +5,25 @@ import UserNavMenu from "./UserNavMenu";
 
 function Nav() {
   return (
-    <BsNav className="ml-auto my-auto">
+    <BsNav className="ml-auto my-auto d-flex align-items-center flex-row">
       <BsNav.Link>
         <IconSearch />
       </BsNav.Link>
-      <BsNav.Link>
+
+      <BsNav.Link className="hide-mobile">
         <IconBookmarks />
       </BsNav.Link>
+
       <BsNav.Link>
         <IconBell />
       </BsNav.Link>
-      <BsNav.Link>
+
+      <BsNav.Link className="hide-mobile">
         <Button variant="dark" size="sm">
           Upgrade
         </Button>
       </BsNav.Link>
+
       <BsNav.Link>
         <UserNavMenu />
       </BsNav.Link>

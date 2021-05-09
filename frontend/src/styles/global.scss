@@ -46,3 +46,24 @@ p {
   margin: 0;
   padding: 0;
 }
+
+a {
+  color: $secondary;
+
+  &:hover {
+    color: $secondary;
+    text-decoration: none;
+  }
+}
+
+.hide-mobile {
+  @media screen and (max-width: map-get($map: $container-max-widths, $key: md)) {
+    display: none;
+  }
+}
+
+.hide-tablet {
+  @media screen and (min-width: map-get($map: $container-max-widths, $key: md)) {
+    display: none;
+  }
+}

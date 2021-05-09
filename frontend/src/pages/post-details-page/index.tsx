@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import DetailsBar from "../../components/details-bar";
@@ -15,7 +16,7 @@ function PostDetailsPage() {
 
   useEffect(() => {
     getPost(params.id);
-  }, [getPost, params.id]);
+  }, []);
 
   return (
     <div>
@@ -23,9 +24,16 @@ function PostDetailsPage() {
         <title>{post?.title}</title>
         <meta name="description" content={post?.title} />
       </Helmet>
-      <section className="d-flex">
-        <DetailsBar />
-        <PostDetails />
+
+      <section>
+        <Row>
+          <Col xs={0}>
+            <DetailsBar />
+          </Col>
+          <Col xs={12}>
+            <PostDetails />
+          </Col>
+        </Row>
       </section>
 
       <Footer />

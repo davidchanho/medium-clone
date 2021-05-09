@@ -11,7 +11,7 @@ function DetailsBar() {
   const { post } = useSelector(postSelectors);
 
   return (
-    <Card className="w-25">
+    <Card className="w-100">
       <Card.Header className="bg-white mb-3">
         <p className="mb-3">{post?.publication?.name}</p>
         <FollowButton user={post?.user} />
