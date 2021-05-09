@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { IComment, IPost, IPublication, ITopic, IUser } from "../types";
+import { IComment, IItem, IPost, IPublication, ITopic, IUser } from "../types";
 
 const instance = axios.create({
   baseURL: "/api",
@@ -16,7 +16,11 @@ const requests = {
   delete: (url: string) => instance.delete(url).then(responseBody),
 };
 
-const URL = {
+interface IUrl {
+  [key: string]: string;
+}
+
+const URL: IUrl = {
   comments: "/comments/",
   posts: "/posts/",
   publications: "/publications/",
@@ -25,6 +29,13 @@ const URL = {
 };
 
 const API = {
+  getItems: async (name: string): Promise<IItem[]> => requests.get(URL[name]),
+  getItem: async (_id: string, name: string): Promise<IItem> =>
+    requests.get(URL[name] + _id),
+  addItem: (post: IItem, name: string) => requests.post(URL[name], post),
+  updateItem: (post: IItem, name: string) => requests.patch(URL[name], post),
+  deleteItem: (_id: string, name: string) => requests.delete(URL[name] + _id),
+
   getPosts: async (): Promise<IPost[]> => requests.get(URL.posts),
   getPost: async (_id: string): Promise<IPost> => requests.get(URL.posts + _id),
   addPost: (post: IPost) => requests.post(URL.posts, post),
