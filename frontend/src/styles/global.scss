@@ -42,27 +42,7 @@ code {
   }
 }
 
-.nav-tabs {
-  .nav-item {
-    border: none;
-    color: rgb(141, 141, 141);
-    &.active {
-      font-weight: bold;
-      border-bottom: 1px solid black;
-    }
-  }
-}
-
-.tab-pane {
-  padding: 30px;
-}
-
 p {
   margin: 0;
   padding: 0;
 }
-
-.bg-yellow {
-  background-color: #ffc017;
-}
-

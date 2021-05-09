@@ -6,14 +6,13 @@ import DetailsImg from "./DetailsImg";
 
 function PostDetails() {
   const { post } = useSelector(postSelectors);
-  const { title, body } = post;
 
   return (
-    <article className="w-75">
-      <h1>{title}</h1>
+    <article className="w-50">
+      <h1>{post?.title}</h1>
       <DetailsHeader {...post} />
       <DetailsImg {...post} />
-      <p className="m-4">{body}</p>{" "}
+      <p className="m-4">{post?.body}</p>{" "}
     </article>
   );
 }

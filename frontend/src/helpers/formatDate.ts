@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
 
-export const formatDate = (date: string) => {
+export const formatDate = (date: string): string | null => {
   if (!date) {
-    return;
+    return null;
   }
   const currentYear = dayjs().get("year").toString();
 

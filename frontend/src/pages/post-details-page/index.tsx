@@ -20,10 +20,10 @@ function PostDetailsPage() {
   return (
     <div>
       <Helmet>
-        <title>{post.title}</title>
-        <meta name="description" content={post.title} />
+        <title>{post?.title}</title>
+        <meta name="description" content={post?.title} />
       </Helmet>
-      <section className="d-flex align-items-start">
+      <section className="d-flex">
         <DetailsBar />
         <PostDetails />
       </section>

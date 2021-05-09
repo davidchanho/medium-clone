@@ -5,7 +5,6 @@ import { IconFacebook, IconLinkedin, IconTwitter } from "../icons";
 import PostOptions from "../post-options";
 
 function DetailsHeader({ ...post }: IPost) {
-  
   return (
     <div className="d-flex align-items-center justify-content-between flex-row mb-3">
       <Row className="d-flex align-items-center flex-row">
@@ -17,7 +16,7 @@ function DetailsHeader({ ...post }: IPost) {
         </Col>
       </Row>
 
-      <div className="d-flex align-items-center">
+      <div className="w-25 d-flex align-items-center justify-content-between">
         <IconTwitter size="28" />
         <IconLinkedin size="28" />
         <IconFacebook size="28" />

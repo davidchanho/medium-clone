@@ -11,11 +11,16 @@ function DetailsImg({ title, image }: IPost) {
 
   return (
     <>
-      <img src={image} alt={title} onClick={toggleOpen} className="w-100" />
+      <img src={image} alt={title} onClick={toggleOpen} className="w-100 pointer" />
 
-      <Modal show={isOpen}>
-        <Modal.Body>
-          <img src={image} alt={title} onClick={toggleOpen} />
+      <Modal show={isOpen} size="xl">
+        <Modal.Body className="p-0">
+          <img
+            className="w-100 pointer"
+            src={image}
+            alt={title}
+            onClick={toggleOpen}
+          />
         </Modal.Body>
       </Modal>
     </>
