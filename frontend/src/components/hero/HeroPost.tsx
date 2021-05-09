@@ -11,9 +11,9 @@ function HeroPost() {
 
   return (
     <Card className="h-100 d-flex flex-column justify-content-between">
-      <PostImg {...hero} width={375} height={281.5} />
-      <Post {...hero} excerpt={120} />
-        <div className="text-secondary d-flex">
+      <PostImg post={hero} width={375} height={281.5} />
+      <Post post={hero && { ...hero, excerpt: 60 }} />
+      <div className="text-secondary d-flex">
         <NavLink to={`/${hero?._id}`}>Read More</NavLink> &middot;{" "}
         {hero?.readingTime}
       </div>

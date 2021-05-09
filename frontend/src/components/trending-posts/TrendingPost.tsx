@@ -1,16 +1,16 @@
 import React from "react";
-import { IPost } from "../../types";
+import { PostProps } from "../../types";
 import Post from "../post";
 
-interface TrendingPostProps extends IPost {
+interface TrendingPostProps extends PostProps {
   index: number;
 }
 
-function TrendingPost({ index, ...post }: TrendingPostProps) {
+function TrendingPost({ index, post }: TrendingPostProps) {
   return (
     <div className="d-flex">
       <h3 className="text-muted mr-4">0{index + 1}</h3>
-      <Post key={`post-${post._id}`} {...post} />
+      <Post key={`post-${post?._id}`} post={post} />
     </div>
   );
 }

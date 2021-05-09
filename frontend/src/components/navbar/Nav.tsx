@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Nav as BsNav, NavLink } from "react-bootstrap";
+import { Button, Nav as BsNav } from "react-bootstrap";
 import { IconBell, IconBookmarks, IconSearch } from "../icons";
 import UserNavMenu from "./UserNavMenu";
 
@@ -9,13 +9,13 @@ function Nav() {
       <BsNav.Link>
         <IconSearch />
       </BsNav.Link>
-      <BsNav.Link to="/reading-list" as={NavLink}>
+      <BsNav.Link>
         <IconBookmarks />
       </BsNav.Link>
       <BsNav.Link>
         <IconBell />
       </BsNav.Link>
-      <BsNav.Link to="/upgrade" as={NavLink}>
+      <BsNav.Link>
         <Button variant="dark" size="sm">
           Upgrade
         </Button>

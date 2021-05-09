@@ -10,7 +10,7 @@ function FeaturedPosts() {
   return (
     <CardDeck className="d-flex flex-column border-right">
       {featured.map((post) => (
-        <FeaturedPost key={`featured-${post._id}`} {...post} />
+        <FeaturedPost key={`featured-${post._id}`} post={post} />
       ))}
     </CardDeck>
   );

@@ -34,7 +34,7 @@ function UserNavMenu() {
         <Dropdown.Item>Design your profile</Dropdown.Item>
         <Dropdown.Item>Settings</Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item as={NavLink} to="/reading-list">
+        <Dropdown.Item>
           Reading List
         </Dropdown.Item>
         <Dropdown.Item>Publications</Dropdown.Item>

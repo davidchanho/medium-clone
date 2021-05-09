@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import { IPost } from "../../types";
+import { PostProps } from "../../types";
 
-function DetailsImg({ title, image }: IPost) {
+function DetailsImg({ post }: PostProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -11,14 +11,19 @@ function DetailsImg({ title, image }: IPost) {
 
   return (
     <>
-      <img src={image} alt={title} onClick={toggleOpen} className="w-100 pointer" />
+      <img
+        src={post?.image}
+        alt={post?.title}
+        onClick={toggleOpen}
+        className="w-100 pointer"
+      />
 
       <Modal show={isOpen} size="xl">
         <Modal.Body className="p-0">
           <img
             className="w-100 pointer"
-            src={image}
-            alt={title}
+            src={post?.image}
+            alt={post?.title}
             onClick={toggleOpen}
           />
         </Modal.Body>

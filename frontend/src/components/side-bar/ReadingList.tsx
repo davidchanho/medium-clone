@@ -16,7 +16,7 @@ function ReadingList() {
 
       <Card.Body className="bg-light pt-1">
         {reading.map((post) => (
-          <Post key={`post-${post._id}`} {...post} />
+          <Post key={`post-${post._id}`} post={post} />
         ))}
         <p className="text-success text-decoration-none">
           See your full reading list

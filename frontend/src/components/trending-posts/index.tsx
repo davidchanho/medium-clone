@@ -18,7 +18,7 @@ function TrendingPosts() {
         </div>
         <div className={`${styles.grid}`}>
           {trending.map((post, index) => (
-            <TrendingPost key={post._id} {...post} index={index} />
+            <TrendingPost key={post._id} post={post} index={index} />
           ))}
         </div>
       </Container>

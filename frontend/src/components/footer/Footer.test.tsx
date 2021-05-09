@@ -1,10 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import PostEditor from ".";
+import Footer from ".";
 
-describe("PostEditor", () => {
+describe("Footer", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<PostEditor />).toJSON();
+    const tree = renderer.create(<Footer />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import { IPost } from "../../types";
+import { IPost, PostProps } from "../../types";
 import { IconFacebook, IconLinkedin, IconTwitter } from "../icons";
 import PostOptions from "../post-options";
 
-function DetailsHeader({ ...post }: IPost) {
+function DetailsHeader({ post }: PostProps) {
   return (
     <div className="d-flex align-items-center justify-content-between flex-row mb-3">
       <Row className="d-flex align-items-center flex-row">
@@ -20,7 +20,7 @@ function DetailsHeader({ ...post }: IPost) {
         <IconTwitter size="28" />
         <IconLinkedin size="28" />
         <IconFacebook size="28" />
-        <PostOptions {...post} />
+        <PostOptions post={post} />
       </div>
     </div>
   );

@@ -10,8 +10,8 @@ function PostDetails() {
   return (
     <article className="w-50">
       <h1>{post?.title}</h1>
-      <DetailsHeader {...post} />
-      <DetailsImg {...post} />
+      <DetailsHeader post={post} />
+      <DetailsImg post={post} />
       <p className="m-4">{post?.body}</p>{" "}
     </article>
   );

@@ -3,9 +3,9 @@ import { Card } from "react-bootstrap";
 import { clampText } from "../../helpers/clampText";
 import { formatDate } from "../../helpers/formatDate";
 import { useGetPost } from "../../hooks/useGetPost";
-import { IPost } from "../../types";
+import { PostProps } from "../../types";
 
-function Post({ ...post }: IPost) {
+function Post({ post }: PostProps) {
   const { onGetPost } = useGetPost(post);
 
   return (
@@ -25,9 +25,9 @@ function Post({ ...post }: IPost) {
       </Card.Text>
       <Card.Title className="text-capitalize mb-1">{post?.title}</Card.Title>
       <Card.Text className="text-secondary">
-        <p>{post.excerpt ? clampText(post?.body, post?.excerpt) : ""}</p>
+        <p>{post?.excerpt ? clampText(post?.body, post?.excerpt) : ""}</p>
         <p>
-          {formatDate(post?.date)} &middot; {post?.readingTime}
+          {post?.date && formatDate(post?.date)} &middot; {post?.readingTime}
         </p>
       </Card.Text>
     </Card>
