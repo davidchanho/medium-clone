@@ -10,7 +10,7 @@ describe("PostOptions", () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <PostOptions {...testPost} />
+          <PostOptions post={testPost} />
         </Provider>
       )
       .toJSON();

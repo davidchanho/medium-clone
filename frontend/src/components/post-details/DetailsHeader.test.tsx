@@ -10,7 +10,7 @@ describe("DetailsHeader", () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <DetailsHeader {...testPost} />
+          <DetailsHeader post={testPost} />
         </Provider>
       )
       .toJSON();

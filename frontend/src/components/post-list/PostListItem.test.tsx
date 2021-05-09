@@ -5,7 +5,7 @@ import PostListItem from "./PostListItem";
 
 describe("PostListItem", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<PostListItem {...testPost} />).toJSON();
+    const tree = renderer.create(<PostListItem post={testPost} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
