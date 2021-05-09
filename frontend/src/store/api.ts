@@ -1,96 +1,55 @@
-import axios from "axios";
-import { IComment, IItem, IPost, IPublication, ITopic, IUser } from "../types";
+import axios, { AxiosResponse } from "axios";
+import { IComment, IPost, IPublication, ITopic, IUser } from "../types";
 
-const commentsUrl = "/api/comments/";
-const postsUrl = "/api/posts/";
-const publicationsUrl = "/api/publications/";
-const usersUrl = "/api/users/";
-const topicsUrl = "/api/topics/";
-const itemsUrl = (name: string) => `/api/${name}/`;
+const instance = axios.create({
+  baseURL: "/api",
+  timeout: 15000,
+});
+
+const responseBody = (response: AxiosResponse) => response.data;
+
+const requests = {
+  get: (url: string) => instance.get(url).then(responseBody),
+  post: (url: string, body: {}) => instance.post(url, body).then(responseBody),
+  patch: (url: string, body: {}) =>
+    instance.patch(url, body).then(responseBody),
+  delete: (url: string) => instance.delete(url).then(responseBody),
+};
+
+const URL = {
+  comments: "/comments/",
+  posts: "/posts/",
+  publications: "/publications/",
+  users: "/users/",
+  topics: "/topics/",
+};
 
 const API = {
-  async getItems(name: string) {
-    const { data } = await axios.get<IItem[]>(itemsUrl(name));
-    return data;
-  },
-  async getItem(_id: string, name: string) {
-    const { data } = await axios.get<IItem>(itemsUrl(name) + _id);
-    return data;
-  },
-  addItem(item: IItem, name: string) {
-    axios.post<any>(itemsUrl(name), item);
-  },
-  deleteItem(_id: string, name: string) {
-    axios.delete<string>(itemsUrl(name) + _id);
-  },
-  updateItem(updateItem: IItem, name: string) {
-    axios.put<string>(itemsUrl(name) + updateItem._id, updateItem);
-  },
+  getPosts: async (): Promise<IPost[]> => requests.get(URL.posts),
+  getPost: async (_id: string): Promise<IPost> => requests.get(URL.posts + _id),
+  addPost: (post: IPost) => requests.post(URL.posts, post),
+  updatePost: (post: IPost) => requests.patch(URL.posts, post),
+  deletePost: (_id: string) => requests.delete(URL.posts + _id),
 
-  async getComments() {
-    const { data } = await axios.get<IComment[]>(commentsUrl);
-    return data;
-  },
-  async getComment(_id: string) {
-    const { data } = await axios.get<IComment>(commentsUrl + _id);
-    return data;
-  },
-  addComment(comment: IComment) {
-    const { body, postId } = comment;
-    axios.post<any>(commentsUrl, { body, postId });
-  },
-  deleteComment(_id: string) {
-    axios.delete<string>(commentsUrl + _id);
-  },
-  updateComment(comment: IComment) {
-    axios.put<string>(commentsUrl + comment._id, comment);
-  },
-  async getPosts() {
-    const { data } = await axios.get<IPost[]>(postsUrl);
-    return data;
-  },
-  async getPost(_id: string) {
-    const { data } = await axios.get<IPost>(postsUrl + _id);
-    return data;
-  },
-  addPost(post: IPost) {
-    axios.post<any>(publicationsUrl, post);
-  },
-  deletePost(_id: string) {
-    axios.delete<string>(postsUrl + _id);
-  },
-  updatePost(post: IPost) {
-    axios.put<string>(postsUrl + post._id, post);
-  },
-  async getPublications() {
-    const { data } = await axios.get<IPublication[]>(publicationsUrl);
-    return data;
-  },
-  async getPublication(_id: string) {
-    const { data } = await axios.get<IPublication>(publicationsUrl + _id);
-    return data;
-  },
-  async getTopics() {
-    const { data } = await axios.get<ITopic[]>(topicsUrl);
-    return data;
-  },
-  async getUsers() {
-    const { data } = await axios.get<IUser[]>(usersUrl);
-    return data;
-  },
-  async getUser(_id: string) {
-    const { data } = await axios.get<IUser>(usersUrl + _id);
-    return data;
-  },
-  addUser(user: IUser) {
-    axios.post<any>(usersUrl, user.name);
-  },
-  deleteUser(_id: string) {
-    axios.delete<string>(usersUrl + _id);
-  },
-  updateUser(post: IUser) {
-    axios.put<string>(usersUrl + post._id, post);
-  },
+  getComments: async (): Promise<IComment[]> => requests.get(URL.comments),
+  getComment: async (_id: string): Promise<IComment> =>
+    requests.get(URL.comments + _id),
+  addComment: (comment: IComment) => requests.post(URL.comments, comment),
+  updateComment: (comment: IComment) => requests.patch(URL.comments, comment),
+  deleteComment: (_id: string) => requests.delete(URL.comments + _id),
+
+  getPublications: async (): Promise<IPublication[]> =>
+    requests.get(URL.publications),
+  getPublication: async (_id: string): Promise<IPublication> =>
+    requests.get(URL.publications + _id),
+
+  getTopics: async (): Promise<ITopic[]> => requests.get(URL.topics),
+
+  getUsers: async (): Promise<IUser[]> => requests.get(URL.users),
+  getUser: async (_id: string): Promise<IUser> => requests.get(URL.users + _id),
+  addUser: (user: IUser) => requests.post(URL.users, user),
+  updateUser: (user: IUser) => requests.patch(URL.users, user),
+  deleteUser: (_id: string) => requests.delete(URL.users + _id),
 };
 
 export default API;

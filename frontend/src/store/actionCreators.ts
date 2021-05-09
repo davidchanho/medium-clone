@@ -165,7 +165,6 @@ export const getPosts = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.LOADING_POSTS });
   try {
     const data = await API.getPosts();
-
     dispatch({
       type: ActionTypes.FETCH_POSTS,
       payload: data,
