@@ -11,11 +11,9 @@ function PostImg({
 }: IPost & ImageProps) {
   const { onGetPost } = useGetPost(post);
 
-  const image = post.image;
-
   return (
     <Card.Img
-      src={image ? image : "/imgPlaceholder.png"}
+      src={post.image}
       className={`${className} pointer`}
       onClick={onGetPost}
       width={width}
