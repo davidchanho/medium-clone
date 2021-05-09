@@ -1,7 +1,90 @@
 import { Dispatch } from "react";
 import { Action, ActionTypes } from ".";
-import { IComment, IPost, IUser } from "../types";
+import { IComment, IItem, IPost, IUser } from "../types";
 import API from "./api";
+
+export const getItems = (name: string) => async (
+  dispatch: Dispatch<Action>
+) => {
+  dispatch({ type: ActionTypes.LOADING_ITEMS });
+
+  try {
+    const data = await API.getItems(name);
+    dispatch({
+      type: ActionTypes.FETCH_ITEMS,
+      name,
+      payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: ActionTypes.ERROR_ITEMS,
+      name,
+      payload: err.message,
+    });
+  }
+};
+
+export const getItem = (_id: string, name: string) => async (
+  dispatch: Dispatch<Action>
+) => {
+  dispatch({ type: ActionTypes.LOADING_ITEMS });
+
+  try {
+    const data = await API.getItem(_id, name);
+    dispatch({
+      type: ActionTypes.FETCH_ITEM,
+      name,
+      payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: ActionTypes.ERROR_ITEMS,
+      name,
+      payload: err.message,
+    });
+  }
+};
+
+export const addItem = (item: IItem, name: string) => async (
+  dispatch: Dispatch<Action>
+) => {
+  try {
+    API.addItem(item, name);
+    dispatch({ type: ActionTypes.ADD_ITEM, name, payload: item });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const deleteItem = (_id: string, name: string) => async (
+  dispatch: Dispatch<Action>
+) => {
+  try {
+    API.deleteItem(_id, name);
+    dispatch({
+      type: ActionTypes.DELETE_ITEM,
+      name,
+      payload: _id,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const updateItem = (item: IItem, name: string) => async (
+  dispatch: Dispatch<Action>
+) => {
+  try {
+    API.updateItem(item, name);
+    dispatch({
+      type: ActionTypes.UPDATE_ITEM,
+      name,
+      payload: item,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 export const getComments = () => async (dispatch: Dispatch<Action>) => {
   dispatch({ type: ActionTypes.LOADING_COMMENTS });
@@ -15,7 +98,7 @@ export const getComments = () => async (dispatch: Dispatch<Action>) => {
   } catch (err) {
     dispatch({
       type: ActionTypes.ERROR_COMMENTS,
-      payload: err,
+      payload: err.message,
     });
   }
 };
@@ -34,7 +117,7 @@ export const getComment = (_id: string) => async (
   } catch (err) {
     dispatch({
       type: ActionTypes.ERROR_COMMENTS,
-      payload: err,
+      payload: err.message,
     });
   }
 };
@@ -90,7 +173,7 @@ export const getPosts = () => async (dispatch: Dispatch<Action>) => {
   } catch (err) {
     dispatch({
       type: ActionTypes.ERROR_POSTS,
-      payload: err,
+      payload: err.message,
     });
   }
 };
@@ -108,7 +191,7 @@ export const getPost = (_id: string) => async (dispatch: Dispatch<Action>) => {
   } catch (err) {
     dispatch({
       type: ActionTypes.ERROR_POSTS,
-      payload: err,
+      payload: err.message,
     });
   }
 };
@@ -165,7 +248,7 @@ export const getPublications = () => async (dispatch: Dispatch<Action>) => {
   } catch (err) {
     dispatch({
       type: ActionTypes.ERROR_PUBLICATIONS,
-      payload: err,
+      payload: err.message,
     });
   }
 };
@@ -184,7 +267,7 @@ export const getPublication = (_id: string) => async (
   } catch (err) {
     dispatch({
       type: ActionTypes.ERROR_PUBLICATIONS,
-      payload: err,
+      payload: err.message,
     });
   }
 };
@@ -201,7 +284,7 @@ export const getUsers = () => async (dispatch: Dispatch<Action>) => {
   } catch (err) {
     dispatch({
       type: ActionTypes.ERROR_USERS,
-      payload: err,
+      payload: err.message,
     });
   }
 };
@@ -218,7 +301,7 @@ export const getUser = (_id: string) => async (dispatch: Dispatch<Action>) => {
   } catch (err) {
     dispatch({
       type: ActionTypes.ERROR_USERS,
-      payload: err,
+      payload: err.message,
     });
   }
 };
@@ -285,7 +368,7 @@ export const getTopics = () => async (dispatch: Dispatch<Action>) => {
   } catch (err) {
     dispatch({
       type: ActionTypes.ERROR_TOPICS,
-      payload: err,
+      payload: err.message,
     });
   }
 };

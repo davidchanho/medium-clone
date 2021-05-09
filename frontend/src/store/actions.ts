@@ -1,5 +1,45 @@
 import { ActionTypes } from ".";
-import { IComment, IPost, IPublication, ITopic, IUser } from "../types";
+import { IComment, IItem, IPost, IPublication, ITopic, IUser } from "../types";
+
+export interface LoadingItemsAction {
+  type: ActionTypes.LOADING_ITEMS;
+}
+
+export interface ErrorItemsAction {
+  type: ActionTypes.ERROR_ITEMS;
+  name: string;
+  payload: string;
+}
+
+export interface FetchItemsAction {
+  type: ActionTypes.FETCH_ITEMS;
+  name: string;
+  payload: IItem[];
+}
+
+export interface FetchItemAction {
+  type: ActionTypes.FETCH_ITEM;
+  name: string;
+  payload: IItem;
+}
+
+export interface AddItemAction {
+  type: ActionTypes.ADD_ITEM;
+  name: string;
+  payload: IItem;
+}
+
+export interface DeleteItemAction {
+  type: ActionTypes.DELETE_ITEM;
+  name: string;
+  payload: string;
+}
+
+export interface UpdateItemAction {
+  type: ActionTypes.UPDATE_ITEM;
+  name: string;
+  payload: IItem;
+}
 
 export interface LoadingCommentsAction {
   type: ActionTypes.LOADING_COMMENTS;
@@ -142,6 +182,13 @@ export interface BookmarkPostAction {
 }
 
 export type Action =
+  | FetchItemsAction
+  | ErrorItemsAction
+  | LoadingItemsAction
+  | FetchItemAction
+  | AddItemAction
+  | DeleteItemAction
+  | UpdateItemAction
   | FetchCommentsAction
   | ErrorCommentsAction
   | LoadingCommentsAction

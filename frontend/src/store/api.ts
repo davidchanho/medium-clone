@@ -1,13 +1,32 @@
 import axios from "axios";
-import { IComment, IPost, IPublication, ITopic, IUser } from "../types";
+import { IComment, IItem, IPost, IPublication, ITopic, IUser } from "../types";
 
 const commentsUrl = "/api/comments/";
 const postsUrl = "/api/posts/";
 const publicationsUrl = "/api/publications/";
 const usersUrl = "/api/users/";
 const topicsUrl = "/api/topics/";
+const itemsUrl = (name: string) => `/api/${name}/`;
 
 const API = {
+  async getItems(name: string) {
+    const { data } = await axios.get<IItem[]>(itemsUrl(name));
+    return data;
+  },
+  async getItem(_id: string, name: string) {
+    const { data } = await axios.get<IItem>(itemsUrl(name) + _id);
+    return data;
+  },
+  addItem(item: IItem, name: string) {
+    axios.post<any>(itemsUrl(name), item);
+  },
+  deleteItem(_id: string, name: string) {
+    axios.delete<string>(itemsUrl(name) + _id);
+  },
+  updateItem(updateItem: IItem, name: string) {
+    axios.put<string>(itemsUrl(name) + updateItem._id, updateItem);
+  },
+
   async getComments() {
     const { data } = await axios.get<IComment[]>(commentsUrl);
     return data;
@@ -18,13 +37,13 @@ const API = {
   },
   addComment(comment: IComment) {
     const { body, postId } = comment;
-    axios.post<any>(postsUrl, { body, postId });
+    axios.post<any>(commentsUrl, { body, postId });
   },
   deleteComment(_id: string) {
     axios.delete<string>(commentsUrl + _id);
   },
-  updateComment(post: IComment) {
-    axios.put<string>(commentsUrl + post._id, post);
+  updateComment(comment: IComment) {
+    axios.put<string>(commentsUrl + comment._id, comment);
   },
   async getPosts() {
     const { data } = await axios.get<IPost[]>(postsUrl);
@@ -35,8 +54,7 @@ const API = {
     return data;
   },
   addPost(post: IPost) {
-    const { title, body } = post;
-    axios.post<any>(publicationsUrl, { title, body });
+    axios.post<any>(publicationsUrl, post);
   },
   deletePost(_id: string) {
     axios.delete<string>(postsUrl + _id);

@@ -1,7 +1,7 @@
 import produce from "immer";
-import { IPost } from "../../types";
 import { Action } from "../actions";
 import { ActionTypes } from "../actionTypes";
+import { IPost } from "./../../types";
 import { initialPublication } from "./../publications/reducers";
 import { initialUser } from "./../users/reducers";
 

@@ -1,3 +1,5 @@
+export type IItem = IComment | IPost | IPublication | ITopic | IUser;
+
 export interface IComment {
   _id?: string;
   postId: string;
