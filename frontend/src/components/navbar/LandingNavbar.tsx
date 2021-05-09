@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Nav, Navbar as BsNavbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { ReactComponent as MediumLogo } from "../../assets/medium.svg";
 
 function LandingNavbar() {
   return (
@@ -10,7 +11,7 @@ function LandingNavbar() {
       className="px-5 py-4 bg-yellow border-bottom"
     >
       <BsNavbar.Brand to="/" as={NavLink} className="font-weight-bold">
-        <img src="/medium.svg" alt="" />
+        <MediumLogo />
       </BsNavbar.Brand>
       <BsNavbar.Toggle aria-controls="basic-navbar-nav" />
       <BsNavbar.Collapse id="basic-navbar-nav">

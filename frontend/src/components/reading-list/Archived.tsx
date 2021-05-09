@@ -1,12 +1,13 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import img from "../../assets/archived.png";
 import { IconArchive } from "../icons";
 
 function Archived() {
   return (
     <Card className="d-flex flex-row">
       <Card.Header>
-        <img src="/archived.png" alt="" />
+        <img src={img} alt="" />
       </Card.Header>
       <Card.Body className="d-flex flex-column">
         <p>
