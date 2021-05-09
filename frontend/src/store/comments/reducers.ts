@@ -25,49 +25,46 @@ const initialCommentsState: ICommentsState = {
   error: "",
 };
 
-const commentsReducers = produce(
-  (
-    state: ICommentsState = initialCommentsState,
-    action: Action
-  ): ICommentsState => {
-    switch (action.type) {
-      case ActionTypes.ADD_COMMENT:
-        state.comments.push(action.payload);
-        return state;
-      case ActionTypes.LOADING_COMMENTS:
-        state.loading = true;
-        state.error = "";
-        return state;
-      case ActionTypes.FETCH_COMMENTS:
-        state.comments = action.payload;
-        state.loading = false;
-        return state;
-      case ActionTypes.ERROR_COMMENTS:
-        state.loading = false;
-        state.error = action.payload;
-        return state;
-      case ActionTypes.FETCH_COMMENT:
-        state.comment = action.payload;
-        state.loading = false;
-        return state;
-      case ActionTypes.DELETE_COMMENT:
-        const deleteCommentIndex = state.comments.findIndex(
-          (comment) => comment._id === action.payload
-        );
-        if (deleteCommentIndex !== -1)
-          state.comments.splice(deleteCommentIndex, 1);
-        return state;
-      case ActionTypes.UPDATE_COMMENT:
-        const updateCommentIndex = state.comments.findIndex(
-          (comment) => comment._id === action.payload._id
-        );
-        if (updateCommentIndex !== -1)
-          state.comments.splice(updateCommentIndex, 1, action.payload);
-        return state;
-      default:
-        return state;
-    }
+const commentsReducers = (
+  state: ICommentsState = initialCommentsState,
+  action: Action
+): ICommentsState => {
+  switch (action.type) {
+    case ActionTypes.ADD_COMMENT:
+      state.comments.push(action.payload);
+      return state;
+    case ActionTypes.LOADING_COMMENTS:
+      state.loading = true;
+      state.error = "";
+      return state;
+    case ActionTypes.FETCH_COMMENTS:
+      state.comments = action.payload;
+      state.loading = false;
+      return state;
+    case ActionTypes.ERROR_COMMENTS:
+      state.loading = false;
+      state.error = action.payload;
+      return state;
+    case ActionTypes.FETCH_COMMENT:
+      state.comment = action.payload;
+      state.loading = false;
+      return state;
+    case ActionTypes.DELETE_COMMENT:
+      const deleteCommentIndex = state.comments.findIndex(
+        (comment) => comment._id === action.payload
+      );
+      if (deleteCommentIndex !== -1)
+        state.comments.splice(deleteCommentIndex, 1);
+      return state;
+    case ActionTypes.UPDATE_COMMENT:
+      const updateCommentIndex = state.comments.findIndex(
+        (comment) => comment._id === action.payload._id
+      );
+      if (updateCommentIndex !== -1)
+        state.comments.splice(updateCommentIndex, 1, action.payload);
+      return state;
+    default:
+      return state;
   }
-);
-
-export default commentsReducers;
+};
+export default produce(commentsReducers);

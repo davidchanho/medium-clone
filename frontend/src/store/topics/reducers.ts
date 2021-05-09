@@ -20,25 +20,26 @@ const initialTopicsState: ITopicsState = {
   error: "",
 };
 
-const topicsReducers = produce(
-  (state: ITopicsState = initialTopicsState, action: Action): ITopicsState => {
-    switch (action.type) {
-      case ActionTypes.LOADING_TOPICS:
-        state.loading = true;
-        state.error = "";
-        return state;
-      case ActionTypes.FETCH_TOPICS:
-        state.topics = action.payload;
-        state.loading = false;
-        return state;
-      case ActionTypes.ERROR_TOPICS:
-        state.loading = false;
-        state.error = action.payload;
-        return state;
-      default:
-        return state;
-    }
+const topicsReducers = (
+  state: ITopicsState = initialTopicsState,
+  action: Action
+): ITopicsState => {
+  switch (action.type) {
+    case ActionTypes.LOADING_TOPICS:
+      state.loading = true;
+      state.error = "";
+      return state;
+    case ActionTypes.FETCH_TOPICS:
+      state.topics = action.payload;
+      state.loading = false;
+      return state;
+    case ActionTypes.ERROR_TOPICS:
+      state.loading = false;
+      state.error = action.payload;
+      return state;
+    default:
+      return state;
   }
-);
+};
 
-export default topicsReducers;
+export default produce(topicsReducers);

@@ -34,7 +34,7 @@ export function createFilteredReducer(reducerFunction: any, reducerPredicate: an
   };
 }
 
-const itemsReducers = produce(
+const itemsReducers =
   (state: IItemsState = initialItemsState, action: Action): IItemsState => {
     switch (action.type) {
       case ActionTypes.LOADING_ITEMS:
@@ -50,6 +50,6 @@ const itemsReducers = produce(
         return state;
     }
   }
-);
 
-export default itemsReducers;
+
+export default produce(itemsReducers);

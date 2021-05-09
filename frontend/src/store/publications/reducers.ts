@@ -24,7 +24,7 @@ const initialPublicationsState: IPublicationsState = {
   error: "",
 };
 
-const publicationsReducers = produce(
+const publicationsReducers = 
   (
     state: IPublicationsState = initialPublicationsState,
     action: Action
@@ -50,6 +50,5 @@ const publicationsReducers = produce(
         return state;
     }
   }
-);
 
-export default publicationsReducers;
+export default produce(publicationsReducers);
